@@ -7,11 +7,11 @@ public class PostgreSQL {
     private Statement stmt;
     private HashMap<Integer, String> notifications;
 
-    private final static String SERVER_IP = "207.154.201.63";
+    private final static String SERVER_IP = "HIDDEN";
     private final static String SERVER_PORT = "5432";
-    private final static String DB_NAME = "PM2022_TEAM_9";
-    private final static String DB_USER = "liransm";
-    private final static String DB_PASSWORD = "PM2022";
+    private final static String DB_NAME = "HIDDEN";
+    private final static String DB_USER = "HIDDEN";
+    private final static String DB_PASSWORD = "HIDDEN";
     private static volatile PostgreSQL instance = null;
 
     /**
