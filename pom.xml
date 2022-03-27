@@ -103,7 +103,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
@@ -115,6 +119,28 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>loans.ui.loans/ui.loans.HelloApplication</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>lib/yourJar.jar</file>
+                            <groupId>com.somegroup.id</groupId>
+                            <artifactId>artefact-id</artifactId>
+                            <version>x.y.z</version>
+                            <packaging>jar</packaging>
                         </configuration>
                     </execution>
                 </executions>
