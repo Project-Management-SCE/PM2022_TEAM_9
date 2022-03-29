@@ -120,6 +120,7 @@
           </execution>
         </executions>
       </plugin>
+                 <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.7</version>
