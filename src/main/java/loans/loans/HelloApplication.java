@@ -1,4 +1,4 @@
-package loans.loans;
+//package loans.loans;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
