@@ -1,4 +1,4 @@
-//package loans.loans;
+package loans.loans;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +18,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        System.out.println("Test");
-        //launch();
+        launch();
     }
 }
