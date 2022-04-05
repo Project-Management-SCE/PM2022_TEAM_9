@@ -9,18 +9,16 @@ public class Activation_SoftMax implements Activation {
     @Override
     public void forward(Matrix inputs) {
         this.outputs = new Matrix(inputs.getRows(), inputs.getColumns());
-        double sum = 0;
-        for (int i = 0; i < inputs.getRows(); i++) {
-            for (int j = 0; j < inputs.getColumns(); j++) {
-                this.outputs.setValue(i, j, Math.pow(Math.E, inputs.getValue(i, j)));
-                sum += this.outputs.getValue(i, j);
-            }
-        }
-        for (int i = 0; i < inputs.getRows(); i++)
-            for (int j = 0; j < inputs.getColumns(); j++)
-                this.outputs.setValue(i, j, this.outputs.getValue(i, j) / sum);
+        Matrix np_max = new Matrix(inputs.max(1));
+        Matrix subtract = new Matrix(inputs.subtract(np_max));
+        Matrix exp_values = new Matrix(subtract.exp());
 
+        Matrix np_sum = new Matrix(exp_values.sum(1));
+        this.outputs = new Matrix(exp_values.divide(np_sum));
     }
 
-
+    @Override
+    public void backwards(Matrix d_values) {
+        //TODO
+    }
 }
