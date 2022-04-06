@@ -153,8 +153,24 @@ public class Matrix {
      * @return Matrix with updated values.
      */
     protected Matrix multiply(Matrix B) {
+        if (B.rows == this.rows && B.columns == 1) { // if 1D array
+            for (int i = 0; i < this.rows; i++) {
+                for (int j = 0; j < this.columns; j++)
+                    this.matrix[i][j] *= B.matrix[i][0];
+            }
+            return this;
+
+        } else if (B.columns == this.columns && B.rows == 1) { // if 1D array
+            for (int i = 0; i < this.rows; i++) {
+                for (int j = 0; j < this.columns; j++)
+                    this.matrix[i][j] *= B.matrix[0][j];
+            }
+            return this;
+        }
+
         if (this.rows != B.rows || this.columns != B.columns)
-            throw new IndexOutOfBoundsException(String.format("Cannot Multiply (%s,%s) By (%s,%s)", this.rows, this.columns, B.rows, B.columns));
+            throw new IndexOutOfBoundsException(String.format("Matrices has different dimensions (%s,%s) By (%s,%s)", this.rows, this.columns, B.rows, B.columns));
+
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++)
                 this.matrix[i][j] *= B.matrix[i][j];
@@ -175,6 +191,7 @@ public class Matrix {
                     this.matrix[i][j] += B.matrix[i][0];
             }
             return this;
+
         } else if (B.columns == this.columns && B.rows == 1) { // if 1D array
             for (int i = 0; i < this.rows; i++) {
                 for (int j = 0; j < this.columns; j++)
@@ -194,7 +211,7 @@ public class Matrix {
     }
 
     /**
-     * add (num) value to each cell of the Matrix.
+     * Add (num) value to each cell of the Matrix.
      *
      * @param num (double value)
      * @return Matrix with updated values.
@@ -208,7 +225,7 @@ public class Matrix {
     }
 
     /**
-     * subtract (num) value to each cell of the Matrix.
+     * Subtract (num) value to each cell of the Matrix.
      *
      * @param num (double value)
      * @return Matrix with updated values.
@@ -245,6 +262,19 @@ public class Matrix {
         return this;
     }
 
+    /**
+     * Divide (num) value to each cell of the Matrix.
+     *
+     * @param num (double value)
+     * @return Matrix with updated values.
+     */
+    protected Matrix divide(double num) {
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.columns; j++)
+                this.matrix[i][j] /= num;
+        }
+        return this;
+    }
 
     /**
      * Divide values from given Matrix (B) to the current Matrix.
@@ -279,7 +309,53 @@ public class Matrix {
     }
 
     /**
-     * raise by E each cell of the Matrix.
+     * Transofrm Matrix into other shape.
+     *
+     * @param n_rows    (number of rows).
+     * @param n_columns (number of columns).
+     * @return Reshaped Matrix.
+     */
+    protected Matrix reshape(int n_rows, int n_columns) {
+        Matrix flatten_matrix = Matrix.flat(this);
+        int index = 0;
+
+        if (Math.abs(n_rows * n_columns) == Math.abs(this.rows * this.columns)) {
+            Matrix temp = new Matrix(n_rows, n_columns);
+            for (int i = 0; i < temp.rows; i++) {
+                for (int j = 0; j < temp.columns; j++) {
+                    temp.setValue(i, j, flatten_matrix.getValue(0, index));
+                    index++;
+                }
+            }
+            return temp;
+
+        } else if (n_rows == -1 && Math.abs(n_columns) <= Math.abs(this.rows * this.columns)) { // number of rows is arbitrary.
+            int rows = Math.abs((this.rows * this.columns) / n_columns);
+            Matrix temp = new Matrix(rows, n_columns);
+            for (int i = 0; i < temp.rows; i++) {
+                for (int j = 0; j < temp.columns; j++) {
+                    temp.setValue(i, j, flatten_matrix.getValue(0, index));
+                    index++;
+                }
+            }
+            return temp;
+
+        } else if (n_columns == -1 && Math.abs(n_rows) <= Math.abs(this.rows * this.columns)) { // number of columns is arbitrary.
+            int columns = Math.abs((this.rows * this.columns) / n_rows);
+            Matrix temp = new Matrix(n_rows, columns);
+            for (int i = 0; i < temp.rows; i++) {
+                for (int j = 0; j < temp.columns; j++) {
+                    temp.setValue(i, j, flatten_matrix.getValue(0, index));
+                    index++;
+                }
+            }
+            return temp;
+        }
+        throw new InputMismatchException(String.format("Given (%s, %s) are invalid for reshape.", n_rows, n_columns));
+    }
+
+    /**
+     * Raise all values in Matrix by (E) exponent.
      *
      * @return Modified Matrix after subtraction.
      */
@@ -303,6 +379,48 @@ public class Matrix {
                 temp.setValue(i, j, this.getValue(j, i));
         }
         return temp;
+    }
+
+    /**
+     * Get specific row of the Matrix.
+     *
+     * @param row (row number).
+     * @return Vector of specific row.
+     */
+    protected Matrix getRow(int row) {
+        Matrix temp = new Matrix(1, this.columns);
+        for (int i = 0; i < this.columns; i++) {
+            temp.setValue(0, i, this.getValue(row, i));
+        }
+        return temp;
+    }
+
+    /**
+     * Get specific column of the Matrix.
+     *
+     * @param column (column number).
+     * @return Vector of specific column.
+     */
+    protected Matrix getColumn(int column) {
+        Matrix temp = new Matrix(this.rows, 1);
+        for (int i = 0; i < this.rows; i++) {
+            temp.setValue(i, 0, this.getValue(i, column));
+        }
+        return temp;
+    }
+
+    /**
+     * Get shape of Matrix
+     *
+     * @return 1 if Matrix is Vector else 2.
+     */
+    protected int shape() {
+        if (this.rows == 1 && this.columns >= 1)
+            return 1;
+        else if (this.columns == 1 && this.rows >= 1)
+            return 1;
+        else
+            return 2;
     }
 
     /**
@@ -525,6 +643,16 @@ public class Matrix {
         return temp;
     }
 
+    /**
+     * Given an interval, values outside the interval are clipped to the interval edges.
+     * For example, if an interval of [0, 1] is specified,
+     * values smaller than 0 become 0, and values larger than 1 become 1.
+     *
+     * @param B   (Matrix object).
+     * @param min (minimal double value).
+     * @param max (maximal double value).
+     * @return Matrix with clipped values.
+     */
     public static Matrix clip(Matrix B, double min, double max) {
         Matrix temp = new Matrix(B.rows, B.columns);
         for (int i = 0; i < B.rows; i++) {
@@ -540,6 +668,13 @@ public class Matrix {
         return temp;
     }
 
+    /**
+     * Change every value of Matrix to given (value) if it is less 0.
+     *
+     * @param B     (Matrix object).
+     * @param value (double number).
+     * @return Matrix modified with positive numbers.
+     */
     protected static Matrix maximum(Matrix B, double value) {
         Matrix temp = new Matrix(B.rows, B.columns);
 
@@ -551,6 +686,14 @@ public class Matrix {
         return temp;
     }
 
+    /**
+     * Compare each values of Matrix (A) to Matrix (B)
+     * Set value 1 if equal else 0.
+     *
+     * @param A (Matrix object).
+     * @param B (Matrix object).
+     * @return Boolean Matrix of 1/0.
+     */
     public static Matrix bitwiseCompare(Matrix A, Matrix B) throws IndexOutOfBoundsException {
         if (A.rows != B.rows || A.columns != B.columns)
             throw new IndexOutOfBoundsException(String.format("Matrices has different dimensions (%s,%s) By (%s,%s)", A.rows, A.columns, B.rows, B.columns));
@@ -562,6 +705,109 @@ public class Matrix {
                     temp.matrix[i][j] = 1.0;
                 else
                     temp.matrix[i][j] = 0.0;
+            }
+        }
+
+        return temp;
+    }
+
+    /**
+     * Create Diagonal (ones) Matrix.
+     *
+     * @param n_rows (number of rows).
+     * @return Diagnal Matrix.
+     */
+    public static Matrix eye(int n_rows) {
+        Matrix temp = new Matrix(Math.abs(n_rows), Math.abs(n_rows));
+        for (int i = 0; i < temp.rows; i++) {
+            for (int j = 0; j < temp.columns; j++) {
+                if (i == j)
+                    temp.setValue(i, j, 1.0);
+            }
+        }
+        return temp;
+    }
+
+    /**
+     * Create Matrix that contains OneHot Vectos each row by given Vector (V).
+     *
+     * @param V (Matrix object).
+     * @return Matrix of OneHot Vectors.
+     */
+    public static Matrix oneHotVector(Matrix V) throws IndexOutOfBoundsException {
+        Matrix temp = new Matrix(V.columns, V.columns); //(m, m) Matrix
+
+        if (V.getRows() == 1)
+            for (int i = 0; i < V.getColumns(); i++)
+                temp.setValue(i, (int) (V.getValue(0, i)), 1.0);
+        else
+            throw new IndexOutOfBoundsException(String.format("Provided Matrix is not in Vector shape (%s,%s)", V.rows, V.columns));
+
+        return temp;
+    }
+
+    /**
+     * Create a 2D Matrix with the array_like input as a diagonal to the new output array.
+     *
+     * @param B (Matrix object).
+     * @return Diagonal Matrix with the given Vector values.
+     */
+    public static Matrix diagflat(Matrix B) throws IndexOutOfBoundsException {
+        if (B.rows == 1) {
+            Matrix temp = new Matrix(B.columns, B.columns);
+            for (int i = 0; i < temp.rows; i++) {
+                for (int j = 0; j < temp.columns; j++) {
+                    if (i == j)
+                        temp.setValue(i, j, B.getValue(0, i));
+                }
+            }
+            return temp;
+
+        } else if (B.columns == 1) {
+            Matrix temp = new Matrix(B.rows, B.rows);
+            B = B.transpose();
+            for (int i = 0; i < temp.rows; i++) {
+                for (int j = 0; j < temp.columns; j++) {
+                    if (i == j)
+                        temp.setValue(i, j, B.getValue(0, i));
+                }
+            }
+            return temp;
+        } else
+            throw new IndexOutOfBoundsException(String.format("Provided Matrix is not in Vector shape (%s,%s)", B.rows, B.columns));
+    }
+
+    /**
+     * Create Diagonal (ones) Matrix.
+     *
+     * @param n_rows    (number of rows).
+     * @param n_columns (number of columns)
+     * @return Diagnal Matrix.
+     */
+    public static Matrix eye(int n_rows, int n_columns) {
+        Matrix temp = new Matrix(Math.abs(n_rows), Math.abs(n_columns));
+        for (int i = 0; i < temp.rows; i++) {
+            for (int j = 0; j < temp.columns; j++) {
+                if (i == j)
+                    temp.setValue(i, j, 1.0);
+            }
+        }
+        return temp;
+    }
+
+    /**
+     * Flat Matrix from 2D to 1D array.
+     *
+     * @param B (Matrix object).
+     * @return flatted Matrix.
+     */
+    protected static Matrix flat(Matrix B) {
+        Matrix temp = new Matrix(1, B.rows * B.columns);
+        int index = 0;
+        for (int i = 0; i < B.rows; i++) {
+            for (int j = 0; j < B.columns; j++) {
+                temp.setValue(0, index, B.getValue(i, j));
+                index++;
             }
         }
         return temp;
@@ -577,6 +823,13 @@ public class Matrix {
         return new Matrix(B.rows, B.columns);
     }
 
+    /**
+     * Multiply 2 Vectors.
+     *
+     * @param V1 (Matrix object).
+     * @param V2 (Matrix object).
+     * @return Matrix of (V1xV2) size.
+     */
     private static double vectorsMultiplication(Matrix V1, Matrix V2) {
         double sum_values = 0.0;
         if (V1.columns == 1 && V2.columns == 1 && V1.rows == V2.rows) {
@@ -592,6 +845,13 @@ public class Matrix {
         return sum_values;
     }
 
+    /**
+     * Sum all values in specific row of the Matrix.
+     *
+     * @param V   (Matrix object).
+     * @param row (row number).
+     * @return (double) values of sum.
+     */
     protected static double sumRow(Matrix V, int row) {
         double sum_values = 0.0;
         for (int i = 0; i < V.columns; i++)
@@ -599,6 +859,13 @@ public class Matrix {
         return sum_values;
     }
 
+    /**
+     * Sum all values in specific column of the Matrix.
+     *
+     * @param V      (Matrix object).
+     * @param column (row number).
+     * @return (double) values of sum.
+     */
     protected static double sumColumn(Matrix V, int column) {
         double sum_values = 0.0;
         for (int i = 0; i < V.rows; i++)
