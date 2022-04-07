@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            docker pull maven
+            sh 'docker pull maven'
         }
     }
    stages {
