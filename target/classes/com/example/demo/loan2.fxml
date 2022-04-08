@@ -37,17 +37,21 @@
                                     </font>
                                 </Label>
                                 <Button mnemonicParsing="false" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                                <Label text="Education:" GridPane.rowIndex="1">
+                                <Label text="Full Name:" GridPane.rowIndex="1">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
                                 </Label>
-                                <Label text="Family Status:" GridPane.rowIndex="2">
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label text="Amount Loan:" GridPane.rowIndex="2">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
                                 </Label>
-                                <Label text="Housing Type:" GridPane.rowIndex="3">
+                                <Label text="Monthly income:" GridPane.rowIndex="3">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -74,6 +78,7 @@
                                 </Label>
                                 <ChoiceBox fx:id="gender" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                 <Button fx:id="back" mnemonicParsing="false" text="Back" GridPane.rowIndex="10" />
+                                <DatePicker fx:id="age" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                 <Label text="Own car:" GridPane.rowIndex="8">
                                     <font>
                                         <Font size="16.0" />
@@ -81,12 +86,6 @@
                                 </Label>
                                 <ChoiceBox fx:id="own_car" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                 <Pagination fx:id="pagination" maxPageIndicatorCount="4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                             </children>
                         </GridPane>
 

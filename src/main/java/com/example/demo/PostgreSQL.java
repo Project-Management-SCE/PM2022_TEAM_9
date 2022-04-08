@@ -130,7 +130,7 @@ public class PostgreSQL {
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             this.cursor = stmt.executeQuery(query);
         } catch (SQLException e) {
-            //dispatchStatus(4);
+            dispatchStatus(4);
             e.printStackTrace();
 //            System.exit(4);
         }
@@ -139,11 +139,11 @@ public class PostgreSQL {
 
     /**
      * Update specific data of specific table.
-     *
-     * @param table   (String) name
+     *  @param table   (String) name
      * @param columns (String) columns name (separated by comma).
+     * @return
      */
-    public void update(String table, String columns, String values) {
+    public boolean update(String table, String columns, String values) {
         try {
             StringBuilder update_clause = new StringBuilder();
             String[] split_columns = columns.split(",");
@@ -163,6 +163,7 @@ public class PostgreSQL {
             dispatchStatus(6);
 //            System.exit(6);
         }
+        return false;
     }
 
     /**
@@ -174,6 +175,7 @@ public class PostgreSQL {
      */
     public void update(String table, String columns, String values, String condition) {
         try {
+            String split_condition = condition.replace(",", " AND ");
             StringBuilder update_clause = new StringBuilder();
             String[] split_columns = columns.split(",");
             String[] split_values = values.split(",");
@@ -185,9 +187,10 @@ public class PostgreSQL {
                     update_clause.append(String.format("%s = '%s'", split_columns[i], split_values[i]));
             }
 
-            String query = "UPDATE %s SET %s WHERE %s".formatted(table, update_clause, condition);
+            String query = "UPDATE %s SET %s WHERE %s".formatted(table, update_clause, split_condition);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmt.execute(query);
+
         } catch (SQLException e) {
             dispatchStatus(6);
 //            System.exit(6);
