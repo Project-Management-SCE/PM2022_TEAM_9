@@ -13,6 +13,7 @@ public class loanManager {
 
     public loanManager(Scene scene) {
         this.scene = scene;
+
     }
 
     /**
@@ -40,10 +41,11 @@ public class loanManager {
 
 
     public void nextPage(int pageIndex) {
-
+        System.out.println(pageIndex);
         if (pageIndex == 2) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("loan2.fxml"));
+
                 scene.setRoot(loader.load());
                 loanController controller = loader.getController();
                 controller.initManager(this);
@@ -51,7 +53,6 @@ public class loanManager {
                 Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-
         if (pageIndex == 3) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("loan3.fxml"));
@@ -62,7 +63,6 @@ public class loanManager {
                 Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-
         if (pageIndex == 4) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("loan4.fxml"));

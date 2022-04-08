@@ -22,10 +22,7 @@ public class LoginManager {
         this.scene = scene;
     }
 
-    /**
-     * Callback method invoked to notify that a user has logged out of the main application.
-     * Will show the login application screen.
-     */
+
 //    public void login() {
 //        showLoginScreen();
 //    }
@@ -64,7 +61,6 @@ public class LoginManager {
      * Check authorization.
      */
     public void authorize(TextField user, TextField pass) throws SQLException {
-
         String[][] x = sql.select("users", "username, password", String.format("username='%s',password='%s'", user.getText(), pass.getText()));
         PostgreSQL.prettyPrint(x);
         if (x.length > 0)
@@ -72,7 +68,14 @@ public class LoginManager {
         else
             System.out.println("Error!!!!!!");
 
+    }
 
+    /**
+     * forgot password
+     */
+    public void goFP(){
+        forgotPassManager forgotPassManager = new forgotPassManager(scene);
+        forgotPassManager.forgotPassword();
     }
 
 
