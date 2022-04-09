@@ -4,10 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 public class userPanelManager {
     private Scene scene;
@@ -27,8 +25,6 @@ public class userPanelManager {
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -36,11 +32,5 @@ public class userPanelManager {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.showLoginScreen();
     }
-
-    public void edit(){
-        editProfileManager editProfileManager = new editProfileManager(scene);
-        editProfileManager.editProfile();
-    }
-
 
 }
