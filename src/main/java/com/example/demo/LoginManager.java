@@ -19,6 +19,7 @@ import static com.example.demo.LoanApp.sql;
 public class LoginManager {
     private final Scene scene;
 
+
     public LoginManager(Scene scene) {
         this.scene = scene;
     }
