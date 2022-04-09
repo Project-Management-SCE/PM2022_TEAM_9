@@ -139,8 +139,9 @@ public class PostgreSQL {
      * @param table   (String) name
      * @param columns (String) columns name (separated by comma).
      */
-    public void update(String table, String columns, String values) {
+public void update(String table, String columns, String values, String condition) {
         try {
+            String split_condition = condition.replace(",", " AND ");
             StringBuilder update_clause = new StringBuilder();
             String[] split_columns = columns.split(",");
             String[] split_values = values.split(",");
@@ -152,12 +153,13 @@ public class PostgreSQL {
                     update_clause.append(String.format("%s = '%s'", split_columns[i], split_values[i]));
             }
 
-            String query = "UPDATE %s SET %s".formatted(table, update_clause);
+            String query = "UPDATE %s SET %s WHERE %s".formatted(table, update_clause, split_condition);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stmt.executeUpdate(query);
+            stmt.execute(query);
+
         } catch (SQLException e) {
             dispatchStatus(6);
-            System.exit(6);
+//            System.exit(6);
         }
     }
 
