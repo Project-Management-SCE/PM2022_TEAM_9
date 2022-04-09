@@ -1,7 +1,7 @@
 package com.example.demo;
+
 import java.sql.*;
 import java.util.HashMap;
-
 
 public class PostgreSQL {
     private Connection connection;
@@ -9,11 +9,11 @@ public class PostgreSQL {
     private Statement stmt;
     private HashMap<Integer, String> notifications;
 
-    private final static String SERVER_IP = "207.154.201.63";
+    private final static String SERVER_IP = "HIDDEN";
     private final static String SERVER_PORT = "5432";
-    private final static String DB_NAME = "PM2022_TEAM_9";
-    private final static String DB_USER = "liransm";
-    private final static String DB_PASSWORD = "PM2022";
+    private final static String DB_NAME = "HIDDEN";
+    private final static String DB_USER = "HIDDEN";
+    private final static String DB_PASSWORD = "HIDDEN";
     private static volatile PostgreSQL instance = null;
 
     /**
@@ -105,12 +105,11 @@ public class PostgreSQL {
     public String[][] select(String table, String columns) throws SQLException {
         try {
             String query = "SELECT %s FROM %s".formatted(columns, table);
-            System.out.println(query);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             this.cursor = stmt.executeQuery(query);
         } catch (SQLException e) {
             dispatchStatus(4);
-//            System.exit(4);
+            System.exit(4);
         }
         return formatQuery(this.cursor);
     }
@@ -131,39 +130,9 @@ public class PostgreSQL {
             this.cursor = stmt.executeQuery(query);
         } catch (SQLException e) {
             dispatchStatus(4);
-            e.printStackTrace();
-//            System.exit(4);
+            System.exit(4);
         }
         return formatQuery(this.cursor);
-    }
-
-    /**
-     * Update specific data of specific table.
-     *  @param table   (String) name
-     * @param columns (String) columns name (separated by comma).
-     * @return
-     */
-    public boolean update(String table, String columns, String values) {
-        try {
-            StringBuilder update_clause = new StringBuilder();
-            String[] split_columns = columns.split(",");
-            String[] split_values = values.split(",");
-
-            for (int i = 0; i < split_columns.length; i++) {
-                if (i != split_columns.length - 1)
-                    update_clause.append(String.format("%s = '%s' ,", split_columns[i], split_values[i]));
-                else
-                    update_clause.append(String.format("%s = '%s'", split_columns[i], split_values[i]));
-            }
-
-            String query = "UPDATE %s SET %s".formatted(table, update_clause);
-            this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stmt.executeUpdate(query);
-        } catch (SQLException e) {
-            dispatchStatus(6);
-//            System.exit(6);
-        }
-        return false;
     }
 
     /**
@@ -175,7 +144,6 @@ public class PostgreSQL {
      */
     public void update(String table, String columns, String values, String condition) {
         try {
-            String split_condition = condition.replace(",", " AND ");
             StringBuilder update_clause = new StringBuilder();
             String[] split_columns = columns.split(",");
             String[] split_values = values.split(",");
@@ -187,13 +155,12 @@ public class PostgreSQL {
                     update_clause.append(String.format("%s = '%s'", split_columns[i], split_values[i]));
             }
 
-            String query = "UPDATE %s SET %s WHERE %s".formatted(table, update_clause, split_condition);
+            String query = "UPDATE %s SET %s WHERE %s".formatted(table, update_clause, condition);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmt.execute(query);
-
         } catch (SQLException e) {
             dispatchStatus(6);
-//            System.exit(6);
+            System.exit(6);
         }
     }
 
@@ -210,7 +177,7 @@ public class PostgreSQL {
             stmt.executeUpdate(query);
         } catch (SQLException e) {
             dispatchStatus(7);
-//            System.exit(7);
+            System.exit(7);
         }
     }
 
@@ -221,9 +188,6 @@ public class PostgreSQL {
      * @return String[][] array.
      */
     private String[][] formatQuery(ResultSet query) throws SQLException {
-        if(query == null)
-            System.exit(-1);
-
         ResultSetMetaData meta_data = query.getMetaData();
         int n_columns = meta_data.getColumnCount();
         int n_rows = get_rows(query);
@@ -314,12 +278,8 @@ public class PostgreSQL {
         //prettyPrint(sql.select("persons", "*"));
 
         //sql.delete("persons", "personid=16");
-        //prettyPrint(sql.selec t("persons", "*"));
+        //prettyPrint(sql.select("persons", "*"));
 
         sql.closeConnection();
     }
 }
-
-
-
-
