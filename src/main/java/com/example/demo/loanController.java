@@ -19,11 +19,8 @@ public class loanController {
     @FXML
     private DatePicker age;
     @FXML
-    private ChoiceBox<String> country;
-    @FXML
-    private ChoiceBox<String> gender;
-    @FXML
-    private ChoiceBox<String> own_car;
+    private ChoiceBox<String> country,own_car,gender;
+
     @FXML
     private TextField name, amount, income, expenses;
 
@@ -45,6 +42,7 @@ public class loanController {
 //            own_car.getItems().clear();
 //            age.getEditor().clear();
         });
+
         // set pagination
         pagination.setPageFactory(this::getPage);
         loanManager.nextPage(pagination.getCurrentPageIndex());

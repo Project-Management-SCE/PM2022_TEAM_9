@@ -4,10 +4,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.logging.*;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.TextField;
+
+import java.util.prefs.Preferences;
 
 import static com.example.demo.LoanApp.sql;
 
@@ -16,7 +17,7 @@ import static com.example.demo.LoanApp.sql;
  * Manages control flow for logins
  */
 public class LoginManager {
-    private final Scene scene;
+    private  Scene scene;
 
     public LoginManager(Scene scene) {
         this.scene = scene;
@@ -44,11 +45,14 @@ public class LoginManager {
      * show user panel
      */
     public void userPanel() {
-        System.out.println("go to user panel");
         userPanelManager userPanelManager = new userPanelManager(scene);
         userPanelManager.showUserPanel();
     }
 
+    public void ManagerPanel(){
+        managerPanelManager managerPanelManager = new managerPanelManager(scene);
+        managerPanelManager.showManagerPanel();
+    }
     /**
      * back button to go back to welcome screen
      */
@@ -62,12 +66,23 @@ public class LoginManager {
      */
     public void authorize(TextField user, TextField pass) throws SQLException {
         String[][] x = sql.select("users", "username, password", String.format("username='%s',password='%s'", user.getText(), pass.getText()));
-        PostgreSQL.prettyPrint(x);
-        if (x.length > 0)
+        String[][] r = sql.select("users", "role",String.format("username='%s',password='%s'", user.getText(), pass.getText()));
+        String[][] id = sql.select("users", "id", String.format("username='%s'", user.getText()));
+        int role = Integer.parseInt(r[0][0]); // get role number
+
+        Preferences userPrefrences = Preferences.userRoot();
+        userPrefrences.put("userid",id[0][0]); // keep id in userPrefrences
+
+        Preferences userPrefrencesRole = Preferences.userRoot();
+        userPrefrencesRole.put("role",r[0][0]); // keep role in userPrefrences
+        if (x.length > 0 && role == 0) {
             userPanel();
+        }
+        else if(role == 2){
+            ManagerPanel();
+        }
         else
             System.out.println("Error!!!!!!");
-
     }
 
     /**

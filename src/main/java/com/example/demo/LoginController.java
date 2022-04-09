@@ -26,7 +26,6 @@ public class LoginController {
             try {
                 loginManager.showLoginScreen();
                 loginManager.authorize(user, password);
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }

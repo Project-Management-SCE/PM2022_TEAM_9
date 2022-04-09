@@ -19,7 +19,6 @@ public class welcomeController {
         });
 
         loan.setOnAction((actionEvent -> welcomeManager.loan()));
-
     }
 
 

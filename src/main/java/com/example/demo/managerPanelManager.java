@@ -8,22 +8,21 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+public class managerPanelManager {
+    private Scene scene;
 
-public class userPanelManager {
-    private  Scene scene;
-
-    public userPanelManager(Scene scene) {
+    public managerPanelManager(Scene scene){
         this.scene = scene;
     }
 
-    public void showUserPanel() {
+    public void showManagerPanel() {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("userPanel.fxml")
+                    getClass().getResource("managerPanel.fxml")
             );
-            System.out.println("show user panel");
+            System.out.println("show manager panel");
             scene.setRoot(loader.load());
-            userPanelController controller = loader.getController();
+            managerPanelController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -32,15 +31,13 @@ public class userPanelManager {
         }
     }
 
-    public  void goLogin() {
+    public void goLogin() {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.showLoginScreen();
     }
 
-    public  void edit(){
+    public void edit(){
         editProfileManager editProfileManager = new editProfileManager(scene);
         editProfileManager.editProfile();
     }
-
-
 }
