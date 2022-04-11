@@ -1,5 +1,5 @@
 package com.example.demo;
-
+////////////
 enum GENDER {
     MALE(2), FEMALE(1);
     private final int value;
@@ -13,7 +13,7 @@ enum GENDER {
         return String.valueOf(this.value);
     }
 }
-
+//////////////
 enum FLAG_OWN_CAR {
     NO(1), YES(2);
     private final int value;
@@ -27,7 +27,7 @@ enum FLAG_OWN_CAR {
         return String.valueOf(this.value);
     }
 }
-
+////////////////
 enum FLAG_OWN_REALTY {
     NO(1), YES(2);
     private final int value;
@@ -41,7 +41,7 @@ enum FLAG_OWN_REALTY {
         return String.valueOf(this.value);
     }
 }
-
+////////////////
 enum NAME_EDUCATION_TYPE {
     ACADEMIC_DEGREE(1), HIGHER_EDUCATION(2), INCOMPLETE_HIGHER(3), LOWER_SECONDARY(4), SECONDARY(5);
     private final int value;
@@ -55,7 +55,7 @@ enum NAME_EDUCATION_TYPE {
         return String.valueOf(this.value);
     }
 }
-
+//////////////
 enum NAME_FAMILY_STATUS {
     CIVIL_MARRIAGE(1), MARRIED(2), SEPARATED(3), SINGLE(4), Unknown(5), WIDOW(6);
     private final int value;
@@ -69,7 +69,7 @@ enum NAME_FAMILY_STATUS {
         return String.valueOf(this.value);
     }
 }
-
+//////////////////
 enum NAME_HOUSING_TYPE {
     CO_OP_APARTMENT(1), HOUSE_OR_APARTMENT(2), MUNICIPAL_APARTMENT(3), OFFICE_APARTMENT(4), RENTED_APARTMENT(5), WITH_PARENTS(6);
     private final int value;
@@ -153,7 +153,7 @@ enum FLAG_EMAIL {
         return String.valueOf(this.value);
     }
 }
-
+////////////////////
 enum OCCUPATION_TYPE {
     UNKNOWN(1), ACCOUNTANTS(2), CLEANING_STAFF(3), COOKING_STAFF(4), CORE_STAFF(5),
     DRIVERS(6), HR_STAFF(7), HIGH_SKILL_TECH_STAFF(8), IT_STAFF(9), LABORERS(10),
@@ -170,7 +170,7 @@ enum OCCUPATION_TYPE {
         return String.valueOf(this.value);
     }
 }
-
+/////////////
 enum REGION_RATING_CLIENT {
     NORTH(1), MIDDLE(2), SOUTH(3);
     private final int value;
@@ -184,7 +184,7 @@ enum REGION_RATING_CLIENT {
         return String.valueOf(this.value);
     }
 }
-
+///////////////////
 enum ORGANIZATION_TYPE {
     ADVERTISING(1), AGRICULTURE(2), BANK(3), BUSINESS(4), CLEANING(7),
     CONSTRUCTION(8), CULTURE(9), ELECTRICITY(10), EMERGENCY(11), MANAGERS(12),

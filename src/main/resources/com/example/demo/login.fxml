@@ -16,20 +16,17 @@
                             <children>
                                 <Label text="Username:" GridPane.rowIndex="2">
                            <font>
-                              <Font size="20.0" />
+                              <Font size="17.0" />
                            </font></Label>
                                 <Label text="Password:" GridPane.rowIndex="3">
                            <font>
-                              <Font size="20.0" />
+                              <Font size="17.0" />
                            </font></Label>
                                 <TextField fx:id="user" prefHeight="35.0" prefWidth="362.0" promptText="Use &quot;tamaram&quot; to login" text="tamaram" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                 <PasswordField fx:id="password" prefHeight="33.0" prefWidth="362.0" promptText="Use &quot;PM2022&quot; to login" text="PM2022" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                <Button fx:id="loginButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="14.0" />
-                           </font></Button>
+                                <Button fx:id="loginButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                       <Button fx:id="back" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="back" GridPane.rowIndex="6" />
-                        <Label prefHeight="30.0" prefWidth="362.0" text="Login Panel " textAlignment="CENTER" GridPane.columnIndex="1">
+                        <Label text="Login Panel " GridPane.columnIndex="1">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
@@ -45,9 +42,9 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                                      <Button fx:id="forgotPss" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="Forgot password?" textFill="#2200cc" GridPane.columnIndex="1">
+                                      <Button fx:id="forgotPss" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="Forgot password?" textFill="#b84654" GridPane.columnIndex="1">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font size="15.0" />
                                  </font>
                               </Button>
                            </children>

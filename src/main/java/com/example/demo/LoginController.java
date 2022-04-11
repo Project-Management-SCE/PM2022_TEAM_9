@@ -11,9 +11,11 @@ import java.sql.SQLException;
 public class LoginController {
     @FXML
     private TextField user,password;
-
     @FXML
     private Button loginButton,back,forgotPss;
+    @FXML
+    private Label login_status;
+
 
     public void initialize() {}
 

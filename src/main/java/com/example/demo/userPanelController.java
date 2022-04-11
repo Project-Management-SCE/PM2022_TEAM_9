@@ -26,7 +26,6 @@ public class userPanelController {
         Text account = new Text("David shalomov");
         balance.getChildren().add(loan); // print loan amount to user panel
         accountName.getChildren().add(account);
-
         logoutButton.setOnAction(actionEvent -> userPanelManager.goLogin());
         editProfileButton.setOnAction(event -> userPanelManager.edit());
 
@@ -35,7 +34,7 @@ public class userPanelController {
 
     public String getLoan() throws SQLException {
         Preferences userPrefrences = Preferences.userRoot();
-        String x = userPrefrences.get("userid","-1");
+        int x = userPrefrences.getInt("userid",-1);
         System.out.println(x);
         String[][] y = sql.select("loans","loan_total",String.format("user_id='%s'", x));
         System.out.println("USER NAME" + y[0][0] + "\n");

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class welcomeManager {
     private Scene scene;
 
@@ -30,6 +31,10 @@ public class welcomeManager {
         loanManager.showLoanScreen();
     }
 
+    public void register(){
+        registerManager registerManager = new registerManager(scene);
+        registerManager.showRegistration();
+    }
     /**
      * show welcome screen
      */

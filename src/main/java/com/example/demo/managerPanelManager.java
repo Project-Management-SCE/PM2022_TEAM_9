@@ -7,13 +7,16 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 
 public class managerPanelManager {
     private Scene scene;
-
-    public managerPanelManager(Scene scene){
+    private Preferences data;
+    public managerPanelManager(Scene scene, Preferences data){
         this.scene = scene;
+        this.data = data;
     }
+
 
     public void showManagerPanel() {
         try {
@@ -37,7 +40,7 @@ public class managerPanelManager {
     }
 
     public void edit(){
-        editProfileManager editProfileManager = new editProfileManager(scene);
+        editProfileManager editProfileManager = new editProfileManager(scene,data);
         editProfileManager.editProfile();
     }
 }

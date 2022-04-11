@@ -44,13 +44,13 @@ public class LoginManager {
     /**
      * show user panel
      */
-    public void userPanel() {
-        userPanelManager userPanelManager = new userPanelManager(scene);
+    public void userPanel(Preferences data) {
+        userPanelManager userPanelManager = new userPanelManager(scene, data);
         userPanelManager.showUserPanel();
     }
 
-    public void ManagerPanel(){
-        managerPanelManager managerPanelManager = new managerPanelManager(scene);
+    public void ManagerPanel(Preferences data){
+        managerPanelManager managerPanelManager = new managerPanelManager(scene,data);
         managerPanelManager.showManagerPanel();
     }
     /**
@@ -64,25 +64,30 @@ public class LoginManager {
     /**
      * Check authorization.
      */
-    public void authorize(TextField user, TextField pass) throws SQLException {
-        String[][] x = sql.select("users", "username, password", String.format("username='%s',password='%s'", user.getText(), pass.getText()));
-        String[][] r = sql.select("users", "role",String.format("username='%s',password='%s'", user.getText(), pass.getText()));
-        String[][] id = sql.select("users", "id", String.format("username='%s'", user.getText()));
-        int role = Integer.parseInt(r[0][0]); // get role number
+    public int authorize(TextField user, TextField pass) throws SQLException {
 
-        Preferences userPrefrences = Preferences.userRoot();
-        userPrefrences.put("userid",id[0][0]); // keep id in userPrefrences
+        String[][] fetch = sql.select("users", "*", String.format("username='%s',password='%s'", user.getText(), pass.getText()));
+        if(fetch.length ==0)
+            return -1;
+        Preferences user_data = Preferences.userRoot().node("LOGIN PANEL");
+        user_data.putInt("userid", Integer.parseInt(fetch[0][0])); // keep id in userPrefrences
+        user_data.put("username", fetch[0][1]);
+        user_data.put("password", fetch[0][2]);
+        user_data.put("email", fetch[0][3]);
+        user_data.putInt("role", Integer.parseInt(fetch[0][4]));
+        user_data.put("last_login", fetch[0][5]);
 
-        Preferences userPrefrencesRole = Preferences.userRoot();
-        userPrefrencesRole.put("role",r[0][0]); // keep role in userPrefrences
-        if (x.length > 0 && role == 0) {
-            userPanel();
+        if (user_data.getInt("role", -1) == 0) {
+            userPanel(user_data);
+            return 0;
         }
-        else if(role == 2){
-            ManagerPanel();
+        else if(user_data.getInt("role",-1) == 2){
+            ManagerPanel(user_data);
+            return 0;
         }
         else
             System.out.println("Error!!!!!!");
+        return 0;
     }
 
     /**

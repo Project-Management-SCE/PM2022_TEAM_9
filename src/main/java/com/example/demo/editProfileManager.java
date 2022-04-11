@@ -15,9 +15,11 @@ import static com.example.demo.LoanApp.sql;
 public class editProfileManager {
 
     private Scene scene;
+    private Preferences data;
 
-    public editProfileManager(Scene scene){
+    public editProfileManager(Scene scene,Preferences data){
         this.scene = scene;
+        this.data = data;
     }
 
     public void editProfile() {
@@ -38,24 +40,18 @@ public class editProfileManager {
      * @throws SQLException
      */
     public void goBack() throws SQLException {
-        int role = Integer.parseInt(getRole());
+        int role = data.getInt("role", -1);
         if (role == 0){
-            userPanelManager userPanelManager = new userPanelManager(scene);
+            userPanelManager userPanelManager = new userPanelManager(scene, data);
             userPanelManager.showUserPanel();
         }
         else if(role == 2){
-            managerPanelManager managerPanelManager = new managerPanelManager(scene);
+            managerPanelManager managerPanelManager = new managerPanelManager(scene, data);
             managerPanelManager.showManagerPanel();
         }
 
     }
 
 
-    public String getRole() throws SQLException {
-        Preferences userPrefrencesRole = Preferences.userRoot();
-        String x = userPrefrencesRole.get("role","-1");
-        String[][] y = sql.select("users","role",String.format("id='%s'", x));
-        System.out.println("ROLE " + y[0][0]);
-        return y[0][0];
-    }
+
 }

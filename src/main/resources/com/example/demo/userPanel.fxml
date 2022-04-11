@@ -79,6 +79,11 @@
                           </rowConstraints>
                            <children>
                               <TextFlow fx:id="balance" layoutX="15.0" layoutY="20.0" prefHeight="38.0" prefWidth="223.0" style="-fx-border-color: BLUE;" textAlignment="CENTER" GridPane.rowIndex="2" />
+                              <Label prefHeight="32.0" prefWidth="250.0" text="User Panel" textAlignment="CENTER" textFill="#f80a0a">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="1">
