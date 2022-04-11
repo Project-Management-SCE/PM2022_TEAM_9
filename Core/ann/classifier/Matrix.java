@@ -1,11 +1,16 @@
 package ann.classifier;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Random;
 
-public class Matrix {
+public class Matrix implements Serializable {
     private final int rows;
     private final int columns;
     private final double[][] matrix;
+
+    @Serial
+    private static final long serialVersionUID = 6529685098267757606L;
 
     /**
      * Default Matrix Constructor.
@@ -70,7 +75,7 @@ public class Matrix {
      *
      * @return (int) number of rows.
      */
-    public int getRows() {
+    protected int getRows() {
         return rows;
     }
 
@@ -79,7 +84,7 @@ public class Matrix {
      *
      * @return (int) number of columns.
      */
-    public int getColumns() {
+    protected int getColumns() {
         return columns;
     }
 
@@ -443,6 +448,40 @@ public class Matrix {
         return max_value;
     }
 
+
+    protected int argmax() throws MatrixIndexesOutOfBounds {
+        int max_index = 0;
+        double max_val;
+
+        if (this.columns == 1) {
+
+            for (int i = 0; i < this.getColumns(); i++) {
+                max_val = this.getValue(0, i); //reset max val to cell (0,i)
+                max_index = 0; //reset max index to cell (0,i)
+                for (int j = 1; j < this.getRows(); j++)
+                    if (this.getValue(j, i) > max_val) {
+                        max_val = this.getValue(j, i);
+                        max_index = j;
+                    }
+            }
+            return max_index;
+        }
+        if (this.rows == 1) {
+
+            for (int i = 0; i < this.getRows(); i++) {
+                max_val = this.getValue(i, 0); //reset max val to cell (i,0)
+                max_index = 0; //reset max index to cell (i,0)
+                for (int j = 1; j < this.getColumns(); j++)
+                    if (this.getValue(i, j) > max_val) {
+                        max_val = this.getValue(i, j);
+                        max_index = j;
+                    }
+            }
+            return max_index;
+        } else
+            throw new IndexOutOfBoundsException();
+    }
+
     /**
      * Returns the indices of the maximum values of each column/row.
      *
@@ -713,7 +752,7 @@ public class Matrix {
      * @param max (maximal double value).
      * @return Matrix with clipped values.
      */
-    public static Matrix clip(Matrix B, double min, double max) throws InvalidMatrixDimension {
+    protected static Matrix clip(Matrix B, double min, double max) throws InvalidMatrixDimension {
         Matrix temp = new Matrix(B.rows, B.columns);
         for (int i = 0; i < B.rows; i++) {
             for (int j = 0; j < B.columns; j++) {
@@ -754,7 +793,7 @@ public class Matrix {
      * @param B (Matrix object).
      * @return Boolean Matrix of 1/0.
      */
-    public static Matrix bitwiseCompare(Matrix A, Matrix B) throws InvalidMatrixDimension {
+    protected static Matrix bitwiseCompare(Matrix A, Matrix B) throws InvalidMatrixDimension {
         if (A.rows != B.rows || A.columns != B.columns)
             throw new InvalidMatrixDimension(A, B);
 
@@ -777,7 +816,7 @@ public class Matrix {
      * @param n_rows (number of rows).
      * @return Diagonal Matrix.
      */
-    public static Matrix eye(int n_rows) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+    protected static Matrix eye(int n_rows) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
         if (n_rows <= 0)
             throw new InvalidMatrixDimension(n_rows, n_rows);
 
@@ -797,7 +836,7 @@ public class Matrix {
      * @param B (Matrix object).
      * @return Diagonal Matrix of (1) values.
      */
-    public static Matrix ones_like(Matrix B) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+    protected static Matrix ones_like(Matrix B) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
         Matrix temp = new Matrix(B.rows, B.columns);
         for (int i = 0; i < temp.rows; i++) {
             for (int j = 0; j < temp.columns; j++)
@@ -812,7 +851,7 @@ public class Matrix {
      * @param V (Matrix object).
      * @return Matrix of OneHot Vectors.
      */
-    public static Matrix oneHotVector(Matrix V) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+    protected static Matrix oneHotVector(Matrix V) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
         Matrix temp = new Matrix(V.columns, V.columns); //(m, m) Matrix
 
         if (V.getRows() == 1)
@@ -830,7 +869,7 @@ public class Matrix {
      * @param B (Matrix object).
      * @return Diagonal Matrix with the given Vector values.
      */
-    public static Matrix diagflat(Matrix B) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+    protected static Matrix diagflat(Matrix B) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
         if (B.rows == 1) {
             Matrix temp = new Matrix(B.columns, B.columns);
             for (int i = 0; i < temp.rows; i++) {
@@ -862,7 +901,7 @@ public class Matrix {
      * @param n_columns (number of columns)
      * @return Diagonal Matrix.
      */
-    public static Matrix eye(int n_rows, int n_columns) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+    protected static Matrix eye(int n_rows, int n_columns) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
         if (n_rows <= 0)
             throw new InvalidMatrixDimension(n_rows, n_columns);
 
@@ -952,6 +991,21 @@ public class Matrix {
         for (int i = 0; i < V.rows; i++)
             sum_values += V.matrix[i][column];
         return sum_values;
+    }
+
+    protected static Matrix slice(Matrix B, int start, int end) throws InvalidMatrixDimension, MatrixIndexesOutOfBounds {
+        if (end < start || end == start || start > B.columns || end > B.columns)
+            throw new MatrixIndexesOutOfBounds(B.rows, B.columns);
+
+        Matrix temp = new Matrix(end - start, B.columns);
+        int temp_index = 0;
+        for (int i = start; i < end; i++) {
+            for (int j = 0; j < temp.columns; j++) {
+                temp.setValue(temp_index, j, B.getValue(i, j));
+            }
+            temp_index++;
+        }
+        return temp;
     }
 }
 
