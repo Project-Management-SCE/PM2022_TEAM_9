@@ -43,4 +43,9 @@ public class managerPanelManager {
         editProfileManager editProfileManager = new editProfileManager(scene,data);
         editProfileManager.editProfile();
     }
+
+    public void manageClients(){
+        manageUserManager manageUserManager = new manageUserManager(scene);
+        manageUserManager.manageUsers();
+    }
 }

@@ -25,15 +25,8 @@ public class registerController {
 
 
     public void initManager(registerManager registerManager){
-        pass.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (!Objects.equals(pass.getText(), re_pass.getText())){
 
-                }
-            }
-        });
-        submit.setOnAction(event -> registerManager.authorize(pass,re_pass));
+        submit.setOnAction(event -> registerManager.authorize(pass,re_pass,email,username));
 
 
         back.setOnAction(event -> registerManager.goWelcome());
