@@ -14,12 +14,11 @@ public class registerManager {
     private Scene scene;
     Alert error = new Alert(Alert.AlertType.ERROR);
 
-
     public registerManager(Scene scene) {
         this.scene = scene;
     }
 
-    public void showRegistration(){
+    public void showRegistration() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("register.fxml")
@@ -39,32 +38,16 @@ public class registerManager {
     }
 
 
-    public int authorize(TextField pass, TextField re_pass, TextField email, TextField name) {
-        if (email.getText().isEmpty() || name.getText().isEmpty() || pass.getText().isEmpty() || re_pass.getText().isEmpty()){
-            error.setHeaderText("Input all the Fields");
+    public void authorize(TextField pass, TextField re_pass, TextField email, TextField username) {
+        if (pass.getText().toString().equals("") || re_pass.getText().toString().equals("") || email.getText().toString().equals("") || username.getText().toString().equals("")) {
+            error.setContentText("fill all the fields");
             error.showAndWait();
-
-            if(Objects.equals(pass.getText(), re_pass.getText())){
-                //for now we wont put into data base because we will implement this after the user
-                // had asked for a loan, so this would be moved to after the submission to loan
-                return 1;
-            }
-            else {
-                error.setHeaderText("password not match!");
-                error.showAndWait();
-
-                System.out.println("not match");
-                return 0;
-            }
-
+        }
+        if (!Objects.equals(pass.getText(), re_pass.getText())) {
+            error.setContentText("Passwords Do Not Match");
+            error.showAndWait();
         }
 
-        error.setHeaderText("Registered Successfully");
-        error.showAndWait();
-        return 1;
-
-
     }
-
 
 }
