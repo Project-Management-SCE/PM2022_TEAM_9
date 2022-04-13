@@ -8,6 +8,8 @@ module com.example.demo {
     requires java.logging;
     requires java.sql;
     requires java.prefs;
+    requires javafx.web;
+    requires java.desktop;
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;

@@ -26,7 +26,7 @@ public class registerController {
 
     public void initManager(registerManager registerManager){
 
-        submit.setOnAction(event -> registerManager.authorize(pass,re_pass, email, username));
+        submit.setOnAction(event -> registerManager.authorize(pass,re_pass,email,username));
 
 
         back.setOnAction(event -> registerManager.goWelcome());

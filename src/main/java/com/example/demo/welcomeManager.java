@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 
 public class welcomeManager {
-    private Scene scene;
+    private final Scene scene;
 
     public welcomeManager(Scene scene) {
         this.scene = scene;

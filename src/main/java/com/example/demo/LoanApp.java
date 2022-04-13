@@ -1,9 +1,6 @@
 package com.example.demo;
 
-
-import java.io.IOException;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -17,7 +14,7 @@ public class LoanApp extends Application {
     public static void main(String[] args) { launch(args); }
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         sql.openConnection();
         Scene scene = new Scene(new StackPane());
         welcomeManager welcomeManager = new welcomeManager(scene);
@@ -25,8 +22,6 @@ public class LoanApp extends Application {
 
         stage.setScene(scene);
         stage.show();
-
-
 //        sql.closeConnection();
 
     }

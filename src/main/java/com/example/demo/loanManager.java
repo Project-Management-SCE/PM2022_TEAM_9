@@ -1,29 +1,52 @@
 package com.example.demo;
 
 
+import core.ann.classifier.Matrix;
+import core.ann.classifier.MatrixExceptionHandler;
+import core.ann.classifier.NeuralNetwork;
+import core.python.extender.PythonInterpreter;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.util.Duration;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
-public class loanManager {
-    private Scene scene;
+public class loanManager implements PropertyChangeListener {
+    private final static int PAGE_1 = 0;
+    private final static int PAGE_2 = 1;
+    private final static int PAGE_3 = 2;
+    private final static int PAGE_4 = 3;
+    private final static int PAGE_5 = 4;
+    private final static int FINAL_PAGE = 5;
+    private final static int APPROVAL_PAGE = 6;
+    private final static int REJECTION_PAGE = 7;
+    private final static String UNDEFINED = "";
+    private static int TIMELINE_OFFSET = 0;
+
+    private final Scene scene;
     private FXMLLoader loader;
+    private final WorkerService ann_loader;
     private final Preferences loan_form = Preferences.userRoot().node("LOAN FORM");
 
-    private final static String UNDEFINED = "";
 
     public loanManager(Scene scene) {
         this.scene = scene;
-        try {
-            loan_form.clear();// clear HDD saved data
-        } catch (BackingStoreException e) {
-            e.printStackTrace();
-        }
+        this.ann_loader = new WorkerService();
+        this.ann_loader.getNotifier().addPropertyChangeListener(this); // set this class as observer to WorkerService
+        //loan_form.clear();// clear HDD saved data
     }
 
     /**
@@ -31,7 +54,7 @@ public class loanManager {
      */
     public void showLoanScreen() {
         try {
-            this.loader = new FXMLLoader(getClass().getResource("loan.fxml"));
+            this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
             scene.setRoot(loader.load());
             loanController controller = loader.getController();
             controller.initManager(this);
@@ -44,17 +67,31 @@ public class loanManager {
     /**
      * go back from loan page to welcome page
      */
-    public void goBack() {
+    public void returnWelcomeScreen() {
         welcomeManager welcomeManager = new welcomeManager(scene);
         welcomeManager.showWelcomeScreen();
     }
 
+    public void continueRegistrationScreen() {
+        registerManager registerManager = new registerManager(scene);
+        registerManager.showRegistration();
+    }
 
-    public void nextPage(int pageIndex) {
-
-        if (pageIndex == 1) {
+    public void nextPage(int currentPage) {
+        if (currentPage == PAGE_1) {
             try {
-                System.out.println("page 2");
+                this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
+                scene.setRoot(loader.load());
+                loanController controller = loader.getController();
+                controller.initManager(this);
+                reloadForm();
+            } catch (IOException e) {
+                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+
+        if (currentPage == PAGE_2) {
+            try {
                 savePage1(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan2.fxml"));
                 scene.setRoot(loader.load());
@@ -65,10 +102,9 @@ public class loanManager {
                 Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-        if (pageIndex == 2) {
+        if (currentPage == PAGE_3) {
             try {
-                System.out.println("page 3");
-                savePage2();
+                savePage2(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan3.fxml"));
                 scene.setRoot(loader.load());
                 loanController controller = loader.getController();
@@ -78,11 +114,10 @@ public class loanManager {
                 Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-        if (pageIndex == 3) { // submit for now
+        if (currentPage == PAGE_4) {
             try {
-                System.out.println("submit");
-                savePage3();
-                this.loader = new FXMLLoader(getClass().getResource("submitLoan.fxml"));
+                savePage3(); // save current data
+                this.loader = new FXMLLoader(getClass().getResource("loan4.fxml"));
                 scene.setRoot(loader.load());
                 loanController controller = loader.getController();
                 controller.initManager4(this);
@@ -90,106 +125,476 @@ public class loanManager {
             } catch (IOException e) {
                 Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
-
         }
 
+        if (currentPage == PAGE_5) {
+            try {
+                savePage4(); // save current data
+                this.loader = new FXMLLoader(getClass().getResource("loan5.fxml"));
+                scene.setRoot(loader.load());
+                loanController controller = loader.getController();
+                controller.initManager5(this);
+                controller.Agreement().getEngine().loadContent(FormAdapter.AGREEMENT);
+            } catch (IOException e) {
+                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+
+        if (currentPage == FINAL_PAGE) { // loan calculation page
+            try {
+                savePage5(); // save current data
+                this.loader = new FXMLLoader(getClass().getResource("submitLoan.fxml"));
+                scene.setRoot(loader.load());
+                updateStatus("Building the magical network...");
+                ann_loader.startTheService();
+            } catch (IOException e) {
+                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+
+        if (currentPage == APPROVAL_PAGE) { // submit for now
+            try {
+                this.loader = new FXMLLoader(getClass().getResource("loanApproved.fxml"));
+                scene.setRoot(loader.load());
+                loanController controller = loader.getController();
+                controller.initManager6(this);
+            } catch (IOException e) {
+                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+
+        if (currentPage == REJECTION_PAGE) { // submit for now
+            try {
+                this.loader = new FXMLLoader(getClass().getResource("loanRejected.fxml"));
+                scene.setRoot(loader.load());
+                loanController controller = loader.getController();
+                controller.initManager7(this);
+            } catch (IOException e) {
+                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
     }
 
 
     private void savePage1() {
-        if (((loanController) loader.getController()).getName() != null && ((loanController) loader.getController()).getName().getText().length() > 0)
-            loan_form.put("full_name", ((loanController) loader.getController()).getName().getText());
-        if (((loanController) loader.getController()).getAmount() != null && ((loanController) loader.getController()).getAmount().getText().length() > 0)
-            loan_form.putDouble("loan_amount", Double.parseDouble(((loanController) loader.getController()).getAmount().getText()));
-        if (((loanController) loader.getController()).getIncome() != null && ((loanController) loader.getController()).getIncome().getText().length() > 0)
-            loan_form.putDouble("monthly_income", Double.parseDouble(((loanController) loader.getController()).getIncome().getText()));
-        if (((loanController) loader.getController()).getExpenses() != null && ((loanController) loader.getController()).getExpenses().getText().length() > 0)
-            loan_form.putDouble("monthly_expenses", Double.parseDouble(((loanController) loader.getController()).getExpenses().getText()));
-        if (((loanController) loader.getController()).getCountry() != null && ((loanController) loader.getController()).getCountry().getValue().length() > 0)
-            loan_form.put("country", ((loanController) loader.getController()).getCountry().getValue());
-//        if (((loanController) loader.getController()).getCountry().getValue() != null && ((loanController) loader.getController()).getCountry().getValue().length() > 0)
-//            loan_form.put("age", String.valueOf(((loanController) loader.getController()).getAge().getValue()));
-        if (((loanController) loader.getController()).getGender() != null && ((loanController) loader.getController()).getGender().getValue().length() > 0)
-            loan_form.put("gender", ((loanController) loader.getController()).getGender().getValue());
-        if (((loanController) loader.getController()).getOwn_car() != null && ((loanController) loader.getController()).getOwn_car().getValue().length() > 0)
-            loan_form.put("own_car", ((loanController) loader.getController()).getOwn_car().getValue());
-        if (((loanController) loader.getController()).getOwn_asset() != null && ((loanController) loader.getController()).getOwn_asset().getValue().length() > 0)
-            loan_form.put("own_apartment", ((loanController) loader.getController()).getOwn_asset().getValue());
+        loanController controller = loader.getController(); // make code readable
+        if (controller.fullName() != null && controller.fullName().getText().length() > 0)
+            loan_form.put("full_name", controller.fullName().getText());
+
+        if (controller.Address() != null && controller.Address().getText().length() > 0)
+            loan_form.put("address", controller.Address().getText());
+
+        if (controller.City() != null && controller.City().getText().length() > 0)
+            loan_form.put("city", controller.City().getText());
+
+        if (controller.State() != null && controller.State().getValue().length() > 0)
+            loan_form.put("state", controller.State().getValue());
+
+        if (controller.Country() != null && controller.Country().getValue().length() > 0)
+            loan_form.put("country", controller.Country().getValue());
+
+        if (controller.Zipcode() != null && controller.Zipcode().getText().length() > 0)
+            loan_form.putInt("zipcode", Integer.parseInt(controller.Zipcode().getText()));
+
+        if (controller.dateOfBirth() != null && loanController.dateToDays(controller.dateOfBirth()) != 0)
+            loan_form.putInt("dob_days", (int) loanController.dateToDays(controller.dateOfBirth()));
+
+        if (controller.Gender() != null && controller.Gender().getValue().length() > 0)
+            loan_form.put("gender", controller.Gender().getValue());
     }
 
-    private void savePage2(){
-        if (((loanController) loader.getController()).getEducation() != null && ((loanController) loader.getController()).getEducation().getValue().length() > 0)
-            loan_form.put("education", ((loanController) loader.getController()).getEducation().getValue());
-        if (((loanController) loader.getController()).getFamily() != null && ((loanController) loader.getController()).getFamily().getValue().length() > 0)
-            loan_form.put("family", ((loanController) loader.getController()).getFamily().getValue());
-        if (((loanController) loader.getController()).getHousing() != null && ((loanController) loader.getController()).getHousing().getValue().length() > 0)
-            loan_form.put("housing", ((loanController) loader.getController()).getHousing().getValue());
-        if (((loanController) loader.getController()).getRegion()!= null && ((loanController) loader.getController()).getRegion().getValue().length() > 0)
-            loan_form.put("region", ((loanController) loader.getController()).getRegion().getValue());
-        if (((loanController) loader.getController()).getOccupation() != null && ((loanController) loader.getController()).getOccupation().getValue().length() > 0)
-            loan_form.put("occupation", ((loanController) loader.getController()).getOccupation().getValue());
-        if (((loanController) loader.getController()).getOrganization() != null && ((loanController) loader.getController()).getOrganization().getValue().length() > 0)
-            loan_form.put("organization", ((loanController) loader.getController()).getOrganization().getValue());
+    private void savePage2() {
+        loanController controller = loader.getController(); // make code readable
+        if (controller.totalIncome() != null && controller.totalIncome().getText().length() > 0)
+            loan_form.putInt("total_income", Integer.parseInt(controller.totalIncome().getText()));
+
+        if (controller.propertyValue() != null && controller.propertyValue().getText().length() > 0)
+            loan_form.putInt("property_value", Integer.parseInt(controller.propertyValue().getText()));
+
+        if (controller.loanAmount() != null && controller.loanAmount().getText().length() > 0)
+            loan_form.putInt("loan_amount", Integer.parseInt(controller.loanAmount().getText()));
+
+        if (controller.LivingType() != null && controller.LivingType().getValue().length() > 0)
+            loan_form.put("living_type", controller.LivingType().getValue());
+
+        if (controller.occupationType() != null && controller.occupationType().getValue().length() > 0)
+            loan_form.put("occupation_type", controller.occupationType().getValue());
+
+        if (controller.organizationType() != null && controller.organizationType().getValue().length() > 0)
+            loan_form.put("organization_type", controller.organizationType().getValue());
+
+        if (controller.ownCarAge() != null && controller.ownCarAge().getText().length() > 0)
+            loan_form.putInt("own_car_age", Integer.parseInt(controller.ownCarAge().getText()));
+
+        if (controller.daysEmployed() != null && loanController.dateToDays(controller.daysEmployed()) != 0)
+            loan_form.putInt("days_employed", (int) loanController.dateToDays(controller.daysEmployed()));
+
+        loan_form.putBoolean("own_car_flag", controller.ownCarFlag() != null && controller.ownCarFlag().isSelected());
+
+        loan_form.putBoolean("own_realty_flag", controller.ownRealtyFlag() != null && controller.ownRealtyFlag().isSelected());
+
     }
 
-    public void savePage3(){
-        if (((loanController) loader.getController()).getWorkPhone() != null && ((loanController) loader.getController()).getWorkPhone().isSelected())
-            loan_form.putBoolean("work_phone", ((loanController) loader.getController()).getWorkPhone().isSelected());
-        if (((loanController) loader.getController()).getPrivatePhone() != null && ((loanController) loader.getController()).getPrivatePhone().isSelected())
-            loan_form.putBoolean("private_phone", ((loanController) loader.getController()).getPrivatePhone().isSelected());
-        if (((loanController) loader.getController()).getHousePhone() != null && ((loanController) loader.getController()).getHousePhone().isSelected())
-            loan_form.putBoolean("house_phone", ((loanController) loader.getController()).getHousePhone().isSelected());
-        if (((loanController) loader.getController()).getEmail() != null && ((loanController) loader.getController()).getEmail().isSelected())
-            loan_form.putBoolean("email", ((loanController) loader.getController()).getEmail().isSelected());
+    public void savePage3() {
+        loanController controller = loader.getController(); // make code readable
+
+        if (controller.familyStatus() != null && controller.familyStatus().getValue().length() > 0)
+            loan_form.put("family_status", controller.familyStatus().getValue());
+
+        if (controller.childrensAmount() != null && controller.childrensAmount().getText().length() > 0)
+            loan_form.putInt("childrens_amount", Integer.parseInt(controller.childrensAmount().getText()));
+
+        if (controller.familyMembers() != null && controller.familyMembers().getText().length() > 0)
+            loan_form.putInt("family_members", Integer.parseInt(controller.familyMembers().getText()));
+
+        if (controller.educationLevel() != null && controller.educationLevel().getValue().length() > 0)
+            loan_form.put("education_level", controller.educationLevel().getValue());
+
+        if (controller.homePhone() != null && controller.homePhone().getText().length() > 0)
+            loan_form.put("home_phone", controller.homePhone().getText());
+
+        if (controller.mobilePhone() != null && controller.mobilePhone().getText().length() > 0)
+            loan_form.put("mobile_phone", controller.mobilePhone().getText());
+
+        if (controller.workPhone() != null && controller.workPhone().getText().length() > 0)
+            loan_form.put("work_phone", controller.workPhone().getText());
+
+        if (controller.Email() != null && controller.Email().getText().length() > 0)
+            loan_form.put("email", controller.Email().getText());
+
+        loan_form.putBoolean("home_phone_flag", controller.homePhoneNA() == null || !controller.homePhoneNA().isSelected());
+
+        loan_form.putBoolean("mobile_phone_flag", controller.mobilePhoneNA() == null || !controller.mobilePhoneNA().isSelected());
+
+        loan_form.putBoolean("work_phone_flag", controller.workPhoneNA() == null || !controller.workPhoneNA().isSelected());
+
+        loan_form.putBoolean("email_flag", controller.EmailNA() == null || !controller.EmailNA().isSelected());
+    }
+
+    public void savePage4() {
+        loanController controller = loader.getController(); // make code readable
+
+        if (controller.docButton0() != null && controller.docButton0().isSelected())
+            loan_form.putBoolean("doc_2_flag", true);
+
+        if (controller.docButton1() != null && controller.docButton1().isSelected())
+            loan_form.putBoolean("doc_3_flag", true);
+
+        if (controller.docButton2() != null && controller.docButton2().isSelected())
+            loan_form.putBoolean("doc_4_flag", true);
+
+        if (controller.docButton3() != null && controller.docButton3().isSelected())
+            loan_form.putBoolean("doc_5_flag", true);
+
+        if (controller.docButton4() != null && controller.docButton4().isSelected())
+            loan_form.putBoolean("doc_6_flag", true);
+
+        if (controller.docButton5() != null && controller.docButton5().isSelected())
+            loan_form.putBoolean("doc_7_flag", true);
+
+        if (controller.docButton6() != null && controller.docButton6().isSelected())
+            loan_form.putBoolean("doc_8_flag", true);
+
+        if (controller.docButton7() != null && controller.docButton7().isSelected())
+            loan_form.putBoolean("doc_9_flag", true);
+
+        if (controller.docButton8() != null && controller.docButton8().isSelected())
+            loan_form.putBoolean("doc_10_flag", true);
+
+        if (controller.docButton9() != null && controller.docButton9().isSelected())
+            loan_form.putBoolean("doc_11_flag", true);
+
+        if (controller.docButton10() != null && controller.docButton10().isSelected())
+            loan_form.putBoolean("doc_12_flag", true);
+
+        if (controller.docButton11() != null && controller.docButton11().isSelected())
+            loan_form.putBoolean("doc_13_flag", true);
+
+        if (controller.docButton12() != null && controller.docButton12().isSelected())
+            loan_form.putBoolean("doc_14_flag", true);
+
+        if (controller.docButton13() != null && controller.docButton13().isSelected())
+            loan_form.putBoolean("doc_15_flag", true);
+
+        if (controller.docButton14() != null && controller.docButton14().isSelected())
+            loan_form.putBoolean("doc_16_flag", true);
+
+        if (controller.docButton15() != null && controller.docButton15().isSelected())
+            loan_form.putBoolean("doc_17_flag", true);
+
+        if (controller.docButton16() != null && controller.docButton16().isSelected())
+            loan_form.putBoolean("doc_18_flag", true);
+
+        if (controller.docButton17() != null && controller.docButton17().isSelected())
+            loan_form.putBoolean("doc_19_flag", true);
+
+        if (controller.docButton18() != null && controller.docButton18().isSelected())
+            loan_form.putBoolean("doc_20_flag", true);
+
+        if (controller.docButton19() != null && controller.docButton19().isSelected())
+            loan_form.putBoolean("doc_21_flag", true);
 
     }
+
+    public void savePage5() {
+        loan_form.put("agreement", "accepted");
+    }
+
 
     private void reloadForm() {
-        if (loan_form.get("full_name", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getName() != null)
-            ((loanController) loader.getController()).getName().setText(loan_form.get("full_name", UNDEFINED));
-        if (loan_form.get("loan_amount", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getAmount() != null)
-            ((loanController) loader.getController()).getAmount().setText(loan_form.get("loan_amount", UNDEFINED));
-        if (loan_form.get("monthly_income", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getIncome() != null)
-            ((loanController) loader.getController()).getIncome().setText(loan_form.get("monthly_income", UNDEFINED));
-        if (loan_form.get("monthly_expenses", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getExpenses() != null)
-            ((loanController) loader.getController()).getExpenses().setText(loan_form.get("monthly_expenses", UNDEFINED));
-        if (loan_form.get("country", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getCountry() != null)
-            ((loanController) loader.getController()).getCountry().getSelectionModel().select(loan_form.get("country", UNDEFINED));
-        if (loan_form.get("gender", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getGender() != null)
-            ((loanController) loader.getController()).getGender().getSelectionModel().select(loan_form.get("gender", UNDEFINED));
-        if (loan_form.get("own_car", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getOwn_car() != null)
-            ((loanController) loader.getController()).getOwn_car().getSelectionModel().select(loan_form.get("own_car", UNDEFINED));
-        if (loan_form.get("own_apartment", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getOwn_asset() != null)
-            ((loanController) loader.getController()).getOwn_asset().getSelectionModel().select(loan_form.get("own_apartment", UNDEFINED));
-        if (loan_form.get("education", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getEducation() != null)
-            ((loanController) loader.getController()).getEducation().getSelectionModel().select(loan_form.get("education", UNDEFINED));
-        if (loan_form.get("family", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getFamily() != null)
-            ((loanController) loader.getController()).getFamily().getSelectionModel().select(loan_form.get("family", UNDEFINED));
-        if (loan_form.get("housing", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getHousing() != null)
-            ((loanController) loader.getController()).getHousing().getSelectionModel().select(loan_form.get("housing", UNDEFINED));
-        if (loan_form.get("region", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getRegion() != null)
-            ((loanController) loader.getController()).getRegion().getSelectionModel().select(loan_form.get("region", UNDEFINED));
-        if (loan_form.get("occupation", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getOccupation() != null)
-            ((loanController) loader.getController()).getOccupation().getSelectionModel().select(loan_form.get("occupation", UNDEFINED));
-        if (loan_form.get("organization", UNDEFINED).compareTo("") != 0 && ((loanController) loader.getController()).getOrganization() != null)
-            ((loanController) loader.getController()).getOrganization().getSelectionModel().select(loan_form.get("organization", UNDEFINED));
+        loanController controller = loader.getController(); // make code readable
 
-        if (loan_form.getBoolean("work_phone", false) && ((loanController) loader.getController()).getWorkPhone() != null)
-            ((loanController) loader.getController()).getWorkPhone().setSelected(true);
-        if (loan_form.getBoolean("private_phone", false) && ((loanController) loader.getController()).getWorkPhone() != null)
-            ((loanController) loader.getController()).getPrivatePhone().setSelected(true);
-        if (loan_form.getBoolean("house_phone", false) && ((loanController) loader.getController()).getWorkPhone() != null)
-            ((loanController) loader.getController()).getHousePhone().setSelected(true);
-        if (loan_form.getBoolean("email", false) && ((loanController) loader.getController()).getWorkPhone() != null)
-            ((loanController) loader.getController()).getEmail().setSelected(true);
+        //////////
+        // PAGE 1
+        //////////
+        if (loan_form.get("full_name", UNDEFINED).compareTo("") != 0 && controller.fullName() != null)
+            controller.fullName().setText(loan_form.get("full_name", UNDEFINED));
+
+        if (loan_form.get("address", UNDEFINED).compareTo("") != 0 && controller.Address() != null)
+            controller.Address().setText(loan_form.get("address", UNDEFINED));
+
+        if (loan_form.get("city", UNDEFINED).compareTo("") != 0 && controller.City() != null)
+            controller.City().setText(loan_form.get("city", UNDEFINED));
+
+        if (loan_form.get("state", UNDEFINED).compareTo("") != 0 && controller.State() != null)
+            controller.State().getSelectionModel().select(loan_form.get("state", UNDEFINED));
+
+        if (loan_form.get("country", UNDEFINED).compareTo("") != 0 && controller.Country() != null)
+            controller.Country().getSelectionModel().select(loan_form.get("country", UNDEFINED));
+
+        if (loan_form.get("zipcode", UNDEFINED).compareTo("") != 0 && controller.Zipcode() != null)
+            controller.Zipcode().setText(loan_form.get("zipcode", UNDEFINED));
+
+        if (loan_form.get("dob_days", UNDEFINED).compareTo("") != 0 && controller.dateOfBirth() != null)
+            controller.dateOfBirth().setValue(loanController.daysToDate(loan_form.getInt("dob_days", 0)));
 
 
+        if (loan_form.get("gender", UNDEFINED).compareTo("") != 0 && controller.Gender() != null)
+            controller.Gender().getSelectionModel().select(loan_form.get("gender", UNDEFINED));
+
+        //////////
+        // PAGE 2
+        //////////
+        if (loan_form.get("total_income", UNDEFINED).compareTo("") != 0 && controller.totalIncome() != null)
+            controller.totalIncome().setText(loan_form.get("total_income", UNDEFINED));
+
+        if (loan_form.get("property_value", UNDEFINED).compareTo("") != 0 && controller.propertyValue() != null)
+            controller.propertyValue().setText(loan_form.get("property_value", UNDEFINED));
+
+        if (loan_form.get("loan_amount", UNDEFINED).compareTo("") != 0 && controller.loanAmount() != null)
+            controller.loanAmount().setText(loan_form.get("loan_amount", UNDEFINED));
+
+        if (loan_form.get("living_type", UNDEFINED).compareTo("") != 0 && controller.LivingType() != null)
+            controller.LivingType().getSelectionModel().select(loan_form.get("living_type", UNDEFINED));
+
+        if (loan_form.get("occupation_type", UNDEFINED).compareTo("") != 0 && controller.occupationType() != null)
+            controller.occupationType().getSelectionModel().select(loan_form.get("occupation_type", UNDEFINED));
+
+        if (loan_form.get("organization_type", UNDEFINED).compareTo("") != 0 && controller.organizationType() != null)
+            controller.organizationType().getSelectionModel().select(loan_form.get("organization_type", UNDEFINED));
+
+        if (loan_form.get("own_car_age", UNDEFINED).compareTo("") != 0 && controller.ownCarAge() != null)
+            controller.ownCarAge().setText(loan_form.get("own_car_age", UNDEFINED));
+
+        if (loan_form.get("days_employed", UNDEFINED).compareTo("") != 0 && controller.daysEmployed() != null)
+            controller.daysEmployed().setValue(loanController.daysToDate(loan_form.getInt("days_employed", 0)));
+
+        if (loan_form.getBoolean("own_car_flag", false) && controller.ownCarFlag() != null) {
+            controller.ownCarFlag().setSelected(true);
+            controller.ownCarAge().setDisable(false);
+        }
+
+        if (loan_form.getBoolean("own_realty_flag", false) && controller.ownRealtyFlag() != null) {
+            controller.ownRealtyFlag().setSelected(true);
+            controller.propertyValue().setDisable(false);
+        }
 
 
+        //////////
+        // PAGE 3
+        //////////
+        if (loan_form.get("family_status", UNDEFINED).compareTo("") != 0 && controller.familyStatus() != null)
+            controller.familyStatus().getSelectionModel().select(loan_form.get("family_status", UNDEFINED));
+
+        if (loan_form.get("childrens_amount", UNDEFINED).compareTo("") != 0 && controller.childrensAmount() != null)
+            controller.childrensAmount().setText(loan_form.get("childrens_amount", UNDEFINED));
+
+        if (loan_form.get("family_members", UNDEFINED).compareTo("") != 0 && controller.familyMembers() != null)
+            controller.familyMembers().setText(loan_form.get("family_members", UNDEFINED));
+
+        if (loan_form.get("education_level", UNDEFINED).compareTo("") != 0 && controller.educationLevel() != null)
+            controller.educationLevel().getSelectionModel().select(loan_form.get("education_level", UNDEFINED));
+
+        if (loan_form.get("home_phone", UNDEFINED).compareTo("") != 0 && controller.homePhone() != null)
+            controller.homePhone().setText(loan_form.get("home_phone", UNDEFINED));
+
+        if (loan_form.get("mobile_phone", UNDEFINED).compareTo("") != 0 && controller.mobilePhone() != null)
+            controller.mobilePhone().setText(loan_form.get("mobile_phone", UNDEFINED));
+
+        if (loan_form.get("work_phone", UNDEFINED).compareTo("") != 0 && controller.workPhone() != null)
+            controller.workPhone().setText(loan_form.get("work_phone", UNDEFINED));
+
+        if (loan_form.get("email", UNDEFINED).compareTo("") != 0 && controller.Email() != null)
+            controller.Email().setText(loan_form.get("email", UNDEFINED));
+
+        if (!loan_form.getBoolean("home_phone_flag", false) && controller.homePhoneNA() != null) {
+            controller.homePhoneNA().setSelected(true);
+            controller.homePhone().setDisable(true);
+        }
+
+        if (!loan_form.getBoolean("mobile_phone_flag", false) && controller.mobilePhoneNA() != null) {
+            controller.mobilePhoneNA().setSelected(true);
+            controller.mobilePhone().setDisable(true);
+        }
+
+        if (!loan_form.getBoolean("work_phone_flag", false) && controller.workPhoneNA() != null) {
+            controller.workPhoneNA().setSelected(true);
+            controller.workPhone().setDisable(true);
+        }
+
+        if (!loan_form.getBoolean("email_flag", false) && controller.EmailNA() != null) {
+            controller.EmailNA().setSelected(true);
+            controller.Email().setDisable(true);
+        }
+
+        //////////
+        // PAGE 4
+        //////////
+        if (loan_form.getBoolean("doc_2_flag", false) && controller.docButton0() != null)
+            controller.docButton0().setSelected(true);
+
+        if (loan_form.getBoolean("doc_3_flag", false) && controller.docButton1() != null)
+            controller.docButton1().setSelected(true);
+
+        if (loan_form.getBoolean("doc_4_flag", false) && controller.docButton2() != null)
+            controller.docButton2().setSelected(true);
+
+        if (loan_form.getBoolean("doc_5_flag", false) && controller.docButton3() != null)
+            controller.docButton3().setSelected(true);
+
+        if (loan_form.getBoolean("doc_6_flag", false) && controller.docButton4() != null)
+            controller.docButton4().setSelected(true);
+
+        if (loan_form.getBoolean("doc_7_flag", false) && controller.docButton5() != null)
+            controller.docButton5().setSelected(true);
+
+        if (loan_form.getBoolean("doc_8_flag", false) && controller.docButton6() != null)
+            controller.docButton6().setSelected(true);
+
+        if (loan_form.getBoolean("doc_9_flag", false) && controller.docButton7() != null)
+            controller.docButton7().setSelected(true);
+
+        if (loan_form.getBoolean("doc_10_flag", false) && controller.docButton8() != null)
+            controller.docButton8().setSelected(true);
+
+        if (loan_form.getBoolean("doc_11_flag", false) && controller.docButton9() != null)
+            controller.docButton9().setSelected(true);
+
+        if (loan_form.getBoolean("doc_12_flag", false) && controller.docButton10() != null)
+            controller.docButton10().setSelected(true);
+
+        if (loan_form.getBoolean("doc_13_flag", false) && controller.docButton11() != null)
+            controller.docButton11().setSelected(true);
+
+        if (loan_form.getBoolean("doc_14_flag", false) && controller.docButton12() != null)
+            controller.docButton12().setSelected(true);
+
+        if (loan_form.getBoolean("doc_15_flag", false) && controller.docButton13() != null)
+            controller.docButton13().setSelected(true);
+
+        if (loan_form.getBoolean("doc_16_flag", false) && controller.docButton14() != null)
+            controller.docButton14().setSelected(true);
+
+        if (loan_form.getBoolean("doc_17_flag", false) && controller.docButton15() != null)
+            controller.docButton15().setSelected(true);
+
+        if (loan_form.getBoolean("doc_18_flag", false) && controller.docButton16() != null)
+            controller.docButton16().setSelected(true);
+
+        if (loan_form.getBoolean("doc_19_flag", false) && controller.docButton17() != null)
+            controller.docButton17().setSelected(true);
+
+        if (loan_form.getBoolean("doc_20_flag", false) && controller.docButton18() != null)
+            controller.docButton18().setSelected(true);
+
+        if (loan_form.getBoolean("doc_21_flag", false) && controller.docButton19() != null)
+            controller.docButton19().setSelected(true);
 
     }
 
+    private void loanResult() {
+        NeuralNetwork local_ann = ann_loader.getValue();
+        try {
+            local_ann.predict(normalizeFormData()); // convert (loan_form) to ANN form
 
+            if (local_ann.get_predictions().argmax() == 0) { // if loan approved
+                nextPage(++loanController.current_page);
+                loan_form.put("loan_status", "approved");
+            } else { // if loan denied
+                ++loanController.current_page;
+                nextPage(++loanController.current_page);
+                loan_form.put("loan_status", "rejected");
+            }
+
+        } catch (MatrixExceptionHandler | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Matrix normalizeFormData() throws MatrixExceptionHandler, IOException {
+        FormAdapter form_data = new FormAdapter(loan_form); // load Preferences load data
+        Matrix temp = form_data.preferencesConverter(); // convert Preferences to Matrix
+        Matrix result = new Matrix(1,43);
+        BufferedReader buffer_reader;
+        String current_line;
+        int row_cnt = 0;
+
+        FileWriter encoded_writer = new FileWriter("src\\core\\bin\\metrics\\loan_encoded.csv"); //write to file
+        List<String> loan_params = new ArrayList<>(43); // convert data into list
+        for (int i = 0; i < temp.getColumns(); i++)
+            loan_params.add(String.valueOf(temp.getValue(0, i)));
+
+        String loan_encoded = String.join(",", loan_params); // convert data to csv type
+        encoded_writer.write(loan_encoded); // save as csv file
+        encoded_writer.close(); // close buffer
+
+        PythonInterpreter.exec("normalize_data.py");
+
+        buffer_reader = new BufferedReader(new FileReader("src\\core\\bin\\metrics\\loan_normalized.csv"));
+
+        while ((current_line = buffer_reader.readLine()) != null) {
+            String[] row = current_line.split(",");    // use comma as separator
+            for (int i = 0; i < result.getColumns(); i++) {
+                double val = Double.parseDouble(row[i]);
+                result.setValue(row_cnt, i, val);
+            }
+            row_cnt++;
+        }
+        return result;
+    }
+
+    private void updateStatus(String text) { // loading text when calculating loan status
+        Label temp = ((loanController) loader.getController()).loadingStatus();
+        TIMELINE_OFFSET += 2500;
+        new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> temp.setText(text))).play();
+
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && evt.getNewValue().toString().compareTo("SUCCESS") == 0) {
+            updateStatus("Let's see the information you've sent us...");
+            updateStatus("Setting up one last thing...");
+            updateStatus("We've come into conclusion...");
+            new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> loanResult())).play();
+        }
+
+        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("FAILED") == 0)
+            nextPage(FINAL_PAGE);
+
+        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("CANCELED") == 0)
+            returnWelcomeScreen();
+    }
 }
 
 
