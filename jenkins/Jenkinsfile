@@ -3,7 +3,7 @@ pipeline {
    stages {
         stage('Build') {
             steps {
-                sh 'mvn -X -DskipTests clean package'
+                sh 'ADD file:966d3669b40f5fbaecee1ecbeb58debe19001076da5d94717080d55efbc25971 in / '
             }
         }
     }
