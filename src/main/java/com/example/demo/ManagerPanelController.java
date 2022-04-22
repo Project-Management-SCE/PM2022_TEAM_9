@@ -37,7 +37,6 @@ public class ManagerPanelController implements PropertyChangeListener {
                 new KeyFrame(Duration.seconds(0.8), e -> {message_icon.setVisible(false);}),
                 new KeyFrame(Duration.seconds(1.6), e -> {message_icon.setVisible(true);}));
         msg_flasher.setCycleCount(Animation.INDEFINITE);
-
     }
 
     @Override

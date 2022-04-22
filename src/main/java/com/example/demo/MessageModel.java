@@ -1,18 +1,18 @@
 package com.example.demo;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class MessageModel {
 
+    private final SimpleIntegerProperty id;
     private final SimpleStringProperty subject;
     private final SimpleStringProperty message;
     private final SimpleStringProperty sender;
-    private SimpleStringProperty time;
+    private final SimpleStringProperty time;
 
-    public MessageModel(String subject, String message, String time, String sender) {
+    public MessageModel(int id, String subject, String message, String time, String sender) {
+        this.id = new SimpleIntegerProperty(id);
         this.subject = new SimpleStringProperty(subject);
         this.message = new SimpleStringProperty(message);
         this.time = new SimpleStringProperty(time);
@@ -66,4 +66,18 @@ public class MessageModel {
     public void setSender(String sender) {
         this.sender.set(sender);
     }
+
+    public int getID() {
+        return id.get();
+    }
+
+    public SimpleIntegerProperty idProperty() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id.set(id);
+    }
+
+
 }

@@ -2,6 +2,7 @@ package com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -32,10 +33,24 @@ public class MessagesPanelManager {
         }
     }
 
+    public void viewMessage(MessageModel selectedMessage) {
+        if (selectedMessage != null) {
+            ViewMessageManager viewMessageManager = new ViewMessageManager(scene);
+            viewMessageManager.showMessageScreen(selectedMessage);
+        }
+    }
+
     public void replyMessage(MessageModel selectedMessage) {
         if (selectedMessage != null) {
             ReplyMessageManager replyMessageManager = new ReplyMessageManager(scene);
             replyMessageManager.showReplyScreen(selectedMessage);
+        }
+    }
+
+    public void deleteMessage(TableView<MessageModel> messages_list) {
+        if (messages_list.getSelectionModel().getSelectedItem() != null) {
+            LoanApp.sql.delete("mailbox", String.format("id=%s", messages_list.getSelectionModel().getSelectedItem().getID()));
+            messages_list.getItems().remove(messages_list.getSelectionModel().getSelectedItem());
         }
     }
 }

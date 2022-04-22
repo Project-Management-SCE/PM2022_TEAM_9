@@ -44,6 +44,11 @@ public class LoginManager {
         userPanelManager.showUserPanel();
     }
 
+    public void bankerPanel() {
+        BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+        bankerPanelManager.showBankerPanel();
+    }
+
     public void ManagerPanel(){
         ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
         managerPanelManager.showManagerPanel();
@@ -75,6 +80,11 @@ public class LoginManager {
             userPanel();
             return 0;
         }
+        else if (logged_in_user.getInt("role", -1) == 1) {
+            bankerPanel();
+            return 0;
+        }
+
         else if(logged_in_user.getInt("role",LoanApp.USER_NOT_EXIST) == 2){
             ManagerPanel();
             return 0;

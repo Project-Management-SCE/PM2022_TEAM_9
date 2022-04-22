@@ -16,10 +16,13 @@ public class ReplyMessageController {
     @FXML
     TextArea message_body;
     @FXML
-    Label replying_to;
+    Label replying_to, message_sent_popup;
 
     public void initManager(ReplyMessageManager replyMessageManager) throws SQLException {
+        message_sent_popup.setVisible(false);//hide success message sent
+
         exit_message.setOnAction(event -> replyMessageManager.returnToMessages());
+        send_message.setOnAction(event -> replyMessageManager.sendReplyMessage(message_subject.getText(), message_body.getText(), this));
     }
 
 

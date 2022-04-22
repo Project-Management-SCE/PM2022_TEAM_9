@@ -74,11 +74,11 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="send_new_msg" contentDisplay="CENTER" layoutX="503.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                  <Button fx:id="view_message" contentDisplay="CENTER" layoutX="503.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/new_message.png" />
+                              <Image url="@img/view_message.png" />
                            </image>
                         </ImageView>
                      </graphic>

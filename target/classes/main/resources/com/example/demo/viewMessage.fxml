@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ReplyMessageController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ViewMessageController">
     <children>
         <StackPane>
             <children>
@@ -60,16 +60,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="send_message" contentDisplay="CENTER" layoutX="526.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/send_message.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label fx:id="replying_to" alignment="CENTER" layoutX="8.0" layoutY="28.0" opacity="0.55" prefHeight="42.0" prefWidth="613.0" text="Reply #USERNAME">
+                  <Label fx:id="sender_username" alignment="CENTER" layoutX="8.0" layoutY="28.0" opacity="0.55" prefHeight="42.0" prefWidth="613.0" text="From: #USERNAME">
                      <font>
                         <Font name="Arial" size="36.0" />
                      </font>
@@ -97,15 +88,6 @@
                         <Insets />
                      </opaqueInsets>
                   </GridPane>
-                  <Label fx:id="message_sent_popup" layoutX="151.0" layoutY="280.0" prefHeight="177.0" prefWidth="222.0">
-                     <graphic>
-                        <ImageView fitHeight="173.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/message_sent.gif" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
                </children>
                 </AnchorPane>
             </items>

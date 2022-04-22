@@ -1,4 +1,5 @@
 package com.example.demo;
+
 import java.sql.*;
 import java.util.HashMap;
 
@@ -44,6 +45,8 @@ public class PostgreSQL {
             this.connection = DriverManager.getConnection(URL_BUILDER, DB_USER, DB_PASSWORD);
             dispatchStatus(0);
         } catch (SQLException e) {
+            e.printStackTrace();
+            ;
             dispatchStatus(2);
             System.exit(2);
         }
@@ -85,11 +88,25 @@ public class PostgreSQL {
 
     public void insert(String table, String values) {
         try {
-            String query = "INSERT INTO %s VALUES (%s)".formatted(table, values);
+            String query = "INSERT INTO %s VALUES (%s);".formatted(table, values);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            this.stmt.executeUpdate(query);
+            this.stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
 
         } catch (SQLException e) {
+            e.printStackTrace();
+            dispatchStatus(5);
+            System.exit(5);
+        }
+    }
+
+    public void insert(String table, String columns, String values) {
+        try {
+            String query = "INSERT INTO %s(%s) VALUES (%s)".formatted(table, columns, values);
+            this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            this.stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
             dispatchStatus(5);
             System.exit(5);
         }
@@ -139,7 +156,8 @@ public class PostgreSQL {
 
     /**
      * Update specific data of specific table.
-     *  @param table   (String) name
+     *
+     * @param table   (String) name
      * @param columns (String) columns name (separated by comma).
      * @return
      */
@@ -192,8 +210,9 @@ public class PostgreSQL {
             stmt.execute(query);
 
         } catch (SQLException e) {
+            e.printStackTrace();
             dispatchStatus(6);
-//            System.exit(6);
+            System.exit(6);
         }
     }
 
@@ -221,7 +240,7 @@ public class PostgreSQL {
      * @return String[][] array.
      */
     private String[][] formatQuery(ResultSet query) throws SQLException {
-        if(query == null)
+        if (query == null)
             System.exit(-1);
 
         ResultSetMetaData meta_data = query.getMetaData();

@@ -18,7 +18,7 @@ public class MessagesPanelController implements Initializable {
     private final ObservableList<MessageModel> observable_list = FXCollections.observableArrayList();
 
     @FXML
-    Button send_new_msg, reply_msg, delete_msg;
+    Button view_message, reply_msg, delete_msg;
     @FXML
     private TableView<MessageModel> messages_list;
     @FXML
@@ -32,16 +32,22 @@ public class MessagesPanelController implements Initializable {
 
     private void controlsConfiguration(MessagesPanelManager messagesPanelManager) {
         reply_msg.setOnAction(event -> messagesPanelManager.replyMessage(messages_list.getSelectionModel().getSelectedItem()));
+        delete_msg.setOnAction(event -> messagesPanelManager.deleteMessage(messages_list));
+        view_message.setOnAction(event -> messagesPanelManager.viewMessage(messages_list.getSelectionModel().getSelectedItem()));
     }
 
+    /**
+     * Fill table with messages data
+     *
+     * @return ObservableList (MessageModel).
+     */
     private ObservableList<MessageModel> messagesToTable() {
         try {
-            String[][] messages = LoanApp.sql.select("mailbox", "*", String.format("receiver=%s", LoginManager.logged_in_user.getInt("userid",LoanApp.USER_NOT_EXIST)));
-            for (String[] message : messages){
+            String[][] messages = LoanApp.sql.select("mailbox", "*", String.format("receiver=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)));
+            for (String[] message : messages) {
                 String sender = LoanApp.sql.select("users", "username", String.format("id=%s", message[1]))[0][0];
-                observable_list.add(new MessageModel(message[3], message[4], message[5],  sender));
+                observable_list.add(new MessageModel(Integer.parseInt(message[0]), message[3], message[4], message[5], sender));
             }
-
             return observable_list;
 
         } catch (SQLException e) {
