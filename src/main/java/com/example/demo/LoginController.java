@@ -21,7 +21,6 @@ public class LoginController {
 
     /**
      * init button in login scene
-     * @param loginManager
      */
     public void initManager(LoginManager loginManager){
         loginButton.setOnAction(event -> {

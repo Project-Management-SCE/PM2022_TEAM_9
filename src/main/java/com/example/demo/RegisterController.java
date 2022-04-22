@@ -6,9 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.TextFlow;
 
-import java.util.Objects;
-
-public class registerController {
+public class RegisterController {
 
     @FXML
     private Button submit, back;
@@ -20,7 +18,7 @@ public class registerController {
     final Label message = new Label("");
 
 
-    public void initManager(registerManager registerManager){
+    public void initManager(RegisterManager registerManager){
 
         submit.setOnAction(event -> registerManager.authorize(pass,re_pass,email,username));
 

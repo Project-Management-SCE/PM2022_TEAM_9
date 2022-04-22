@@ -10,12 +10,12 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class registerManager {
+public class RegisterManager {
     private Scene scene;
     Alert error = new Alert(Alert.AlertType.ERROR);
 
 
-    public registerManager(Scene scene) {
+    public RegisterManager(Scene scene) {
         this.scene = scene;
     }
 
@@ -26,7 +26,7 @@ public class registerManager {
             );
             System.out.println("register manager");
             scene.setRoot(loader.load());
-            registerController controller = loader.getController();
+            RegisterController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -34,7 +34,7 @@ public class registerManager {
     }
 
     public void goWelcome() {
-        welcomeManager welcomeManager = new welcomeManager(scene);
+        WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.showWelcomeScreen();
     }
 

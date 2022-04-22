@@ -4,13 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 
-public class welcomeController {
+public class WelcomeController {
 
     @FXML
     private Button toLogin,loan,register;
 
 
-    public void initManager(welcomeManager welcomeManager) {
+    public void initManager(WelcomeManager welcomeManager) {
         toLogin.setOnAction(actionEvent -> {
             welcomeManager.login();
         });

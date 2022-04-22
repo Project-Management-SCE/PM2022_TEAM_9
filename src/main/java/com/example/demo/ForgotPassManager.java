@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.LoginManager;
-import com.example.demo.PostgreSQL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -12,10 +10,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static com.example.demo.LoanApp.sql;
 
-public class forgotPassManager {
+public class ForgotPassManager {
     public final Scene scene;
 
-    public forgotPassManager(Scene scene) {
+    public ForgotPassManager(Scene scene) {
         this.scene = scene;
     }
 
@@ -28,7 +26,7 @@ public class forgotPassManager {
                     getClass().getResource("forgot.fxml")
             );
             scene.setRoot(loader.load());
-            forgotPassController controller = loader.getController();
+            ForgotPassController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);

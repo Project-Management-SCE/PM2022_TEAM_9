@@ -1,11 +1,10 @@
 package com.example.demo;
 
-import com.example.demo.forgotPassManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class forgotPassController {
+public class ForgotPassController {
 
     @FXML
     private Button reset, back;
@@ -14,7 +13,7 @@ public class forgotPassController {
 
 
 
-    public void initManager(forgotPassManager forgotPassManager){
+    public void initManager(ForgotPassManager forgotPassManager){
         reset.setOnAction(event -> {
             try{
                 forgotPassManager.authorize(user, email, new_pass);

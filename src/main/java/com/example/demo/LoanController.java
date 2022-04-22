@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 
-public class loanController {
+public class LoanController {
     private final ObservableList<String> genderList = FXCollections.observableArrayList("Male", "Female");
     private final ObservableList<String> regionList = FXCollections.observableArrayList("North", "Center", "South");
     private final ObservableList<String> familyList = FXCollections.observableArrayList("Civil Marriage", "Married", "Separated", "Single", "Widow", "Unknown");
@@ -49,7 +49,7 @@ public class loanController {
      *
      * @param loanManager
      */
-    public void initManager(loanManager loanManager) {
+    public void initManager(LoanManager loanManager) {
         state.setItems(regionList);
         country.setItems(countryList); // load ComboBox list
         gender.setItems(genderList); // load ComboBox list
@@ -72,7 +72,7 @@ public class loanController {
      *
      * @param loanManager
      */
-    public void initManager2(loanManager loanManager) {
+    public void initManager2(LoanManager loanManager) {
         organization_type.setItems(organizationList);
         occupation_type.setItems(occupationList);
         living_type.setItems(housingList);
@@ -98,7 +98,7 @@ public class loanController {
     /**
      * init third page buttons and check box
      */
-    public void initManager3(loanManager loanManager) {
+    public void initManager3(LoanManager loanManager) {
         family_status.setItems(familyList); // load ComboBox list
         education_level.setItems(educationList); // load ComboBox list
         nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
@@ -112,7 +112,7 @@ public class loanController {
     /**
      * init calculating page buttons
      */
-    public void initManager4(loanManager loanManager) {
+    public void initManager4(LoanManager loanManager) {
         nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
     }
@@ -121,7 +121,7 @@ public class loanController {
     /**
      * init calculating page buttons
      */
-    public void initManager5(loanManager loanManager) {
+    public void initManager5(LoanManager loanManager) {
         nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
     }
@@ -130,7 +130,7 @@ public class loanController {
     /**
      * init calculating page buttons
      */
-    public void initManager6(loanManager loanManager) {
+    public void initManager6(LoanManager loanManager) {
         accept_offer_button.setOnAction((event) -> loanManager.continueRegistrationScreen());
         reject_offer_button.setOnAction((event) -> loanManager.returnWelcomeScreen());
     }
@@ -138,7 +138,7 @@ public class loanController {
     /**
      * init calculating page buttons
      */
-    public void initManager7(loanManager loanManager) {
+    public void initManager7(LoanManager loanManager) {
         file_an_appeal_button.setOnAction((event) -> loanManager.continueRegistrationScreen());
         back_to_main_button.setOnAction((event) -> loanManager.returnWelcomeScreen());
     }

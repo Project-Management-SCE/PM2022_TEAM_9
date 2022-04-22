@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
-public class loanManager implements PropertyChangeListener {
+public class LoanManager implements PropertyChangeListener {
     private final static int PAGE_1 = 0;
     private final static int PAGE_2 = 1;
     private final static int PAGE_3 = 2;
@@ -41,7 +41,7 @@ public class loanManager implements PropertyChangeListener {
     private final Preferences loan_form = Preferences.userRoot().node("LOAN FORM");
 
 
-    public loanManager(Scene scene) {
+    public LoanManager(Scene scene) {
         this.scene = scene;
         this.ann_loader = new ThreadWorker_1();
         this.form_data_normalizer = new ThreadWorker_2();
@@ -58,11 +58,11 @@ public class loanManager implements PropertyChangeListener {
         try {
             this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
             scene.setRoot(loader.load());
-            loanController controller = loader.getController();
+            LoanController controller = loader.getController();
             controller.initManager(this);
             reloadForm(); // reload previous saved data
         } catch (IOException e) {
-            Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -70,12 +70,12 @@ public class loanManager implements PropertyChangeListener {
      * go back from loan page to welcome page
      */
     public void returnWelcomeScreen() {
-        welcomeManager welcomeManager = new welcomeManager(scene);
+        WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.showWelcomeScreen();
     }
 
     public void continueRegistrationScreen() {
-        registerManager registerManager = new registerManager(scene);
+        RegisterManager registerManager = new RegisterManager(scene);
         registerManager.showRegistration();
     }
 
@@ -84,11 +84,11 @@ public class loanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager(this);
                 reloadForm();
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
 
@@ -97,11 +97,11 @@ public class loanManager implements PropertyChangeListener {
                 savePage1(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan2.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager2(this);
                 reloadForm();
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
         if (currentPage == PAGE_3) {
@@ -109,11 +109,11 @@ public class loanManager implements PropertyChangeListener {
                 savePage2(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan3.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager3(this);
                 reloadForm();
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
         if (currentPage == PAGE_4) {
@@ -121,11 +121,11 @@ public class loanManager implements PropertyChangeListener {
                 savePage3(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan4.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager4(this);
                 reloadForm();
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
 
@@ -134,11 +134,11 @@ public class loanManager implements PropertyChangeListener {
                 savePage4(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan5.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager5(this);
                 controller.Agreement().getEngine().loadContent(FormAdapter.AGREEMENT);
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
 
@@ -150,7 +150,7 @@ public class loanManager implements PropertyChangeListener {
                 updateStatus("Building the magical network...");
                 ann_loader.startTheService();
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
 
@@ -158,10 +158,10 @@ public class loanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanApproved.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager6(this);
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
 
@@ -169,17 +169,17 @@ public class loanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanRejected.fxml"));
                 scene.setRoot(loader.load());
-                loanController controller = loader.getController();
+                LoanController controller = loader.getController();
                 controller.initManager7(this);
             } catch (IOException e) {
-                Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
         }
     }
 
 
     private void savePage1() {
-        loanController controller = loader.getController(); // make code readable
+        LoanController controller = loader.getController(); // make code readable
         if (controller.fullName() != null && controller.fullName().getText().length() > 0)
             loan_form.put("full_name", controller.fullName().getText());
 
@@ -198,15 +198,15 @@ public class loanManager implements PropertyChangeListener {
         if (controller.Zipcode() != null && controller.Zipcode().getText().length() > 0)
             loan_form.putInt("zipcode", Integer.parseInt(controller.Zipcode().getText()));
 
-        if (controller.dateOfBirth() != null && loanController.dateToDays(controller.dateOfBirth()) != 0)
-            loan_form.putInt("dob_days", (int) loanController.dateToDays(controller.dateOfBirth()));
+        if (controller.dateOfBirth() != null && LoanController.dateToDays(controller.dateOfBirth()) != 0)
+            loan_form.putInt("dob_days", (int) LoanController.dateToDays(controller.dateOfBirth()));
 
         if (controller.Gender() != null && controller.Gender().getValue().length() > 0)
             loan_form.put("gender", controller.Gender().getValue());
     }
 
     private void savePage2() {
-        loanController controller = loader.getController(); // make code readable
+        LoanController controller = loader.getController(); // make code readable
         if (controller.totalIncome() != null && controller.totalIncome().getText().length() > 0)
             loan_form.putDouble("total_income", Double.parseDouble(controller.totalIncome().getText()));
 
@@ -228,8 +228,8 @@ public class loanManager implements PropertyChangeListener {
         if (controller.ownCarAge() != null && controller.ownCarAge().getText().length() > 0)
             loan_form.putInt("own_car_age", Integer.parseInt(controller.ownCarAge().getText()));
 
-        if (controller.daysEmployed() != null && loanController.dateToDays(controller.daysEmployed()) != 0)
-            loan_form.putInt("days_employed", (int) loanController.dateToDays(controller.daysEmployed()));
+        if (controller.daysEmployed() != null && LoanController.dateToDays(controller.daysEmployed()) != 0)
+            loan_form.putInt("days_employed", (int) LoanController.dateToDays(controller.daysEmployed()));
 
         loan_form.putBoolean("own_car_flag", controller.ownCarFlag() != null && controller.ownCarFlag().isSelected());
 
@@ -238,7 +238,7 @@ public class loanManager implements PropertyChangeListener {
     }
 
     public void savePage3() {
-        loanController controller = loader.getController(); // make code readable
+        LoanController controller = loader.getController(); // make code readable
 
         if (controller.familyStatus() != null && controller.familyStatus().getValue().length() > 0)
             loan_form.put("family_status", controller.familyStatus().getValue());
@@ -274,7 +274,7 @@ public class loanManager implements PropertyChangeListener {
     }
 
     public void savePage4() {
-        loanController controller = loader.getController(); // make code readable
+        LoanController controller = loader.getController(); // make code readable
 
         if (controller.docButton0() != null && controller.docButton0().isSelected())
             loan_form.putBoolean("doc_2_flag", true);
@@ -344,7 +344,7 @@ public class loanManager implements PropertyChangeListener {
 
 
     private void reloadForm() {
-        loanController controller = loader.getController(); // make code readable
+        LoanController controller = loader.getController(); // make code readable
 
         //////////
         // PAGE 1
@@ -368,7 +368,7 @@ public class loanManager implements PropertyChangeListener {
             controller.Zipcode().setText(loan_form.get("zipcode", UNDEFINED));
 
         if (loan_form.get("dob_days", UNDEFINED).compareTo("") != 0 && controller.dateOfBirth() != null)
-            controller.dateOfBirth().setValue(loanController.daysToDate(loan_form.getInt("dob_days", 0)));
+            controller.dateOfBirth().setValue(LoanController.daysToDate(loan_form.getInt("dob_days", 0)));
 
 
         if (loan_form.get("gender", UNDEFINED).compareTo("") != 0 && controller.Gender() != null)
@@ -399,7 +399,7 @@ public class loanManager implements PropertyChangeListener {
             controller.ownCarAge().setText(loan_form.get("own_car_age", UNDEFINED));
 
         if (loan_form.get("days_employed", UNDEFINED).compareTo("") != 0 && controller.daysEmployed() != null)
-            controller.daysEmployed().setValue(loanController.daysToDate(loan_form.getInt("days_employed", 0)));
+            controller.daysEmployed().setValue(LoanController.daysToDate(loan_form.getInt("days_employed", 0)));
 
         if (loan_form.getBoolean("own_car_flag", false) && controller.ownCarFlag() != null) {
             controller.ownCarFlag().setSelected(true);
@@ -530,11 +530,11 @@ public class loanManager implements PropertyChangeListener {
             local_ann.predict(A); // convert (loan_form) to ANN form
 
             if (local_ann.get_predictions().argmax() == 0) { // if loan approved
-                nextPage(++loanController.current_page);
+                nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "approved");
             } else { // if loan denied
-                ++loanController.current_page;
-                nextPage(++loanController.current_page);
+                ++LoanController.current_page;
+                nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "rejected");
             }
 
@@ -576,7 +576,7 @@ public class loanManager implements PropertyChangeListener {
     }
 
     private void updateStatus(String text) { // loading text when calculating loan status
-        Label temp = ((loanController) loader.getController()).loadingStatus();
+        Label temp = ((LoanController) loader.getController()).loadingStatus();
         TIMELINE_OFFSET += 2500;
         new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> temp.setText(text))).play();
 

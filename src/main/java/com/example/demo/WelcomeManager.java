@@ -8,10 +8,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class welcomeManager {
+public class WelcomeManager {
     private final Scene scene;
 
-    public welcomeManager(Scene scene) {
+    public WelcomeManager(Scene scene) {
         this.scene = scene;
     }
 
@@ -27,12 +27,12 @@ public class welcomeManager {
      * go from welcome page to loan page
      */
     public void loan() {
-        loanManager loanManager = new loanManager(scene);
+        LoanManager loanManager = new LoanManager(scene);
         loanManager.showLoanScreen();
     }
 
     public void register(){
-        registerManager registerManager = new registerManager(scene);
+        RegisterManager registerManager = new RegisterManager(scene);
         registerManager.showRegistration();
     }
     /**
@@ -43,10 +43,10 @@ public class welcomeManager {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
             System.out.println("welcome screen");
             scene.setRoot(loader.load());
-            welcomeController controller = loader.getController();
+            WelcomeController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException e) {
-            Logger.getLogger(welcomeManager.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

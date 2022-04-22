@@ -1,4 +1,5 @@
 package com.example.demo;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,15 +17,13 @@ import java.util.prefs.Preferences;
 
 public class ManagerPanelManager {
     private final Scene scene;
-    private final Preferences data;
     private final static int WINDOW_WIDTH = 650;
     private final static int WINDOW_HEIGHT = 650;
     private final PropertyChangeSupport notifier;
 
 
-    public ManagerPanelManager(Scene scene, Preferences data){
+    public ManagerPanelManager(Scene scene) {
         this.scene = scene;
-        this.data = data;
         this.notifier = new PropertyChangeSupport(this);
     }
 
@@ -66,26 +65,29 @@ public class ManagerPanelManager {
         loginManager.showLoginScreen();
     }
 
-    public void edit(){
-        editProfileManager editProfileManager = new editProfileManager(scene,data);
+    public void edit() {
+        EditProfileManager editProfileManager = new EditProfileManager(scene);
         editProfileManager.editProfile();
     }
 
-    public void manageClients(){
-        modifyUserManager manageUserManager = new modifyUserManager(scene);
+    public void manageClients() {
+        ModifyUserManager manageUserManager = new ModifyUserManager(scene);
         manageUserManager.manageUsers();
     }
 
-    public void manageMessages(){
+    public void manageMessages() {
         MessagesPanelManager manageMessagesManager = new MessagesPanelManager(scene);
         manageMessagesManager.manageMessages();
     }
 
+    /**
+     * Retrieve all the messages belong to the specific user.
+     */
     private void fetchMessages() throws SQLException {
-        String [][] unread_messages = LoanApp.sql.select("mailbox", "read", "read=CAST(0 AS BIT)");
-        if (unread_messages.length>0)
-            notifier.firePropertyChange("NEW_MESSAGE", 0,unread_messages.length);
-        if (unread_messages.length==0)
-            notifier.firePropertyChange("NO_NEW_MESSAGES", -1,unread_messages.length);
+        String[][] unread_messages = LoanApp.sql.select("mailbox", "read", String.format("read=CAST(0 AS BIT),receiver=%s", LoginManager.logged_in_user.getInt("userid", -1)));
+        if (unread_messages.length > 0)
+            notifier.firePropertyChange("NEW_MESSAGE", 0, unread_messages.length);
+        if (unread_messages.length == 0)
+            notifier.firePropertyChange("NO_NEW_MESSAGES", -1, unread_messages.length);
     }
 }

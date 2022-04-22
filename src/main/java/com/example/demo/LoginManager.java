@@ -7,9 +7,7 @@ import java.util.logging.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.TextField;
-
 import java.util.prefs.Preferences;
-
 import static com.example.demo.LoanApp.sql;
 
 
@@ -17,16 +15,13 @@ import static com.example.demo.LoanApp.sql;
  * Manages control flow for logins
  */
 public class LoginManager {
-    private  Scene scene;
+    private final Scene scene;
+    protected final static Preferences logged_in_user = Preferences.userRoot().node("AUTHORIZED_USER");;
 
     public LoginManager(Scene scene) {
         this.scene = scene;
     }
 
-
-//    public void login() {
-//        showLoginScreen();
-//    }
     public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
@@ -44,20 +39,20 @@ public class LoginManager {
     /**
      * show user panel
      */
-    public void userPanel(Preferences data) {
-        userPanelManager userPanelManager = new userPanelManager(scene, data);
+    public void userPanel() {
+        UserPanelManager userPanelManager = new UserPanelManager(scene);
         userPanelManager.showUserPanel();
     }
 
-    public void ManagerPanel(Preferences data){
-        ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene,data);
+    public void ManagerPanel(){
+        ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
         managerPanelManager.showManagerPanel();
     }
     /**
      * back button to go back to welcome screen
      */
     public void goWelcome() {
-        welcomeManager welcomeManager = new welcomeManager(scene);
+        WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.showWelcomeScreen();
     }
 
@@ -69,20 +64,19 @@ public class LoginManager {
         String[][] fetch = sql.select("users", "*", String.format("username='%s',password='%s'", user.getText(), pass.getText()));
         if(fetch.length ==0)
             return -1;
-        Preferences user_data = Preferences.userRoot().node("LOGIN PANEL");
-        user_data.putInt("userid", Integer.parseInt(fetch[0][0])); // keep id in userPrefrences
-        user_data.put("username", fetch[0][1]);
-        user_data.put("password", fetch[0][2]);
-        user_data.put("email", fetch[0][3]);
-        user_data.putInt("role", Integer.parseInt(fetch[0][4]));
-        user_data.put("last_login", fetch[0][5]);
+        logged_in_user.putInt("userid", Integer.parseInt(fetch[0][0])); // keep id in userPrefrences
+        logged_in_user.put("username", fetch[0][1]);
+        logged_in_user.put("password", fetch[0][2]);
+        logged_in_user.put("email", fetch[0][3]);
+        logged_in_user.putInt("role", Integer.parseInt(fetch[0][4]));
+        logged_in_user.put("last_login", fetch[0][5]);
 
-        if (user_data.getInt("role", -1) == 0) {
-            userPanel(user_data);
+        if (logged_in_user.getInt("role", -1) == 0) {
+            userPanel();
             return 0;
         }
-        else if(user_data.getInt("role",-1) == 2){
-            ManagerPanel(user_data);
+        else if(logged_in_user.getInt("role",LoanApp.USER_NOT_EXIST) == 2){
+            ManagerPanel();
             return 0;
         }
         else
@@ -94,7 +88,7 @@ public class LoginManager {
      * forgot password
      */
     public void goFP(){
-        forgotPassManager forgotPassManager = new forgotPassManager(scene);
+        ForgotPassManager forgotPassManager = new ForgotPassManager(scene);
         forgotPassManager.forgotPassword();
     }
 

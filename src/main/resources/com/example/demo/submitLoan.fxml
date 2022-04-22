@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.loanController">
+<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoanController">
    <children>
       <Accordion layoutX="52.0" layoutY="111.0" />
       <Label layoutX="101.0" layoutY="196.0" text="Checking Your Eligibility...">

@@ -3,21 +3,16 @@ package com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.Preferences;
 
-public class editProfileManager {
+public class EditProfileManager {
+    private final Scene scene;
 
-    private Scene scene;
-    private Preferences data;
-
-    public editProfileManager(Scene scene,Preferences data){
+    public EditProfileManager(Scene scene){
         this.scene = scene;
-        this.data = data;
     }
 
     public void editProfile() {
@@ -26,7 +21,7 @@ public class editProfileManager {
                     getClass().getResource("editProfile.fxml")
             );
             scene.setRoot(loader.load());
-            editProfileController controller = loader.getController();
+            EditProfileController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -35,16 +30,15 @@ public class editProfileManager {
 
     /**
      * go back function from edit profile panel to ither user panel or manager panel
-     * @throws SQLException
      */
     public void goBack() throws SQLException {
-        int role = data.getInt("role", -1);
+        int role = LoginManager.logged_in_user.getInt("role", -1);
         if (role == 0){
-            userPanelManager userPanelManager = new userPanelManager(scene, data);
+            UserPanelManager userPanelManager = new UserPanelManager(scene);
             userPanelManager.showUserPanel();
         }
         else if(role == 2){
-            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene, data);
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.showManagerPanel();
         }
 

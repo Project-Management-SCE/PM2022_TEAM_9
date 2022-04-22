@@ -5,12 +5,12 @@ import javafx.scene.control.Button;
 
 import java.sql.SQLException;
 
-public class editProfileController {
+public class EditProfileController {
 
     @FXML
     private Button submit, back;
 
-    public void initManager(editProfileManager editProfileManager){
+    public void initManager(EditProfileManager editProfileManager){
         submit.setOnAction(event -> editProfileManager.editProfile());
         back.setOnAction(event -> {
             try {

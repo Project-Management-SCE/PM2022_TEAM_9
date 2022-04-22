@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+
 import static com.example.demo.LoanApp.sql;
 
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import java.util.prefs.Preferences;
 /**
  * Controls the main application screen
  */
-public class userPanelController {
+public class UserPanelController {
 
     @FXML
     private TextFlow balance, accountName;
@@ -21,7 +22,7 @@ public class userPanelController {
     private MenuItem logoutButton, editProfileButton;
 
 
-    public void initManager(userPanelManager userPanelManager) throws SQLException {
+    public void initManager(UserPanelManager userPanelManager) throws SQLException {
         Text loan = new Text(getLoan());
         Text account = new Text("David shalomov");
         balance.getChildren().add(loan); // print loan amount to user panel
@@ -33,14 +34,6 @@ public class userPanelController {
 
 
     public String getLoan() throws SQLException {
-        Preferences userPrefrences = Preferences.userRoot();
-        int x = userPrefrences.getInt("userid",-1);
-        System.out.println(x);
-        String[][] y = sql.select("loans","loan_total",String.format("user_id='%s'", x));
-        System.out.println("USER NAME" + y[0][0] + "\n");
-        return y[0][0];
-
+        return LoginManager.logged_in_user.get("username", LoanApp.USERNAME_NOT_EXIST);
     }
-
-
 }

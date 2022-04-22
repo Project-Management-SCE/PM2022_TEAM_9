@@ -10,13 +10,11 @@ import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
 
-public class userPanelManager {
-    private  Scene scene;
-    private Preferences data;
+public class UserPanelManager {
+    private final Scene scene;
 
-    public userPanelManager(Scene scene, Preferences data) {
+    public UserPanelManager(Scene scene) {
         this.scene = scene;
-        this.data = data;
     }
 
     public void showUserPanel() {
@@ -26,7 +24,7 @@ public class userPanelManager {
             );
             System.out.println("show user panel");
             scene.setRoot(loader.load());
-            userPanelController controller = loader.getController();
+            UserPanelController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,7 +39,7 @@ public class userPanelManager {
     }
 
     public  void edit(){
-        editProfileManager editProfileManager = new editProfileManager(scene, data);
+        EditProfileManager editProfileManager = new EditProfileManager(scene);
         editProfileManager.editProfile();
     }
 

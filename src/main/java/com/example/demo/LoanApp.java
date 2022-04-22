@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.PostgreSQL;
-import com.example.demo.welcomeManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -12,6 +10,8 @@ import javafx.stage.Stage;
 public class LoanApp extends Application {
 
     public static PostgreSQL sql = PostgreSQL.getInstance();
+    public final static int USER_NOT_EXIST = -999;
+    public final static String USERNAME_NOT_EXIST = "USERNAME_NOT_EXIST";
 
     public static void main(String[] args) { launch(args); }
 
@@ -19,7 +19,7 @@ public class LoanApp extends Application {
     public void start(Stage stage) {
         sql.openConnection();
         Scene scene = new Scene(new StackPane());
-        welcomeManager welcomeManager = new welcomeManager(scene);
+        WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.showWelcomeScreen();
 
         stage.setScene(scene);

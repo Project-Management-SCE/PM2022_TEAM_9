@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.loanController">
+<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoanController">
    <children>
       <Accordion layoutX="52.0" layoutY="111.0" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="148.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
