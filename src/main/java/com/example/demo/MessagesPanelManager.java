@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.Preferences;
 
 public class MessagesPanelManager {
     private final Scene scene;
@@ -30,6 +29,13 @@ public class MessagesPanelManager {
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void replyMessage(MessageModel selectedMessage) {
+        if (selectedMessage != null) {
+            ReplyMessageManager replyMessageManager = new ReplyMessageManager(scene);
+            replyMessageManager.showReplyScreen(selectedMessage);
         }
     }
 }

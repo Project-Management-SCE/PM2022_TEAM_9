@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.Preferences;
 
 public class ManagerPanelManager {
     private final Scene scene;

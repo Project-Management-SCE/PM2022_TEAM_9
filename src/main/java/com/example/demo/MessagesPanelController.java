@@ -31,14 +31,17 @@ public class MessagesPanelController implements Initializable {
     }
 
     private void controlsConfiguration(MessagesPanelManager messagesPanelManager) {
-        //TODO
+        reply_msg.setOnAction(event -> messagesPanelManager.replyMessage(messages_list.getSelectionModel().getSelectedItem()));
     }
 
     private ObservableList<MessageModel> messagesToTable() {
         try {
             String[][] messages = LoanApp.sql.select("mailbox", "*", String.format("receiver=%s", LoginManager.logged_in_user.getInt("userid",LoanApp.USER_NOT_EXIST)));
-            for (String[] message : messages)
-                observable_list.add(new MessageModel(message[3], message[4], message[5], message[1]));
+            for (String[] message : messages){
+                String sender = LoanApp.sql.select("users", "username", String.format("id=%s", message[1]))[0][0];
+                observable_list.add(new MessageModel(message[3], message[4], message[5],  sender));
+            }
+
             return observable_list;
 
         } catch (SQLException e) {
@@ -50,12 +53,10 @@ public class MessagesPanelController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
         subject_col.setCellValueFactory(new PropertyValueFactory<>("Subject"));
         message_col.setCellValueFactory(new PropertyValueFactory<>("Message"));
         time_col.setCellValueFactory(new PropertyValueFactory<>("Time"));
         sender_col.setCellValueFactory(new PropertyValueFactory<>("Sender"));
-        //add your data to the table here.
         messages_list.setItems(messagesToTable());
     }
 }
