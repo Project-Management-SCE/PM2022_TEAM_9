@@ -1,10 +1,8 @@
 package com.example.demo;
 
-
 import core.ann.classifier.Matrix;
 import core.ann.classifier.MatrixExceptionHandler;
 import core.ann.classifier.NeuralNetwork;
-import core.python.extender.PythonInterpreter;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
@@ -38,14 +36,18 @@ public class loanManager implements PropertyChangeListener {
 
     private final Scene scene;
     private FXMLLoader loader;
-    private final WorkerService ann_loader;
+    private final ThreadWorker_1 ann_loader;
+    private final ThreadWorker_2 form_data_normalizer;
     private final Preferences loan_form = Preferences.userRoot().node("LOAN FORM");
 
 
     public loanManager(Scene scene) {
         this.scene = scene;
-        this.ann_loader = new WorkerService();
-        this.ann_loader.getNotifier().addPropertyChangeListener(this); // set this class as observer to WorkerService
+        this.ann_loader = new ThreadWorker_1();
+        this.form_data_normalizer = new ThreadWorker_2();
+        this.ann_loader.getNotifier().addPropertyChangeListener(this); // set this class as observer to ThreadWorker_1
+        this.form_data_normalizer.getNotifier().addPropertyChangeListener(this); // set this class as observer to ThreadWorker_2
+
         //loan_form.clear();// clear HDD saved data
     }
 
@@ -206,13 +208,13 @@ public class loanManager implements PropertyChangeListener {
     private void savePage2() {
         loanController controller = loader.getController(); // make code readable
         if (controller.totalIncome() != null && controller.totalIncome().getText().length() > 0)
-            loan_form.putInt("total_income", Integer.parseInt(controller.totalIncome().getText()));
+            loan_form.putDouble("total_income", Double.parseDouble(controller.totalIncome().getText()));
 
         if (controller.propertyValue() != null && controller.propertyValue().getText().length() > 0)
-            loan_form.putInt("property_value", Integer.parseInt(controller.propertyValue().getText()));
+            loan_form.putDouble("property_value", Double.parseDouble(controller.propertyValue().getText()));
 
         if (controller.loanAmount() != null && controller.loanAmount().getText().length() > 0)
-            loan_form.putInt("loan_amount", Integer.parseInt(controller.loanAmount().getText()));
+            loan_form.putDouble("loan_amount", Double.parseDouble(controller.loanAmount().getText()));
 
         if (controller.LivingType() != null && controller.LivingType().getValue().length() > 0)
             loan_form.put("living_type", controller.LivingType().getValue());
@@ -522,10 +524,10 @@ public class loanManager implements PropertyChangeListener {
 
     }
 
-    private void loanResult() {
-        NeuralNetwork local_ann = ann_loader.getValue();
+        private void loanResult(Matrix A) {
+        NeuralNetwork local_ann = ann_loader.getValue(); // get loaded data of NeuralNetwork file.
         try {
-            local_ann.predict(normalizeFormData()); // convert (loan_form) to ANN form
+            local_ann.predict(A); // convert (loan_form) to ANN form
 
             if (local_ann.get_predictions().argmax() == 0) { // if loan approved
                 nextPage(++loanController.current_page);
@@ -536,18 +538,14 @@ public class loanManager implements PropertyChangeListener {
                 loan_form.put("loan_status", "rejected");
             }
 
-        } catch (MatrixExceptionHandler | IOException e) {
+        } catch (MatrixExceptionHandler e) {
             e.printStackTrace();
         }
     }
 
-    private Matrix normalizeFormData() throws MatrixExceptionHandler, IOException {
+    private void formDataToCSV() throws MatrixExceptionHandler, IOException {
         FormAdapter form_data = new FormAdapter(loan_form); // load Preferences load data
         Matrix temp = form_data.preferencesConverter(); // convert Preferences to Matrix
-        Matrix result = new Matrix(1,43);
-        BufferedReader buffer_reader;
-        String current_line;
-        int row_cnt = 0;
 
         FileWriter encoded_writer = new FileWriter("src\\core\\bin\\metrics\\loan_encoded.csv"); //write to file
         List<String> loan_params = new ArrayList<>(43); // convert data into list
@@ -557,9 +555,13 @@ public class loanManager implements PropertyChangeListener {
         String loan_encoded = String.join(",", loan_params); // convert data to csv type
         encoded_writer.write(loan_encoded); // save as csv file
         encoded_writer.close(); // close buffer
+    }
 
-        PythonInterpreter.exec("normalize_data.py");
-
+    private Matrix normalizeCSV() throws MatrixExceptionHandler, IOException {
+        Matrix result = new Matrix(1, 43);
+        BufferedReader buffer_reader;
+        String current_line;
+        int row_cnt = 0;
         buffer_reader = new BufferedReader(new FileReader("src\\core\\bin\\metrics\\loan_normalized.csv"));
 
         while ((current_line = buffer_reader.readLine()) != null) {
@@ -586,14 +588,34 @@ public class loanManager implements PropertyChangeListener {
             updateStatus("Let's see the information you've sent us...");
             updateStatus("Setting up one last thing...");
             updateStatus("We've come into conclusion...");
-            new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> loanResult())).play();
+            new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> {
+                try {
+                    formDataToCSV();
+                    form_data_normalizer.startTheService();
+                } catch (MatrixExceptionHandler | IOException e) {
+                    e.printStackTrace();
+                }
+            })).play();
         }
 
-        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("FAILED") == 0)
-            nextPage(FINAL_PAGE);
+        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("FAILED") == 0) {
+            System.out.println("Error occurred while loading ANN data...\n");
+            System.exit(-1);
+        }
 
-        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("CANCELED") == 0)
-            returnWelcomeScreen();
+
+        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("CANCELED") == 0) {
+            System.out.println("Error occurred while loading ANN data...\n");
+            System.exit(-1);
+        }
+
+        if (evt.getPropertyName().compareTo("PYTHON_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("SUCCESS") == 0) {
+            try {
+                loanResult(normalizeCSV());
+            } catch (MatrixExceptionHandler | IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

@@ -2,8 +2,8 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.logging.*;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.TextField;

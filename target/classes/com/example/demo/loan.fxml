@@ -36,7 +36,7 @@
                               <Font size="32.0" />
                            </font>
                         </Label>
-                        <Button fx:id="clear" mnemonicParsing="false" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                        <Button fx:id="clear" mnemonicParsing="false" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="9" />
                         <Label text="Full Name:" GridPane.rowIndex="1">
                            <font>
                               <Font size="16.0" />
@@ -78,7 +78,7 @@
                            </font>
                         </Label>
                         <ChoiceBox fx:id="gender" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Button fx:id="back" mnemonicParsing="false" text="Back" GridPane.rowIndex="10" />
+                        <Button fx:id="back1" mnemonicParsing="false" text="Back" GridPane.rowIndex="10" />
                         <DatePicker fx:id="age" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="Own car:" GridPane.rowIndex="8">
                            <font>
@@ -86,7 +86,14 @@
                            </font>
                         </Label>
                         <ChoiceBox fx:id="own_car" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Pagination fx:id="pagination" maxPageIndicatorCount="4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Pagination fx:id="pagination" currentPageIndex="0" maxPageIndicatorCount="4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label text="Own apartment:" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="own_asset" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button fx:id="next1" mnemonicParsing="false" text="Next" GridPane.columnIndex="2" GridPane.rowIndex="10" />
                      </children>
                   </GridPane>
 

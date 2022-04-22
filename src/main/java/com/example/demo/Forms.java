@@ -1,9 +1,9 @@
 package com.example.demo;
 
 import core.ann.classifier.Matrix;
+import core.ann.classifier.MatrixExceptionHandler;
 
 import java.util.prefs.Preferences;
-
 
 enum GENDER {
     MALE(2), FEMALE(1);
@@ -642,7 +642,7 @@ class FormAdapter {
         this.data = data;
     }
 
-    protected Matrix preferencesConverter() throws core.ann.classifier.MatrixExceptionHandler {
+    protected Matrix preferencesConverter() throws MatrixExceptionHandler {
         Matrix ann_data = new Matrix(ROWS, ATTRIBUTES);
         ann_data.setValue(0, 0, Gender());
         ann_data.setValue(0, 1, flagOwnCar());

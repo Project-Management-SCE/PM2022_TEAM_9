@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.PostgreSQL;
+import com.example.demo.welcomeManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -21,6 +23,7 @@ public class LoanApp extends Application {
         welcomeManager.showWelcomeScreen();
 
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 //        sql.closeConnection();
 

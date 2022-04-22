@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.welcomeController">
+<StackPane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.welcomeController">
     <children>
         <StackPane>
             <children>
                 <VBox spacing="10.0">
                     <children>
-                        <GridPane prefHeight="387.0" prefWidth="613.0">
+                        <GridPane prefHeight="387.0" prefWidth="630.0">
                             <children>
                                 <Button fx:id="loan" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="418.0" text="Ask for a Loan" GridPane.columnIndex="1" GridPane.rowIndex="2" StackPane.alignment="CENTER_RIGHT" />
                         <Label prefHeight="54.0" prefWidth="402.0" text="Welcome" textAlignment="CENTER" textFill="#d91212" GridPane.columnIndex="1">
@@ -19,6 +19,7 @@
                               <Font size="43.0" />
                            </font></Label>
                         <Button fx:id="toLogin" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="417.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="register" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="431.0" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                             </children>
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="60.59999237060546" />
