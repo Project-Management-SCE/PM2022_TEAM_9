@@ -9,9 +9,8 @@ import java.io.IOException;
 
 public class init {
     public static void main(String[] args) throws MatrixExceptionHandler, IOException {
-        NeuralNetwork ann = new NeuralNetwork(43, 5, 1, 2, "adam", "categorical", 100);
+        NeuralNetwork ann = new NeuralNetwork(43, 5, 1, 2, "adam", "categorical", 300);
         Dataset x = new Dataset();
-        Dataset y = new Dataset();
         ann.setLogs(true);
         ann.setMetrices(false);
         ann.set_l2_regularizer(5e-4, 5e-4);

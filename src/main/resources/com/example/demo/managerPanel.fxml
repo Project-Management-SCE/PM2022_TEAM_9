@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.managerPanelController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ManagerPanelController">
     <children>
         <StackPane>
             <children>
@@ -45,11 +45,15 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ImageView fitHeight="36.0" fitWidth="76.0" layoutX="513.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/mailbox.jpg" />
-                     </image>
-                  </ImageView>
+                  <Label fx:id="message_icon" layoutX="513.0" layoutY="31.0">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/mailbox.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
                   <Label fx:id="new_messages_quantity" layoutX="576.0" layoutY="40.0" prefHeight="16.0" prefWidth="18.0" text="(0)">
                      <font>
                         <Font name="Arial" size="14.0" />

@@ -8,8 +8,6 @@ import java.beans.PropertyChangeSupport;
 public class ThreadWorker_2 extends Service<Void> {
     private final PropertyChangeSupport notifier;
 
-    private static final String ANN_FILE = "src\\core\\bin\\metrics\\pre_trained_ann.bin";
-
     public ThreadWorker_2() {
         this.notifier = new PropertyChangeSupport(this);
 

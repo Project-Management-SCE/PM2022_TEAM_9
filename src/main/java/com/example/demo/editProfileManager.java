@@ -10,8 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
-import static com.example.demo.LoanApp.sql;
-
 public class editProfileManager {
 
     private Scene scene;
@@ -46,7 +44,7 @@ public class editProfileManager {
             userPanelManager.showUserPanel();
         }
         else if(role == 2){
-            managerPanelManager managerPanelManager = new managerPanelManager(scene, data);
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene, data);
             managerPanelManager.showManagerPanel();
         }
 

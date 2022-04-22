@@ -50,7 +50,7 @@ public class LoginManager {
     }
 
     public void ManagerPanel(Preferences data){
-        managerPanelManager managerPanelManager = new managerPanelManager(scene,data);
+        ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene,data);
         managerPanelManager.showManagerPanel();
     }
     /**
