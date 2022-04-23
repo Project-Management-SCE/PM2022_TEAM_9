@@ -2,7 +2,9 @@ package com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,29 +43,38 @@ public class TodoListManager {
         }
     }
 
-    public void commitChange(TableView<TodoListModel> items_list) {
-        if (items_list.getSelectionModel().getSelectedItem() != null) {
-            String columns = "user_id, item, status";
-            String todo_item = items_list.getSelectionModel().getSelectedItem().getItem();
-            String status = items_list.getSelectionModel().getSelectedItem().getStatus();
-            int note_id = items_list.getSelectionModel().getSelectedItem().getId();
-            int bit_status;
+    public void commitChange(TableView<TodoListModel> items_list, TableColumn.CellEditEvent<TodoListModel, String> modified_data) {
+        if (items_list.getSelectionModel().getSelectedItem() != null) { // if row selected
 
-            if (status.compareTo("NOT DONE") == 0)
-                bit_status = 0;
-            else
-                bit_status = 1;
+            if (modified_data.getNewValue().compareTo(modified_data.getOldValue()) != 0) { // if value did change
+                int note_id = items_list.getSelectionModel().getSelectedItem().getId();
+                String item_data = items_list.getSelectionModel().getSelectedItem().getItem();
+                String item_status = items_list.getSelectionModel().getSelectedItem().getStatus();
+                String columns = "user_id, item, status";
 
-            if (note_id == BRAND_NEW_NOTE)
-                LoanApp.sql.insert("todolist", String.format("%s", columns), String.format("%s,%s, CAST(%s AS BIT)", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), todo_item, bit_status));
-            else
-                System.out.println("TODO!");
+                if (items_list.getFocusModel().getFocusedCell().getColumn() == 0) { //if To-do column selected
+                    if (note_id == BRAND_NEW_NOTE) // if new note inserted
+                        LoanApp.sql.insert("todolist", String.format("%s", columns), String.format("%s, '%s', '%s'", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), modified_data.getNewValue(), item_status));
+                    else
+                        LoanApp.sql.update("todolist", "item", String.format("%s", modified_data.getNewValue()), String.format("id=%s", note_id));
+                }
+
+                if (items_list.getFocusModel().getFocusedCell().getColumn() == 1) { //if Status column selected
+                    if (note_id == BRAND_NEW_NOTE) // if new note inserted
+                        LoanApp.sql.insert("todolist", String.format("%s", columns), String.format("%s, '%s', '%s'", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), item_data, modified_data.getNewValue()));
+                    else
+                        LoanApp.sql.update("todolist", "status", String.format("%s", modified_data.getNewValue()), String.format("id=%s", note_id));
+                }
+
+            }
         }
     }
 
     public void addItem(TableView<TodoListModel> items_list) {
-        TodoListModel item = new TodoListModel(BRAND_NEW_NOTE, LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), "Write New Task Here", "NOT DONE");
+        TodoListModel item = new TodoListModel(BRAND_NEW_NOTE, LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), "Write Your Task Here...", "NEW");
         items_list.getItems().add(item);
 
     }
+
+
 }
