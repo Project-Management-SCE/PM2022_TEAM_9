@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.util.Duration;
 
@@ -18,7 +19,7 @@ public class BankerPanelController implements PropertyChangeListener {
     private Boolean isUserNotified = false;
     private Timeline msg_flasher;
     @FXML
-    private MenuItem logoutButton, editProfileButton, manage_clients;
+    private MenuItem logoutButton, editProfileButton, manage_clients, todoButton;
     @FXML
     private Label new_messages_quantity, message_icon;
 
@@ -30,6 +31,7 @@ public class BankerPanelController implements PropertyChangeListener {
         logoutButton.setOnAction(actionEvent -> bankerPanelManager.goLogin());
         editProfileButton.setOnAction(event -> bankerPanelManager.edit());
         manage_clients.setOnAction(event -> bankerPanelManager.manageClients());
+        todoButton.setOnAction(event -> bankerPanelManager.showTodoList());
         message_icon.setOnMouseClicked(event -> bankerPanelManager.manageMessages());
 
         // new message icon blinker

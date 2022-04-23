@@ -79,6 +79,11 @@ public class BankerPanelManager {
         manageMessagesManager.manageMessages();
     }
 
+    public void showTodoList() {
+        TodoListManager todoListManager = new TodoListManager(scene);
+        todoListManager.manageTodoList();
+    }
+
     /**
      * Retrieve all the messages belong to the specific user.
      */

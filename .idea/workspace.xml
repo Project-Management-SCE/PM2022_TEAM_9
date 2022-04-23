@@ -5,59 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-65">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ManagerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ManagerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MessageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MessageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/img/calculating_eligibility.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/img/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/img/new_message.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/managerMessagesPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/managerMessagesPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/replyMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/replyMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessageModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/MessageModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/editProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/editProfileManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/forgotPassController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/forgotPassManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/logOutViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/modifyUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/modifyUserManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/registerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/registerManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanelManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/welcomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/welcomeManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/img/calculating_eligibility.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/img/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/img/new_message.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/managerMessagesPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/managerMessagesPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/replyMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/com/example/demo/replyMessage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/bankerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/bankerPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/calculating_eligibility.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/cat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/new_message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerMessagesPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/managerMessagesPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/userPanelController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +172,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1650638152692</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="BSPM2022T9-65">
+      <created>1650658509428</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1650658509428</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,5 +196,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BSPM2022T9-65" />
     <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-65" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/TodoListManager.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/TodoListManager.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

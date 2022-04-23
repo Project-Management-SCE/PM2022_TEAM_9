@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MessagesPanelController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TodoListController">
     <children>
         <StackPane>
             <children>
@@ -48,15 +48,13 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TableView fx:id="messages_list" layoutX="4.0" layoutY="138.0" prefHeight="457.0" prefWidth="619.0">
+                  <TableView fx:id="todo_list" layoutX="4.0" layoutY="138.0" prefHeight="457.0" prefWidth="619.0">
                     <columns>
-                      <TableColumn fx:id="subject_col" prefWidth="125.0" text="Subject" />
-                      <TableColumn fx:id="message_col" prefWidth="254.0" text="Message" />
-                        <TableColumn fx:id="time_col" minWidth="0.0" prefWidth="105.0" text="Time" />
-                        <TableColumn fx:id="sender_col" prefWidth="131.0" text="Sender" />
+                      <TableColumn fx:id="to_do_col" prefWidth="498.0" text="To Do" />
+                        <TableColumn fx:id="status_col" minWidth="0.0" prefWidth="120.0" text="Status" />
                     </columns>
                   </TableView>
-                  <Button fx:id="delete_msg" contentDisplay="CENTER" layoutX="583.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                  <Button fx:id="delete_item" contentDisplay="CENTER" layoutX="583.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -65,25 +63,16 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="reply_msg" contentDisplay="CENTER" layoutX="543.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                  <Button fx:id="add_item" contentDisplay="CENTER" layoutX="543.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/reply_message.png" />
+                              <Image url="@img/add_item.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="view_message" contentDisplay="CENTER" layoutX="503.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/view_message.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="231.0" layoutY="28.0" opacity="0.55" text="Messages">
+                  <Label layoutX="231.0" layoutY="28.0" opacity="0.55" text="Todo List">
                      <font>
                         <Font name="Arial" size="36.0" />
                      </font>
