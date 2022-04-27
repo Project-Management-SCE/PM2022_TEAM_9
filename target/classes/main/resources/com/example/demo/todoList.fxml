@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -10,7 +9,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ModifyUserController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TodoListController">
     <children>
         <StackPane>
             <children>
@@ -50,16 +48,13 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TableView fx:id="clients_list" layoutX="4.0" layoutY="165.0" prefHeight="430.0" prefWidth="619.0">
+                  <TableView fx:id="todo_list" layoutX="4.0" layoutY="138.0" prefHeight="457.0" prefWidth="619.0">
                     <columns>
-                      <TableColumn fx:id="id_col" prefWidth="31.0" text="ID" />
-                      <TableColumn fx:id="username_col" prefWidth="132.0" text="Username" />
-                        <TableColumn fx:id="email_col" minWidth="0.0" prefWidth="215.0" text="Email" />
-                        <TableColumn fx:id="last_logged_in_col" prefWidth="175.0" text="Last Login" />
-                        <TableColumn fx:id="role_col" prefWidth="63.0" text="Role" />
+                      <TableColumn fx:id="to_do_col" prefWidth="498.0" text="To Do" />
+                        <TableColumn fx:id="status_col" minWidth="0.0" prefWidth="120.0" text="Status" />
                     </columns>
                   </TableView>
-                  <Button fx:id="delete_client" contentDisplay="CENTER" layoutX="583.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                  <Button fx:id="delete_item" contentDisplay="CENTER" layoutX="583.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -68,7 +63,16 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="188.0" layoutY="25.0" opacity="0.55" text="Manage Clients">
+                  <Button fx:id="add_item" contentDisplay="CENTER" layoutX="543.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/add_item.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="231.0" layoutY="28.0" opacity="0.55" text="Todo List">
                      <font>
                         <Font name="Arial" size="36.0" />
                      </font>
@@ -76,8 +80,6 @@
                         <Glow />
                      </effect>
                   </Label>
-                  <TextField fx:id="search_criterion" layoutX="172.0" layoutY="132.0" prefHeight="25.0" prefWidth="360.0" />
-                  <ComboBox fx:id="sort_list" layoutX="5.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
                </children>
                 </AnchorPane>
             </items>

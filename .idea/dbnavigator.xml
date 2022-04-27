@@ -28,7 +28,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3729c0ef-37e4-4ffd-9b7d-34f03c022ea8">
-      <console name="TEAM_9_DB" type="STANDARD" schema="pg_catalog" session="Main" />
+      <console name="TEAM_9_DB" type="STANDARD" schema="public" session="Main"><![CDATA[select * from users;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -38,6 +38,7 @@
     <connection id="3729c0ef-37e4-4ffd-9b7d-34f03c022ea8" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="3729c0ef-37e4-4ffd-9b7d-34f03c022ea8" dataset="public.users" active-filter-id="" />
     <filter-actions connection-id="3729c0ef-37e4-4ffd-9b7d-34f03c022ea8" dataset="public.mailbox" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
