@@ -38,8 +38,9 @@ public class ModifyUserController implements Initializable {
     }
 
     private void controlsConfiguration(ModifyUserManager modifyUserManager) {
-        sort_list.setItems(FXCollections.observableArrayList("Username", "Email", "Password"));
+        sort_list.setItems(FXCollections.observableArrayList("Username", "Email", "Role"));
         delete_client.setOnAction(event -> modifyUserManager.deleteItem(clients_list));
+        sort_list.getSelectionModel().select(0);
 
         //make table editable
         clients_list.setEditable(true);
@@ -72,7 +73,7 @@ public class ModifyUserController implements Initializable {
         });
 
         // search by criteria
-        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(clients_list, search_criterion, observable_list));
+        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(clients_list, search_criterion, observable_list, sort_list));
     }
 
     /**

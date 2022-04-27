@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -42,7 +43,7 @@ public class ModifyUserManager {
         }
     }
 
-    public void commitChange(TableView<ClientsModel> items_list, TableColumn.CellEditEvent<ClientsModel, String > modified_data) {
+    public void commitChange(TableView<ClientsModel> items_list, TableColumn.CellEditEvent<ClientsModel, String> modified_data) {
 //        if (items_list.getSelectionModel().getSelectedItem() != null) { // if row selected
 //
 //            if (modified_data.getNewValue().compareTo(modified_data.getOldValue()) != 0) { // if value did change
@@ -71,16 +72,30 @@ public class ModifyUserManager {
         return;
     }
 
-    protected void filterUsers(TableView<ClientsModel> clients_list, TextField search_criterion, ObservableList<ClientsModel> c){
-        String keyword = search_criterion.getText();
+    /**
+     * Filter list of users by defined criteria
+     * @param clients_list (TableView<ClientsModel> object)
+     * @param search_criterion (TextField object)
+     * @param c (ObservableList<ClientsModel> object)
+     * @param filter_by_items (ComboBox<String> object)
+     */
+    protected void filterUsers(TableView<ClientsModel> clients_list, TextField search_criterion, ObservableList<ClientsModel> c, ComboBox<String> filter_by_items) {
+        String keyword = search_criterion.getText().toLowerCase();
         if (keyword.equals("")) {
             clients_list.getItems().removeAll();
             clients_list.setItems(c);
         } else {
             ObservableList<ClientsModel> filteredData = FXCollections.observableArrayList();
             for (ClientsModel client : clients_list.getItems()) {
-                if(client.getUsername().contains(keyword))
-                    filteredData.add(client);
+                if (filter_by_items.getSelectionModel().getSelectedItem().compareTo("Username") == 0) // search by username
+                    if (client.getUsername().toLowerCase().contains(keyword))
+                        filteredData.add(client);
+                if (filter_by_items.getSelectionModel().getSelectedItem().compareTo("Email") == 0) // search by email
+                    if (client.getEmail().toLowerCase().contains(keyword))
+                        filteredData.add(client);
+                if (filter_by_items.getSelectionModel().getSelectedItem().compareTo("Role") == 0) //search by role
+                    if (client.getRole().toLowerCase().contains(keyword))
+                        filteredData.add(client);
             }
             clients_list.setItems(filteredData);
         }
