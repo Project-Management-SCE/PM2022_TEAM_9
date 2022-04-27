@@ -228,6 +228,7 @@ public class PostgreSQL {
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmt.executeUpdate(query);
         } catch (SQLException e) {
+            e.printStackTrace();
             dispatchStatus(7);
 //            System.exit(7);
         }

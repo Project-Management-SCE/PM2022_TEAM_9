@@ -25,7 +25,7 @@ public class ModifyUserController implements Initializable {
     @FXML
     TextField search_criterion;
     @FXML
-    private TableView<ClientsModel> clients_list;
+    private TableView<ClientsModel> users_list;
     @FXML
     private TableColumn<ClientsModel, String> username_col, email_col, role_col, last_logged_in_col;
     @FXML
@@ -39,11 +39,11 @@ public class ModifyUserController implements Initializable {
 
     private void controlsConfiguration(ModifyUserManager modifyUserManager) {
         sort_list.setItems(FXCollections.observableArrayList("Username", "Email", "Role"));
-        delete_client.setOnAction(event -> modifyUserManager.deleteItem(clients_list));
+        delete_client.setOnAction(event -> modifyUserManager.deleteUser(users_list));
         sort_list.getSelectionModel().select(0);
 
         //make table editable
-        clients_list.setEditable(true);
+        users_list.setEditable(true);
         username_col.setEditable(true);
         email_col.setEditable(true);
         role_col.setEditable(true);
@@ -52,28 +52,28 @@ public class ModifyUserController implements Initializable {
         role_col.setCellFactory(ChoiceBoxTableCell.forTableColumn("Client", "Banker", "Manager"));
 
         username_col.setOnEditCommit(event -> {
-            modifyUserManager.commitChange(clients_list, event);
-            clients_list.getItems().removeAll(clients_list.getItems());
-            clients_list.getSelectionModel().clearSelection();
-            clients_list.setItems(itemsToTable());
+            modifyUserManager.commitChange(users_list, event);
+            users_list.getItems().removeAll(users_list.getItems());
+            users_list.getSelectionModel().clearSelection();
+            users_list.setItems(itemsToTable());
         });
 
         email_col.setOnEditCommit(event -> {
-            modifyUserManager.commitChange(clients_list, event);
-            clients_list.getItems().removeAll(clients_list.getItems());
-            clients_list.getSelectionModel().clearSelection();
-            clients_list.setItems(itemsToTable());
+            modifyUserManager.commitChange(users_list, event);
+            users_list.getItems().removeAll(users_list.getItems());
+            users_list.getSelectionModel().clearSelection();
+            users_list.setItems(itemsToTable());
         });
 
         role_col.setOnEditCommit(event -> {
-            modifyUserManager.commitChange(clients_list, event);
-            clients_list.getItems().removeAll(clients_list.getItems());
-            clients_list.getSelectionModel().clearSelection();
-            clients_list.setItems(itemsToTable());
+            modifyUserManager.commitChange(users_list, event);
+            users_list.getItems().removeAll(users_list.getItems());
+            users_list.getSelectionModel().clearSelection();
+            users_list.setItems(itemsToTable());
         });
 
         // search by criteria
-        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(clients_list, search_criterion, observable_list, sort_list));
+        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(users_list, search_criterion, observable_list, sort_list));
     }
 
     /**
@@ -108,7 +108,7 @@ public class ModifyUserController implements Initializable {
         email_col.setCellValueFactory(new PropertyValueFactory<>("email"));
         last_logged_in_col.setCellValueFactory(new PropertyValueFactory<>("last_logged_in"));
         role_col.setCellValueFactory(new PropertyValueFactory<>("role"));
-        clients_list.setItems(itemsToTable());
+        users_list.setItems(itemsToTable());
     }
 
 }
