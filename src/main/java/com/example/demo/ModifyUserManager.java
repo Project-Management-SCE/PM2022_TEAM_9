@@ -71,11 +71,11 @@ public class ModifyUserManager {
         return;
     }
 
-    protected void filterUsers(TableView<ClientsModel> clients_list, TextField search_criterion, ModifyUserController c){
+    protected void filterUsers(TableView<ClientsModel> clients_list, TextField search_criterion, ObservableList<ClientsModel> c){
         String keyword = search_criterion.getText();
         if (keyword.equals("")) {
             clients_list.getItems().removeAll();
-            clients_list.setItems(c.observable_list);
+            clients_list.setItems(c);
         } else {
             ObservableList<ClientsModel> filteredData = FXCollections.observableArrayList();
             for (ClientsModel client : clients_list.getItems()) {

@@ -49,36 +49,45 @@
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <TableView fx:id="clients_list" layoutX="4.0" layoutY="165.0" prefHeight="430.0" prefWidth="619.0">
-                    <columns>
-                      <TableColumn fx:id="id_col" prefWidth="31.0" text="ID" />
-                      <TableColumn fx:id="username_col" prefWidth="132.0" text="Username" />
-                        <TableColumn fx:id="email_col" minWidth="0.0" prefWidth="215.0" text="Email" />
-                        <TableColumn fx:id="last_logged_in_col" prefWidth="175.0" text="Last Login" />
-                        <TableColumn fx:id="role_col" prefWidth="63.0" text="Role" />
-                    </columns>
-                  </TableView>
-                  <Button fx:id="delete_client" contentDisplay="CENTER" layoutX="583.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/delete_message.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label layoutX="188.0" layoutY="25.0" opacity="0.55" text="Manage Clients">
-                     <font>
-                        <Font name="Arial" size="36.0" />
-                     </font>
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </Label>
-                  <TextField fx:id="search_criterion" layoutX="172.0" layoutY="132.0" prefHeight="25.0" prefWidth="360.0" />
-                  <ComboBox fx:id="sort_list" layoutX="5.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
-               </children>
+                    <children>
+                        <TableView fx:id="clients_list" layoutX="4.0" layoutY="165.0" prefHeight="430.0" prefWidth="619.0">
+                            <columns>
+                                <TableColumn fx:id="id_col" prefWidth="31.0" style="-fx-alignment: CENTER;" text="ID" />
+                                <TableColumn fx:id="username_col" prefWidth="132.0" style="-fx-alignment: CENTER;" text="Username" />
+                                <TableColumn fx:id="email_col" minWidth="0.0" prefWidth="215.0" style="-fx-alignment: CENTER;" text="Email" />
+                                <TableColumn fx:id="last_logged_in_col" prefWidth="175.0" style="-fx-alignment: CENTER;" text="Last Login" />
+                                <TableColumn fx:id="role_col" prefWidth="63.0" style="-fx-alignment: CENTER;" text="Role" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="delete_client" contentDisplay="CENTER" layoutX="583.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/delete_message.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Label layoutX="188.0" layoutY="25.0" opacity="0.55" text="Manage Clients">
+                            <font>
+                                <Font name="Arial" size="36.0" />
+                            </font>
+                            <effect>
+                                <Glow />
+                            </effect>
+                        </Label>
+                        <TextField fx:id="search_criterion" layoutX="172.0" layoutY="132.0" prefHeight="25.0" prefWidth="283.0" promptText="Enter a criterion for filtering the list..." />
+                        <ComboBox fx:id="sort_list" layoutX="5.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
+                        <Button fx:id="reset_password" contentDisplay="CENTER" layoutX="543.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/reset_password.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
                 </AnchorPane>
             </items>
         </SplitPane>

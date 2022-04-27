@@ -14,8 +14,6 @@ import javafx.util.converter.DefaultStringConverter;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -23,7 +21,7 @@ public class ModifyUserController implements Initializable {
     protected final ObservableList<ClientsModel> observable_list = FXCollections.observableArrayList();
 
     @FXML
-    private Button delete_client;
+    private Button delete_client, reset_password;
     @FXML
     TextField search_criterion;
     @FXML
@@ -40,7 +38,7 @@ public class ModifyUserController implements Initializable {
     }
 
     private void controlsConfiguration(ModifyUserManager modifyUserManager) {
-        sort_list.setItems(FXCollections.observableArrayList("First Name, Last Name, Phone"));
+        sort_list.setItems(FXCollections.observableArrayList("Username", "Email", "Password"));
         delete_client.setOnAction(event -> modifyUserManager.deleteItem(clients_list));
 
         //make table editable
@@ -74,8 +72,7 @@ public class ModifyUserController implements Initializable {
         });
 
         // search by criteria
-
-        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(clients_list, search_criterion, this));
+        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(clients_list, search_criterion, observable_list));
     }
 
     /**
@@ -86,8 +83,6 @@ public class ModifyUserController implements Initializable {
     protected ObservableList<ClientsModel> itemsToTable() {
         try {
             String[][] users = LoanApp.sql.select("users", "*");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
             for (String[] col : users) {
                 if (col[4].compareTo("0") == 0)
                     observable_list.add(new ClientsModel(Integer.parseInt(col[0]), col[1], col[3], col[5], "Client"));
