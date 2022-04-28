@@ -1,4 +1,4 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static com.example.demo.LoanApp.sql;
+import static  main.java.com.example.demo.LoanApp.sql;
 
 public class ForgotPassManager {
     public final Scene scene;

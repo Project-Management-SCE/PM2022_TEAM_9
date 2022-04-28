@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoanController">
+<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.example.demo.LoanController">
    <children>
       <Accordion layoutX="52.0" layoutY="111.0" />
       <Label layoutX="162.0" layoutY="36.0" text="Documents" textAlignment="CENTER">

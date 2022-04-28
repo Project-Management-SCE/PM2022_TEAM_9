@@ -1,12 +1,11 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-import static com.example.demo.LoanApp.sql;
-
+import static  main.java.com.example.demo.LoanApp.sql;
 import java.sql.SQLException;
 import java.util.prefs.Preferences;
 

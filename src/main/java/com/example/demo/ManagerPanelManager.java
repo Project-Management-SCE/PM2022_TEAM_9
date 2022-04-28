@@ -1,4 +1,4 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;

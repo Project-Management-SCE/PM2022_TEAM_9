@@ -1,4 +1,4 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import core.python.extender.PythonInterpreter;
 import javafx.concurrent.Service;

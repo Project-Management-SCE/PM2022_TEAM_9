@@ -1,4 +1,4 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 
 import java.util.prefs.Preferences;
 
-import static com.example.demo.LoanApp.sql;
+import static  main.java.com.example.demo.LoanApp.sql;
 
 
 /**

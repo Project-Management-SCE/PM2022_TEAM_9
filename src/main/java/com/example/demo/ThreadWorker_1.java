@@ -1,4 +1,4 @@
-package com.example.demo;
+package main.java.com.example.demo;
 
 import core.ann.classifier.NeuralNetwork;
 import javafx.concurrent.Service;
