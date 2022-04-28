@@ -27,7 +27,7 @@ public class ManagerPanelManager {
     }
 
 
-    public void showManagerPanel() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("managerPanel.fxml"));
             scene.setRoot(loader.load());
@@ -61,22 +61,22 @@ public class ManagerPanelManager {
 
     public void goLogin() {
         LoginManager loginManager = new LoginManager(scene);
-        loginManager.showLoginScreen();
+        loginManager.initializeScreen();
     }
 
     public void edit() {
         EditProfileManager editProfileManager = new EditProfileManager(scene);
-        editProfileManager.editProfile();
+        editProfileManager.initializeScreen();
     }
 
     public void manageClients() {
         ModifyUserManager manageUserManager = new ModifyUserManager(scene);
-        manageUserManager.manageUsers();
+        manageUserManager.initializeScreen();
     }
 
     public void manageMessages() {
         MessagesPanelManager manageMessagesManager = new MessagesPanelManager(scene);
-        manageMessagesManager.manageMessages();
+        manageMessagesManager.initializeScreen();
     }
 
     /**

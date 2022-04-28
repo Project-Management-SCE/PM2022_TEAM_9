@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,9 +19,9 @@ public class ModifyUserManager {
         this.scene = scene;
     }
 
-    public void manageUsers() {
+    public void initializeScreen() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("manageClients.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("manageUsers.fxml"));
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
@@ -36,48 +33,47 @@ public class ModifyUserManager {
         }
     }
 
-    public void deleteItem(TableView<ClientsModel> items_list) {
-        if (items_list.getSelectionModel().getSelectedItem() != null) {
-            LoanApp.sql.delete("users", String.format("id=%s", items_list.getSelectionModel().getSelectedItem().getId()));
-            items_list.getItems().remove(items_list.getSelectionModel().getSelectedItem());
+    public void deleteUser(TableView<ClientsModel> users_list) {
+        if (users_list.getSelectionModel().getSelectedItem() != null) {
+            if (confirmDeletion(users_list.getSelectionModel().getSelectedItem().getUsername())) {
+                LoanApp.sql.delete("users", String.format("id=%s", users_list.getSelectionModel().getSelectedItem().getId()));
+                users_list.getItems().remove(users_list.getSelectionModel().getSelectedItem());
+            }
         }
     }
 
-    public void commitChange(TableView<ClientsModel> items_list, TableColumn.CellEditEvent<ClientsModel, String> modified_data) {
-//        if (items_list.getSelectionModel().getSelectedItem() != null) { // if row selected
-//
-//            if (modified_data.getNewValue().compareTo(modified_data.getOldValue()) != 0) { // if value did change
-//                int note_id = items_list.getSelectionModel().getSelectedItem().getId();
-//                String item_data = items_list.getSelectionModel().getSelectedItem().getItem();
-//                String item_status = items_list.getSelectionModel().getSelectedItem().getStatus();
-//                String columns = "user_id, item, status";
-//
-//                if (items_list.getFocusModel().getFocusedCell().getColumn() == 0) { //if To-do column selected
-//                    if (note_id == BRAND_NEW_NOTE) // if new note inserted
-//                        LoanApp.sql.insert("todolist", String.format("%s", columns), String.format("%s, '%s', '%s'", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), modified_data.getNewValue(), item_status));
-//                    else
-//                        LoanApp.sql.update("todolist", "item", String.format("%s", modified_data.getNewValue()), String.format("id=%s", note_id));
-//                }
-//
-//                if (items_list.getFocusModel().getFocusedCell().getColumn() == 1) { //if Status column selected
-//                    if (note_id == BRAND_NEW_NOTE) // if new note inserted
-//                        LoanApp.sql.insert("todolist", String.format("%s", columns), String.format("%s, '%s', '%s'", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST), item_data, modified_data.getNewValue()));
-//                    else
-//                        LoanApp.sql.update("todolist", "status", String.format("%s", modified_data.getNewValue()), String.format("id=%s", note_id));
-//                }
-//
-//            }
-//        }
-//    }
-        return;
+    public void commitChange(TableView<ClientsModel> users_list, TableColumn.CellEditEvent<ClientsModel, String> modified_data) {
+        if (users_list.getSelectionModel().getSelectedItem() != null) { // if row selected
+
+            if (modified_data.getNewValue().compareTo(modified_data.getOldValue()) != 0) { // if value did change
+                int user_id = users_list.getSelectionModel().getSelectedItem().getId();
+                String user_role = users_list.getSelectionModel().getSelectedItem().getRole();
+                if (users_list.getFocusModel().getFocusedCell().getColumn() == 1) //if Username column selected
+                    LoanApp.sql.update("users", "username", String.format("%s", modified_data.getNewValue()), String.format("id=%s", user_id));
+                if (users_list.getFocusModel().getFocusedCell().getColumn() == 2) //if Email column selected
+                    LoanApp.sql.update("users", "email", String.format("%s", modified_data.getNewValue()), String.format("id=%s", user_id));
+                if (users_list.getFocusModel().getFocusedCell().getColumn() == 4) { //if Role column selected
+                    if (modified_data.getNewValue().compareTo("Manager") == 0)
+                        LoanApp.sql.update("users", "role", String.format("%s", 2), String.format("id=%s", user_id));
+                    else if (modified_data.getNewValue().compareTo("Banker") == 0)
+                        LoanApp.sql.update("users", "role", String.format("%s", 1), String.format("id=%s", user_id));
+                    else if (modified_data.getNewValue().compareTo("Client") == 0)
+                        LoanApp.sql.update("users", "role", String.format("%s", 0), String.format("id=%s", user_id));
+                    else
+                        LoanApp.sql.update("users", "role", String.format("%s", user_role), String.format("id=%s", user_id));
+
+                }
+            }
+        }
     }
 
     /**
      * Filter list of users by defined criteria
-     * @param clients_list (TableView<ClientsModel> object)
+     *
+     * @param clients_list     (TableView<ClientsModel> object)
      * @param search_criterion (TextField object)
-     * @param c (ObservableList<ClientsModel> object)
-     * @param filter_by_items (ComboBox<String> object)
+     * @param c                (ObservableList<ClientsModel> object)
+     * @param filter_by_items  (ComboBox<String> object)
      */
     protected void filterUsers(TableView<ClientsModel> clients_list, TextField search_criterion, ObservableList<ClientsModel> c, ComboBox<String> filter_by_items) {
         String keyword = search_criterion.getText().toLowerCase();
@@ -99,6 +95,12 @@ public class ModifyUserManager {
             }
             clients_list.setItems(filteredData);
         }
+    }
+
+    private Boolean confirmDeletion(String username) {
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Are you sure you want to delete #" + username + " ?", ButtonType.YES, ButtonType.NO);
+        alert.showAndWait();
+        return alert.getResult() == ButtonType.YES;
     }
 
 }

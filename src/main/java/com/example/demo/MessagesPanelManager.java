@@ -17,7 +17,7 @@ public class MessagesPanelManager {
         this.scene = scene;
     }
 
-    public void manageMessages() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("managerMessagesPanel.fxml")
@@ -36,14 +36,14 @@ public class MessagesPanelManager {
     public void viewMessage(MessageModel selectedMessage) {
         if (selectedMessage != null) {
             ViewMessageManager viewMessageManager = new ViewMessageManager(scene);
-            viewMessageManager.showMessageScreen(selectedMessage);
+            viewMessageManager.initializeScreen(selectedMessage);
         }
     }
 
     public void replyMessage(MessageModel selectedMessage) {
         if (selectedMessage != null) {
             ReplyMessageManager replyMessageManager = new ReplyMessageManager(scene);
-            replyMessageManager.showReplyScreen(selectedMessage);
+            replyMessageManager.initializeScreen(selectedMessage);
         }
     }
 

@@ -3,6 +3,7 @@ package com.example.demo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,6 +11,8 @@ import java.util.logging.Logger;
 
 public class WelcomeManager {
     private final Scene scene;
+    private final static int WINDOW_WIDTH = 477;
+    private final static int WINDOW_HEIGHT = 407;
 
     public WelcomeManager(Scene scene) {
         this.scene = scene;
@@ -20,7 +23,7 @@ public class WelcomeManager {
      */
     public void login() {
         LoginManager log = new LoginManager(scene);
-        log.showLoginScreen();
+        log.initializeScreen();
     }
 
     /**
@@ -28,21 +31,26 @@ public class WelcomeManager {
      */
     public void loan() {
         LoanManager loanManager = new LoanManager(scene);
-        loanManager.showLoanScreen();
+        loanManager.initializeScreen();
     }
 
     public void register(){
         RegisterManager registerManager = new RegisterManager(scene);
-        registerManager.showRegistration();
+        registerManager.initializeScreen();
     }
     /**
      * show welcome screen
      */
-    public void showWelcomeScreen() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
-            System.out.println("welcome screen");
             scene.setRoot(loader.load());
+
+            if (scene.getWindow()!= null) {
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            }
+
             WelcomeController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException e) {

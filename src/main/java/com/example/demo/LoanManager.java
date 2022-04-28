@@ -32,6 +32,8 @@ public class LoanManager implements PropertyChangeListener {
     private final static int APPROVAL_PAGE = 6;
     private final static int REJECTION_PAGE = 7;
     private final static String UNDEFINED = "";
+    private final static int WINDOW_WIDTH = 495;
+    private final static int WINDOW_HEIGHT = 675;
     private static int TIMELINE_OFFSET = 0;
 
     private final Scene scene;
@@ -54,10 +56,13 @@ public class LoanManager implements PropertyChangeListener {
     /**
      * show loan screen
      */
-    public void showLoanScreen() {
+    public void initializeScreen() {
         try {
             this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
             scene.setRoot(loader.load());
+            this.scene.getWindow().setWidth(WINDOW_WIDTH);
+            this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
             LoanController controller = loader.getController();
             controller.initManager(this);
             reloadForm(); // reload previous saved data
@@ -71,12 +76,12 @@ public class LoanManager implements PropertyChangeListener {
      */
     public void returnWelcomeScreen() {
         WelcomeManager welcomeManager = new WelcomeManager(scene);
-        welcomeManager.showWelcomeScreen();
+        welcomeManager.initializeScreen();
     }
 
     public void continueRegistrationScreen() {
         RegisterManager registerManager = new RegisterManager(scene);
-        registerManager.showRegistration();
+        registerManager.initializeScreen();
     }
 
     public void nextPage(int currentPage) {
@@ -84,6 +89,9 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager(this);
                 reloadForm();
@@ -97,6 +105,9 @@ public class LoanManager implements PropertyChangeListener {
                 savePage1(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan2.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager2(this);
                 reloadForm();
@@ -109,6 +120,9 @@ public class LoanManager implements PropertyChangeListener {
                 savePage2(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan3.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager3(this);
                 reloadForm();
@@ -121,6 +135,9 @@ public class LoanManager implements PropertyChangeListener {
                 savePage3(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan4.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager4(this);
                 reloadForm();
@@ -134,6 +151,9 @@ public class LoanManager implements PropertyChangeListener {
                 savePage4(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan5.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager5(this);
                 controller.Agreement().getEngine().loadContent(FormAdapter.AGREEMENT);
@@ -147,6 +167,9 @@ public class LoanManager implements PropertyChangeListener {
                 savePage5(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("submitLoan.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 updateStatus("Building the magical network...");
                 ann_loader.startTheService();
             } catch (IOException e) {
@@ -158,6 +181,9 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanApproved.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager6(this);
             } catch (IOException e) {
@@ -169,6 +195,9 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanRejected.fxml"));
                 scene.setRoot(loader.load());
+                this.scene.getWindow().setWidth(WINDOW_WIDTH);
+                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+
                 LoanController controller = loader.getController();
                 controller.initManager7(this);
             } catch (IOException e) {

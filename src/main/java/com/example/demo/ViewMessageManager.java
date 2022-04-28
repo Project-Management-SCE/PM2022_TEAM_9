@@ -18,7 +18,7 @@ public class ViewMessageManager {
         this.scene = scene;
     }
 
-    public void showMessageScreen(MessageModel selectedMessage) {
+    public void initializeScreen(MessageModel selectedMessage) {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("viewMessage.fxml")
@@ -47,6 +47,6 @@ public class ViewMessageManager {
 
     public void returnToMessages() {
         MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
-        messagesPanelManager.manageMessages();
+        messagesPanelManager.initializeScreen();
     }
 }

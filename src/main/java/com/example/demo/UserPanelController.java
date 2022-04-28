@@ -19,7 +19,7 @@ public class UserPanelController {
     @FXML
     private TextFlow balance, accountName;
     @FXML
-    private MenuItem logoutButton, editProfileButton;
+    private MenuItem logoutButton, editProfileButton, contactusButton;
 
 
     public void initManager(UserPanelManager userPanelManager) throws SQLException {
@@ -29,6 +29,7 @@ public class UserPanelController {
         accountName.getChildren().add(account);
         logoutButton.setOnAction(actionEvent -> userPanelManager.goLogin());
         editProfileButton.setOnAction(event -> userPanelManager.edit());
+        contactusButton.setOnAction(event -> userPanelManager.sendMessageBanker());
 
     }
 

@@ -15,7 +15,7 @@ public class EditProfileManager {
         this.scene = scene;
     }
 
-    public void editProfile() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("editProfile.fxml")
@@ -35,11 +35,11 @@ public class EditProfileManager {
         int role = LoginManager.logged_in_user.getInt("role", -1);
         if (role == 0){
             UserPanelManager userPanelManager = new UserPanelManager(scene);
-            userPanelManager.showUserPanel();
+            userPanelManager.initializeScreen();
         }
         else if(role == 2){
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
-            managerPanelManager.showManagerPanel();
+            managerPanelManager.initializeScreen();
         }
 
     }

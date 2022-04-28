@@ -16,7 +16,7 @@ public class LogOutViewController {
         sessionLabel.setText(sessionID);
         logoutButton.setOnAction(event -> {
             System.out.println("log out view controller");
-            loginManager.showLoginScreen();
+            loginManager.initializeScreen();
         });
     }
 

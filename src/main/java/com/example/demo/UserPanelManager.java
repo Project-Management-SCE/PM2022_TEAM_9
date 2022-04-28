@@ -17,7 +17,7 @@ public class UserPanelManager {
         this.scene = scene;
     }
 
-    public void showUserPanel() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("userPanel.fxml")
@@ -35,12 +35,17 @@ public class UserPanelManager {
 
     public  void goLogin() {
         LoginManager loginManager = new LoginManager(scene);
-        loginManager.showLoginScreen();
+        loginManager.initializeScreen();
     }
 
     public  void edit(){
         EditProfileManager editProfileManager = new EditProfileManager(scene);
-        editProfileManager.editProfile();
+        editProfileManager.initializeScreen();
+    }
+
+    protected void sendMessageBanker(){
+        SendMessageManager sendMessageManager = new SendMessageManager(scene);
+        sendMessageManager.initializeScreen();
     }
 
 

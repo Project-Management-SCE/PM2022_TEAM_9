@@ -19,7 +19,7 @@ public class TodoListManager {
         this.scene = scene;
     }
 
-    public void manageTodoList() {
+    public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("todoList.fxml")

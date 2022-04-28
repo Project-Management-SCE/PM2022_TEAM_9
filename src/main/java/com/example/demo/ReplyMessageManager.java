@@ -23,7 +23,7 @@ public class ReplyMessageManager {
         this.scene = scene;
     }
 
-    public void showReplyScreen(MessageModel selectedMessage) {
+    public void initializeScreen(MessageModel selectedMessage) {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("replyMessage.fxml")
@@ -50,7 +50,7 @@ public class ReplyMessageManager {
 
     public void returnToMessages() {
         MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
-        messagesPanelManager.manageMessages();
+        messagesPanelManager.initializeScreen();
     }
 
     public void sendReplyMessage(String subject, String body, ReplyMessageController c) {

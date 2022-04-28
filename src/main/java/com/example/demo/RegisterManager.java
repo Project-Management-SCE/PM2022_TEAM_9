@@ -19,7 +19,7 @@ public class RegisterManager {
         this.scene = scene;
     }
 
-    public void showRegistration(){
+    public void initializeScreen(){
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("register.fxml")
@@ -35,7 +35,7 @@ public class RegisterManager {
 
     public void goWelcome() {
         WelcomeManager welcomeManager = new WelcomeManager(scene);
-        welcomeManager.showWelcomeScreen();
+        welcomeManager.initializeScreen();
     }
 
 

@@ -11,7 +11,7 @@ public class EditProfileController {
     private Button submit, back;
 
     public void initManager(EditProfileManager editProfileManager){
-        submit.setOnAction(event -> editProfileManager.editProfile());
+        submit.setOnAction(event -> editProfileManager.initializeScreen());
         back.setOnAction(event -> {
             try {
                 editProfileManager.goBack();

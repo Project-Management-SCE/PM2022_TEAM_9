@@ -20,7 +20,7 @@ public class ForgotPassManager {
     /**
      *
      */
-    public void forgotPassword(){
+    public void initializeScreen(){
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("forgot.fxml")
@@ -35,7 +35,7 @@ public class ForgotPassManager {
 
     public void goBack(){
         LoginManager loginManager = new LoginManager(scene);
-        loginManager.showLoginScreen();
+        loginManager.initializeScreen();
     }
 
     public void authorize(TextField user , TextField email, TextField new_pass) throws SQLException {
