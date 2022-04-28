@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="436.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"fx:controller="main.java.com.example.demo.LoginController">
+<Pane prefHeight="436.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.example.demo.LoginController">
     <children>
         <Accordion layoutX="52.0" layoutY="111.0" />
         <GridPane layoutX="38.0" layoutY="93.0" prefHeight="70.0" prefWidth="269.0">

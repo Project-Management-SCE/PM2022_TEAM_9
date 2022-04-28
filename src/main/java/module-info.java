@@ -1,4 +1,4 @@
-module main.java.com.example.demo {
+module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -11,6 +11,6 @@ module main.java.com.example.demo {
     requires javafx.web;
     requires java.desktop;
 
-    opens main.java.com.example.demo to javafx.fxml;
-    exports  main.java.com.example.demo;
+    opens com.example.demo to javafx.fxml;
+    exports com.example.demo;
 }
