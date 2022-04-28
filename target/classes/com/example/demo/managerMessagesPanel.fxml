@@ -32,6 +32,7 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="Profile">
                                     <items>
+                                        <MenuItem fx:id="back" mnemonicParsing="false" text="Back" />
                                         <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Clients" />
                                         <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
                                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />

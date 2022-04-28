@@ -2,10 +2,11 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EditProfileController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EditProfileController">
     <children>
         <StackPane>
             <children>
@@ -21,15 +22,18 @@
                                     <font>
                                         <Font size="17.0" />
                                     </font></Label>
-                                <TextField fx:id="user" prefHeight="35.0" prefWidth="362.0" promptText="Use &quot;tamaram&quot; to login" text="tamaram" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="user" prefHeight="35.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                 <Button fx:id="submit" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="364.0" text="Update Profile" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                 <Button fx:id="back" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="back" GridPane.rowIndex="7" />
-                                <Label prefHeight="50.0" prefWidth="360.0" text="Edit Profile Panel" textAlignment="CENTER" GridPane.columnIndex="1">
+                                <Label layoutX="190.0" layoutY="28.0" opacity="0.55" prefHeight="35.0" prefWidth="249.0" text="Edit Profile" GridPane.columnIndex="1">
                                     <font>
-                                        <Font name="Arial" size="25.0" />
+                                        <Font name="Arial" size="36.0" />
                                     </font>
+                                    <effect>
+                                        <Glow />
+                                    </effect>
                                 </Label>
-                                <TextField fx:id="email" prefHeight="33.0" prefWidth="362.0" promptText="Use &quot;tamaram@ac.sce.ac.il&quot; to login" text="tamaram@ac.sce.ac.il" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="email" prefHeight="33.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                 <Label text="New Password:" GridPane.rowIndex="4">
                                     <font>
                                         <Font size="17.0" />
