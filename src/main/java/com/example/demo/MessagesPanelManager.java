@@ -53,4 +53,31 @@ public class MessagesPanelManager {
             messages_list.getItems().remove(messages_list.getSelectionModel().getSelectedItem());
         }
     }
+
+
+    public void goBack(){
+        int role = LoginManager.logged_in_user.getInt("role", -1);
+        if(role == 1){
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        }
+        else if(role == 2){
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+        }
+    }
+
+    public void manage(){
+        ModifyUserManager modifyUserManager = new ModifyUserManager(scene);
+        modifyUserManager.initializeScreen();
+    }
+    public void edit(){
+        EditProfileManager editProfileManager = new EditProfileManager(scene);
+        editProfileManager.initializeScreen();
+    }
+
+    public void logOut(){
+        LoginManager loginManager = new LoginManager(scene);
+        loginManager.initializeScreen();
+    }
 }

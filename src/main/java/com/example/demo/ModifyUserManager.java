@@ -14,7 +14,7 @@ public class ModifyUserManager {
     private final Scene scene;
     private final static int WINDOW_WIDTH = 665;
     private final static int WINDOW_HEIGHT = 690;
-
+    int role = LoginManager.logged_in_user.getInt("role", -1);
     public ModifyUserManager(Scene scene) {
         this.scene = scene;
     }
@@ -101,6 +101,32 @@ public class ModifyUserManager {
         Alert alert = new Alert(Alert.AlertType.WARNING, "Are you sure you want to delete #" + username + " ?", ButtonType.YES, ButtonType.NO);
         alert.showAndWait();
         return alert.getResult() == ButtonType.YES;
+    }
+
+
+    public void goBack(){
+        if (role == 0){
+            UserPanelManager userPanelManager = new UserPanelManager(scene);
+            userPanelManager.initializeScreen();
+        }
+        else if(role == 1){
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        }
+        else if(role == 2){
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+        }
+
+    }
+    public void logOut(){
+        LoginManager loginManager = new LoginManager(scene);
+        loginManager.initializeScreen();
+    }
+
+    public void editProfile(){
+        EditProfileManager editProfileManager = new EditProfileManager(scene);
+        editProfileManager.initializeScreen();
     }
 
 }

@@ -32,12 +32,20 @@ public class ModifyUserController implements Initializable {
     private TableColumn<ClientsModel, Integer> id_col;
     @FXML
     private ComboBox<String> sort_list;
+    @FXML
+    private MenuItem back, editProfileButton,logoutButton;
 
     public void initManager(ModifyUserManager modifyUserManager) {
         controlsConfiguration(modifyUserManager);
     }
 
     private void controlsConfiguration(ModifyUserManager modifyUserManager) {
+        //menu item buttons
+        back.setOnAction(event -> modifyUserManager.goBack());
+        editProfileButton.setOnAction(event -> modifyUserManager.editProfile());
+        logoutButton.setOnAction(event -> modifyUserManager.logOut());
+        ////
+
         sort_list.setItems(FXCollections.observableArrayList("Username", "Email", "Role"));
         delete_client.setOnAction(event -> modifyUserManager.deleteUser(users_list));
         sort_list.getSelectionModel().select(0);

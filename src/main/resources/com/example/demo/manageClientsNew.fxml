@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MessagesPanelController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ModifyUserController">
     <children>
         <StackPane>
             <children>
@@ -34,7 +34,7 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="Profile">
                                     <items>
-                                        <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Clients" />
+                                        <MenuItem fx:id="back" mnemonicParsing="false" text="back" />
                                         <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
                                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />
                                     </items>

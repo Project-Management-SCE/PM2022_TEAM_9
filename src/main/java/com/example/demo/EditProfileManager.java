@@ -37,6 +37,10 @@ public class EditProfileManager {
             UserPanelManager userPanelManager = new UserPanelManager(scene);
             userPanelManager.initializeScreen();
         }
+        else if(role == 1){
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        }
         else if(role == 2){
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();

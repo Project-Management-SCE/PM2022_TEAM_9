@@ -35,6 +35,7 @@ public class UserPanelController {
 
 
     public String getLoan() throws SQLException {
-        return LoginManager.logged_in_user.get("username", LoanApp.USERNAME_NOT_EXIST);
+        return sql.select("loans", "*", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][2];
     }
+
 }

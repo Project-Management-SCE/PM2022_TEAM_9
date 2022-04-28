@@ -27,9 +27,11 @@ public class ManagerPanelController implements PropertyChangeListener {
     }
 
     private void controlsConfiguration(ManagerPanelManager managerPanelManager) {
+        ////menu buttons
         logoutButton.setOnAction(actionEvent -> managerPanelManager.goLogin());
         editProfileButton.setOnAction(event -> managerPanelManager.edit());
         manage_clients.setOnAction(event -> managerPanelManager.manageClients());
+        ///
         message_icon.setOnMouseClicked(event -> managerPanelManager.manageMessages());
 
         // new message icon blinker

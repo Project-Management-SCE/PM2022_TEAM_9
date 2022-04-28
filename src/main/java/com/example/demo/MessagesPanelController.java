@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +26,8 @@ public class MessagesPanelController implements Initializable {
     TableColumn<MessageModel, String> subject_col, message_col, sender_col;
     @FXML
     TableColumn<MessageModel, Date> time_col;
+    @FXML
+    MenuItem back,manage_clients,editProfileButton,logoutButton;
 
     public void initManager(MessagesPanelManager messagesPanelManager) {
         controlsConfiguration(messagesPanelManager);
@@ -34,6 +37,11 @@ public class MessagesPanelController implements Initializable {
         reply_msg.setOnAction(event -> messagesPanelManager.replyMessage(messages_list.getSelectionModel().getSelectedItem()));
         delete_msg.setOnAction(event -> messagesPanelManager.deleteMessage(messages_list));
         view_message.setOnAction(event -> messagesPanelManager.viewMessage(messages_list.getSelectionModel().getSelectedItem()));
+        ///// menu buttons ////
+        back.setOnAction(event -> messagesPanelManager.goBack());
+        manage_clients.setOnAction(event -> messagesPanelManager.manage());
+        editProfileButton.setOnAction(event -> messagesPanelManager.edit());
+        logoutButton.setOnAction(event -> messagesPanelManager.logOut());
     }
 
     /**

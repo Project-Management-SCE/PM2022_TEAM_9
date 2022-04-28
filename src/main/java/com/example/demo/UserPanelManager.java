@@ -12,7 +12,8 @@ import java.util.prefs.Preferences;
 
 public class UserPanelManager {
     private final Scene scene;
-
+    private final static int WINDOW_WIDTH = 650;
+    private final static int WINDOW_HEIGHT = 650;
     public UserPanelManager(Scene scene) {
         this.scene = scene;
     }
@@ -24,6 +25,8 @@ public class UserPanelManager {
             );
             System.out.println("show user panel");
             scene.setRoot(loader.load());
+            scene.getWindow().setWidth(WINDOW_WIDTH);
+            scene.getWindow().setHeight(WINDOW_HEIGHT);
             UserPanelController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
