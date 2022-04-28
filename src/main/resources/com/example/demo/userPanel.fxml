@@ -16,7 +16,7 @@
 <?import javafx.scene.text.TextFlow?>
 
 <?import javafx.scene.effect.Glow?>
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.example.demo.UserPanelController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.UserPanelController">
     <children>
         <StackPane>
             <children>

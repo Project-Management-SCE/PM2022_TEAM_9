@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.example.demo.RegisterController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.RegisterController">
     <children>
         <StackPane>
             <children>
@@ -43,7 +43,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="email" prefHeight="33.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label  GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label fx:id="message" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
                             </children>
                             <columnConstraints>

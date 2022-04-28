@@ -1,4 +1,4 @@
-package main.java.com.example.demo;
+package com.example.demo;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -14,7 +14,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
 
-import static  main.java.com.example.demo.LoanApp.sql;
+import static com.example.demo.LoanApp.sql;
 
 public class SendMessageController implements PropertyChangeListener {
 
