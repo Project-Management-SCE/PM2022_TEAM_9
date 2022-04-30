@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-154">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dlsc_formsfx_formsfx_core_11_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_controlsfx_controlsfx_11_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_3_4.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_beta_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_testfx_testfx_junit_4_0_4_alpha.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testfx_testfx_junit5_4_0_16_alpha.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/MessagesPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +238,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1651315118711</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="BSPM2022T9-154">
+      <created>1651315631415</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1651315631415</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

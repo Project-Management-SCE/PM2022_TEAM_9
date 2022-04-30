@@ -8,14 +8,10 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.testfx.framework.junit.ApplicationTest;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.LocalDate;
+import org.testfx.framework.junit.ApplicationTest;
 
 import static org.junit.Assert.*;
 
@@ -27,18 +23,13 @@ public class MessagesPanelManagerTest extends ApplicationTest {
     private static final PostgreSQL sql = PostgreSQL.getInstance();
     private final String TEST_MESSAGE_IDENTIFIER = "TEST MESSAGE PLEASE IGNORE #9801456456";
 
-
-    /**
-     * Will be called with {@code @Before} semantics, i. e. before each test method.
-     */
-
     @BeforeClass
     public static void initSQL() {
         sql.openConnection();
     }
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage)  {
         scene = new Scene(new StackPane());
         WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.initializeScreen();
