@@ -1,6 +1,5 @@
 package com.example.demo;
 
-
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
@@ -12,11 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.testfx.framework.junit.ApplicationTest;
-
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestCase extends ApplicationTest {
+public class MessagesPanelManagerTest extends ApplicationTest {
 
     private Scene scene;
     private FXMLLoader loader;
