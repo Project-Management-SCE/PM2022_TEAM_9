@@ -21,11 +21,11 @@ public class TodoListController implements Initializable {
     private final ObservableList<TodoListModel> observable_list = FXCollections.observableArrayList();
 
     @FXML
-    Button add_item, delete_item;
+    private Button add_item, delete_item;
     @FXML
     private TableView<TodoListModel> todo_list;
     @FXML
-    TableColumn<TodoListModel, String> to_do_col, status_col;
+    private TableColumn<TodoListModel, String> to_do_col, status_col;
 
     public void initManager(TodoListManager todoListManager) {
         controlsConfiguration(todoListManager);
@@ -82,4 +82,27 @@ public class TodoListController implements Initializable {
         todo_list.setItems(itemsToTable());
     }
 
+    public ObservableList<TodoListModel> getObservable_list() {
+        return observable_list;
+    }
+
+    public Button getAdd_item() {
+        return add_item;
+    }
+
+    public Button getDelete_item() {
+        return delete_item;
+    }
+
+    public TableView<TodoListModel> getTodo_list() {
+        return todo_list;
+    }
+
+    public TableColumn<TodoListModel, String> getTo_do_col() {
+        return to_do_col;
+    }
+
+    public TableColumn<TodoListModel, String> getStatus_col() {
+        return status_col;
+    }
 }

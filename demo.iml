@@ -44,6 +44,6 @@
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.webjars:jquery:3.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit:4.0.4-alpha" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.vintage:junit-vintage-engine:5.7.0-M1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.vintage:junit-vintage-engine:5.8.2" level="project" />
   </component>
 </module>

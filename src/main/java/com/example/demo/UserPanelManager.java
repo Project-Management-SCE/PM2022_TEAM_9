@@ -2,12 +2,10 @@ package com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.Preferences;
 
 
 public class UserPanelManager {
@@ -23,7 +21,6 @@ public class UserPanelManager {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("userPanel.fxml")
             );
-            System.out.println("show user panel");
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);

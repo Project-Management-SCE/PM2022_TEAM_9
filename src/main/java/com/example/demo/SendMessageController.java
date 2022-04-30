@@ -4,6 +4,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -19,15 +21,17 @@ import static com.example.demo.LoanApp.sql;
 public class SendMessageController implements PropertyChangeListener {
 
     @FXML
-    Button send_message, exit_message;
+    private Button send_message, exit_message;
     @FXML
-    TextField message_subject;
+    private TextField message_subject;
     @FXML
-    TextArea message_body;
+    private TextArea message_body;
     @FXML
-    Label message_sent_popup;
+    private Label message_sent_popup;
     @FXML
-    ComboBox<String> bankers_list;
+    private ComboBox<String> bankers_list;
+    @FXML
+    MenuItem logoutButton, editProfileButton, aboutButton, contactusButton, homeButton;
 
 
     public void initManager(SendMessageManager sendMessageManager) throws SQLException {
@@ -36,8 +40,30 @@ public class SendMessageController implements PropertyChangeListener {
         bankers_list.getSelectionModel().select(0);
         message_sent_popup.setVisible(false);//hide success message sent
 
+        logoutButton.setOnAction(event -> {
+            LoginManager loginManager = new LoginManager(sendMessageManager.getScene());
+            loginManager.initializeScreen();
+        });
+
+        homeButton.setOnAction(event -> {
+            UserPanelManager userPanelManager = new UserPanelManager(sendMessageManager.getScene());
+            userPanelManager.initializeScreen();
+        });
+
+        editProfileButton.setOnAction(event -> {
+            EditProfileManager editProfileManager = new EditProfileManager(sendMessageManager.getScene());
+            editProfileManager.initializeScreen();
+        });
+
+        aboutButton.setOnAction(event -> System.out.println("TODO!"));
+
+        contactusButton.setOnAction(event -> {
+            sendMessageManager.initializeScreen();
+        });
+
+
         exit_message.setOnAction(event -> sendMessageManager.returnToMessages());
-        send_message.setOnAction(event -> sendMessageManager.sendMessage(message_subject.getText(), message_body.getText(),bankers_list.getSelectionModel().getSelectedItem()));
+        send_message.setOnAction(event -> sendMessageManager.sendMessage(message_subject.getText(), message_body.getText(), bankers_list.getSelectionModel().getSelectedItem()));
     }
 
     public ObservableList<String> fetchBankers() throws SQLException {

@@ -27,6 +27,7 @@ public class TodoListManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
+            scene.setUserData(loader);
 
             TodoListController controller = loader.getController();
             controller.initManager(this);
@@ -76,5 +77,7 @@ public class TodoListManager {
 
     }
 
-
+    public Scene getScene() {
+        return scene;
+    }
 }

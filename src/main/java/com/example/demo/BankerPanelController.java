@@ -5,23 +5,21 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.util.Duration;
-
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
 
 
 public class BankerPanelController implements PropertyChangeListener {
-    private Boolean isUserNotified = false;
-    private Timeline msg_flasher;
     @FXML
-    private MenuItem logoutButton, editProfileButton, manage_clients, todoButton;
+    private MenuItem logoutButton, editProfileButton, todolistButton, aboutButton;
     @FXML
     private Label new_messages_quantity, message_icon;
+
+    private Timeline msg_flasher;
+    private Boolean isUserNotified = false;
 
     public void initManager(BankerPanelManager bankerPanelManager) throws SQLException {
         controlsConfiguration(bankerPanelManager);
@@ -30,14 +28,14 @@ public class BankerPanelController implements PropertyChangeListener {
     private void controlsConfiguration(BankerPanelManager bankerPanelManager) {
         logoutButton.setOnAction(actionEvent -> bankerPanelManager.goLogin());
         editProfileButton.setOnAction(event -> bankerPanelManager.edit());
-        manage_clients.setOnAction(event -> bankerPanelManager.manageClients());
-        todoButton.setOnAction(event -> bankerPanelManager.showTodoList());
+        todolistButton.setOnAction(event -> bankerPanelManager.showTodoList());
         message_icon.setOnMouseClicked(event -> bankerPanelManager.manageMessages());
+        aboutButton.setOnAction(event -> System.out.println("TODO!"));
 
         // new message icon blinker
         msg_flasher = new Timeline(
-                new KeyFrame(Duration.seconds(0.8), e -> {message_icon.setVisible(false);}),
-                new KeyFrame(Duration.seconds(1.6), e -> {message_icon.setVisible(true);}));
+                new KeyFrame(Duration.seconds(0.8), e -> message_icon.setVisible(false)),
+                new KeyFrame(Duration.seconds(1.6), e -> message_icon.setVisible(true)));
         msg_flasher.setCycleCount(Animation.INDEFINITE);
 
     }

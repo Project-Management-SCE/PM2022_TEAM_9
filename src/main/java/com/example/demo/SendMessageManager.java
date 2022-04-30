@@ -35,6 +35,7 @@ public class SendMessageManager {
             this.scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
             this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            this.scene.setUserData(loader);
 
             SendMessageController controller = loader.getController();
             controller.initManager(this);
@@ -66,5 +67,9 @@ public class SendMessageManager {
 
     public PropertyChangeSupport getNotifier() {
         return notifier;
+    }
+
+    public Scene getScene() {
+        return scene;
     }
 }

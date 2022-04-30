@@ -36,14 +36,15 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="Profile">
                                     <items>
-                                        <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Clients" />
+                              <MenuItem fx:id="homeButton" mnemonicParsing="false" text="Home" />
                                         <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
-                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />
+                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                                     </items>
                                 </Menu>
                                 <Menu fx:id="help" mnemonicParsing="false" text="Help">
                                     <items>
-                                        <MenuItem mnemonicParsing="false" text="About" />
+                                        <MenuItem fx:id="contactusButton" mnemonicParsing="false" text="Contact Us" />
+                                        <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />
                                     </items>
                                 </Menu>
                             </menus>
