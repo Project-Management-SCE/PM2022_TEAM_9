@@ -157,7 +157,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <includes>
-                        <include>TestCase.java</include>
+                        <include>"**/*TestCase.java"</include>
                     </includes>
                     <argLine>
                         --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
