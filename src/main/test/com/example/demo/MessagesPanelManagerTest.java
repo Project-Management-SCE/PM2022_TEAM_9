@@ -7,9 +7,6 @@ import javafx.scene.image.Image;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.testfx.framework.junit.ApplicationTest;
 import javafx.scene.Scene;
@@ -103,7 +100,6 @@ public class MessagesPanelManagerTest extends ApplicationTest {
     }
 
     @Test
-    @Order(3)
     public void A3_testReplyMessage() {
         Platform.runLater(() -> {
             // Stage [MessagePanel]
