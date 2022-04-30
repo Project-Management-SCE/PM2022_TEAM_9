@@ -26,6 +26,7 @@ public class ViewMessageManager {
             this.scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
             this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            this.scene.setUserData(loader);
 
             this.messageModel = selectedMessage;
             ViewMessageController controller = loader.getController();
@@ -48,5 +49,9 @@ public class ViewMessageManager {
     public void returnToMessages() {
         MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
         messagesPanelManager.initializeScreen();
+    }
+
+    public Scene getScene() {
+        return scene;
     }
 }

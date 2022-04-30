@@ -16,4 +16,11 @@ public class WelcomeController {
     }
 
 
+    public Button getLogin() {
+        return login;
+    }
+
+    public Button getAsk_for_loan() {
+        return ask_for_loan;
+    }
 }

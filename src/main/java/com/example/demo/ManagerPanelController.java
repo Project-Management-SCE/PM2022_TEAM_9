@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 
@@ -21,6 +22,8 @@ public class ManagerPanelController implements PropertyChangeListener {
     private MenuItem logoutButton, editProfileButton, manage_clients;
     @FXML
     private Label new_messages_quantity, message_icon;
+    @FXML
+    private StackPane stackpane;
 
     public void initManager(ManagerPanelManager managerPanelManager) throws SQLException {
         controlsConfiguration(managerPanelManager);
@@ -61,4 +64,11 @@ public class ManagerPanelController implements PropertyChangeListener {
         }
     }
 
+    public Label getMessage_icon() {
+        return message_icon;
+    }
+
+    public StackPane getStackpane() {
+        return stackpane;
+    }
 }

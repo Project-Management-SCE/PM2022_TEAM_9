@@ -25,6 +25,7 @@ public class MessagesPanelManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
+            scene.setUserData(loader);
 
             MessagesPanelController controller = loader.getController();
             controller.initManager(this);
@@ -79,5 +80,9 @@ public class MessagesPanelManager {
     public void logOut(){
         LoginManager loginManager = new LoginManager(scene);
         loginManager.initializeScreen();
+    }
+
+    public Scene getScene() {
+        return scene;
     }
 }

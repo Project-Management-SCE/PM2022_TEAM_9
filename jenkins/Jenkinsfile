@@ -15,10 +15,15 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+            post {
+                always {
+                echo 'NOT YET AVAILABLE'
+                }
+            }
         }
         stage('Deliver') {
             steps {
-                echo 'Does Not Yet Exist'
+                echo 'NOT YET AVAILABLE'
             }
         }
     }

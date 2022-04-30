@@ -31,6 +31,7 @@ public class ReplyMessageManager {
             this.scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
             this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            this.scene.setUserData(loader);
 
             this.messageModel = selectedMessage;
             ReplyMessageController controller = loader.getController();
@@ -59,7 +60,7 @@ public class ReplyMessageManager {
             System.out.println(current_time);
             String columns = "sender, receiver, subject, body, date_sent, read";
             String[][] fetch_message = LoanApp.sql.select("mailbox", "*", String.format("id=%s", messageModel.getID()));
-            LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_message[0][2], fetch_message[0][1], subject, body, current_time));
+            LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_message[0][2], fetch_message[0][1], subject.replace("'",""), body.replace("'",""), current_time));
 
             c.exit_message.setDisable(true);
             c.send_message.setDisable(true);
@@ -71,5 +72,9 @@ public class ReplyMessageManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Scene getScene() {
+        return scene;
     }
 }

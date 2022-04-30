@@ -11,10 +11,10 @@ import javafx.stage.Stage;
  * Main application class for the login demo application
  */
 public class LoanApp extends Application {
+    private Scene scene;
 
     public static PostgreSQL sql = PostgreSQL.getInstance();
     public final static int USER_NOT_EXIST = -999;
-    public final static String USERNAME_NOT_EXIST = "USERNAME_NOT_EXIST";
 
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class LoanApp extends Application {
     @Override
     public void start(Stage stage) {
         sql.openConnection();
-        Scene scene = new Scene(new StackPane());
+        scene = new Scene(new StackPane());
         WelcomeManager welcomeManager = new WelcomeManager(scene);
         welcomeManager.initializeScreen();
 
@@ -36,6 +36,8 @@ public class LoanApp extends Application {
 //        sql.closeConnection();
 
     }
-
+    public Scene getScene() {
+        return scene;
+    }
 
 }

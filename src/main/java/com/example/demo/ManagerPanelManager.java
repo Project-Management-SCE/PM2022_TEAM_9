@@ -33,6 +33,7 @@ public class ManagerPanelManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
+            this.scene.setUserData(loader);
 
             ManagerPanelController controller = loader.getController();
             notifier.addPropertyChangeListener(controller); // to notify controller
@@ -88,5 +89,9 @@ public class ManagerPanelManager {
             notifier.firePropertyChange("NEW_MESSAGE", 0, unread_messages.length);
         if (unread_messages.length == 0)
             notifier.firePropertyChange("NO_NEW_MESSAGES", -1, unread_messages.length);
+    }
+
+    public Scene getScene() {
+        return scene;
     }
 }

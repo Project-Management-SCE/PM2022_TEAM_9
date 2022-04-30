@@ -21,7 +21,7 @@ public class MessagesPanelController implements Initializable {
     @FXML
     Button view_message, reply_msg, delete_msg;
     @FXML
-    private TableView<MessageModel> messages_list;
+    TableView<MessageModel> messages_list;
     @FXML
     TableColumn<MessageModel, String> subject_col, message_col, sender_col;
     @FXML

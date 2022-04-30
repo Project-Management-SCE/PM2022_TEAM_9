@@ -38,6 +38,7 @@ public class LoginManager {
             scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
             this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            this.scene.setUserData(loader);
 
             LoginController controller = loader.getController();
             controller.initManager(this);
@@ -109,5 +110,7 @@ public class LoginManager {
         forgotPassManager.initializeScreen();
     }
 
-
+    public Scene getScene() {
+        return scene;
+    }
 }

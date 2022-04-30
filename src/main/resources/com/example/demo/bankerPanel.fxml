@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BankerPanelController">
+<StackPane fx:id="stackpane" prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ManagerPanelController">
     <children>
         <StackPane>
             <children>
@@ -34,11 +34,6 @@
                                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />
                                     </items>
                                 </Menu>
-                        <Menu mnemonicParsing="false" text="To Do">
-                            <items>
-                            <MenuItem fx:id="todoButton" mnemonicParsing="false" text="View" />
-                            </items>
-                        </Menu>
                                 <Menu fx:id="help" mnemonicParsing="false" text="Help">
                                     <items>
                                         <MenuItem mnemonicParsing="false" text="About" />
@@ -63,7 +58,7 @@
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="190.0" layoutY="28.0" opacity="0.55" prefHeight="35.0" prefWidth="249.0" text="Banker Panel">
+                  <Label layoutX="190.0" layoutY="28.0" opacity="0.55" prefHeight="35.0" prefWidth="249.0" text="Manager Panel">
                      <font>
                         <Font name="Arial" size="36.0" />
                      </font>

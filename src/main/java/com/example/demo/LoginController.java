@@ -73,6 +73,20 @@ public class LoginController {
         msg_flasher.play();
     }
 
+    public TextField getUser() {
+        return user;
+    }
 
+    public TextField getPassword() {
+        return password;
+    }
+
+    public Button getLoginButton() {
+        return loginButton;
+    }
+
+    public Button getBack() {
+        return back;
+    }
 }
 

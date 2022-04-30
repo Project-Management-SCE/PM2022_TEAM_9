@@ -45,10 +45,12 @@ public class WelcomeManager {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
             scene.setRoot(loader.load());
+            scene.setUserData(loader);
 
             if (scene.getWindow()!= null) {
                 this.scene.getWindow().setWidth(WINDOW_WIDTH);
                 this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                this.scene.setUserData(loader);
             }
 
             WelcomeController controller = loader.getController();
@@ -58,5 +60,7 @@ public class WelcomeManager {
         }
     }
 
-
+    public Scene getScene() {
+        return scene;
+    }
 }
