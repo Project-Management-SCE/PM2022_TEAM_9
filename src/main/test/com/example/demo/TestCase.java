@@ -16,7 +16,7 @@ import org.testfx.framework.junit.ApplicationTest;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MessagesPanelManagerTest extends ApplicationTest {
+public class TestCase extends ApplicationTest {
 
     private Scene scene;
     private FXMLLoader loader;
@@ -61,7 +61,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     }
 
-    @Test
+    @org.junit.Test
     public void A1_testInitializeScreen() {
         // Stage [MessagePanel]
         MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
@@ -74,7 +74,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getTime(), "");
     }
 
-    @Test
+    @org.junit.Test
     public void A2_testViewMessage() {
         Platform.runLater(() -> {
             // Stage [MessagePanel]
@@ -90,7 +90,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @Test
+    @org.junit.Test
     public void A3_testReplyMessage() {
         Platform.runLater(() -> {
             // Stage [MessagePanel]
@@ -111,7 +111,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @Test
+    @org.junit.Test
     public void A4_testDeleteMessage() {
         Platform.runLater(() -> {
             // Stage [MessagePanel]
