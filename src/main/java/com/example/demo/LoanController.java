@@ -39,7 +39,7 @@ public class LoanController {
     @FXML
     private WebView agreement;
     @FXML
-    private Label loadingStatus;
+    private Label loadingStatus, full_name_label, county_label, address_name_label, country_label, original_loan_label, approved_loan_label ;
 
     protected static int current_page = 0;
 
@@ -357,6 +357,30 @@ public class LoanController {
 
     public Label loadingStatus() {
         return loadingStatus;
+    }
+
+    public Label getFull_name_label() {
+        return full_name_label;
+    }
+
+    public Label getCounty_label() {
+        return county_label;
+    }
+
+    public Label getAddress_name_label() {
+        return address_name_label;
+    }
+
+    public Label getCountry_label() {
+        return country_label;
+    }
+
+    public Label getOriginal_loan_label() {
+        return original_loan_label;
+    }
+
+    public Label getApproved_loan_label() {
+        return approved_loan_label;
     }
 
     protected static long dateToDays(DatePicker dp) {

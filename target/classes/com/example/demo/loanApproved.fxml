@@ -35,32 +35,32 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="17.0" prefWidth="277.0" text="Karim El Mahmud" GridPane.rowIndex="1">
+            <Label fx:id="full_name_label" prefHeight="17.0" prefWidth="277.0"  GridPane.rowIndex="1">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="281.0" text="Jaffa Muslim 19/7" GridPane.rowIndex="2">
+            <Label fx:id="address_name_label" prefHeight="17.0" prefWidth="281.0"  GridPane.rowIndex="2">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="284.0" text="Jericho, 8541229" GridPane.rowIndex="3">
+            <Label fx:id="county_label" prefHeight="17.0" prefWidth="284.0"  GridPane.rowIndex="3">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="303.0" text="Israel" GridPane.rowIndex="4">
+            <Label fx:id="country_label" prefHeight="17.0" prefWidth="303.0"  GridPane.rowIndex="4">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="290.0" text="Original Loan Amount:  30,8000 $" GridPane.rowIndex="5">
+            <Label fx:id="original_loan_label" prefHeight="17.0" prefWidth="290.0"  GridPane.rowIndex="5">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="265.0" text="Approved Loan Amount:  23,8000 $" GridPane.rowIndex="6">
+            <Label fx:id="approved_loan_label" prefHeight="17.0" prefWidth="265.0" GridPane.rowIndex="6">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

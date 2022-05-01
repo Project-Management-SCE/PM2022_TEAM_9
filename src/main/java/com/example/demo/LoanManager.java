@@ -35,11 +35,13 @@ public class LoanManager implements PropertyChangeListener {
     private final static int WINDOW_WIDTH = 495;
     private final static int WINDOW_HEIGHT = 675;
     private static int TIMELINE_OFFSET = 0;
+    public static Boolean is_file_downloaded = false;
 
     private final Scene scene;
     private FXMLLoader loader;
     private final ThreadWorker_1 ann_loader;
     private final ThreadWorker_2 form_data_normalizer;
+    private final ThreadWorker_3 ann_downloader;
     private final Preferences loan_form = Preferences.userRoot().node("LOAN FORM");
 
 
@@ -47,8 +49,10 @@ public class LoanManager implements PropertyChangeListener {
         this.scene = scene;
         this.ann_loader = new ThreadWorker_1();
         this.form_data_normalizer = new ThreadWorker_2();
+        this.ann_downloader = new ThreadWorker_3();
         this.ann_loader.getNotifier().addPropertyChangeListener(this); // set this class as observer to ThreadWorker_1
         this.form_data_normalizer.getNotifier().addPropertyChangeListener(this); // set this class as observer to ThreadWorker_2
+        this.ann_downloader.getNotifier().addPropertyChangeListener(this); // set this class as observer to ThreadWorker_3
 
         //loan_form.clear();// clear HDD saved data
     }
@@ -58,6 +62,7 @@ public class LoanManager implements PropertyChangeListener {
      */
     public void initializeScreen() {
         try {
+            LoanController.current_page = 0;
             this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
             scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
@@ -66,6 +71,7 @@ public class LoanManager implements PropertyChangeListener {
             LoanController controller = loader.getController();
             controller.initManager(this);
             reloadForm(); // reload previous saved data
+            ann_downloader.startTheService(); // start downloading ann_core_file
         } catch (IOException e) {
             Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -169,9 +175,8 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 this.scene.getWindow().setWidth(WINDOW_WIDTH);
                 this.scene.getWindow().setHeight(WINDOW_HEIGHT);
-
-                updateStatus("Building the magical network...");
                 ann_loader.startTheService();
+                updateStatus("Building the magical network...");
             } catch (IOException e) {
                 Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -186,6 +191,12 @@ public class LoanManager implements PropertyChangeListener {
 
                 LoanController controller = loader.getController();
                 controller.initManager6(this);
+                ((LoanController) loader.getController()).getFull_name_label().setText(loan_form.get("full_name", "UNKNOWN"));
+                ((LoanController) loader.getController()).getAddress_name_label().setText(loan_form.get("address", "UNKNOWN"));
+                ((LoanController) loader.getController()).getCounty_label().setText(loan_form.get("state", "UNKNOWN") +", "+ loan_form.getInt("zipcode", 0));
+                ((LoanController) loader.getController()).getCountry_label().setText(loan_form.get("country", "UNKNOWN"));
+                ((LoanController) loader.getController()).getOriginal_loan_label().setText("Total Requested Loan: $"+ loan_form.getDouble("loan_amount", 0.0));
+                ((LoanController) loader.getController()).getApproved_loan_label().setText("Total Approved Loan: $"+  loan_form.getDouble("loan_amount", 0.0));
             } catch (IOException e) {
                 Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -553,7 +564,7 @@ public class LoanManager implements PropertyChangeListener {
 
     }
 
-        private void loanResult(Matrix A) {
+    private void loanResult(Matrix A) {
         NeuralNetwork local_ann = ann_loader.getValue(); // get loaded data of NeuralNetwork file.
         try {
             local_ann.predict(A); // convert (loan_form) to ANN form
@@ -576,7 +587,7 @@ public class LoanManager implements PropertyChangeListener {
         FormAdapter form_data = new FormAdapter(loan_form); // load Preferences load data
         Matrix temp = form_data.preferencesConverter(); // convert Preferences to Matrix
 
-        FileWriter encoded_writer = new FileWriter("src\\core\\bin\\metrics\\loan_encoded.csv"); //write to file
+        FileWriter encoded_writer = new FileWriter("src\\main\\java\\core\\bin\\metrics\\loan_encoded.csv"); //write to file
         List<String> loan_params = new ArrayList<>(43); // convert data into list
         for (int i = 0; i < temp.getColumns(); i++)
             loan_params.add(String.valueOf(temp.getValue(0, i)));
@@ -591,7 +602,7 @@ public class LoanManager implements PropertyChangeListener {
         BufferedReader buffer_reader;
         String current_line;
         int row_cnt = 0;
-        buffer_reader = new BufferedReader(new FileReader("src\\core\\bin\\metrics\\loan_normalized.csv"));
+        buffer_reader = new BufferedReader(new FileReader("src\\main\\java\\core\\bin\\metrics\\loan_normalized.csv"));
 
         while ((current_line = buffer_reader.readLine()) != null) {
             String[] row = current_line.split(",");    // use comma as separator
@@ -611,6 +622,10 @@ public class LoanManager implements PropertyChangeListener {
 
     }
 
+    public Boolean getIs_file_downloaded() {
+        return is_file_downloaded;
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && evt.getNewValue().toString().compareTo("SUCCESS") == 0) {
@@ -627,16 +642,6 @@ public class LoanManager implements PropertyChangeListener {
             })).play();
         }
 
-        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("FAILED") == 0) {
-            System.out.println("Error occurred while loading ANN data...\n");
-            System.exit(-1);
-        }
-
-
-        if (evt.getPropertyName().compareTo("LOADER_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("CANCELED") == 0) {
-            System.out.println("Error occurred while loading ANN data...\n");
-            System.exit(-1);
-        }
 
         if (evt.getPropertyName().compareTo("PYTHON_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("SUCCESS") == 0) {
             try {
@@ -644,6 +649,9 @@ public class LoanManager implements PropertyChangeListener {
             } catch (MatrixExceptionHandler | IOException e) {
                 e.printStackTrace();
             }
+        }
+        if (evt.getPropertyName().compareTo("DOWNLOAD_STATUS") == 0 && ((String) (evt.getNewValue())).compareTo("SUCCESS") == 0) {
+            LoanManager.is_file_downloaded = true;
         }
     }
 }

@@ -15,7 +15,7 @@ public class PythonInterpreter {
 
             // run the Unix "ps -ef" command
             // using the Runtime exec method:
-            Process p = Runtime.getRuntime().exec(String.format("python src\\core\\bin\\python\\%s", filename));
+            Process p = Runtime.getRuntime().exec(String.format("python src\\main\\java\\core\\bin\\python\\%s", filename));
 
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));

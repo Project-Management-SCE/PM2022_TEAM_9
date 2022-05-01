@@ -4,35 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX JENKINS TESTING">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_8_2.xml" afterDir="false" />
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-158">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_5_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/TodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/TodoListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/TodoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/TodoListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/bankerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/bankerPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/sendMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/sendMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/userPanel.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/userPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/python/normalize_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/python/normalize_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/python/extender/PythonInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/python/extender/PythonInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanApproved.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanApproved.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com/example/demo/TodoListManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanApproved.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/loanApproved.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +44,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,7 +111,7 @@
       <recent name="core.ann.classifier" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TodoListManagerTest">
+  <component name="RunManager" selected="Application.LoanApp">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -188,8 +187,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TodoListManagerTest" />
         <item itemvalue="Application.LoanApp" />
+        <item itemvalue="JUnit.TodoListManagerTest" />
         <item itemvalue="JUnit.MessagesPanelManagerTest" />
         <item itemvalue="JUnit.TestCase" />
         <item itemvalue="JUnit.MessagesPanelManagerTest" />
@@ -398,7 +397,13 @@
       <option name="presentableId" value="LOCAL‎00032" />
       <updated>1651330195250</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎00033" summary="BSPM2022T9-158">
+      <created>1651353381680</created>
+      <option name="number" value="LOCAL‎00033" />
+      <option name="presentableId" value="LOCAL‎00033" />
+      <updated>1651353381680</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +429,8 @@
     <MESSAGE value="FIX JENKINS" />
     <MESSAGE value="BSPM2022T9-154" />
     <MESSAGE value="FIX JENKINS TESTING" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX JENKINS TESTING" />
+    <MESSAGE value="BSPM2022T9-158" />
+    <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-158" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

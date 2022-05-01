@@ -1,14 +1,21 @@
 package com.example.demo;
 
 import core.ann.classifier.NeuralNetwork;
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import javafx.util.Duration;
+
 import java.beans.PropertyChangeSupport;
+import java.sql.SQLOutput;
 
 public class ThreadWorker_1 extends Service<NeuralNetwork> {
     private final PropertyChangeSupport notifier;
 
-    private static final String ANN_FILE = "src\\core\\bin\\metrics\\pre_trained_ann.bin";
+    private static final String ANN_FILE = "src\\main\\java\\core\\bin\\metrics\\pre_trained_ann.bin";
 
     public ThreadWorker_1() {
         this.notifier = new PropertyChangeSupport(this);
@@ -36,6 +43,10 @@ public class ThreadWorker_1 extends Service<NeuralNetwork> {
             @Override
             protected NeuralNetwork call() throws Exception {
                 //create neural network object and load pre-trained values
+                while(!LoanManager.is_file_downloaded) {
+                    System.out.print("");
+                }
+
                 return NeuralNetwork.LoadObject(ANN_FILE);
             }
         };

@@ -448,7 +448,7 @@ public class NeuralNetwork implements Serializable {
     }
 
     public static void SaveObject(NeuralNetwork obj) throws IOException {
-        String fileName = "src\\core\\bin\\metrics\\pre_trained_ann.bin";
+        String fileName = "src\\main\\java\\core\\bin\\metrics\\pre_trained_ann.bin";
         FileOutputStream fos = new FileOutputStream(fileName);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(obj);
