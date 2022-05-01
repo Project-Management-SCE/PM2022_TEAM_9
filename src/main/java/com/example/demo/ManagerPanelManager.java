@@ -33,7 +33,7 @@ public class ManagerPanelManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
-            this.scene.setUserData(loader);
+            scene.setUserData(loader);
 
             ManagerPanelController controller = loader.getController();
             notifier.addPropertyChangeListener(controller); // to notify controller
