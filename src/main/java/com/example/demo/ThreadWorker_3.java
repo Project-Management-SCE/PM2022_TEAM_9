@@ -45,18 +45,22 @@ public class ThreadWorker_3 extends Service<Void> {
                 DataInputStream dis;
                 FileOutputStream fos;
                 byte[] fileData;
+                File ann_file = new File("src\\main\\java\\core\\bin\\metrics",ANN_FILE_NAME);
+
                 try {
-                    url = new URL(ANN_URL_FILE); //File Location goes here
-                    con = url.openConnection(); // open the url connection.
-                    dis = new DataInputStream(con.getInputStream());
-                    fileData = new byte[con.getContentLength()];
-                    for (int q = 0; q < fileData.length; q++) {
-                        fileData[q] = dis.readByte();
+                    if (!ann_file.exists()){ //skip download if file exists.
+                        url = new URL(ANN_URL_FILE); //File Location goes here
+                        con = url.openConnection(); // open the url connection.
+                        dis = new DataInputStream(con.getInputStream());
+                        fileData = new byte[con.getContentLength()];
+                        for (int q = 0; q < fileData.length; q++)
+                            fileData[q] = dis.readByte();
+
+                        dis.close(); // close the data input stream
+                        fos = new FileOutputStream(ann_file);
+                        fos.write(fileData);  // write out the file we want to save.
+                        fos.close(); // close the output stream writer
                     }
-                    dis.close(); // close the data input stream
-                    fos = new FileOutputStream(new File("src\\main\\java\\core\\bin\\metrics",ANN_FILE_NAME));
-                    fos.write(fileData);  // write out the file we want to save.
-                    fos.close(); // close the output stream writer
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

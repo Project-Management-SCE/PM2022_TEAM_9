@@ -4,34 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-158">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_5_1.xml" afterDir="false" />
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="&#10;BSPM2022T9-158">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ThreadWorker_3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/python/normalize_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/python/normalize_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/python/extender/PythonInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/python/extender/PythonInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanApproved.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanApproved.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com/example/demo/TodoListManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanRejected.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/loanRejected.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanApproved.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/loanApproved.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanRejected.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/loanRejected.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/python/extender/PythonInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/python/extender/PythonInterpreter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -403,7 +394,13 @@
       <option name="presentableId" value="LOCAL‎00033" />
       <updated>1651353381680</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL‎00034" summary="&#10;BSPM2022T9-158">
+      <created>1651396327793</created>
+      <option name="number" value="LOCAL‎00034" />
+      <option name="presentableId" value="LOCAL‎00034" />
+      <updated>1651396327793</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +427,8 @@
     <MESSAGE value="BSPM2022T9-154" />
     <MESSAGE value="FIX JENKINS TESTING" />
     <MESSAGE value="BSPM2022T9-158" />
-    <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-158" />
+    <MESSAGE value="&#10;BSPM2022T9-158" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;BSPM2022T9-158" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

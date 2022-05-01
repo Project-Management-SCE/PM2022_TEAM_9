@@ -65,7 +65,7 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="17.0" prefWidth="273.0" text="Reference ID: #F456FGDS14">
+            <Label fx:id="reference_id_label" prefHeight="17.0" prefWidth="273.0" text="Reference ID: #F456FGDS14">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

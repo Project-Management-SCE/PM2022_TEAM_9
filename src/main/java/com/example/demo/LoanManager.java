@@ -16,8 +16,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
@@ -36,6 +39,8 @@ public class LoanManager implements PropertyChangeListener {
     private final static int WINDOW_HEIGHT = 675;
     private static int TIMELINE_OFFSET = 0;
     public static Boolean is_file_downloaded = false;
+    private final static int INT_KEY_ERROR = -1;
+    private final static String STRING_KEY_ERROR = "-1";
 
     private final Scene scene;
     private FXMLLoader loader;
@@ -193,10 +198,11 @@ public class LoanManager implements PropertyChangeListener {
                 controller.initManager6(this);
                 ((LoanController) loader.getController()).getFull_name_label().setText(loan_form.get("full_name", "UNKNOWN"));
                 ((LoanController) loader.getController()).getAddress_name_label().setText(loan_form.get("address", "UNKNOWN"));
-                ((LoanController) loader.getController()).getCounty_label().setText(loan_form.get("state", "UNKNOWN") +", "+ loan_form.getInt("zipcode", 0));
+                ((LoanController) loader.getController()).getCounty_label().setText(loan_form.get("state", "UNKNOWN") + ", " + loan_form.getInt("zipcode", 0));
                 ((LoanController) loader.getController()).getCountry_label().setText(loan_form.get("country", "UNKNOWN"));
-                ((LoanController) loader.getController()).getOriginal_loan_label().setText("Total Requested Loan: $"+ loan_form.getDouble("loan_amount", 0.0));
-                ((LoanController) loader.getController()).getApproved_loan_label().setText("Total Approved Loan: $"+  loan_form.getDouble("loan_amount", 0.0));
+                ((LoanController) loader.getController()).getOriginal_loan_label().setText("Total Requested Loan: $" + loan_form.getDouble("loan_amount", 0.0));
+                ((LoanController) loader.getController()).getApproved_loan_label().setText("Total Approved Loan: $" + loan_form.getDouble("loan_amount", 0.0));
+
             } catch (IOException e) {
                 Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -572,10 +578,12 @@ public class LoanManager implements PropertyChangeListener {
             if (local_ann.get_predictions().argmax() == 0) { // if loan approved
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "approved");
+                loan_form.put("reference_id", getReferenceID(8));
             } else { // if loan denied
                 ++LoanController.current_page;
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "rejected");
+                loan_form.put("reference_id", getReferenceID(8));
             }
 
         } catch (MatrixExceptionHandler e) {
@@ -622,9 +630,137 @@ public class LoanManager implements PropertyChangeListener {
 
     }
 
-    public Boolean getIs_file_downloaded() {
-        return is_file_downloaded;
+    private void insertDataToDB(Preferences loan_form) {
+        LoanApp.sql.insert("loan_form_data",
+                "address," +
+                        " amt_credit," +
+                        " amt_goods_price, " +
+                        "amt_income_total, " +
+                        "city, " +
+                        "cnt_children, " +
+                        "cnt_fam_members, " +
+                        "code_gender, " +
+                        "country, " +
+                        "county, " +
+                        "days_employed, " +
+                        "first_name, " +
+                        "flag_email, " +
+                        "flag_emp_phone, " +
+                        "flag_mobil, " +
+                        "flag_own_car, " +
+                        "flag_own_realty, " +
+                        "flag_phone, " +
+                        "flag_work_phone, " +
+                        "last_name, " +
+                        "name_education_type, " +
+                        "name_family_status, " +
+                        "name_housing_type, " +
+                        "occupation_type, " +
+                        "organization_type, " +
+                        "own_car_age, " +
+                        "phone, " +
+                        "region_population_relative," +
+                        "region_rating_client, " +
+                        "status, " +
+                        "user_id, " +
+                        "zipcode, " +
+                        "reference_id",
+                String.format("'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s',%s,'%s','%s'",
+                        loan_form.get("address", STRING_KEY_ERROR),
+                        loan_form.getDouble("loan_amount", INT_KEY_ERROR),
+                        loan_form.getDouble("property_value", INT_KEY_ERROR),
+                        loan_form.getDouble("total_income", INT_KEY_ERROR),
+                        loan_form.get("city", STRING_KEY_ERROR),
+                        loan_form.getInt("childrens_amount", INT_KEY_ERROR),
+                        loan_form.getInt("family_members", INT_KEY_ERROR),
+                        loan_form.get("gender", STRING_KEY_ERROR),
+                        loan_form.get("country", STRING_KEY_ERROR),
+                        loan_form.get("state", STRING_KEY_ERROR),
+                        loan_form.getInt("days_employed", INT_KEY_ERROR),
+                        loan_form.get("full_name", STRING_KEY_ERROR).split(" ", 2)[0],
+                        loan_form.getBoolean("email_flag", false),
+                        loan_form.getBoolean("work_phone_flag", false),
+                        loan_form.getBoolean("mobile_phone_flag", false),
+                        loan_form.getBoolean("own_car_flag", false),
+                        loan_form.getBoolean("own_realty_flag", false),
+                        loan_form.getBoolean("home_phone", false),
+                        loan_form.getBoolean("work_phone_flag", false),
+                        loan_form.get("full_name", STRING_KEY_ERROR).split(" ", 2)[1],
+                        loan_form.get("education_level", STRING_KEY_ERROR),
+                        loan_form.get("family_status", STRING_KEY_ERROR),
+                        loan_form.get("living_type", STRING_KEY_ERROR),
+                        loan_form.get("occupation_type", STRING_KEY_ERROR),
+                        loan_form.get("organization_type", STRING_KEY_ERROR),
+                        loan_form.getInt("own_car_age", INT_KEY_ERROR),
+                        loan_form.get("home_phone", STRING_KEY_ERROR),
+                        regionPopulationRelative(),
+                        regionRatingClient(),
+                        loan_form.get("loan_status", STRING_KEY_ERROR),
+                        LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST),
+                        loan_form.getInt("zipcode", INT_KEY_ERROR),
+                        loan_form.get("reference_id", STRING_KEY_ERROR)
+                )
+        );
     }
+
+    private int regionRatingClient() {
+        if (loan_form.get("state", null).compareTo("North") == 0)
+            return REGION_RATING_CLIENT.NORTH.value();
+
+        if (loan_form.get("state", null).compareTo("Center") == 0)
+            return REGION_RATING_CLIENT.NORTH.value();
+
+        if (loan_form.get("state", null).compareTo("South") == 0)
+            return REGION_RATING_CLIENT.NORTH.value();
+
+        return -1;
+    }
+
+    private double regionPopulationRelative() {
+        if ((loan_form.get("state", null).compareTo("North") == 0))
+            return 0.03;
+        if ((loan_form.get("state", null).compareTo("Center") == 0))
+            return 0.07;
+        else
+            return 0.03;
+    }
+
+
+    static String getReferenceID(int n) {
+
+        // length is bounded by 256 Character
+        byte[] array = new byte[256];
+        new Random().nextBytes(array);
+
+        String randomString
+                = new String(array, StandardCharsets.UTF_8);
+
+        // Create a StringBuffer to store the result
+        StringBuilder r = new StringBuilder();
+
+        // remove all spacial char
+        String AlphaNumericString
+                = randomString
+                .replaceAll("[^A-Za-z0-9]", "");
+
+        // Append first 20 alphanumeric characters
+        // from the generated random String into the result
+        for (int k = 0; k < AlphaNumericString.length(); k++) {
+
+            if (Character.isLetter(AlphaNumericString.charAt(k))
+                    && (n > 0)
+                    || Character.isDigit(AlphaNumericString.charAt(k))
+                    && (n > 0)) {
+
+                r.append(AlphaNumericString.charAt(k));
+                n--;
+            }
+        }
+
+        // return the resultant string
+        return r.toString();
+    }
+
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {

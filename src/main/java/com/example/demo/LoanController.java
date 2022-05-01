@@ -39,7 +39,7 @@ public class LoanController {
     @FXML
     private WebView agreement;
     @FXML
-    private Label loadingStatus, full_name_label, county_label, address_name_label, country_label, original_loan_label, approved_loan_label ;
+    private Label loadingStatus, full_name_label, county_label, address_name_label, country_label, original_loan_label, approved_loan_label, reference_id_label;
 
     protected static int current_page = 0;
 
@@ -381,6 +381,10 @@ public class LoanController {
 
     public Label getApproved_loan_label() {
         return approved_loan_label;
+    }
+
+    public Label getReference_id_label() {
+        return reference_id_label;
     }
 
     protected static long dateToDays(DatePicker dp) {
