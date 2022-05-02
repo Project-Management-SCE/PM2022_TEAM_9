@@ -46,6 +46,18 @@ public class ViewMessageManager {
         controller.sender_username.setText(String.format("From: #%s", messageModel.getSender()));
     }
 
+    protected void goBack(){
+        int role = LoginManager.logged_in_user.getInt("role", -1);
+        if(role == 1){
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        }
+        else if(role == 2){
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+        }
+    }
+
     public void returnToMessages() {
         MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
         messagesPanelManager.initializeScreen();

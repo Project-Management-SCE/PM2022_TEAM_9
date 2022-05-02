@@ -27,7 +27,7 @@ public class MessagesPanelController implements Initializable {
     @FXML
     TableColumn<MessageModel, Date> time_col;
     @FXML
-    MenuItem back,manage_clients,editProfileButton,logoutButton;
+    MenuItem homeButton, manageUsersButton, editProfileButton, logoutButton, modifyAccountButton;
 
     public void initManager(MessagesPanelManager messagesPanelManager) {
         controlsConfiguration(messagesPanelManager);
@@ -38,10 +38,22 @@ public class MessagesPanelController implements Initializable {
         delete_msg.setOnAction(event -> messagesPanelManager.deleteMessage(messages_list));
         view_message.setOnAction(event -> messagesPanelManager.viewMessage(messages_list.getSelectionModel().getSelectedItem()));
         ///// menu buttons ////
-        back.setOnAction(event -> messagesPanelManager.goBack());
-        manage_clients.setOnAction(event -> messagesPanelManager.manage());
+        homeButton.setOnAction(event -> messagesPanelManager.goBack());
+        manageUsersButton.setOnAction(event -> messagesPanelManager.manage());
         editProfileButton.setOnAction(event -> messagesPanelManager.edit());
         logoutButton.setOnAction(event -> messagesPanelManager.logOut());
+
+        modifyAccountButton.setOnAction(event -> {
+            ModifyAccountManager modifyAccountManager = new ModifyAccountManager(messagesPanelManager.getScene());
+            modifyAccountManager.initializeScreen();
+        });
+
+        if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)
+            editProfileButton.setVisible(false);
+
+        if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) != 2)
+            manageUsersButton.setVisible(false);
+
     }
 
     /**

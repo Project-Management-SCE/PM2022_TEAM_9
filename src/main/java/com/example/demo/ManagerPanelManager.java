@@ -3,11 +3,9 @@ package com.example.demo;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.util.Duration;
-
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -65,13 +63,13 @@ public class ManagerPanelManager {
         loginManager.initializeScreen();
     }
 
-    public void edit() {
-        EditProfileManager editProfileManager = new EditProfileManager(scene);
-        editProfileManager.initializeScreen();
+    public void modifyAccount() {
+        ModifyAccountManager modifyAccountManager = new ModifyAccountManager(scene);
+        modifyAccountManager.initializeScreen();
     }
 
     public void manageClients() {
-        ModifyUserManager manageUserManager = new ModifyUserManager(scene);
+        ManageUsersManager manageUserManager = new ManageUsersManager(scene);
         manageUserManager.initializeScreen();
     }
 

@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ChoiceBoxTableCell;
@@ -26,6 +27,8 @@ public class TodoListController implements Initializable {
     private TableView<TodoListModel> todo_list;
     @FXML
     private TableColumn<TodoListModel, String> to_do_col, status_col;
+    @FXML
+    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton, viewButton;
 
     public void initManager(TodoListManager todoListManager) {
         controlsConfiguration(todoListManager);
@@ -54,6 +57,40 @@ public class TodoListController implements Initializable {
             todo_list.setItems(itemsToTable());
 
         });
+
+        modifyAccountButton.setOnAction(event -> {
+            ModifyAccountManager modifyAccountManager = new ModifyAccountManager(todoListManager.getScene());
+            modifyAccountManager.initializeScreen();
+        });
+
+        homeButton.setOnAction(event -> {
+            todoListManager.goBack();
+        });
+
+        viewButton.setOnAction(event -> {
+            todoListManager.initializeScreen();
+        });
+
+        manageUsersButton.setOnAction(event -> {
+            ManageUsersManager manageUsersManager = new ManageUsersManager(todoListManager.getScene());
+            manageUsersManager.initializeScreen();
+        });
+
+        editProfileButton.setOnAction(event -> {
+            EditProfileManager editProfileManager = new EditProfileManager(todoListManager.getScene());
+            editProfileManager.initializeScreen();
+        });
+
+        logoutButton.setOnAction(event -> {
+            LoginManager loginManager = new LoginManager(todoListManager.getScene());
+            loginManager.initializeScreen();
+        });
+
+        if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)
+            editProfileButton.setVisible(false);
+
+        if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) != 2)
+            manageUsersButton.setVisible(false);
     }
 
     /**

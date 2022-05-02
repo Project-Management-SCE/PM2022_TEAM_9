@@ -24,6 +24,7 @@ public class UserPanelManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
+            scene.setUserData(loader);
             UserPanelController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
@@ -48,5 +49,7 @@ public class UserPanelManager {
         sendMessageManager.initializeScreen();
     }
 
-
+    public Scene getScene() {
+        return scene;
+    }
 }

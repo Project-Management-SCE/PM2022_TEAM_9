@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.util.Duration;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
@@ -14,7 +15,7 @@ import java.sql.SQLException;
 
 public class BankerPanelController implements PropertyChangeListener {
     @FXML
-    private MenuItem logoutButton, editProfileButton, todolistButton, aboutButton;
+    private MenuItem logoutButton, editProfileButton, todolistButton, aboutButton, modifyAccountButton, homeButton;
     @FXML
     private Label new_messages_quantity, message_icon;
 
@@ -31,6 +32,16 @@ public class BankerPanelController implements PropertyChangeListener {
         todolistButton.setOnAction(event -> bankerPanelManager.showTodoList());
         message_icon.setOnMouseClicked(event -> bankerPanelManager.manageMessages());
         aboutButton.setOnAction(event -> System.out.println("TODO!"));
+
+        homeButton.setOnAction(event -> {
+            bankerPanelManager.initializeScreen();
+        });
+
+        modifyAccountButton.setOnAction(event -> {
+            ModifyAccountManager modifyAccountManager = new ModifyAccountManager(bankerPanelManager.getScene());
+            modifyAccountManager.initializeScreen();
+        });
+
 
         // new message icon blinker
         msg_flasher = new Timeline(
@@ -60,4 +71,43 @@ public class BankerPanelController implements PropertyChangeListener {
         }
     }
 
+    public MenuItem getLogoutButton() {
+        return logoutButton;
+    }
+
+    public MenuItem getEditProfileButton() {
+        return editProfileButton;
+    }
+
+    public MenuItem getTodolistButton() {
+        return todolistButton;
+    }
+
+    public MenuItem getAboutButton() {
+        return aboutButton;
+    }
+
+    public MenuItem getModifyAccountButton() {
+        return modifyAccountButton;
+    }
+
+    public MenuItem getHomeButton() {
+        return homeButton;
+    }
+
+    public Label getNew_messages_quantity() {
+        return new_messages_quantity;
+    }
+
+    public Label getMessage_icon() {
+        return message_icon;
+    }
+
+    public Timeline getMsg_flasher() {
+        return msg_flasher;
+    }
+
+    public Boolean getUserNotified() {
+        return isUserNotified;
+    }
 }

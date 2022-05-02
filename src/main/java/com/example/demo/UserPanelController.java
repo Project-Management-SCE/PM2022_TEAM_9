@@ -20,7 +20,7 @@ public class UserPanelController implements PropertyChangeListener {
     @FXML
     private Label accountLabel, balanceLabel;
     @FXML
-    private MenuItem logoutButton, editProfileButton, contactusButton, aboutButton;
+    private MenuItem logoutButton, editProfileButton, contactusButton, aboutButton, modifyAccountButton, homeButton;
     @FXML
     private Label new_messages_quantity, message_icon;
 
@@ -32,6 +32,15 @@ public class UserPanelController implements PropertyChangeListener {
         logoutButton.setOnAction(actionEvent -> userPanelManager.goLogin());
         editProfileButton.setOnAction(event -> userPanelManager.edit());
         contactusButton.setOnAction(event -> userPanelManager.sendMessageBanker());
+
+        modifyAccountButton.setOnAction(event -> {
+            ModifyAccountManager modifyAccountManager = new ModifyAccountManager(userPanelManager.getScene());
+            modifyAccountManager.initializeScreen();
+        });
+
+        homeButton.setOnAction(event -> {
+            userPanelManager.initializeScreen();
+        });
 
         accountLabel.setText(AccountFullName());
         balanceLabel.setText("$" + latestLoanAmount());

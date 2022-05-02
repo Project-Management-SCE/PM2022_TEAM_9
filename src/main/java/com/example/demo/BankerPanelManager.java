@@ -71,7 +71,7 @@ public class BankerPanelManager {
     }
 
     public void manageClients() {
-        ModifyUserManager manageUserManager = new ModifyUserManager(scene);
+        ManageUsersManager manageUserManager = new ManageUsersManager(scene);
         manageUserManager.initializeScreen();
     }
 

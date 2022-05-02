@@ -77,6 +77,18 @@ public class TodoListManager {
 
     }
 
+    protected void goBack(){
+        int role = LoginManager.logged_in_user.getInt("role", -1);
+        if(role == 1){
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        }
+        else if(role == 2){
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+        }
+    }
+
     public Scene getScene() {
         return scene;
     }

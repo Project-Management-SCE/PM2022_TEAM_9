@@ -20,7 +20,7 @@ public class MessagesPanelManager {
     public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("managerMessagesPanel.fxml")
+                    getClass().getResource("messagesPanel.fxml")
             );
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
@@ -56,7 +56,7 @@ public class MessagesPanelManager {
     }
 
 
-    public void goBack(){
+    protected void goBack(){
         int role = LoginManager.logged_in_user.getInt("role", -1);
         if(role == 1){
             BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
@@ -69,7 +69,7 @@ public class MessagesPanelManager {
     }
 
     public void manage(){
-        ModifyUserManager modifyUserManager = new ModifyUserManager(scene);
+        ManageUsersManager modifyUserManager = new ManageUsersManager(scene);
         modifyUserManager.initializeScreen();
     }
     public void edit(){
