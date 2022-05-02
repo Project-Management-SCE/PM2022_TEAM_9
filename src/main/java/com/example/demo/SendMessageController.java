@@ -55,7 +55,10 @@ public class SendMessageController implements PropertyChangeListener {
             editProfileManager.initializeScreen();
         });
 
-        aboutButton.setOnAction(event -> System.out.println("TODO!"));
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(sendMessageManager.getScene());
+            aboutManager.initializeScreen();
+        });
 
         contactusButton.setOnAction(event -> {
             sendMessageManager.initializeScreen();

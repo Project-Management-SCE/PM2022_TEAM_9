@@ -28,7 +28,7 @@ public class TodoListController implements Initializable {
     @FXML
     private TableColumn<TodoListModel, String> to_do_col, status_col;
     @FXML
-    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton, viewButton;
+    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton, viewButton, aboutButton;
 
     public void initManager(TodoListManager todoListManager) {
         controlsConfiguration(todoListManager);
@@ -85,6 +85,12 @@ public class TodoListController implements Initializable {
             LoginManager loginManager = new LoginManager(todoListManager.getScene());
             loginManager.initializeScreen();
         });
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(todoListManager.getScene());
+            aboutManager.initializeScreen();
+        });
+
 
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)
             editProfileButton.setVisible(false);

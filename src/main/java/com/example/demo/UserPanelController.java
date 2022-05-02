@@ -45,6 +45,11 @@ public class UserPanelController implements PropertyChangeListener {
         accountLabel.setText(AccountFullName());
         balanceLabel.setText("$" + latestLoanAmount());
 
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(userPanelManager.getScene());
+            aboutManager.initializeScreen();
+        });
+
         // new message icon blinker
         msg_flasher = new Timeline(
                 new KeyFrame(Duration.seconds(0.8), e -> message_icon.setVisible(false)),

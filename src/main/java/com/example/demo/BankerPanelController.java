@@ -42,6 +42,11 @@ public class BankerPanelController implements PropertyChangeListener {
             modifyAccountManager.initializeScreen();
         });
 
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(bankerPanelManager.getScene());
+            aboutManager.initializeScreen();
+        });
+
 
         // new message icon blinker
         msg_flasher = new Timeline(

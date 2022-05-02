@@ -27,7 +27,7 @@ public class MessagesPanelController implements Initializable {
     @FXML
     TableColumn<MessageModel, Date> time_col;
     @FXML
-    MenuItem homeButton, manageUsersButton, editProfileButton, logoutButton, modifyAccountButton;
+    MenuItem homeButton, manageUsersButton, editProfileButton, logoutButton, modifyAccountButton, aboutButton;
 
     public void initManager(MessagesPanelManager messagesPanelManager) {
         controlsConfiguration(messagesPanelManager);
@@ -46,6 +46,11 @@ public class MessagesPanelController implements Initializable {
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(messagesPanelManager.getScene());
             modifyAccountManager.initializeScreen();
+        });
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(messagesPanelManager.getScene());
+            aboutManager.initializeScreen();
         });
 
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)

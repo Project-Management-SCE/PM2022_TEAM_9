@@ -15,7 +15,7 @@ public class ReplyMessageController {
     @FXML
     Label replying_to, message_sent_popup;
     @FXML
-    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton;
+    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton, aboutButton;
 
     public void initManager(ReplyMessageManager replyMessageManager) throws SQLException {
         message_sent_popup.setVisible(false);//hide success message sent
@@ -44,6 +44,11 @@ public class ReplyMessageController {
         logoutButton.setOnAction(event -> {
             LoginManager loginManager = new LoginManager(replyMessageManager.getScene());
             loginManager.initializeScreen();
+        });
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(replyMessageManager.getScene());
+            aboutManager.initializeScreen();
         });
 
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)

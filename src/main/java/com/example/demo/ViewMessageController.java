@@ -15,7 +15,7 @@ public class ViewMessageController {
     @FXML
     Label sender_username;
     @FXML
-    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton;
+    MenuItem homeButton, manageUsersButton, editProfileButton, modifyAccountButton, logoutButton, aboutButton;
 
     public void initManager(ViewMessageManager viewMessageManager) throws SQLException {
         exit_message.setOnAction(event -> viewMessageManager.returnToMessages());
@@ -42,6 +42,11 @@ public class ViewMessageController {
         logoutButton.setOnAction(event -> {
             LoginManager loginManager = new LoginManager(viewMessageManager.getScene());
             loginManager.initializeScreen();
+        });
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(viewMessageManager.getScene());
+            aboutManager.initializeScreen();
         });
 
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)

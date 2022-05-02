@@ -167,7 +167,7 @@ public class LoanManager implements PropertyChangeListener {
 
                 LoanController controller = loader.getController();
                 controller.initManager5(this);
-                controller.Agreement().getEngine().loadContent(FormAdapter.AGREEMENT);
+                controller.Agreement().getEngine().loadContent(FormAdapter.LOAN_AGREEMENT);
             } catch (IOException e) {
                 Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }

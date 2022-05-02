@@ -19,7 +19,7 @@ public class ManagerPanelController implements PropertyChangeListener {
     private Boolean isUserNotified = false;
     private Timeline msg_flasher;
     @FXML
-    private MenuItem logoutButton, modifyAccountButton, manage_clients, homeButton;
+    private MenuItem logoutButton, modifyAccountButton, manage_clients, homeButton, aboutButton;
     @FXML
     private Label new_messages_quantity, message_icon;
     @FXML
@@ -37,6 +37,11 @@ public class ManagerPanelController implements PropertyChangeListener {
         message_icon.setOnMouseClicked(event -> managerPanelManager.manageMessages());
         homeButton.setOnAction(event -> {
             managerPanelManager.initializeScreen();
+        });
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(managerPanelManager.getScene());
+            aboutManager.initializeScreen();
         });
 
         // new message icon blinker
