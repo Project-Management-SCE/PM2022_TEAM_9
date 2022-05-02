@@ -41,7 +41,7 @@
                                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                                     </items>
                                 </Menu>
-                                <Menu fx:id="help" mnemonicParsing="false" text="Help">
+                                <Menu  mnemonicParsing="false" text="Help">
                                     <items>
                                         <MenuItem fx:id="contactusButton" mnemonicParsing="false" text="Contact Us" />
                                         <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />

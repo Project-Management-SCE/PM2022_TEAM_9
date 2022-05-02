@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TodoListController">
+<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TodoListController">
     <children>
         <StackPane>
             <children>
@@ -32,14 +32,21 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="Profile">
                                     <items>
-                                        <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Clients" />
+                              <MenuItem fx:id="homeButton" mnemonicParsing="false" text="Home" />
+                                        <MenuItem fx:id="manageUsersButton" mnemonicParsing="false" text="Manage Users" />
                                         <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
-                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />
+                              <MenuItem fx:id="modifyAccountButton" mnemonicParsing="false" text="Modify Account" />
+                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                                     </items>
                                 </Menu>
-                                <Menu fx:id="help" mnemonicParsing="false" text="Help">
+                        <Menu mnemonicParsing="false" text="To Do List">
+                          <items>
+                            <MenuItem fx:id="viewButton" mnemonicParsing="false" text="View" />
+                          </items>
+                        </Menu>
+                                <Menu  mnemonicParsing="false" text="Help">
                                     <items>
-                                        <MenuItem mnemonicParsing="false" text="About" />
+                                        <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />
                                     </items>
                                 </Menu>
                             </menus>

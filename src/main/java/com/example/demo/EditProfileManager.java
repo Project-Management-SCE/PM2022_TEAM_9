@@ -94,4 +94,8 @@ public class EditProfileManager {
             e.printStackTrace();
         }
     }
+
+    public Scene getScene() {
+        return scene;
+    }
 }

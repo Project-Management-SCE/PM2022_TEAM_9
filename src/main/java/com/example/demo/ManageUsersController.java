@@ -118,4 +118,11 @@ public class ManageUsersController implements Initializable {
         users_list.setItems(itemsToTable());
     }
 
+    public TableView<ClientsModel> getUsers_list() {
+        return users_list;
+    }
+
+    public TextField getSearch_criterion() {
+        return search_criterion;
+    }
 }

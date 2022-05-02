@@ -91,4 +91,20 @@ public class SendMessageController implements PropertyChangeListener {
             })).play();
         }
     }
+
+    public Button getSend_message() {
+        return send_message;
+    }
+
+    public TextField getMessage_subject() {
+        return message_subject;
+    }
+
+    public TextArea getMessage_body() {
+        return message_body;
+    }
+
+    public ComboBox<String> getBankers_list() {
+        return bankers_list;
+    }
 }

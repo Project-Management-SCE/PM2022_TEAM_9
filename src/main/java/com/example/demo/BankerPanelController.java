@@ -31,7 +31,11 @@ public class BankerPanelController implements PropertyChangeListener {
         editProfileButton.setOnAction(event -> bankerPanelManager.edit());
         todolistButton.setOnAction(event -> bankerPanelManager.showTodoList());
         message_icon.setOnMouseClicked(event -> bankerPanelManager.manageMessages());
-        aboutButton.setOnAction(event -> System.out.println("TODO!"));
+
+        aboutButton.setOnAction(event -> {
+            AboutManager aboutManager = new AboutManager(bankerPanelManager.getScene());
+            aboutManager.initializeScreen();
+        });
 
         homeButton.setOnAction(event -> {
             bankerPanelManager.initializeScreen();

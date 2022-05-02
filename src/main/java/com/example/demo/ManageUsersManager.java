@@ -25,7 +25,7 @@ public class ManageUsersManager {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
-
+            scene.setUserData(loader);
             ManageUsersController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
@@ -129,4 +129,7 @@ public class ManageUsersManager {
         modifyAccountManager.initializeScreen();
     }
 
+    public Scene getScene() {
+        return scene;
+    }
 }
