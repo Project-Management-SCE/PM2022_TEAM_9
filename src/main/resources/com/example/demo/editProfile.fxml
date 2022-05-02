@@ -60,7 +60,7 @@
                   <TextField fx:id="country" prefHeight="8.0" prefWidth="281.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="zipcode" prefHeight="6.0" prefWidth="281.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField fx:id="phone" prefHeight="4.0" prefWidth="281.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label alignment="CENTER_RIGHT" opacity="0.55" prefHeight="26.0" prefWidth="170.0" text="Bank Account: " GridPane.rowIndex="7">
+                  <Label fx:id="bank_account_label" alignment="CENTER_RIGHT" opacity="0.55" prefHeight="26.0" prefWidth="170.0" text="Bank Account: " GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>

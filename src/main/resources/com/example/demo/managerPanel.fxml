@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackpane" prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ManagerPanelController">
+<StackPane fx:id="stackpane" prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ManagerPanelController">
     <children>
         <StackPane>
             <children>
@@ -29,9 +29,10 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="Profile">
                                     <items>
-                                        <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Clients" />
-                                        <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
-                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="LogOut" />
+                              <MenuItem fx:id="homeButton" mnemonicParsing="false" text="Home" />
+                                        <MenuItem fx:id="manage_clients" mnemonicParsing="false" text="Manage Users" />
+                                        <MenuItem fx:id="modifyAccountButton" mnemonicParsing="false" text="Modify Account" />
+                                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                                     </items>
                                 </Menu>
                                 <Menu fx:id="help" mnemonicParsing="false" text="Help">
