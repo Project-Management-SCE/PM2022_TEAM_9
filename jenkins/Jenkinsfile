@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'apt-get install sudo -y'
+                sh 'su root'
+                sh 'apt install libopenjfx-jni'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
