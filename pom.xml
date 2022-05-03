@@ -11,7 +11,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.8.2</junit.version>
         <java.version>11</java.version>
 
     </properties>
@@ -74,20 +73,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>main/test/com/example/demo</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>main/test/com/example/demo</scope>
-        </dependency>
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
@@ -101,17 +86,10 @@
             <scope>compile</scope>
         </dependency>
 
-    <dependency>
-        <groupId>org.testfx</groupId>
-        <artifactId>testfx-junit</artifactId>
-        <version>4.0.4-alpha</version>
-        <scope>test</scope>
-    </dependency>
-
         <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>5.8.2</version>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-junit</artifactId>
+            <version>4.0.4-alpha</version>
             <scope>test</scope>
         </dependency>
 
