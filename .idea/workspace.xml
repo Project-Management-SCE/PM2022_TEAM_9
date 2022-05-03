@@ -4,17 +4,161 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="&#10;BSPM2022T9-158">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ManageUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ManageUsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ManageUsersManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ManageUsersManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SendMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/EditProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/EditProfileManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_21.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_DOCUMENT_9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_EMAIL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_EMP_PHONE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_MOBIL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_OWN_CAR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_OWN_REALTY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_PHONE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FLAG_WORK_PHONE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ForgotPassController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ForgotPassManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/FormAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/GENDER.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LogOutViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessageModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyUserManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NAME_EDUCATION_TYPE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NAME_FAMILY_STATUS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NAME_HOUSING_TYPE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/OCCUPATION_TYPE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ORGANIZATION_TYPE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/REGION_RATING_CLIENT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ThreadWorker_3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/TodoListModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ViewMessageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ViewMessageManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/editProfile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/forgot.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/add_item.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/app_icon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/approved.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/ask_loan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/calculating_eligibility.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/delete_message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/delete_message.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/mailbox.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/message_sent.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/register.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/rejected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/reply_message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/reset_password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/send_message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/img/view_message.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan1.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan3.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan4.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loan5.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanApproved.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanRejected.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/login_NEW.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/logout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/manageClients.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/manageClientsNew.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/manageUsers.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerMessagesPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/replyMessage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/submitLoan.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/todoList.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/viewMessage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/welcome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation_ReLU.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation_Sigmoid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation_Sigmoid_Loss_BinaryCrossEntropy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation_SoftMax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Activation_Softmax_Loss_CategoricalCrossEntropy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Dataset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/InvalidMatrixArgument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/InvalidMatrixAxis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/InvalidMatrixDimension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/InvalidMatrixOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/LayerDense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/LayerDropout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Loss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Loss_BinaryCrossEntropy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Loss_CategoricalCrossEntropy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Matrix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/MatrixExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/MatrixIndexesOutOfBounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Optimization.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Optimizer_Adagrad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Optimizer_Adam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Optimizer_RMSprop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/Optimizer_SGD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/init.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/python/extender/PythonInterpreter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,17 +201,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src" />
@@ -181,7 +325,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650272469723</updated>
       <workItem from="1651050519650" duration="1664000" />
-      <workItem from="1651511736767" duration="483000" />
+      <workItem from="1651511736767" duration="592000" />
+      <workItem from="1651558096710" duration="2092000" />
     </task>
     <task id="LOCAL‎00001" summary="BSPM2022T9-65">
       <created>1650579254531</created>
@@ -387,7 +532,13 @@
       <option name="presentableId" value="LOCAL‎00034" />
       <updated>1651396327793</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎00035" summary="FIX TESTING FILES">
+      <created>1651512316719</created>
+      <option name="number" value="LOCAL‎00035" />
+      <option name="presentableId" value="LOCAL‎00035" />
+      <updated>1651512316719</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +565,8 @@
     <MESSAGE value="FIX JENKINS TESTING" />
     <MESSAGE value="BSPM2022T9-158" />
     <MESSAGE value="&#10;BSPM2022T9-158" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;BSPM2022T9-158" />
+    <MESSAGE value="FIX TESTING FILES" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX TESTING FILES" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
