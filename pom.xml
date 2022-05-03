@@ -170,7 +170,7 @@
                         --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
                     </argLine>
                     <includes>
-                        <include>**/*Test.java</include>
+                        <include>**/com/example/demo/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>

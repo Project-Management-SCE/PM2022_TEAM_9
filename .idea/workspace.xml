@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/AboutManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/EditProfileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/LoginManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/ManageUsersManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/MessagesPanelManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/SendMessageManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/TodoListManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" />
@@ -176,38 +171,59 @@
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/surefire-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/Command line suite/Command line test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/Command line suite/Command line test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/TEST-TestSuite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/TestSuite.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/bullet_point.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/collapseall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/emailable-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/failed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/navigator-bullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/Command line test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/groups.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/methods-alphabetical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/methods-not-run.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/methods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/reporter-output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/testng.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/Command line suite/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/old/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/passed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/skipped.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng-reports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng-reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng-reports1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng-reports2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng-results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-report/testng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/bullet_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/collapseall.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.AboutManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.EditProfileManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.LoginManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.ManageUsersManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.MessagesPanelManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.SendMessageManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.example.demo.TodoListManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/navigator-bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/Command line test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/Surefire test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/passed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/skipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" />
@@ -295,6 +311,7 @@
       <command value="mvn clean" />
       <command value="mvn surefire-report:report" />
       <command value="mvn test" />
+      <command value="junit 'target/surefire-reports/*.xml" />
     </option>
   </component>
   <component name="RunManager" selected="JUnit.AboutManagerTest">
@@ -392,7 +409,7 @@
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
       <workItem from="1651558096710" duration="3112000" />
-      <workItem from="1651570980227" duration="1957000" />
+      <workItem from="1651570980227" duration="2574000" />
     </task>
     <task id="LOCAL‎00001" summary="BSPM2022T9-65">
       <created>1650579254531</created>
@@ -622,7 +639,13 @@
       <option name="presentableId" value="LOCAL‎00038" />
       <updated>1651572223371</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL‎00039" summary="FIX TESTING FILES">
+      <created>1651573159982</created>
+      <option name="number" value="LOCAL‎00039" />
+      <option name="presentableId" value="LOCAL‎00039" />
+      <updated>1651573159982</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
