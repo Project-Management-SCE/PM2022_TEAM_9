@@ -149,7 +149,7 @@
                     </argLine>
                 </configuration>
             </plugin>
-
         </plugins>
+        <testSourceDirectory>src/main/test</testSourceDirectory>
     </build>
 </project>
