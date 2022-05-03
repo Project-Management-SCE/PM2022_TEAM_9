@@ -7,6 +7,8 @@
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" beforeDir="false" />
@@ -51,11 +53,15 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LogOutViewController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManageUsersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManageUsersManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessageModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyUserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyUserManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NAME_EDUCATION_TYPE.class" beforeDir="false" />
@@ -86,6 +92,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ViewMessageManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/aboutPanel.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/editProfile.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/forgot.fxml" beforeDir="false" />
@@ -121,6 +128,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/manageUsers.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerMessagesPanel.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/messagesPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/modifyAccount.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/register.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/replyMessage.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" beforeDir="false" />
@@ -157,7 +166,12 @@
       <change beforePath="$PROJECT_DIR$/target/classes/core/init.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/python/extender/PythonInterpreter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ManageUsersManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +218,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -232,7 +247,14 @@
       <recent name="core.ann.classifier" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoanApp">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+      <command value="mvn surefire:test" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.AboutManagerTest">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -242,6 +264,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AboutManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.AboutManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -256,21 +293,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo.MessagesPanelManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -308,11 +330,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AboutManagerTest" />
         <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.TodoListManagerTest" />
         <item itemvalue="JUnit.MessagesPanelManagerTest" />
         <item itemvalue="JUnit.TestCase" />
-        <item itemvalue="JUnit.MessagesPanelManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +348,8 @@
       <updated>1650272469723</updated>
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
-      <workItem from="1651558096710" duration="2092000" />
+      <workItem from="1651558096710" duration="3112000" />
+      <workItem from="1651570980227" duration="606000" />
     </task>
     <task id="LOCAL‎00001" summary="BSPM2022T9-65">
       <created>1650579254531</created>
@@ -538,7 +561,13 @@
       <option name="presentableId" value="LOCAL‎00035" />
       <updated>1651512316719</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL‎00036" summary="FIX TESTING FILES">
+      <created>1651569869159</created>
+      <option name="number" value="LOCAL‎00036" />
+      <option name="presentableId" value="LOCAL‎00036" />
+      <updated>1651569869159</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
