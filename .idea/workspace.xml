@@ -95,7 +95,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoanApp">
+  <component name="RunManager" selected="TestNG.BankerPanelManagerTest">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -139,21 +139,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MessagesPanelManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.MessagesPanelManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TodoListManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -169,13 +154,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BankerPanelManagerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.BankerPanelManagerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BankerPanelManagerTest" />
         <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.EditProfileManagerTest" />
         <item itemvalue="JUnit.AboutManagerTest" />
         <item itemvalue="JUnit.TodoListManagerTest" />
-        <item itemvalue="JUnit.MessagesPanelManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,13 +192,7 @@
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
       <workItem from="1651558096710" duration="3112000" />
-      <workItem from="1651570980227" duration="9622000" />
-    </task>
-    <task id="LOCAL‎00006" summary="BSPM2022T9-65">
-      <created>1650611978654</created>
-      <option name="number" value="LOCAL‎00006" />
-      <option name="presentableId" value="LOCAL‎00006" />
-      <updated>1650611978654</updated>
+      <workItem from="1651570980227" duration="9993000" />
     </task>
     <task id="LOCAL‎00007" summary="BSPM2022T9-65">
       <created>1650614468467</created>
@@ -486,7 +482,13 @@
       <option name="presentableId" value="LOCAL‎00054" />
       <updated>1651582216302</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL‎00055" summary="FIX TESTING FILES">
+      <created>1651582735558</created>
+      <option name="number" value="LOCAL‎00055" />
+      <option name="presentableId" value="LOCAL‎00055" />
+      <updated>1651582735558</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
