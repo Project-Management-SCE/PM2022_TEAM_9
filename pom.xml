@@ -104,10 +104,25 @@
             <version>1.7.36</version>
         </dependency>
 
+
     </dependencies>
 
     <build>
         <plugins>
+            <plugin> <groupId>com.googlecode.mavennatives</groupId>
+                <artifactId>maven-nativedependencies-plugin</artifactId>
+                <version>0.0.7</version>
+                <configuration> <nativesTargetDir>target/natives</nativesTargetDir> <separateDirs>false</separateDirs> </configuration>
+                <executions>
+                    <execution>
+                        <id>unpacknatives</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

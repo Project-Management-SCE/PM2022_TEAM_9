@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,13 +185,7 @@
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
       <workItem from="1651558096710" duration="3112000" />
-      <workItem from="1651570980227" duration="8531000" />
-    </task>
-    <task id="LOCAL‎00004" summary="BSPM2022T9-65">
-      <created>1650579813996</created>
-      <option name="number" value="LOCAL‎00004" />
-      <option name="presentableId" value="LOCAL‎00004" />
-      <updated>1650579813996</updated>
+      <workItem from="1651570980227" duration="9171000" />
     </task>
     <task id="LOCAL‎00005" summary="BSPM2022T9-65">
       <created>1650579936743</created>
@@ -484,7 +475,13 @@
       <option name="presentableId" value="LOCAL‎00052" />
       <updated>1651580739235</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL‎00053" summary="FIX TESTING FILES">
+      <created>1651581362492</created>
+      <option name="number" value="LOCAL‎00053" />
+      <option name="presentableId" value="LOCAL‎00053" />
+      <updated>1651581362492</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
