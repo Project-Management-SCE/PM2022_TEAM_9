@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn surefire:test -e'
+                sh 'mvn test -e'
             }
             post {
                 always {
