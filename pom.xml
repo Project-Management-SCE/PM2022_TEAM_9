@@ -171,7 +171,7 @@
                     </argLine>
                 </configuration>
             </plugin>
-
         </plugins>
+        <testSourceDirectory>${project.basedir}/src/main/test</testSourceDirectory>
     </build>
 </project>
