@@ -1,14 +1,13 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.8.5-openjdk-17-slim'            
+            image 'maven:3.8.5-jdk-11'
             args '-v /root/.m2:/root/.m2'
         }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'java -Djavafx.platform=eglfb -Dprism.verbose=true -Dcom.sun.javafx.experimental.embedded.3d=true -Dprism.glDepthSize=24 -Dprism.forceGPU=true -jar Brake_Check.jar'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
