@@ -160,7 +160,7 @@
                     </argLine>
                     <suiteXmlFiles>
                     </suiteXmlFiles>
-                    <reportsDirectory>${basedir}/target/site/surefire-report.html</reportsDirectory>
+                    <reportsDirectory>${basedir}/target/surefire-report</reportsDirectory>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
