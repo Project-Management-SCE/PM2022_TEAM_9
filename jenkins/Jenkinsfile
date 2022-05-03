@@ -13,8 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "${mvnHome}"
-                sh 'mvn test'
+                sh 'mvn test/com/example/demo/'
             }
         }
         stage('Deliver') {
