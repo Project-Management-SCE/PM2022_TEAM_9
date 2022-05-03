@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_reload4j_reload4j_1_2_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_reload4j_1_7_36.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_19_ea_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_19_ea_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_19_ea_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_19_ea_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_19_ea_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_19_ea_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_19_ea_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_19_ea_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +93,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EditProfileManagerTest">
+  <component name="RunManager" selected="Application.LoanApp">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -186,9 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.EditProfileManagerTest" />
         <item itemvalue="JUnit.AboutManagerTest" />
-        <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.TodoListManagerTest" />
         <item itemvalue="JUnit.MessagesPanelManagerTest" />
       </list>
@@ -205,19 +188,7 @@
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
       <workItem from="1651558096710" duration="3112000" />
-      <workItem from="1651570980227" duration="7785000" />
-    </task>
-    <task id="LOCAL‎00002" summary="BSPM2022T9-65">
-      <created>1650579313915</created>
-      <option name="number" value="LOCAL‎00002" />
-      <option name="presentableId" value="LOCAL‎00002" />
-      <updated>1650579313915</updated>
-    </task>
-    <task id="LOCAL‎00003" summary="BSPM2022T9-65">
-      <created>1650579635599</created>
-      <option name="number" value="LOCAL‎00003" />
-      <option name="presentableId" value="LOCAL‎00003" />
-      <updated>1650579635599</updated>
+      <workItem from="1651570980227" duration="8531000" />
     </task>
     <task id="LOCAL‎00004" summary="BSPM2022T9-65">
       <created>1650579813996</created>
@@ -501,7 +472,19 @@
       <option name="presentableId" value="LOCAL‎00050" />
       <updated>1651580116245</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL‎00051" summary="FIX TESTING FILES">
+      <created>1651580598459</created>
+      <option name="number" value="LOCAL‎00051" />
+      <option name="presentableId" value="LOCAL‎00051" />
+      <updated>1651580598459</updated>
+    </task>
+    <task id="LOCAL‎00052" summary="FIX TESTING FILES">
+      <created>1651580739235</created>
+      <option name="number" value="LOCAL‎00052" />
+      <option name="presentableId" value="LOCAL‎00052" />
+      <updated>1651580739235</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
