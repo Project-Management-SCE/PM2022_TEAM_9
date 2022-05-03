@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX TESTING FILES">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +187,7 @@
       <workItem from="1651050519650" duration="1664000" />
       <workItem from="1651511736767" duration="592000" />
       <workItem from="1651558096710" duration="3112000" />
-      <workItem from="1651570980227" duration="5945000" />
+      <workItem from="1651570980227" duration="6274000" />
     </task>
     <task id="LOCAL‎00001" summary="BSPM2022T9-65">
       <created>1650579254531</created>
@@ -467,7 +465,13 @@
       <option name="presentableId" value="LOCAL‎00046" />
       <updated>1651576362683</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL‎00047" summary="FIX TESTING FILES">
+      <created>1651577248992</created>
+      <option name="number" value="LOCAL‎00047" />
+      <option name="presentableId" value="LOCAL‎00047" />
+      <updated>1651577248992</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
