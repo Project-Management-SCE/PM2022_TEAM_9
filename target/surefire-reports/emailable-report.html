@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Surefire suite</th></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">16</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">23,431</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.example.demo.SendMessageManagerTest</td><td><a href="#m0">A2_sendMessage</a></td><td rowspan="1">1651573126141</td><td rowspan="1">2689</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.example.demo.AboutManagerTest</td><td><a href="#m1">A1_initializeScreen</a></td><td rowspan="1">1651573109089</td><td rowspan="1">5235</td></tr><tr class="passedodd"><td rowspan="2">com.example.demo.EditProfileManagerTest</td><td><a href="#m2">A1_testInitializeScreen</a></td><td rowspan="1">1651573114332</td><td rowspan="1">1805</td></tr><tr class="passedodd"><td><a href="#m3">A2_updateFormData</a></td><td rowspan="1">1651573114332</td><td rowspan="1">2884</td></tr><tr class="passedeven"><td rowspan="2">com.example.demo.LoginManagerTest</td><td><a href="#m4">A1_initializeScreen</a></td><td rowspan="1">1651573117218</td><td rowspan="1">870</td></tr><tr class="passedeven"><td><a href="#m5">A2_authorize</a></td><td rowspan="1">1651573117219</td><td rowspan="1">2249</td></tr><tr class="passedodd"><td rowspan="2">com.example.demo.ManageUsersManagerTest</td><td><a href="#m6">A1_initializeScreen</a></td><td rowspan="1">1651573119470</td><td rowspan="1">1375</td></tr><tr class="passedodd"><td><a href="#m7">A2_filterUsers</a></td><td rowspan="1">1651573119470</td><td rowspan="1">1904</td></tr><tr class="passedeven"><td rowspan="4">com.example.demo.MessagesPanelManagerTest</td><td><a href="#m8">A1_testInitializeScreen</a></td><td rowspan="1">1651573121376</td><td rowspan="1">1561</td></tr><tr class="passedeven"><td><a href="#m9">A2_testViewMessage</a></td><td rowspan="1">1651573121376</td><td rowspan="1">2560</td></tr><tr class="passedeven"><td><a href="#m10">A3_testReplyMessage</a></td><td rowspan="1">1651573121376</td><td rowspan="1">3769</td></tr><tr class="passedeven"><td><a href="#m11">A4_testDeleteMessage</a></td><td rowspan="1">1651573121376</td><td rowspan="1">4763</td></tr><tr class="passedodd"><td rowspan="1">com.example.demo.SendMessageManagerTest</td><td><a href="#m12">A1_initializeScreen</a></td><td rowspan="1">1651573126141</td><td rowspan="1">1487</td></tr><tr class="passedeven"><td rowspan="4">com.example.demo.TodoListManagerTest</td><td><a href="#m13">A1_initializeScreen</a></td><td rowspan="1">1651573128837</td><td rowspan="1">1072</td></tr><tr class="passedeven"><td><a href="#m14">A2_commitChange</a></td><td rowspan="1">1651573128837</td><td rowspan="1">1759</td></tr><tr class="passedeven"><td><a href="#m15">A3_addItem</a></td><td rowspan="1">1651573128837</td><td rowspan="1">2806</td></tr><tr class="passedeven"><td><a href="#m16">A4_deleteItem</a></td><td rowspan="1">1651573128837</td><td rowspan="1">3613</td></tr></tbody>
+</table>
+<h2>Surefire test</h2><h3 id="m0">com.example.demo.SendMessageManagerTest#A2_sendMessage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at org.testfx.util.WaitForAsyncUtils.---- Delayed Exception: (See Trace Below) ----(WaitForAsyncUtils.java:0)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at com.example.demo.MessagesPanelManager.initializeScreen(MessagesPanelManager.java:26)
+	at com.example.demo.ReplyMessageManager.returnToMessages(ReplyMessageManager.java:54)
+	at com.example.demo.ReplyMessageManager.lambda$sendReplyMessage$0(ReplyMessageManager.java:82)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.SingleLoopClipEnvelope.timePulse(SingleLoopClipEnvelope.java:103)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1189)
+	at javafx.animation.Animation$1.lambda$timePulse$0(Animation.java:207)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.animation.Animation$1.timePulse(Animation.java:206)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:343)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:266)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:571)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:555)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:548)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:352)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.example.demo.AboutManagerTest#A1_initializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.example.demo.EditProfileManagerTest#A1_testInitializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.example.demo.EditProfileManagerTest#A2_updateFormData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.example.demo.LoginManagerTest#A1_initializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.example.demo.LoginManagerTest#A2_authorize</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.example.demo.ManageUsersManagerTest#A1_initializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.example.demo.ManageUsersManagerTest#A2_filterUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.example.demo.MessagesPanelManagerTest#A1_testInitializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.example.demo.MessagesPanelManagerTest#A2_testViewMessage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.example.demo.MessagesPanelManagerTest#A3_testReplyMessage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.example.demo.MessagesPanelManagerTest#A4_testDeleteMessage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.example.demo.SendMessageManagerTest#A1_initializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">com.example.demo.TodoListManagerTest#A1_initializeScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">com.example.demo.TodoListManagerTest#A2_commitChange</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">com.example.demo.TodoListManagerTest#A3_addItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">com.example.demo.TodoListManagerTest#A4_deleteItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

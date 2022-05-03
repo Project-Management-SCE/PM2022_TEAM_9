@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 23.978 sec <<< FAILURE! - in TestSuite
+A2_sendMessage on A2_sendMessage(com.example.demo.SendMessageManagerTest)(com.example.demo.SendMessageManagerTest)  Time elapsed: 1.211 sec  <<< FAILURE!
+java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "javafx.stage.Window.setWidth(double)" because the return value of "javafx.scene.Scene.getWindow()" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.stage.Window.setWidth(double)" because the return value of "javafx.scene.Scene.getWindow()" is null
+

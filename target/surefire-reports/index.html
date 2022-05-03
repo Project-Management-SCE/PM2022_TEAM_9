@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
+              <span class="suite-name border-failed">Surefire suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Surefire_suite" class="navigator-link ">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Surefire_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Surefire_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Surefire_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Surefire_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Surefire_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Surefire_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">17 methods, 1 failed,   16 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.SendMessageManagerTest" class="method navigator-link" hash-for-method="A2_sendMessage">A2_sendMessage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods passed suite-Surefire_suite"> (hide)</a> <!-- hide-methods passed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Surefire_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.AboutManagerTest" class="method navigator-link" hash-for-method="A1_initializeScreen">A1_initializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.ManageUsersManagerTest" class="method navigator-link" hash-for-method="A1_initializeScreen">A1_initializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.TodoListManagerTest" class="method navigator-link" hash-for-method="A1_initializeScreen">A1_initializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.SendMessageManagerTest" class="method navigator-link" hash-for-method="A1_initializeScreen">A1_initializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.LoginManagerTest" class="method navigator-link" hash-for-method="A1_initializeScreen">A1_initializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.EditProfileManagerTest" class="method navigator-link" hash-for-method="A1_testInitializeScreen">A1_testInitializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.MessagesPanelManagerTest" class="method navigator-link" hash-for-method="A1_testInitializeScreen">A1_testInitializeScreen</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.LoginManagerTest" class="method navigator-link" hash-for-method="A2_authorize">A2_authorize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.TodoListManagerTest" class="method navigator-link" hash-for-method="A2_commitChange">A2_commitChange</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.ManageUsersManagerTest" class="method navigator-link" hash-for-method="A2_filterUsers">A2_filterUsers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.MessagesPanelManagerTest" class="method navigator-link" hash-for-method="A2_testViewMessage">A2_testViewMessage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.EditProfileManagerTest" class="method navigator-link" hash-for-method="A2_updateFormData">A2_updateFormData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.TodoListManagerTest" class="method navigator-link" hash-for-method="A3_addItem">A3_addItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.MessagesPanelManagerTest" class="method navigator-link" hash-for-method="A3_testReplyMessage">A3_testReplyMessage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.TodoListManagerTest" class="method navigator-link" hash-for-method="A4_deleteItem">A4_deleteItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.example.demo.MessagesPanelManagerTest" class="method navigator-link" hash-for-method="A4_testDeleteMessage">A4_testDeleteMessage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Surefire_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.example.demo.SendMessageManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_sendMessage">
+                  </a> <!-- A2_sendMessage -->
+                  <span class="method-name">A2_sendMessage</span>
+                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at org.testfx.util.WaitForAsyncUtils.---- Delayed Exception: (See Trace Below) ----(WaitForAsyncUtils.java:0)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at com.example.demo.MessagesPanelManager.initializeScreen(MessagesPanelManager.java:26)
+	at com.example.demo.ReplyMessageManager.returnToMessages(ReplyMessageManager.java:54)
+	at com.example.demo.ReplyMessageManager.lambda$sendReplyMessage$0(ReplyMessageManager.java:82)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.SingleLoopClipEnvelope.timePulse(SingleLoopClipEnvelope.java:103)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1189)
+	at javafx.animation.Animation$1.lambda$timePulse$0(Animation.java:207)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.animation.Animation$1.timePulse(Animation.java:206)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:343)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:266)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:571)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:555)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:548)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:352)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.AboutManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_initializeScreen">
+                  </a> <!-- A1_initializeScreen -->
+                  <span class="method-name">A1_initializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.EditProfileManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_testInitializeScreen">
+                  </a> <!-- A1_testInitializeScreen -->
+                  <span class="method-name">A1_testInitializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_updateFormData">
+                  </a> <!-- A2_updateFormData -->
+                  <span class="method-name">A2_updateFormData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.SendMessageManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_initializeScreen">
+                  </a> <!-- A1_initializeScreen -->
+                  <span class="method-name">A1_initializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.MessagesPanelManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_testInitializeScreen">
+                  </a> <!-- A1_testInitializeScreen -->
+                  <span class="method-name">A1_testInitializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_testViewMessage">
+                  </a> <!-- A2_testViewMessage -->
+                  <span class="method-name">A2_testViewMessage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A3_testReplyMessage">
+                  </a> <!-- A3_testReplyMessage -->
+                  <span class="method-name">A3_testReplyMessage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A4_testDeleteMessage">
+                  </a> <!-- A4_testDeleteMessage -->
+                  <span class="method-name">A4_testDeleteMessage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.ManageUsersManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_initializeScreen">
+                  </a> <!-- A1_initializeScreen -->
+                  <span class="method-name">A1_initializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_filterUsers">
+                  </a> <!-- A2_filterUsers -->
+                  <span class="method-name">A2_filterUsers</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.TodoListManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_initializeScreen">
+                  </a> <!-- A1_initializeScreen -->
+                  <span class="method-name">A1_initializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_commitChange">
+                  </a> <!-- A2_commitChange -->
+                  <span class="method-name">A2_commitChange</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A3_addItem">
+                  </a> <!-- A3_addItem -->
+                  <span class="method-name">A3_addItem</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A4_deleteItem">
+                  </a> <!-- A4_deleteItem -->
+                  <span class="method-name">A4_deleteItem</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.LoginManagerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="A1_initializeScreen">
+                  </a> <!-- A1_initializeScreen -->
+                  <span class="method-name">A1_initializeScreen</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="A2_authorize">
+                  </a> <!-- A2_authorize -->
+                  <span class="method-name">A2_authorize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+        </div> <!-- panel Surefire_suite -->
+        <div panel-name="test-xml-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; junit=&quot;true&quot; name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
+  &lt;test junit=&quot;true&quot; thread-count=&quot;1&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.example.demo.AboutManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.EditProfileManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.LoginManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.ManageUsersManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.MessagesPanelManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.SendMessageManagerTest&quot;/&gt;
+      &lt;class name=&quot;com.example.demo.TodoListManagerTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Surefire test --&gt;
+&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Surefire test (7 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Surefire_suite');
+function tableData_Surefire_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(17);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'A1_initializeScreen')
+data.setCell(0, 2, 'com.example.demo.AboutManagerTest')
+data.setCell(0, 3, 5235);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'A4_testDeleteMessage')
+data.setCell(1, 2, 'com.example.demo.MessagesPanelManagerTest')
+data.setCell(1, 3, 4763);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'A3_testReplyMessage')
+data.setCell(2, 2, 'com.example.demo.MessagesPanelManagerTest')
+data.setCell(2, 3, 3769);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'A4_deleteItem')
+data.setCell(3, 2, 'com.example.demo.TodoListManagerTest')
+data.setCell(3, 3, 3613);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'A2_updateFormData')
+data.setCell(4, 2, 'com.example.demo.EditProfileManagerTest')
+data.setCell(4, 3, 2884);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'A3_addItem')
+data.setCell(5, 2, 'com.example.demo.TodoListManagerTest')
+data.setCell(5, 3, 2806);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'A2_sendMessage')
+data.setCell(6, 2, 'com.example.demo.SendMessageManagerTest')
+data.setCell(6, 3, 2689);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'A2_testViewMessage')
+data.setCell(7, 2, 'com.example.demo.MessagesPanelManagerTest')
+data.setCell(7, 3, 2560);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'A2_authorize')
+data.setCell(8, 2, 'com.example.demo.LoginManagerTest')
+data.setCell(8, 3, 2249);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'A2_filterUsers')
+data.setCell(9, 2, 'com.example.demo.ManageUsersManagerTest')
+data.setCell(9, 3, 1904);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'A1_testInitializeScreen')
+data.setCell(10, 2, 'com.example.demo.EditProfileManagerTest')
+data.setCell(10, 3, 1805);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'A2_commitChange')
+data.setCell(11, 2, 'com.example.demo.TodoListManagerTest')
+data.setCell(11, 3, 1759);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'A1_testInitializeScreen')
+data.setCell(12, 2, 'com.example.demo.MessagesPanelManagerTest')
+data.setCell(12, 3, 1561);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'A1_initializeScreen')
+data.setCell(13, 2, 'com.example.demo.SendMessageManagerTest')
+data.setCell(13, 3, 1487);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'A1_initializeScreen')
+data.setCell(14, 2, 'com.example.demo.ManageUsersManagerTest')
+data.setCell(14, 3, 1375);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'A1_initializeScreen')
+data.setCell(15, 2, 'com.example.demo.TodoListManagerTest')
+data.setCell(15, 3, 1072);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'A1_initializeScreen')
+data.setCell(16, 2, 'com.example.demo.LoginManagerTest')
+data.setCell(16, 3, 870);
+window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
+              <div id="times-div-Surefire_suite">
+              </div> <!-- times-div-Surefire_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.AboutManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A1_initializeScreen</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.EditProfileManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A2_updateFormData</span>
+                <span class="method-start">5243 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A1_testInitializeScreen</span>
+                <span class="method-start">5243 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.LoginManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A1_initializeScreen</span>
+                <span class="method-start">8129 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A2_authorize</span>
+                <span class="method-start">8130 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.ManageUsersManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A1_initializeScreen</span>
+                <span class="method-start">10381 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A2_filterUsers</span>
+                <span class="method-start">10381 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.MessagesPanelManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A4_testDeleteMessage</span>
+                <span class="method-start">12287 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A1_testInitializeScreen</span>
+                <span class="method-start">12287 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A2_testViewMessage</span>
+                <span class="method-start">12287 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A3_testReplyMessage</span>
+                <span class="method-start">12287 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.SendMessageManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">A2_sendMessage</span>
+                <span class="method-start">17052 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A1_initializeScreen</span>
+                <span class="method-start">17052 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.TodoListManagerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">A1_initializeScreen</span>
+                <span class="method-start">19748 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A2_commitChange</span>
+                <span class="method-start">19748 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A3_addItem</span>
+                <span class="method-start">19748 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">A4_deleteItem</span>
+                <span class="method-start">19748 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

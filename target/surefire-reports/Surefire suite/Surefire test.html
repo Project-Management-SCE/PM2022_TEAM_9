@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>16/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue May 03 13:18:29 IDT 2022</td>
+</tr>
+<tr><td>Total time:</td><td>23 seconds (23431 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.example.demo.SendMessageManagerTest.A2_sendMessage()'><b>A2_sendMessage</b><br>Test class: com.example.demo.SendMessageManagerTest</td>
+<td><div><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at org.testfx.util.WaitForAsyncUtils.---- Delayed Exception: (See Trace Below) ----(WaitForAsyncUtils.java:0)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at com.example.demo.MessagesPanelManager.initializeScreen(MessagesPanelManager.java:26)
+	at com.example.demo.ReplyMessageManager.returnToMessages(ReplyMessageManager.java:54)
+	at com.example.demo.ReplyMessageManager.lambda$sendReplyMessage$0(ReplyMessageManager.java:82)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.SingleLoopClipEnvelope.timePulse(SingleLoopClipEnvelope.java:103)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1189)
+	at javafx.animation.Animation$1.lambda$timePulse$0(Animation.java:207)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.animation.Animation$1.timePulse(Animation.java:206)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:343)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:266)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:571)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:555)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:548)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:352)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div><a href='#' onClick='toggleBox("stack-trace664186542", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace664186542'><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at org.testfx.util.WaitForAsyncUtils.---- Delayed Exception: (See Trace Below) ----(WaitForAsyncUtils.java:0)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;javafx.stage.Window.setWidth(double)&quot; because the return value of &quot;javafx.scene.Scene.getWindow()&quot; is null
+	at com.example.demo.MessagesPanelManager.initializeScreen(MessagesPanelManager.java:26)
+	at com.example.demo.ReplyMessageManager.returnToMessages(ReplyMessageManager.java:54)
+	at com.example.demo.ReplyMessageManager.lambda$sendReplyMessage$0(ReplyMessageManager.java:82)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.SingleLoopClipEnvelope.timePulse(SingleLoopClipEnvelope.java:103)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1189)
+	at javafx.animation.Animation$1.lambda$timePulse$0(Animation.java:207)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.animation.Animation$1.timePulse(Animation.java:206)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:343)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:266)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:571)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:555)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:548)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:352)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>2</td>
+<td>A2_sendMessage(com.example.demo.SendMessageManagerTest)</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.example.demo.AboutManagerTest.A1_initializeScreen()'><b>A1_initializeScreen</b><br>Test class: com.example.demo.AboutManagerTest</td>
+<td></td>
+<td>5</td>
+<td>A1_initializeScreen(com.example.demo.AboutManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.LoginManagerTest.A2_authorize()'><b>A2_authorize</b><br>Test class: com.example.demo.LoginManagerTest</td>
+<td></td>
+<td>2</td>
+<td>A2_authorize(com.example.demo.LoginManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.EditProfileManagerTest.A2_updateFormData()'><b>A2_updateFormData</b><br>Test class: com.example.demo.EditProfileManagerTest</td>
+<td></td>
+<td>2</td>
+<td>A2_updateFormData(com.example.demo.EditProfileManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.ManageUsersManagerTest.A1_initializeScreen()'><b>A1_initializeScreen</b><br>Test class: com.example.demo.ManageUsersManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A1_initializeScreen(com.example.demo.ManageUsersManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.EditProfileManagerTest.A1_testInitializeScreen()'><b>A1_testInitializeScreen</b><br>Test class: com.example.demo.EditProfileManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A1_testInitializeScreen(com.example.demo.EditProfileManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.MessagesPanelManagerTest.A4_testDeleteMessage()'><b>A4_testDeleteMessage</b><br>Test class: com.example.demo.MessagesPanelManagerTest</td>
+<td></td>
+<td>4</td>
+<td>A4_testDeleteMessage(com.example.demo.MessagesPanelManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.ManageUsersManagerTest.A2_filterUsers()'><b>A2_filterUsers</b><br>Test class: com.example.demo.ManageUsersManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A2_filterUsers(com.example.demo.ManageUsersManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.TodoListManagerTest.A1_initializeScreen()'><b>A1_initializeScreen</b><br>Test class: com.example.demo.TodoListManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A1_initializeScreen(com.example.demo.TodoListManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.TodoListManagerTest.A2_commitChange()'><b>A2_commitChange</b><br>Test class: com.example.demo.TodoListManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A2_commitChange(com.example.demo.TodoListManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.TodoListManagerTest.A3_addItem()'><b>A3_addItem</b><br>Test class: com.example.demo.TodoListManagerTest</td>
+<td></td>
+<td>2</td>
+<td>A3_addItem(com.example.demo.TodoListManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.TodoListManagerTest.A4_deleteItem()'><b>A4_deleteItem</b><br>Test class: com.example.demo.TodoListManagerTest</td>
+<td></td>
+<td>3</td>
+<td>A4_deleteItem(com.example.demo.TodoListManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.MessagesPanelManagerTest.A1_testInitializeScreen()'><b>A1_testInitializeScreen</b><br>Test class: com.example.demo.MessagesPanelManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A1_testInitializeScreen(com.example.demo.MessagesPanelManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.SendMessageManagerTest.A1_initializeScreen()'><b>A1_initializeScreen</b><br>Test class: com.example.demo.SendMessageManagerTest</td>
+<td></td>
+<td>1</td>
+<td>A1_initializeScreen(com.example.demo.SendMessageManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.LoginManagerTest.A1_initializeScreen()'><b>A1_initializeScreen</b><br>Test class: com.example.demo.LoginManagerTest</td>
+<td></td>
+<td>0</td>
+<td>A1_initializeScreen(com.example.demo.LoginManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.MessagesPanelManagerTest.A2_testViewMessage()'><b>A2_testViewMessage</b><br>Test class: com.example.demo.MessagesPanelManagerTest</td>
+<td></td>
+<td>2</td>
+<td>A2_testViewMessage(com.example.demo.MessagesPanelManagerTest)</td></tr>
+<tr>
+<td title='com.example.demo.MessagesPanelManagerTest.A3_testReplyMessage()'><b>A3_testReplyMessage</b><br>Test class: com.example.demo.MessagesPanelManagerTest</td>
+<td></td>
+<td>3</td>
+<td>A3_testReplyMessage(com.example.demo.MessagesPanelManagerTest)</td></tr>
+</table><p>
+</body>
+</html>

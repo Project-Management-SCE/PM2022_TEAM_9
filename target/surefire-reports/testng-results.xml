@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="17" passed="16" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-03T13:18:29 IDT" name="Surefire suite" finished-at="2022-05-03T13:18:52 IDT" duration-ms="23431">
+    <groups>
+    </groups>
+    <test started-at="2022-05-03T13:18:29 IDT" name="Surefire test" finished-at="2022-05-03T13:18:52 IDT" duration-ms="23431">
+      <class name="com.example.demo.TodoListManagerTest">
+        <test-method signature="A1_initializeScreen()" started-at="2022-05-03T13:18:48 IDT" name="A1_initializeScreen" finished-at="2022-05-03T13:18:49 IDT" duration-ms="1072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_initializeScreen -->
+        <test-method signature="A2_commitChange()" started-at="2022-05-03T13:18:48 IDT" name="A2_commitChange" finished-at="2022-05-03T13:18:50 IDT" duration-ms="1759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_commitChange -->
+        <test-method signature="A3_addItem()" started-at="2022-05-03T13:18:48 IDT" name="A3_addItem" finished-at="2022-05-03T13:18:51 IDT" duration-ms="2806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A3_addItem -->
+        <test-method signature="A4_deleteItem()" started-at="2022-05-03T13:18:48 IDT" name="A4_deleteItem" finished-at="2022-05-03T13:18:52 IDT" duration-ms="3613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A4_deleteItem -->
+      </class> <!-- com.example.demo.TodoListManagerTest -->
+      <class name="com.example.demo.SendMessageManagerTest">
+        <test-method signature="A2_sendMessage()" started-at="2022-05-03T13:18:46 IDT" name="A2_sendMessage" finished-at="2022-05-03T13:18:48 IDT" duration-ms="2689" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "javafx.stage.Window.setWidth(double)" because the return value of "javafx.scene.Scene.getWindow()" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "javafx.stage.Window.setWidth(double)" because the return value of "javafx.scene.Scene.getWindow()" is null
+at org.testfx.util.WaitForAsyncUtils.---- Delayed Exception: (See Trace Below) ----(WaitForAsyncUtils.java:0)
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.stage.Window.setWidth(double)" because the return value of "javafx.scene.Scene.getWindow()" is null
+at com.example.demo.MessagesPanelManager.initializeScreen(MessagesPanelManager.java:26)
+at com.example.demo.ReplyMessageManager.returnToMessages(ReplyMessageManager.java:54)
+at com.example.demo.ReplyMessageManager.lambda$sendReplyMessage$0(ReplyMessageManager.java:82)
+at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+at com.sun.scenario.animation.shared.SingleLoopClipEnvelope.timePulse(SingleLoopClipEnvelope.java:103)
+at javafx.animation.Animation.doTimePulse(Animation.java:1189)
+at javafx.animation.Animation$1.lambda$timePulse$0(Animation.java:207)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at javafx.animation.Animation$1.timePulse(Animation.java:206)
+at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:343)
+at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:266)
+at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:571)
+at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:555)
+at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:548)
+at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:352)
+at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_sendMessage -->
+        <test-method signature="A1_initializeScreen()" started-at="2022-05-03T13:18:46 IDT" name="A1_initializeScreen" finished-at="2022-05-03T13:18:47 IDT" duration-ms="1487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_initializeScreen -->
+      </class> <!-- com.example.demo.SendMessageManagerTest -->
+      <class name="com.example.demo.MessagesPanelManagerTest">
+        <test-method signature="A4_testDeleteMessage()" started-at="2022-05-03T13:18:41 IDT" name="A4_testDeleteMessage" finished-at="2022-05-03T13:18:46 IDT" duration-ms="4763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A4_testDeleteMessage -->
+        <test-method signature="A1_testInitializeScreen()" started-at="2022-05-03T13:18:41 IDT" name="A1_testInitializeScreen" finished-at="2022-05-03T13:18:42 IDT" duration-ms="1561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_testInitializeScreen -->
+        <test-method signature="A2_testViewMessage()" started-at="2022-05-03T13:18:41 IDT" name="A2_testViewMessage" finished-at="2022-05-03T13:18:43 IDT" duration-ms="2560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_testViewMessage -->
+        <test-method signature="A3_testReplyMessage()" started-at="2022-05-03T13:18:41 IDT" name="A3_testReplyMessage" finished-at="2022-05-03T13:18:45 IDT" duration-ms="3769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A3_testReplyMessage -->
+      </class> <!-- com.example.demo.MessagesPanelManagerTest -->
+      <class name="com.example.demo.ManageUsersManagerTest">
+        <test-method signature="A1_initializeScreen()" started-at="2022-05-03T13:18:39 IDT" name="A1_initializeScreen" finished-at="2022-05-03T13:18:40 IDT" duration-ms="1375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_initializeScreen -->
+        <test-method signature="A2_filterUsers()" started-at="2022-05-03T13:18:39 IDT" name="A2_filterUsers" finished-at="2022-05-03T13:18:41 IDT" duration-ms="1904" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_filterUsers -->
+      </class> <!-- com.example.demo.ManageUsersManagerTest -->
+      <class name="com.example.demo.AboutManagerTest">
+        <test-method signature="A1_initializeScreen()" started-at="2022-05-03T13:18:29 IDT" name="A1_initializeScreen" finished-at="2022-05-03T13:18:34 IDT" duration-ms="5235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_initializeScreen -->
+      </class> <!-- com.example.demo.AboutManagerTest -->
+      <class name="com.example.demo.LoginManagerTest">
+        <test-method signature="A1_initializeScreen()" started-at="2022-05-03T13:18:37 IDT" name="A1_initializeScreen" finished-at="2022-05-03T13:18:38 IDT" duration-ms="870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_initializeScreen -->
+        <test-method signature="A2_authorize()" started-at="2022-05-03T13:18:37 IDT" name="A2_authorize" finished-at="2022-05-03T13:18:39 IDT" duration-ms="2249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_authorize -->
+      </class> <!-- com.example.demo.LoginManagerTest -->
+      <class name="com.example.demo.EditProfileManagerTest">
+        <test-method signature="A2_updateFormData()" started-at="2022-05-03T13:18:34 IDT" name="A2_updateFormData" finished-at="2022-05-03T13:18:37 IDT" duration-ms="2884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A2_updateFormData -->
+        <test-method signature="A1_testInitializeScreen()" started-at="2022-05-03T13:18:34 IDT" name="A1_testInitializeScreen" finished-at="2022-05-03T13:18:36 IDT" duration-ms="1805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A1_testInitializeScreen -->
+      </class> <!-- com.example.demo.EditProfileManagerTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
