@@ -59,6 +59,7 @@ public class UserPanelManager {
     }
 
     public void Withdraw(){
-
+        WithdrawManager withdrawManager = new WithdrawManager(scene);
+        withdrawManager.initializeScreen();
     }
 }

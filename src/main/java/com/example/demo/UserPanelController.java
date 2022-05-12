@@ -34,6 +34,7 @@ public class UserPanelController implements PropertyChangeListener {
         contactusButton.setOnAction(event -> userPanelManager.sendMessageBanker());
         complaint.setOnAction(event -> userPanelManager.goComplaint());
         withdraw.setOnAction(event -> userPanelManager.Withdraw());
+
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(userPanelManager.getScene());
             modifyAccountManager.initializeScreen();
@@ -44,7 +45,7 @@ public class UserPanelController implements PropertyChangeListener {
         });
 
         accountLabel.setText(AccountFullName());
-        balanceLabel.setText("$" + latestLoanAmount());
+        balanceLabel.setText("$" + creditsAmount());
 
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(userPanelManager.getScene());
@@ -79,8 +80,8 @@ public class UserPanelController implements PropertyChangeListener {
         }
     }
 
-    private String latestLoanAmount() throws SQLException {
-        return sql.select("loans", "*", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][2];
+    private String creditsAmount() throws SQLException {
+        return sql.select("clients", "credits", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][0];
     }
 
     private String AccountFullName() throws SQLException {
