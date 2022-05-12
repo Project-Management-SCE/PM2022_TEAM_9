@@ -15,8 +15,7 @@ import org.testfx.framework.junit.ApplicationTest;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ComplaintManagerTest extends ApplicationTest {
-
+public class WithdrawManagerTest extends ApplicationTest {
     private Scene scene;
     private FXMLLoader loader;
     private static final PostgreSQL sql = PostgreSQL.getInstance();
@@ -35,13 +34,11 @@ public class ComplaintManagerTest extends ApplicationTest {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();
-        stage.getIcons().add(new Image(String.format("file:%s\\src\\main\\resources\\com\\example\\demo\\img\\app_icon.jpg", System.getProperty("user.dir"))));
         stage.show();
 
         // Stage [Welcome]
         loader = (FXMLLoader) welcomeManager.getScene().getUserData();
         ((WelcomeController) loader.getController()).getLogin().fire();
-
 
         // Stage [Login]
         LoginManager loginManager = new LoginManager(scene);
@@ -57,33 +54,31 @@ public class ComplaintManagerTest extends ApplicationTest {
         loader = (FXMLLoader) userPanelManager.getScene().getUserData();
     }
 
+
     @Test
     public void A1_initializeScreen() {
         Platform.runLater(() -> {
-            // Stage [SendMessagePanel]
-            ComplaintManager complaintManager = new ComplaintManager(scene);
-            complaintManager.initializeScreen();
-            loader = (FXMLLoader) complaintManager.getScene().getUserData();
+            // Stage [AboutPanel]
+            WithdrawManager withdrawManager = new WithdrawManager(scene);
+            withdrawManager.initializeScreen();
+            loader = (FXMLLoader) withdrawManager.getScene().getUserData();
 
-            assertNotNull(((ComplaintController) loader.getController()).getComplain());
-            assertNotNull(((ComplaintController) loader.getController()).getSend_message());
-            assertNotNull(((ComplaintController) loader.getController()).getMessage_subject());
-            assertNotNull(((ComplaintController) loader.getController()).getMessage_body());
-            assertNotEquals(((ComplaintController) loader.getController()).getComplain_list().get(0), "");
+            assertNotNull(((WithdrawController) loader.getController()).getAcc_num());
+            assertNotNull(((WithdrawController) loader.getController()).getBranch());
+            assertNotNull(((WithdrawController) loader.getController()).getAmount());
+            assertNotNull(((WithdrawController) loader.getController()).getWithdrawButton());
+            assertNotNull(((WithdrawController) loader.getController()).getBank_name());
+            assertNotNull(((WithdrawController) loader.getController()).getFull_name());
+
+            ((WithdrawController) loader.getController()).getAcc_num().setText("0");
+            ((WithdrawController) loader.getController()).getBranch().setText("0");
+           ((WithdrawController) loader.getController()).getAmount().setText("0");
+            ((WithdrawController) loader.getController()).getWithdrawButton().setText("0");
+            ((WithdrawController) loader.getController()).getBank_name().setText("0");
+            ((WithdrawController) loader.getController()).getFull_name().setText("0");
+            ((WithdrawController) loader.getController()).getAmount().setText("1");
+            ((WithdrawController) loader.getController()).getWithdrawButton().fire();
         });
-    }
 
-    @Test
-    public void A2_sendMessage() {
-        Platform.runLater(() -> {
-            // Stage [SendMessagePanel]
-            ComplaintManager complaintManager = new ComplaintManager(scene);
-            complaintManager.initializeScreen();
-            loader = (FXMLLoader) complaintManager.getScene().getUserData();
-
-            ((ComplaintController) loader.getController()).getMessage_subject().setText("TEST SUBJECT");
-            ((ComplaintController) loader.getController()).getMessage_body().setText("TEST MESSAGE");
-            ((ComplaintController) loader.getController()).getSend_message().fire();
-        });
     }
 }

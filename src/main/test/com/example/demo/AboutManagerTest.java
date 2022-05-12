@@ -45,7 +45,7 @@ public class AboutManagerTest extends ApplicationTest {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.initializeScreen();
         loader = (FXMLLoader) loginManager.getScene().getUserData();
-        ((LoginController) loader.getController()).getUser().setText("david");
+        ((LoginController) loader.getController()).getUser().setText("yonatan");
         ((LoginController) loader.getController()).getPassword().setText("1234");
         ((LoginController) loader.getController()).getLoginButton().fire();
 
