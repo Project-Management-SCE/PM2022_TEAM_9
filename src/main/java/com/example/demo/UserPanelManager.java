@@ -52,4 +52,13 @@ public class UserPanelManager {
     public Scene getScene() {
         return scene;
     }
+
+    public void goComplaint(){
+        ComplaintManager complaintManager = new ComplaintManager(scene);
+        complaintManager.initializeScreen();
+    }
+
+    public void Withdraw(){
+
+    }
 }
