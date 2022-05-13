@@ -20,7 +20,7 @@ public class UserPanelController implements PropertyChangeListener {
     @FXML
     private Label accountLabel, balanceLabel;
     @FXML
-    private MenuItem withdraw, complaint,logoutButton, editProfileButton, contactusButton, aboutButton, modifyAccountButton, homeButton;
+    private MenuItem logoutButton, editProfileButton, contactusButton, aboutButton, modifyAccountButton, homeButton;
     @FXML
     private Label new_messages_quantity, message_icon;
 
@@ -32,8 +32,6 @@ public class UserPanelController implements PropertyChangeListener {
         logoutButton.setOnAction(actionEvent -> userPanelManager.goLogin());
         editProfileButton.setOnAction(event -> userPanelManager.edit());
         contactusButton.setOnAction(event -> userPanelManager.sendMessageBanker());
-        complaint.setOnAction(event -> userPanelManager.goComplaint());
-        withdraw.setOnAction(event -> userPanelManager.Withdraw());
 
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(userPanelManager.getScene());
@@ -45,7 +43,7 @@ public class UserPanelController implements PropertyChangeListener {
         });
 
         accountLabel.setText(AccountFullName());
-        balanceLabel.setText("$" + creditsAmount());
+        balanceLabel.setText("$" + latestLoanAmount());
 
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(userPanelManager.getScene());
@@ -80,8 +78,8 @@ public class UserPanelController implements PropertyChangeListener {
         }
     }
 
-    private String creditsAmount() throws SQLException {
-        return sql.select("clients", "credits", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][0];
+    private String latestLoanAmount() throws SQLException {
+        return sql.select("loans", "*", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][2];
     }
 
     private String AccountFullName() throws SQLException {

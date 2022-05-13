@@ -19,7 +19,7 @@ public class ManagerPanelController implements PropertyChangeListener {
     private Boolean isUserNotified = false;
     private Timeline msg_flasher;
     @FXML
-    private MenuItem logoutButton, modifyAccountButton, manage_clients, homeButton, aboutButton, loansStatusButton;
+    private MenuItem logoutButton, modifyAccountButton, manage_clients, homeButton, aboutButton;
     @FXML
     private Label new_messages_quantity, message_icon;
     @FXML
@@ -42,11 +42,6 @@ public class ManagerPanelController implements PropertyChangeListener {
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(managerPanelManager.getScene());
             aboutManager.initializeScreen();
-        });
-
-        loansStatusButton.setOnAction(event -> {
-            LoansGraphManager loansGraphManager = new LoansGraphManager(managerPanelManager.getScene());
-            loansGraphManager.initializeScreen();
         });
 
         // new message icon blinker

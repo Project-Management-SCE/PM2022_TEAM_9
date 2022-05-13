@@ -64,7 +64,6 @@ public class LoanController {
                 setDisable(empty || date.compareTo(LocalDate.now()) > 0);
             }
         });
-
     }
 
     /**
@@ -398,6 +397,29 @@ public class LoanController {
         LocalDateTime live_time = LocalDateTime.now();
         LocalDate current_time = LocalDate.of(live_time.getYear(), live_time.getMonthValue(), live_time.getDayOfMonth());
         return current_time.minusDays(days);
+    }
+
+    private void resetToggles(){
+        this.doc_btn_0.setSelected(false);
+        this.doc_btn_1.setSelected(false);
+        this.doc_btn_2.setSelected(false);
+        this.doc_btn_3.setSelected(false);
+        this.doc_btn_4.setSelected(false);
+        this.doc_btn_5.setSelected(false);
+        this.doc_btn_6.setSelected(false);
+        this.doc_btn_7.setSelected(false);
+        this.doc_btn_8.setSelected(false);
+        this.doc_btn_9.setSelected(false);
+        this.doc_btn_10.setSelected(false);
+        this.doc_btn_11.setSelected(false);
+        this.doc_btn_12.setSelected(false);
+        this.doc_btn_13.setSelected(false);
+        this.doc_btn_14.setSelected(false);
+        this.doc_btn_15.setSelected(false);
+        this.doc_btn_16.setSelected(false);
+        this.doc_btn_17.setSelected(false);
+        this.doc_btn_18.setSelected(false);
+        this.doc_btn_19.setSelected(false);
     }
 
 }

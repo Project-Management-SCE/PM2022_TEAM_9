@@ -16,7 +16,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +40,8 @@ public class LoanManager implements PropertyChangeListener {
     public static Boolean is_file_downloaded = false;
     private final static int INT_KEY_ERROR = -1;
     private final static String STRING_KEY_ERROR = "-1";
+
+    private final static double EPSILON = 0.833;
 
     private final Scene scene;
     private FXMLLoader loader;
@@ -217,6 +218,12 @@ public class LoanManager implements PropertyChangeListener {
 
                 LoanController controller = loader.getController();
                 controller.initManager7(this);
+                ((LoanController) loader.getController()).getFull_name_label().setText(loan_form.get("full_name", "UNKNOWN"));
+                ((LoanController) loader.getController()).getAddress_name_label().setText(loan_form.get("address", "UNKNOWN"));
+                ((LoanController) loader.getController()).getCounty_label().setText(loan_form.get("state", "UNKNOWN") + ", " + loan_form.getInt("zipcode", 0));
+                ((LoanController) loader.getController()).getCountry_label().setText(loan_form.get("country", "UNKNOWN"));
+                ((LoanController) loader.getController()).getOriginal_loan_label().setText("Total Requested Loan: $" + loan_form.getDouble("loan_amount", 0.0));
+                ((LoanController) loader.getController()).getApproved_loan_label().setText("Total Approved Loan: $" + loan_form.getDouble("loan_amount", 0.0));
             } catch (IOException e) {
                 Logger.getLogger(WelcomeManager.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -322,66 +329,26 @@ public class LoanManager implements PropertyChangeListener {
     public void savePage4() {
         LoanController controller = loader.getController(); // make code readable
 
-        if (controller.docButton0() != null && controller.docButton0().isSelected())
-            loan_form.putBoolean("doc_2_flag", true);
-
-        if (controller.docButton1() != null && controller.docButton1().isSelected())
-            loan_form.putBoolean("doc_3_flag", true);
-
-        if (controller.docButton2() != null && controller.docButton2().isSelected())
-            loan_form.putBoolean("doc_4_flag", true);
-
-        if (controller.docButton3() != null && controller.docButton3().isSelected())
-            loan_form.putBoolean("doc_5_flag", true);
-
-        if (controller.docButton4() != null && controller.docButton4().isSelected())
-            loan_form.putBoolean("doc_6_flag", true);
-
-        if (controller.docButton5() != null && controller.docButton5().isSelected())
-            loan_form.putBoolean("doc_7_flag", true);
-
-        if (controller.docButton6() != null && controller.docButton6().isSelected())
-            loan_form.putBoolean("doc_8_flag", true);
-
-        if (controller.docButton7() != null && controller.docButton7().isSelected())
-            loan_form.putBoolean("doc_9_flag", true);
-
-        if (controller.docButton8() != null && controller.docButton8().isSelected())
-            loan_form.putBoolean("doc_10_flag", true);
-
-        if (controller.docButton9() != null && controller.docButton9().isSelected())
-            loan_form.putBoolean("doc_11_flag", true);
-
-        if (controller.docButton10() != null && controller.docButton10().isSelected())
-            loan_form.putBoolean("doc_12_flag", true);
-
-        if (controller.docButton11() != null && controller.docButton11().isSelected())
-            loan_form.putBoolean("doc_13_flag", true);
-
-        if (controller.docButton12() != null && controller.docButton12().isSelected())
-            loan_form.putBoolean("doc_14_flag", true);
-
-        if (controller.docButton13() != null && controller.docButton13().isSelected())
-            loan_form.putBoolean("doc_15_flag", true);
-
-        if (controller.docButton14() != null && controller.docButton14().isSelected())
-            loan_form.putBoolean("doc_16_flag", true);
-
-        if (controller.docButton15() != null && controller.docButton15().isSelected())
-            loan_form.putBoolean("doc_17_flag", true);
-
-        if (controller.docButton16() != null && controller.docButton16().isSelected())
-            loan_form.putBoolean("doc_18_flag", true);
-
-        if (controller.docButton17() != null && controller.docButton17().isSelected())
-            loan_form.putBoolean("doc_19_flag", true);
-
-        if (controller.docButton18() != null && controller.docButton18().isSelected())
-            loan_form.putBoolean("doc_20_flag", true);
-
-        if (controller.docButton19() != null && controller.docButton19().isSelected())
-            loan_form.putBoolean("doc_21_flag", true);
-
+        loan_form.putBoolean("doc_2_flag", controller.docButton0() != null && controller.docButton0().isSelected());
+        loan_form.putBoolean("doc_3_flag", controller.docButton1() != null && controller.docButton1().isSelected());
+        loan_form.putBoolean("doc_4_flag", controller.docButton2() != null && controller.docButton2().isSelected());
+        loan_form.putBoolean("doc_5_flag", controller.docButton3() != null && controller.docButton3().isSelected());
+        loan_form.putBoolean("doc_6_flag", controller.docButton4() != null && controller.docButton4().isSelected());
+        loan_form.putBoolean("doc_7_flag", controller.docButton5() != null && controller.docButton5().isSelected());
+        loan_form.putBoolean("doc_8_flag", controller.docButton6() != null && controller.docButton6().isSelected());
+        loan_form.putBoolean("doc_9_flag", controller.docButton7() != null && controller.docButton7().isSelected());
+        loan_form.putBoolean("doc_10_flag", controller.docButton8() != null && controller.docButton8().isSelected());
+        loan_form.putBoolean("doc_11_flag", controller.docButton9() != null && controller.docButton9().isSelected());
+        loan_form.putBoolean("doc_12_flag", controller.docButton10() != null && controller.docButton10().isSelected());
+        loan_form.putBoolean("doc_13_flag", controller.docButton11() != null && controller.docButton11().isSelected());
+        loan_form.putBoolean("doc_14_flag", controller.docButton12() != null && controller.docButton12().isSelected());
+        loan_form.putBoolean("doc_15_flag", controller.docButton13() != null && controller.docButton13().isSelected());
+        loan_form.putBoolean("doc_16_flag", controller.docButton14() != null && controller.docButton14().isSelected());
+        loan_form.putBoolean("doc_17_flag", controller.docButton15() != null && controller.docButton15().isSelected());
+        loan_form.putBoolean("doc_18_flag", controller.docButton16() != null && controller.docButton16().isSelected());
+        loan_form.putBoolean("doc_19_flag", controller.docButton17() != null && controller.docButton17().isSelected());
+        loan_form.putBoolean("doc_20_flag", controller.docButton18() != null && controller.docButton18().isSelected());
+        loan_form.putBoolean("doc_21_flag", controller.docButton19() != null && controller.docButton19().isSelected());
     }
 
     public void savePage5() {
@@ -575,12 +542,14 @@ public class LoanManager implements PropertyChangeListener {
         try {
             local_ann.predict(A); // convert (loan_form) to ANN form
 
-            if (local_ann.get_predictions().argmax() == 0) { // if loan approved
+            if (local_ann.get_predictions().argmax(0).getValue(0, 0) > EPSILON) { // if loan approved
+                System.out.println(local_ann.get_predictions().argmax(0));
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "approved");
                 loan_form.put("reference_id", getReferenceID(8));
             } else { // if loan denied
                 ++LoanController.current_page;
+                System.out.println(local_ann.get_predictions().argmax(0));
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "rejected");
                 loan_form.put("reference_id", getReferenceID(8));
