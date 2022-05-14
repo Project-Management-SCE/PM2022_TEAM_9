@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.effect.MotionBlur;
 import javafx.util.Duration;
 
 import java.beans.PropertyChangeSupport;
@@ -144,9 +145,21 @@ public class BankerPanelManager {
             c.getRejected_count().setText("(" + rejected + " Rejected)");
             c.getPending_count().setText("(" + pending + " Pending)");
             c.getApproved_count().setText("(" + approved + " Approved)");
+
+            if (pending > 0 && !LoanApp.isBankerPendingMessageSeen) {
+                c.getUnderstand_img().setVisible(true);
+                c.getNote_img().setVisible(true);
+                c.getMain_pane().setEffect(new MotionBlur(0.0, 63.0));
+                c.getPopup_pane().setVisible(true);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    protected void inspectLoan() {
+        InspectLoanManager inspectLoanManager = new InspectLoanManager(scene);
+        inspectLoanManager.initializeScreen(((BankerPanelController) ((FXMLLoader) scene.getUserData()).getController()).getLoans_list().getSelectionModel().getSelectedItem().getId());
     }
 
     public Scene getScene() {

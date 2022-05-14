@@ -15,6 +15,7 @@ public class LoanApp extends Application {
 
     public static PostgreSQL sql = PostgreSQL.getInstance();
     public final static int USER_NOT_EXIST = -999;
+    public static Boolean isBankerPendingMessageSeen = false;
 
 
     public static void main(String[] args) {

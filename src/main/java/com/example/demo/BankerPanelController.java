@@ -3,17 +3,22 @@ package com.example.demo;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.ChoiceBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.effect.MotionBlur;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.util.Callback;
 import javafx.util.Duration;
 import javafx.util.converter.DefaultStringConverter;
 import javafx.util.converter.DoubleStringConverter;
@@ -38,13 +43,30 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
     private TableColumn<LoansModel, String> client_name_col, request_date_col, status_col;
     @FXML
     private TableColumn<LoansModel, Double> loan_amount_col, remaining_amount_col;
-
+    @FXML
+    private ImageView understand_img, note_img;
+    @FXML
+    private AnchorPane main_pane;
+    @FXML
+    private Pane popup_pane;
 
     private Timeline msg_flasher;
     private Boolean isUserNotified = false;
     protected final ObservableList<LoansModel> loans_list = FXCollections.observableArrayList();
 
+
     public void initManager(BankerPanelManager bankerPanelManager) throws SQLException {
+        if (!LoanApp.isBankerPendingMessageSeen) {
+            understand_img.setVisible(true);
+            note_img.setVisible(true);
+            main_pane.setEffect(new MotionBlur(0.0, 63.0));
+            popup_pane.setVisible(true);
+        } else {
+            understand_img.setVisible(false);
+            note_img.setVisible(false);
+            main_pane.setEffect(null);
+            popup_pane.setVisible(false);
+        }
         controlsConfiguration(bankerPanelManager);
     }
 
@@ -112,6 +134,26 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
 
         });
 
+        loans_table.setRowFactory(
+                tableView -> {
+                    final TableRow<LoansModel> row = new TableRow<>();
+                    final ContextMenu rowMenu = new ContextMenu();
+                    MenuItem inspectItem = new MenuItem("Inspect Loan");
+                    inspectItem.setOnAction(event -> bankerPanelManager.inspectLoan());
+                    rowMenu.getItems().addAll(inspectItem);
+
+                    // only display context menu for non-empty rows:
+                    row.contextMenuProperty().bind(Bindings.when(row.emptyProperty()).then((ContextMenu) null).otherwise(rowMenu));
+                    return row;
+                });
+
+        understand_img.setOnMouseClicked(event -> {
+            LoanApp.isBankerPendingMessageSeen = true;
+            understand_img.setVisible(false);
+            note_img.setVisible(false);
+            main_pane.setEffect(null);
+            popup_pane.setVisible(false);
+        });
 
         // new message icon blinker
         msg_flasher = new Timeline(
@@ -253,5 +295,25 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
 
     public Label getPending_count() {
         return pending_count;
+    }
+
+    public ImageView getUnderstand_img() {
+        return understand_img;
+    }
+
+    public ImageView getNote_img() {
+        return note_img;
+    }
+
+    public TableView<LoansModel> getLoans_table() {
+        return loans_table;
+    }
+
+    public AnchorPane getMain_pane() {
+        return main_pane;
+    }
+
+    public Pane getPopup_pane() {
+        return popup_pane;
     }
 }
