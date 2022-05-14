@@ -29,7 +29,7 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
     @FXML
     private MenuItem logoutButton, editProfileButton, todolistButton, aboutButton, modifyAccountButton, homeButton;
     @FXML
-    private Label new_messages_quantity, message_icon;
+    private Label new_messages_quantity, message_icon, approved_count, rejected_count, pending_count;
     @FXML
     private TableView<LoansModel> loans_table;
     @FXML
@@ -241,5 +241,17 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
 
     public TableColumn<LoansModel, Double> getRemaining_amount_column() {
         return remaining_amount_col;
+    }
+
+    public Label getApproved_count() {
+        return approved_count;
+    }
+
+    public Label getRejected_count() {
+        return rejected_count;
+    }
+
+    public Label getPending_count() {
+        return pending_count;
     }
 }

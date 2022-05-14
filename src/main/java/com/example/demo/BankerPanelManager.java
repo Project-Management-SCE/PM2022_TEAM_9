@@ -40,6 +40,7 @@ public class BankerPanelManager {
             BankerPanelController controller = loader.getController();
             notifier.addPropertyChangeListener(controller); // to notify controller
             controller.initManager(this);
+            countStatus(controller);
 
             // Infinity Thread worker to check for new messages
             //--------------------------------
@@ -108,13 +109,12 @@ public class BankerPanelManager {
 
                 if (items_list.getFocusModel().getFocusedCell().getColumn() == 3) {  //if loan_amount column selected
                     LoanApp.sql.update("loans", "loan_amount", String.format("%s", double_modified_data.getNewValue()), String.format("id=%s", loan_id));
-                    if (double_modified_data.getNewValue() > double_modified_data.getOldValue() ) // update remaining amount accordingly
+                    if (double_modified_data.getNewValue() > double_modified_data.getOldValue()) // update remaining amount accordingly
                         LoanApp.sql.update("loans", "remaining_amount", String.format("%s", remaining_loan + Math.abs(double_modified_data.getOldValue() - double_modified_data.getNewValue())), String.format("id=%s", loan_id));
-                    if (double_modified_data.getNewValue() < double_modified_data.getOldValue() ) // update remaining amount accordingly
+                    if (double_modified_data.getNewValue() < double_modified_data.getOldValue()) // update remaining amount accordingly
                         LoanApp.sql.update("loans", "remaining_amount", String.format("%s", remaining_loan - Math.abs(double_modified_data.getOldValue() - double_modified_data.getNewValue())), String.format("id=%s", loan_id));
-                    if (double_modified_data.getNewValue() < remaining_loan ) // update remaining amount accordingly
+                    if (double_modified_data.getNewValue() < remaining_loan) // update remaining amount accordingly
                         LoanApp.sql.update("loans", "remaining_amount", String.format("%s", 0.0), String.format("id=%s", loan_id));
-
                 }
             }
 
@@ -124,9 +124,30 @@ public class BankerPanelManager {
                 if (items_list.getFocusModel().getFocusedCell().getColumn() == 5)  //if status column selected
                     LoanApp.sql.update("loans", "status", String.format("%s", string_modified_data.getNewValue()), String.format("id=%s", loan_id));
             }
+            countStatus(((FXMLLoader) scene.getUserData()).getController());
         }
     }
 
+    private void countStatus(BankerPanelController c) {
+        try {
+            String[][] status_counter = LoanApp.sql.select("loans", "status");
+            int approved = 0, pending = 0, rejected = 0;
+            for (String[] status : status_counter) {
+                if (status[0].compareTo("APPROVED") == 0)
+                    approved++;
+                if (status[0].compareTo("PENDING") == 0)
+                    pending++;
+                if (status[0].compareTo("REJECTED") == 0)
+                    rejected++;
+            }
+
+            c.getRejected_count().setText("(" + rejected + " Rejected)");
+            c.getPending_count().setText("(" + pending + " Pending)");
+            c.getApproved_count().setText("(" + approved + " Approved)");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public Scene getScene() {
         return scene;
