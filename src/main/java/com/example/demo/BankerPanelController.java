@@ -11,8 +11,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.ChoiceBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.Duration;
+import javafx.util.converter.DefaultStringConverter;
+import javafx.util.converter.DoubleStringConverter;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -69,13 +73,44 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
             aboutManager.initializeScreen();
         });
 
-        // Sort Columns
+        // sort columns
         remaining_amount_col.setSortType(TableColumn.SortType.DESCENDING);
         client_name_col.setSortType(TableColumn.SortType.DESCENDING);
         request_date_col.setSortType(TableColumn.SortType.DESCENDING);
         loan_amount_col.setSortType(TableColumn.SortType.DESCENDING);
         remaining_amount_col.setSortType(TableColumn.SortType.DESCENDING);
         status_col.setSortType(TableColumn.SortType.DESCENDING);
+
+        //make table editable
+        status_col.setEditable(true);
+        loan_amount_col.setEditable(true);
+        loans_table.setEditable(true);
+        loan_amount_col.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        status_col.setCellFactory(ChoiceBoxTableCell.forTableColumn("APPROVED", "PENDING", "REJECTED"));
+
+        status_col.setOnEditCommit(event -> {
+            try {
+                bankerPanelManager.commitChange(loans_table, event, null);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            loans_table.getItems().removeAll(loans_table.getItems());
+            loans_table.getSelectionModel().clearSelection();
+            loans_table.setItems(itemsToTable());
+
+        });
+
+        loan_amount_col.setOnEditCommit(event -> {
+            try {
+                bankerPanelManager.commitChange(loans_table, null, event);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            loans_table.getItems().removeAll(loans_table.getItems());
+            loans_table.getSelectionModel().clearSelection();
+            loans_table.setItems(itemsToTable());
+
+        });
 
 
         // new message icon blinker

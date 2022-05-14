@@ -42,9 +42,6 @@ public class UserPanelController implements PropertyChangeListener {
             userPanelManager.initializeScreen();
         });
 
-        accountLabel.setText(AccountFullName());
-        balanceLabel.setText("$" + latestLoanAmount());
-
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(userPanelManager.getScene());
             aboutManager.initializeScreen();
@@ -78,19 +75,11 @@ public class UserPanelController implements PropertyChangeListener {
         }
     }
 
-    private String latestLoanAmount() throws SQLException {
-        return sql.select("loans", "*", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0][2];
+    public Label getAccountLabel() {
+        return accountLabel;
     }
 
-    private String AccountFullName() throws SQLException {
-        String[] loan_ids = sql.select("loans", "id", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0];
-        String latest_loan = "0";
-        for (int i = 0; i < loan_ids.length; i++) {
-            if (Integer.parseInt(loan_ids[0]) > Integer.parseInt(latest_loan))
-                latest_loan = loan_ids[0];
-        }
-        String[] fetch_name = sql.select("loan_form_data", "first_name, last_name", String.format("id=%s", latest_loan))[0];
-        return fetch_name[0] + " " + fetch_name[1];
+    public Label getBalanceLabel() {
+        return balanceLabel;
     }
-
 }

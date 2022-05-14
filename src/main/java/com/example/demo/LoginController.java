@@ -31,6 +31,7 @@ public class LoginController {
             try {
                 if (loginManager.authorize(user.getText(), password.getText()) == LoanApp.USER_NOT_EXIST)
                     incorrectLogin();
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
