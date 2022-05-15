@@ -54,7 +54,13 @@ public class LoanController {
         country.setItems(countryList); // load ComboBox list
         gender.setItems(genderList); // load ComboBox list
         nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
-        backBtn.setOnAction((event) -> loanManager.returnWelcomeScreen());
+        if (LoanApp.isClientRequestedAnotherLoan)// if user already signed in
+            backBtn.setOnAction((event) -> {
+                UserPanelManager userPanelManager = new UserPanelManager(loanManager.getScene());
+                userPanelManager.initializeScreen();
+            });
+        else
+            backBtn.setOnAction((event) -> loanManager.returnWelcomeScreen());
 
         // disable choice of future date
         date_of_birth.setDayCellFactory(param -> new DateCell() {
@@ -138,8 +144,22 @@ public class LoanController {
      * init calculating page buttons
      */
     public void initManager7(LoanManager loanManager) {
-        file_an_appeal_button.setOnAction((event) -> loanManager.continueRegistrationScreen());
-        back_to_main_button.setOnAction((event) -> loanManager.returnWelcomeScreen());
+        if (LoanApp.isClientRequestedAnotherLoan) { // if user already signed in
+            back_to_main_button.setOnAction((event) -> {
+                UserPanelManager userPanelManager = new UserPanelManager(loanManager.getScene());
+                userPanelManager.initializeScreen();
+            });
+
+            file_an_appeal_button.setText("Send Appeal To Banker");
+            file_an_appeal_button.setOnAction((event) -> {
+                UserPanelManager userPanelManager = new UserPanelManager(loanManager.getScene());
+                userPanelManager.initializeScreen();
+            });
+
+        } else {
+            file_an_appeal_button.setOnAction((event) -> loanManager.continueRegistrationScreen());
+            back_to_main_button.setOnAction((event) -> loanManager.returnWelcomeScreen());
+        }
     }
 
     private void checkBoxToTextField(TextField tf) {
@@ -397,29 +417,6 @@ public class LoanController {
         LocalDateTime live_time = LocalDateTime.now();
         LocalDate current_time = LocalDate.of(live_time.getYear(), live_time.getMonthValue(), live_time.getDayOfMonth());
         return current_time.minusDays(days);
-    }
-
-    private void resetToggles(){
-        this.doc_btn_0.setSelected(false);
-        this.doc_btn_1.setSelected(false);
-        this.doc_btn_2.setSelected(false);
-        this.doc_btn_3.setSelected(false);
-        this.doc_btn_4.setSelected(false);
-        this.doc_btn_5.setSelected(false);
-        this.doc_btn_6.setSelected(false);
-        this.doc_btn_7.setSelected(false);
-        this.doc_btn_8.setSelected(false);
-        this.doc_btn_9.setSelected(false);
-        this.doc_btn_10.setSelected(false);
-        this.doc_btn_11.setSelected(false);
-        this.doc_btn_12.setSelected(false);
-        this.doc_btn_13.setSelected(false);
-        this.doc_btn_14.setSelected(false);
-        this.doc_btn_15.setSelected(false);
-        this.doc_btn_16.setSelected(false);
-        this.doc_btn_17.setSelected(false);
-        this.doc_btn_18.setSelected(false);
-        this.doc_btn_19.setSelected(false);
     }
 
 }

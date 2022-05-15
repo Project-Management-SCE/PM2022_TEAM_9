@@ -759,6 +759,10 @@ public class LoanManager implements PropertyChangeListener {
             LoanManager.is_file_downloaded = true;
         }
     }
+
+    public Scene getScene() {
+        return scene;
+    }
 }
 
 

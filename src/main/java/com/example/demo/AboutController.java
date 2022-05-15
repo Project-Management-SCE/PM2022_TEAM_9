@@ -10,7 +10,7 @@ public class AboutController {
     @FXML
     Button userAgreementButton, loanAgreementButton, registrationAgreementButton;
     @FXML
-    MenuItem homeButton, editProfileButton, modifyAccountButton, logoutButton, aboutButton;
+    MenuItem homeButton, editProfileButton, modifyAccountButton, logoutButton, aboutButton, myLoansButton, requestLoanButton;
     @FXML
     WebView webLoader;
 
@@ -34,6 +34,17 @@ public class AboutController {
         logoutButton.setOnAction(event -> {
             LoginManager loginManager = new LoginManager(aboutManager.getScene());
             loginManager.initializeScreen();
+        });
+
+        myLoansButton.setOnAction(event -> {
+            ClientLoansManager clientLoansManager = new ClientLoansManager(aboutManager.getScene());
+            clientLoansManager.initializeScreen();
+        });
+
+        requestLoanButton.setOnAction(event -> {
+            LoanApp.isClientRequestedAnotherLoan = true;
+            LoanManager loanManager = new LoanManager(aboutManager.getScene());
+            loanManager.initializeScreen();
         });
 
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 2)

@@ -34,6 +34,8 @@ public class LoginManager {
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
             this.scene.getWindow().setHeight(WINDOW_HEIGHT);
             this.scene.setUserData(loader);
+            LoanApp.isClientRequestedAnotherLoan = false;
+            LoanApp.isBankerPendingMessageSeen = false;
 
             LoginController controller = loader.getController();
             controller.initManager(this);

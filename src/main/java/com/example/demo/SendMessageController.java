@@ -31,7 +31,7 @@ public class SendMessageController implements PropertyChangeListener {
     @FXML
     private ComboBox<String> bankers_list;
     @FXML
-    MenuItem logoutButton, editProfileButton, aboutButton, contactusButton, homeButton;
+    MenuItem logoutButton, editProfileButton, aboutButton, contactusButton, homeButton, requestLoanButton, myLoansButton;
 
 
     public void initManager(SendMessageManager sendMessageManager) throws SQLException {
@@ -62,6 +62,17 @@ public class SendMessageController implements PropertyChangeListener {
 
         contactusButton.setOnAction(event -> {
             sendMessageManager.initializeScreen();
+        });
+
+        myLoansButton.setOnAction(event -> {
+            ClientLoansManager clientLoansManager = new ClientLoansManager(sendMessageManager.getScene());
+            clientLoansManager.initializeScreen();
+        });
+
+        requestLoanButton.setOnAction(event -> {
+            LoanApp.isClientRequestedAnotherLoan = true;
+            LoanManager loanManager = new LoanManager(sendMessageManager.getScene());
+            loanManager.initializeScreen();
         });
 
 

@@ -36,8 +36,17 @@ public class InspectLoanManager {
     }
 
     protected void goBack() {
-        BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
-        bankerPanelManager.initializeScreen();
+        int role = LoginManager.logged_in_user.getInt("role", -1);
+        if (role == 1) {
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+        } else if (role == 0) {
+            UserPanelManager userPanelManager = new UserPanelManager(scene);
+            userPanelManager.initializeScreen();
+        } else if (role == 2) {
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+        }
     }
 
     public Scene getScene() {

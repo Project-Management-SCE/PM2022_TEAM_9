@@ -56,28 +56,31 @@ public class MessagesPanelManager {
     }
 
 
-    protected void goBack(){
+    protected void goBack() {
         int role = LoginManager.logged_in_user.getInt("role", -1);
-        if(role == 1){
+        if (role == 1) {
             BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
             bankerPanelManager.initializeScreen();
-        }
-        else if(role == 2){
+        } else if (role == 0) {
+            UserPanelManager userPanelManager = new UserPanelManager(scene);
+            userPanelManager.initializeScreen();
+        } else if (role == 2) {
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();
         }
     }
 
-    public void manage(){
+    public void manage() {
         ManageUsersManager modifyUserManager = new ManageUsersManager(scene);
         modifyUserManager.initializeScreen();
     }
-    public void edit(){
+
+    public void edit() {
         EditProfileManager editProfileManager = new EditProfileManager(scene);
         editProfileManager.initializeScreen();
     }
 
-    public void logOut(){
+    public void logOut() {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.initializeScreen();
     }
