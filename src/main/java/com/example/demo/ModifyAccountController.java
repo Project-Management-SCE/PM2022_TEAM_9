@@ -3,12 +3,13 @@ package com.example.demo;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
 import java.sql.SQLException;
 
 public class ModifyAccountController {
 
     @FXML
-    private Button updateButton, cancelButton;
+    private Button updateButton, cancelButton, deleteAccountButton;
     @FXML
     private TextField username, email, password;
 
@@ -22,14 +23,10 @@ public class ModifyAccountController {
             }
         });
 
-    }
+        // show delete button only for clients
+        deleteAccountButton.setVisible(LoginManager.logged_in_user.getInt("role", -1) == 0);
+        deleteAccountButton.setOnAction(event -> modifyAccountManager.deleteUserAccount());
 
-    public Button getUpdateButton() {
-        return updateButton;
-    }
-
-    public Button getCancelButton() {
-        return cancelButton;
     }
 
     public TextField getUsername() {

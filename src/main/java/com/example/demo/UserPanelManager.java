@@ -52,7 +52,10 @@ public class UserPanelManager {
 
     private String AccountFullName() throws SQLException {
         String[][] full_name = sql.select("clients", "first_name, last_name", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)));
-        return full_name[0][0] + " " + full_name[0][1];
+        if (full_name.length != 0)
+            return full_name[0][0] + " " + full_name[0][1];
+        else
+            return "NOT AVAILABLE";
     }
 
 
