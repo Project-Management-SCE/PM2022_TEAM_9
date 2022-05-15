@@ -74,6 +74,16 @@ public class UserPanelManager {
         sendMessageManager.initializeScreen();
     }
 
+    public void goComplaint(){
+        ComplaintManager complaintManager = new ComplaintManager(scene);
+        complaintManager.initializeScreen();
+    }
+
+    public void Withdraw(){
+        WithdrawManager withdrawManager = new WithdrawManager(scene);
+        withdrawManager.initializeScreen();
+    }
+
     public Scene getScene() {
         return scene;
     }

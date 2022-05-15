@@ -97,4 +97,11 @@ public class ComplaintController implements PropertyChangeListener{
         return message_body;
     }
 
+    public ObservableList<String> getComplain_list() {
+        return complain_list;
+    }
+
+    public ComboBox<String> getComplain() {
+        return complain;
+    }
 }

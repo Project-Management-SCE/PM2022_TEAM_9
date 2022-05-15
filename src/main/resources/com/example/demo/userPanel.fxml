@@ -36,6 +36,7 @@
                               <MenuItem fx:id="homeButton" mnemonicParsing="false" text="Home" />
                               <MenuItem fx:id="modifyAccountButton" mnemonicParsing="false" text="Modify Account" />
                                         <MenuItem fx:id="editProfileButton" mnemonicParsing="false" text="Edit Profile" />
+                                        <MenuItem fx:id="withdraw" mnemonicParsing="false" text="Withdraw" />
                                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                                     </items>
                                 </Menu>
@@ -47,6 +48,7 @@
                         </Menu>
                                 <Menu mnemonicParsing="false" text="Help">
                                     <items>
+                                        <MenuItem fx:id="complaint" mnemonicParsing="false" text="Send Complaint" />
                                         <MenuItem fx:id="contactusButton" mnemonicParsing="false" text="Contact Us" />
                                         <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />
                                     </items>

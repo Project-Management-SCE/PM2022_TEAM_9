@@ -64,11 +64,10 @@ public class LoansGraphController {
 
 
             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                    new PieChart.Data(String.format("Approved (%s)", count_approved), count_approved),
+                    new PieChart.Data(String.format("Rejected (%s)", count_rejected), count_rejected),
                     new PieChart.Data(String.format("Pending (%s)", count_pending), count_pending),
-                    new PieChart.Data(String.format("Rejected (%s)", count_rejected), count_rejected)
+                    new PieChart.Data(String.format("Approved (%s)", count_approved), count_approved)
             );
-
 
 
             //Creating a Pie chart

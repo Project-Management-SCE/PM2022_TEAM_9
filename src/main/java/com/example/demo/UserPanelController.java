@@ -21,7 +21,7 @@ public class UserPanelController implements PropertyChangeListener {
     @FXML
     private Label accountLabel, balanceLabel;
     @FXML
-    private MenuItem logoutButton, editProfileButton, contactusButton, aboutButton, modifyAccountButton, homeButton, myLoansButton, requestLoanButton;
+    private MenuItem withdraw, complaint, logoutButton, editProfileButton, contactusButton, aboutButton, modifyAccountButton, homeButton, myLoansButton, requestLoanButton;
     @FXML
     private Label new_messages_quantity, message_icon;
 
@@ -33,6 +33,8 @@ public class UserPanelController implements PropertyChangeListener {
         logoutButton.setOnAction(actionEvent -> userPanelManager.goLogin());
         editProfileButton.setOnAction(event -> userPanelManager.edit());
         contactusButton.setOnAction(event -> userPanelManager.sendMessageBanker());
+        complaint.setOnAction(event -> userPanelManager.goComplaint());
+        withdraw.setOnAction(event -> userPanelManager.Withdraw());
 
         message_icon.setOnMouseClicked(event -> {
             MessagesPanelManager manageMessagesManager = new MessagesPanelManager(userPanelManager.getScene());
