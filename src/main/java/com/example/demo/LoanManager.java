@@ -93,7 +93,7 @@ public class LoanManager implements PropertyChangeListener {
 
     public void continueRegistrationScreen() {
         RegisterManager registerManager = new RegisterManager(scene);
-        registerManager.initializeScreen();
+        registerManager.initializeScreen(loan_form);
     }
 
     public void nextPage(int currentPage) {
@@ -598,102 +598,6 @@ public class LoanManager implements PropertyChangeListener {
         new Timeline(new KeyFrame(Duration.millis(TIMELINE_OFFSET), ignore -> temp.setText(text))).play();
 
     }
-
-    private void insertDataToDB(Preferences loan_form) {
-        LoanApp.sql.insert("loan_form_data",
-                "address," +
-                        " amt_credit," +
-                        " amt_goods_price, " +
-                        "amt_income_total, " +
-                        "city, " +
-                        "cnt_children, " +
-                        "cnt_fam_members, " +
-                        "code_gender, " +
-                        "country, " +
-                        "county, " +
-                        "days_employed, " +
-                        "first_name, " +
-                        "flag_email, " +
-                        "flag_emp_phone, " +
-                        "flag_mobil, " +
-                        "flag_own_car, " +
-                        "flag_own_realty, " +
-                        "flag_phone, " +
-                        "flag_work_phone, " +
-                        "last_name, " +
-                        "name_education_type, " +
-                        "name_family_status, " +
-                        "name_housing_type, " +
-                        "occupation_type, " +
-                        "organization_type, " +
-                        "own_car_age, " +
-                        "phone, " +
-                        "region_population_relative," +
-                        "region_rating_client, " +
-                        "status, " +
-                        "user_id, " +
-                        "zipcode, " +
-                        "reference_id",
-                String.format("'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s',%s,'%s','%s'",
-                        loan_form.get("address", STRING_KEY_ERROR),
-                        loan_form.getDouble("loan_amount", INT_KEY_ERROR),
-                        loan_form.getDouble("property_value", INT_KEY_ERROR),
-                        loan_form.getDouble("total_income", INT_KEY_ERROR),
-                        loan_form.get("city", STRING_KEY_ERROR),
-                        loan_form.getInt("childrens_amount", INT_KEY_ERROR),
-                        loan_form.getInt("family_members", INT_KEY_ERROR),
-                        loan_form.get("gender", STRING_KEY_ERROR),
-                        loan_form.get("country", STRING_KEY_ERROR),
-                        loan_form.get("state", STRING_KEY_ERROR),
-                        loan_form.getInt("days_employed", INT_KEY_ERROR),
-                        loan_form.get("full_name", STRING_KEY_ERROR).split(" ", 2)[0],
-                        loan_form.getBoolean("email_flag", false),
-                        loan_form.getBoolean("work_phone_flag", false),
-                        loan_form.getBoolean("mobile_phone_flag", false),
-                        loan_form.getBoolean("own_car_flag", false),
-                        loan_form.getBoolean("own_realty_flag", false),
-                        loan_form.getBoolean("home_phone", false),
-                        loan_form.getBoolean("work_phone_flag", false),
-                        loan_form.get("full_name", STRING_KEY_ERROR).split(" ", 2)[1],
-                        loan_form.get("education_level", STRING_KEY_ERROR),
-                        loan_form.get("family_status", STRING_KEY_ERROR),
-                        loan_form.get("living_type", STRING_KEY_ERROR),
-                        loan_form.get("occupation_type", STRING_KEY_ERROR),
-                        loan_form.get("organization_type", STRING_KEY_ERROR),
-                        loan_form.getInt("own_car_age", INT_KEY_ERROR),
-                        loan_form.get("home_phone", STRING_KEY_ERROR),
-                        regionPopulationRelative(),
-                        regionRatingClient(),
-                        loan_form.get("loan_status", STRING_KEY_ERROR),
-                        LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST),
-                        loan_form.getInt("zipcode", INT_KEY_ERROR),
-                        loan_form.get("reference_id", STRING_KEY_ERROR)
-                )
-        );
-    }
-
-    private int regionRatingClient() {
-        if (loan_form.get("state", null).compareTo("North") == 0)
-            return REGION_RATING_CLIENT.NORTH.value();
-
-        if (loan_form.get("state", null).compareTo("Center") == 0)
-            return REGION_RATING_CLIENT.NORTH.value();
-
-        if (loan_form.get("state", null).compareTo("South") == 0)
-            return REGION_RATING_CLIENT.NORTH.value();
-
-        return -1;
-    }
-
-    private double regionPopulationRelative() {
-        if ((loan_form.get("state", null).compareTo("North") == 0))
-            return 0.03;
-        if ((loan_form.get("state", null).compareTo("Center") == 0))
-            return 0.07;
-        else
-            return 0.03;
-    }
-
 
     static String getReferenceID(int n) {
 

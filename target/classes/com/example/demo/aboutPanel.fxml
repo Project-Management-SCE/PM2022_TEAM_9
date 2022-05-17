@@ -32,6 +32,12 @@
                               <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
                            </items>
                         </Menu>
+                        <Menu mnemonicParsing="false" text="Loans">
+                          <items>
+                            <MenuItem fx:id="myLoansButton" mnemonicParsing="false" text="My Loans" />
+                              <MenuItem fx:id="requestLoanButton" mnemonicParsing="false" text="Request Loan" />
+                          </items>
+                        </Menu>
                         <Menu mnemonicParsing="false" text="Help">
                            <items>
                               <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />

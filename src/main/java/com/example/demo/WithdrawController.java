@@ -20,4 +20,32 @@ public class WithdrawController {
         cancelButton.setOnAction(event -> withdrawManager.goBack());
 
     }
+
+    public Button getWithdrawButton() {
+        return withdrawButton;
+    }
+
+    public Button getCancelButton() {
+        return cancelButton;
+    }
+
+    public TextField getAcc_num() {
+        return acc_num;
+    }
+
+    public TextField getBranch() {
+        return branch;
+    }
+
+    public TextField getBank_name() {
+        return bank_name;
+    }
+
+    public TextField getFull_name() {
+        return full_name;
+    }
+
+    public TextField getAmount() {
+        return amount;
+    }
 }

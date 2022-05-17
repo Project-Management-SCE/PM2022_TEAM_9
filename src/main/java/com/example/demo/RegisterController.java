@@ -1,31 +1,32 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.text.TextFlow;
+import javafx.scene.control.*;
+
+import java.sql.SQLException;
 
 public class RegisterController {
 
     @FXML
-    private Button submit, back;
+    private Button homeButton, confirmButton;
     @FXML
-    private TextField username, email, pass, re_pass;
+    private TextField username, email;
     @FXML
-    private TextFlow error;
-
-    final Label message = new Label("");
-
-
-    public void initManager(RegisterManager registerManager){
-
-        submit.setOnAction(event -> registerManager.authorize(pass,re_pass,email,username));
+    private PasswordField password, repeat_password;
+    @FXML
+    private CheckBox agreementCheckBox;
 
 
-        back.setOnAction(event -> registerManager.goWelcome());
+    public void initManager(RegisterManager registerManager) {
+        confirmButton.setOnAction(event -> {
+            try {
+                registerManager.createAccount(password, repeat_password, email, username, agreementCheckBox);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        homeButton.setOnAction(event -> registerManager.goWelcome());
     }
-
 
 
 }

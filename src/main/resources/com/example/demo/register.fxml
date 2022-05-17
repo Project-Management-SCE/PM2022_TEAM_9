@@ -1,73 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="650" prefWidth="650" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.RegisterController">
-    <children>
-        <StackPane>
-            <children>
-
-                <VBox spacing="10.0">
-                    <children>
-                        <GridPane prefHeight="641.0" prefWidth="655.0">
-                            <children>
-                                <Label text="Username:" GridPane.rowIndex="2">
-                                    <font>
-                                        <Font size="17.0" />
-                                    </font></Label>
-                                <Label text="Password:" GridPane.rowIndex="4">
-                                    <font>
-                                        <Font size="17.0" />
-                                    </font></Label>
-                                <TextField fx:id="username" prefHeight="35.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                <PasswordField fx:id="pass" prefHeight="33.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                <Button fx:id="submit" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="366.0" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                <Button fx:id="back" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="back" GridPane.rowIndex="7" />
-                                <Label text="Register Panel" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="Arial" size="25.0" />
-                                    </font>
-                                </Label>
-                        <Label text="Repeat Password:" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="re_pass" prefHeight="32.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="E-mail:" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="email" prefHeight="33.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label  GridPane.columnIndex="2" GridPane.rowIndex="5" />
-
-                            </children>
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="123.6" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="379.19999999999993" minWidth="10.0" prefWidth="355.19999999999993" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="130.39999999999998" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                        </GridPane>
-                    </children>
-                </VBox>
-            </children>
-        </StackPane>
-    </children>
-    <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-    </padding>
-</StackPane>
+<Pane prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.RegisterController">
+   <children>
+      <Accordion layoutX="52.0" layoutY="111.0" />
+      <Label layoutX="118.0" layoutY="29.0" text="Create an Account" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="29.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="63.0" layoutY="99.0" prefHeight="173.0" prefWidth="342.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="128.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="214.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="162.0" text="Email: " textAlignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="149.0" text="Repeat Password: " textAlignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="139.0" text="Password: " textAlignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="157.0" text="Username: " textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="repeat_password" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="username" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" />
+            <CheckBox fx:id="agreementCheckBox" alignment="CENTER_RIGHT" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="262.0" text="I confirm the terms of registration" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="12.5" />
+               </font>
+            </CheckBox>
+         </children>
+      </GridPane>
+      <Button fx:id="confirmButton" layoutX="349.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Confirm">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Button  fx:id="homeButton" layoutX="19.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Home">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

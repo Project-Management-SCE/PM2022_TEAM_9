@@ -65,4 +65,7 @@ public class WithdrawManager {
         userPanelManager.initializeScreen();
     }
 
+    public Scene getScene() {
+        return scene;
+    }
 }

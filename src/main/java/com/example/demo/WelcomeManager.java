@@ -34,10 +34,6 @@ public class WelcomeManager {
         loanManager.initializeScreen();
     }
 
-    public void register(){
-        RegisterManager registerManager = new RegisterManager(scene);
-        registerManager.initializeScreen();
-    }
     /**
      * show welcome screen
      */

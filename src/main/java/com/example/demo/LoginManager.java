@@ -2,11 +2,14 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.logging.*;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
+
 import java.util.prefs.Preferences;
+
 import static com.example.demo.LoanApp.sql;
 
 
@@ -78,6 +81,10 @@ public class LoginManager {
         String[][] fetch = sql.select("users", "*", String.format("username='%s',password='%s'", user, pass));
         if (fetch.length == 0)
             return LoanApp.USER_NOT_EXIST;
+
+        //Update login timestamp
+        LocalDate current_time = LocalDate.now();
+        sql.update("users", "last_logged_in", String.valueOf(current_time), String.format("id=%s", fetch[0][0]));
 
         logged_in_user.putInt("userid", Integer.parseInt(fetch[0][0])); // keep id in userPreferences
         logged_in_user.put("username", fetch[0][1]);
