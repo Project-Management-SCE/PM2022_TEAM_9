@@ -53,7 +53,11 @@ public class LoanController {
         state.setItems(regionList);
         country.setItems(countryList); // load ComboBox list
         gender.setItems(genderList); // load ComboBox list
-        nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
+        nextBtn.setOnAction((event) -> {
+            if (!isFormInvalid(current_page))
+                loanManager.nextPage(++current_page);
+        });
+
         if (LoanApp.isClientRequestedAnotherLoan)// if user already signed in
             backBtn.setOnAction((event) -> {
                 UserPanelManager userPanelManager = new UserPanelManager(loanManager.getScene());
@@ -83,7 +87,11 @@ public class LoanController {
         living_type.setItems(housingList);
         own_car_age.setDisable(true);
         property_value.setDisable(true);
-        nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
+        nextBtn.setOnAction((event) -> {
+            if (!isFormInvalid(current_page))
+                loanManager.nextPage(++current_page);
+        });
+
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
         flag_own_car.setOnAction((event) -> inverseCheckBoxToTextField(own_car_age, flag_own_car));
         flag_own_realty.setOnAction((event) -> inverseCheckBoxToTextField(property_value, flag_own_realty));
@@ -106,7 +114,11 @@ public class LoanController {
     public void initManager3(LoanManager loanManager) {
         family_status.setItems(familyList); // load ComboBox list
         education_level.setItems(educationList); // load ComboBox list
-        nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
+        nextBtn.setOnAction((event) -> {
+            if (!isFormInvalid(current_page))
+                loanManager.nextPage(++current_page);
+        });
+
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
         home_phone_na.setOnAction((event) -> checkBoxToTextField(home_phone));
         work_phone_na.setOnAction((event) -> checkBoxToTextField(work_phone));
@@ -118,7 +130,10 @@ public class LoanController {
      * init calculating page buttons
      */
     public void initManager4(LoanManager loanManager) {
-        nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
+        nextBtn.setOnAction((event) -> {
+            if (!isFormInvalid(current_page))
+                loanManager.nextPage(++current_page);
+        });
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
     }
 
@@ -127,7 +142,10 @@ public class LoanController {
      * init calculating page buttons
      */
     public void initManager5(LoanManager loanManager) {
-        nextBtn.setOnAction((event) -> loanManager.nextPage(++current_page));
+        nextBtn.setOnAction((event) -> {
+            if (!isFormInvalid(current_page))
+                loanManager.nextPage(++current_page);
+        });
         backBtn.setOnAction((event) -> loanManager.nextPage(--current_page));
     }
 
@@ -417,6 +435,153 @@ public class LoanController {
         LocalDateTime live_time = LocalDateTime.now();
         LocalDate current_time = LocalDate.of(live_time.getYear(), live_time.getMonthValue(), live_time.getDayOfMonth());
         return current_time.minusDays(days);
+    }
+
+    private boolean isFormInvalid(int page) {
+        boolean isFormInvalid = false;
+
+        if (page == 0) {
+            // Form Validation
+            if (fullName().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(fullName(), false);
+            } else
+                LoanApp.markRedBox(fullName(), true);
+
+            if (Address().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(Address(), false);
+            } else
+                LoanApp.markRedBox(Address(), true);
+
+            if (City().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(City(), false);
+            } else
+                LoanApp.markRedBox(City(), true);
+
+            if (State().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(State(), false);
+            } else
+                LoanApp.markRedBox(State(), true);
+
+            if (Country().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(Country(), false);
+            } else
+                LoanApp.markRedBox(Country(), true);
+
+            if (Gender().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(Gender(), false);
+            } else
+                LoanApp.markRedBox(Gender(), true);
+
+            return isFormInvalid;
+        }
+
+        if (page == 1) {
+            // Form Validation
+            if (totalIncome().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(totalIncome(), false);
+            } else
+                LoanApp.markRedBox(totalIncome(), true);
+
+            if (propertyValue().getText().length() == 0 && ownRealtyFlag().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(propertyValue(), false);
+            } else
+                LoanApp.markRedBox(propertyValue(), true);
+
+            if (loanAmount().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(loanAmount(), false);
+            } else
+                LoanApp.markRedBox(loanAmount(), true);
+
+            if (LivingType().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(LivingType(), false);
+            } else
+                LoanApp.markRedBox(LivingType(), true);
+
+            if (occupationType().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(occupationType(), false);
+            } else
+                LoanApp.markRedBox(occupationType(), true);
+
+            if (organizationType().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(organizationType(), false);
+            } else
+                LoanApp.markRedBox(organizationType(), true);
+
+            if (ownCarAge().getText().length() == 0 && ownCarFlag().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(ownCarAge(), false);
+            } else
+                LoanApp.markRedBox(ownCarAge(), true);
+
+            return isFormInvalid;
+        }
+
+        if (page == 2) {
+            // Form Validation
+            if (familyStatus().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(familyStatus(), false);
+            } else
+                LoanApp.markRedBox(familyStatus(), true);
+
+            if (childrensAmount().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(childrensAmount(), false);
+            } else
+                LoanApp.markRedBox(childrensAmount(), true);
+
+            if (familyMembers().getText().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(familyMembers(), false);
+            } else
+                LoanApp.markRedBox(familyMembers(), true);
+
+            if (educationLevel().getValue().length() == 0) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(educationLevel(), false);
+            } else
+                LoanApp.markRedBox(educationLevel(), true);
+
+            if (homePhone().getText().length() == 0 && !homePhoneNA().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(homePhone(), false);
+            } else
+                LoanApp.markRedBox(homePhone(), true);
+
+            if (mobilePhone().getText().length() == 0 && !mobilePhoneNA().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(mobilePhone(), false);
+            } else
+                LoanApp.markRedBox(mobilePhone(), true);
+
+            if (workPhone().getText().length() == 0 && !workPhoneNA().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(workPhone(), false);
+            } else
+                LoanApp.markRedBox(workPhone(), true);
+
+            if (Email().getText().length() == 0 && !EmailNA().isSelected()) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(Email(), false);
+            } else
+                LoanApp.markRedBox(Email(), true);
+
+            return isFormInvalid;
+        }
+
+        return isFormInvalid;
     }
 
 }

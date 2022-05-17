@@ -195,7 +195,8 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
                 String[][] loan_form_data = LoanApp.sql.select("loan_form_data", "reference_id", String.format("user_id=%s", col[0]));
                 String[][] loan_data = LoanApp.sql.select("loans", "*", String.format("user_id=%s", col[0]));
                 String[][] full_name = LoanApp.sql.select("clients", "first_name, last_name", String.format("user_id=%s", col[0]));
-                loans_list.add(new LoansModel(Integer.parseInt(loan_data[0][0]), loan_form_data[0][0], full_name[0][0] + " " + full_name[0][1], loan_data[0][2], Double.parseDouble(loan_data[0][3]), Double.parseDouble(loan_data[0][4]), loan_data[0][5]));
+                if (loan_form_data.length > 0 && loan_data.length > 0 && full_name.length > 0)
+                    loans_list.add(new LoansModel(Integer.parseInt(loan_data[0][0]), loan_form_data[0][0], full_name[0][0] + " " + full_name[0][1], loan_data[0][2], Double.parseDouble(loan_data[0][3]), Double.parseDouble(loan_data[0][4]), loan_data[0][5]));
             }
             return loans_list;
 

@@ -71,8 +71,8 @@ public class LoanManager implements PropertyChangeListener {
             LoanController.current_page = 0;
             this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
             scene.setRoot(loader.load());
-            this.scene.getWindow().setWidth(WINDOW_WIDTH);
-            this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+            scene.getWindow().setWidth(WINDOW_WIDTH);
+            scene.getWindow().setHeight(WINDOW_HEIGHT);
 
             LoanController controller = loader.getController();
             controller.initManager(this);
@@ -101,8 +101,8 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loan1.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager(this);
@@ -117,8 +117,8 @@ public class LoanManager implements PropertyChangeListener {
                 savePage1(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan2.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager2(this);
@@ -132,8 +132,8 @@ public class LoanManager implements PropertyChangeListener {
                 savePage2(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan3.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager3(this);
@@ -147,8 +147,8 @@ public class LoanManager implements PropertyChangeListener {
                 savePage3(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan4.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager4(this);
@@ -163,8 +163,8 @@ public class LoanManager implements PropertyChangeListener {
                 savePage4(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("loan5.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager5(this);
@@ -179,8 +179,8 @@ public class LoanManager implements PropertyChangeListener {
                 savePage5(); // save current data
                 this.loader = new FXMLLoader(getClass().getResource("submitLoan.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
                 ann_loader.startTheService();
                 updateStatus("Building the magical network...");
             } catch (IOException e) {
@@ -192,8 +192,8 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanApproved.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager6(this);
@@ -213,8 +213,8 @@ public class LoanManager implements PropertyChangeListener {
             try {
                 this.loader = new FXMLLoader(getClass().getResource("loanRejected.fxml"));
                 scene.setRoot(loader.load());
-                this.scene.getWindow().setWidth(WINDOW_WIDTH);
-                this.scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.getWindow().setWidth(WINDOW_WIDTH);
+                scene.getWindow().setHeight(WINDOW_HEIGHT);
 
                 LoanController controller = loader.getController();
                 controller.initManager7(this);
@@ -233,6 +233,7 @@ public class LoanManager implements PropertyChangeListener {
 
     private void savePage1() {
         LoanController controller = loader.getController(); // make code readable
+
         if (controller.fullName() != null && controller.fullName().getText().length() > 0)
             loan_form.put("full_name", controller.fullName().getText());
 
@@ -256,6 +257,7 @@ public class LoanManager implements PropertyChangeListener {
 
         if (controller.Gender() != null && controller.Gender().getValue().length() > 0)
             loan_form.put("gender", controller.Gender().getValue());
+
     }
 
     private void savePage2() {
@@ -263,8 +265,10 @@ public class LoanManager implements PropertyChangeListener {
         if (controller.totalIncome() != null && controller.totalIncome().getText().length() > 0)
             loan_form.putDouble("total_income", Double.parseDouble(controller.totalIncome().getText()));
 
-        if (controller.propertyValue() != null && controller.propertyValue().getText().length() > 0)
+        if (controller.propertyValue() != null && controller.ownRealtyFlag().isSelected())
             loan_form.putDouble("property_value", Double.parseDouble(controller.propertyValue().getText()));
+        else
+            loan_form.putInt("property_value", 0);
 
         if (controller.loanAmount() != null && controller.loanAmount().getText().length() > 0)
             loan_form.putDouble("loan_amount", Double.parseDouble(controller.loanAmount().getText()));
@@ -278,8 +282,10 @@ public class LoanManager implements PropertyChangeListener {
         if (controller.organizationType() != null && controller.organizationType().getValue().length() > 0)
             loan_form.put("organization_type", controller.organizationType().getValue());
 
-        if (controller.ownCarAge() != null && controller.ownCarAge().getText().length() > 0)
+        if (controller.ownCarAge() != null && controller.ownCarFlag().isSelected())
             loan_form.putInt("own_car_age", Integer.parseInt(controller.ownCarAge().getText()));
+        else
+            loan_form.putInt("own_car_age", 0);
 
         if (controller.daysEmployed() != null && LoanController.dateToDays(controller.daysEmployed()) != 0)
             loan_form.putInt("days_employed", (int) LoanController.dateToDays(controller.daysEmployed()));

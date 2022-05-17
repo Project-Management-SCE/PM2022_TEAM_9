@@ -4,50 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="MERGE HACKATHON WITH SPRINT 3">
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="REGISTRATION IS NOW OPERATIONAL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/RegisterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/RegisterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WelcomeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WelcomeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WithdrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WithdrawController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WithdrawManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WithdrawManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/AboutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/AboutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/AboutManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoginManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ManagerPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/MessagesPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ModifyAccountManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SendMessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/aboutPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/aboutPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/bankerPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/editProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/loanRejected.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/loanRejected.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/manageUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/manageUsers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/managerPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/messagesPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/messagesPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/modifyAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/modifyAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/replyMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/replyMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/sendMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/todoList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/todoList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/userPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/userPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/viewMessage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/viewMessage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/WelcomeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/BankerPanelManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,13 +220,7 @@
       <workItem from="1651558096710" duration="3112000" />
       <workItem from="1651570980227" duration="10658000" />
       <workItem from="1652640844518" duration="1185000" />
-      <workItem from="1652775462413" duration="9202000" />
-    </task>
-    <task id="LOCAL‎00010" summary="BSPM2022T9-65">
-      <created>1650638152692</created>
-      <option name="number" value="LOCAL‎00010" />
-      <option name="presentableId" value="LOCAL‎00010" />
-      <updated>1650638152692</updated>
+      <workItem from="1652775462413" duration="18667000" />
     </task>
     <task id="LOCAL‎00011" summary="BSPM2022T9-65">
       <created>1650658509428</created>
@@ -536,7 +510,13 @@
       <option name="presentableId" value="LOCAL‎00058" />
       <updated>1652642032973</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL‎00059" summary="REGISTRATION IS NOW OPERATIONAL">
+      <created>1652785272722</created>
+      <option name="number" value="LOCAL‎00059" />
+      <option name="presentableId" value="LOCAL‎00059" />
+      <updated>1652785272722</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +545,8 @@
     <MESSAGE value="&#10;BSPM2022T9-158" />
     <MESSAGE value="FIX TESTING FILES" />
     <MESSAGE value="MERGE HACKATHON WITH SPRINT 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="MERGE HACKATHON WITH SPRINT 3" />
+    <MESSAGE value="REGISTRATION IS NOW OPERATIONAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="REGISTRATION IS NOW OPERATIONAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -575,9 +556,14 @@
           <option name="timeStamp" value="12" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/LoginManager.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java</url>
+          <line>532</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java</url>
+          <line>538</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

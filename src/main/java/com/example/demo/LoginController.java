@@ -29,27 +29,11 @@ public class LoginController {
 
         loginButton.setOnAction(event -> {
             try {
+                if (user.getText().length() == 0 || password.getText().length() == 0)
+                    incorrectLogin();
                 if (loginManager.authorize(user.getText(), password.getText()) == LoanApp.USER_NOT_EXIST)
                     incorrectLogin();
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        });
-
-        password.setOnAction(event -> {
-            try {
-                if (loginManager.authorize(user.getText(), password.getText()) == LoanApp.USER_NOT_EXIST)
-                    incorrectLogin();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        });
-
-        user.setOnAction(event -> {
-            try {
-                if (loginManager.authorize(user.getText(), password.getText()) == LoanApp.USER_NOT_EXIST)
-                    incorrectLogin();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

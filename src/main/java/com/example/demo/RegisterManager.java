@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -53,10 +54,42 @@ public class RegisterManager {
 
 
     protected void createAccount(PasswordField password, PasswordField repeat_password, TextField email, TextField username, CheckBox agreement) throws SQLException {
-        username.requestFocus();
+        boolean isFormInvalid = false;
+
+        // Form Validation
+        if (password.getText().length() == 0) {
+            isFormInvalid = true;
+            LoanApp.markRedBox(password, false);
+        } else
+            LoanApp.markRedBox(password, true);
+
+        if (repeat_password.getText().length() == 0 && repeat_password.getText().compareTo(password.getText()) != 0) {
+            isFormInvalid = true;
+            LoanApp.markRedBox(repeat_password, false);
+        } else
+            LoanApp.markRedBox(repeat_password, true);
+
+        if (email.getText().length() == 0) {
+            isFormInvalid = true;
+            LoanApp.markRedBox(email, false);
+        } else
+            LoanApp.markRedBox(email, true);
+
+        if (username.getText().length() == 0) {
+            isFormInvalid = true;
+            LoanApp.markRedBox(username, false);
+        } else
+            LoanApp.markRedBox(username, true);
+
+        if (!agreement.isSelected()) {
+            isFormInvalid = true;
+            LoanApp.markRedBox(agreement, false);
+        } else
+            LoanApp.markRedBox(agreement, true);
+
 
         // Check Form Validation
-        if (password.getText().compareTo(repeat_password.getText()) == 0 && agreement.isSelected()) {
+        if (!isFormInvalid) {
 
             // User Creation
             String u_registration_cols = "username, email, password, role";
@@ -164,10 +197,14 @@ public class RegisterManager {
 
             } else
                 LoanApp.sql.insert("loans", String.format("%s", l_registration_cols), String.format("%s, %s, '%s', %s, %s, '%s'", loan_id, user_id, current_time, request_amount, request_amount, "PENDING"));
-        }
 
-        LoginManager loginManager = new LoginManager(scene);
-        loginManager.initializeScreen();
+            // After successful data insertion go back to login
+            LoginManager loginManager = new LoginManager(scene);
+            loginManager.initializeScreen();
+
+        } else {
+
+        }
     }
 
 

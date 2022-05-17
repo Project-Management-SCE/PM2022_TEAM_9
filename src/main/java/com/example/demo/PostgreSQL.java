@@ -122,7 +122,6 @@ public class PostgreSQL {
     public String[][] select(String table, String columns) throws SQLException {
         try {
             String query = "SELECT %s FROM %s".formatted(columns, table);
-            System.out.println(query);
             this.stmt = this.connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             this.cursor = stmt.executeQuery(query);
         } catch (SQLException e) {
