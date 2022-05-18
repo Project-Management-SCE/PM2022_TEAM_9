@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 public class AboutManager {
     private final Scene scene;
-    private MessageModel messageModel;
 
     private final static int WINDOW_WIDTH = 665;
     private final static int WINDOW_HEIGHT = 690;
@@ -49,11 +48,6 @@ public class AboutManager {
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();
         }
-    }
-
-    public void returnToMessages() {
-        MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
-        messagesPanelManager.initializeScreen();
     }
 
     public Scene getScene() {

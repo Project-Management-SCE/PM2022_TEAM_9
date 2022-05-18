@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.effect.BoxBlur;
 import javafx.util.Duration;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -54,13 +55,12 @@ public class ReplyMessageManager {
         messagesPanelManager.initializeScreen();
     }
 
-    protected void goBack(){
+    protected void goBack() {
         int role = LoginManager.logged_in_user.getInt("role", -1);
-        if(role == 1){
+        if (role == 1) {
             BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
             bankerPanelManager.initializeScreen();
-        }
-        else if(role == 2){
+        } else if (role == 2) {
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();
         }
@@ -72,15 +72,13 @@ public class ReplyMessageManager {
             System.out.println(current_time);
             String columns = "sender, receiver, subject, body, date_sent, read";
             String[][] fetch_message = LoanApp.sql.select("mailbox", "*", String.format("id=%s", messageModel.getID()));
-            LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_message[0][2], fetch_message[0][1], subject.replace("'",""), body.replace("'",""), current_time));
+            LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_message[0][2], fetch_message[0][1], subject.replace("'", ""), body.replace("'", ""), current_time));
 
             c.exit_message.setDisable(true);
             c.send_message.setDisable(true);
             this.scene.getRoot().setEffect(new BoxBlur(5.0, 5.0, 1));
             c.message_sent_popup.setVisible(true);
-            new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-                returnToMessages();
-            })).play();
+            new Timeline(new KeyFrame(Duration.seconds(3), event -> returnToMessages())).play();
         } catch (SQLException e) {
             e.printStackTrace();
         }

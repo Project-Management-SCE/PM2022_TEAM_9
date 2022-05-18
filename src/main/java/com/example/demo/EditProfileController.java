@@ -32,11 +32,6 @@ public class EditProfileController {
         }
 
     }
-
-    public Button getUpdateButton() {
-        return updateButton;
-    }
-
     public TextField getFirstname() {
         return firstname;
     }
@@ -63,10 +58,6 @@ public class EditProfileController {
 
     public TextField getPhone() {
         return phone;
-    }
-
-    public Button getCancelButton() {
-        return cancelButton;
     }
 
     public TextField getBank_number() {

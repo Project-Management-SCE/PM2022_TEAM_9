@@ -11,16 +11,12 @@ public class WelcomeController {
 
 
     public void initManager(WelcomeManager welcomeManager) {
-        login.setOnAction(actionEvent -> {welcomeManager.login(); });
+        login.setOnAction(actionEvent -> welcomeManager.login());
         ask_for_loan.setOnAction((actionEvent -> welcomeManager.loan()));
     }
 
 
     public Button getLogin() {
         return login;
-    }
-
-    public Button getAsk_for_loan() {
-        return ask_for_loan;
     }
 }

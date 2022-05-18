@@ -1,13 +1,17 @@
 package com.example.demo;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.util.Duration;
+
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.logging.*;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.*;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
 import static com.example.demo.LoanApp.sql;
@@ -22,7 +26,8 @@ public class ForgotPasswordManager {
     private final static int WINDOW_HEIGHT = 436;
 
     protected final static Preferences logged_in_user = Preferences.userRoot().node("AUTHORIZED_USER");
-    ;
+
+    protected final static int INVALID_USER_ID = -1;
 
     public ForgotPasswordManager(Scene scene) {
         this.scene = scene;
@@ -56,19 +61,42 @@ public class ForgotPasswordManager {
     /**
      * Check authorization.
      */
-    public boolean authorize(String username, String phone) throws SQLException {
+    public int authorize(String username, String phone) throws SQLException {
+
+        if (username.length() == 0 || phone.length() == 0)
+            return INVALID_USER_ID;
 
         String[][] fetch_user = sql.select("users", "id", String.format("username='%s'", username));
         if (fetch_user.length == 0)
-            return false;
+            return INVALID_USER_ID;
 
         String[][] fetch_phone = sql.select("clients", "id", String.format("phone='%s', id=%s", phone, fetch_user[0][0]));
-        return fetch_phone.length != 0;
+        if (fetch_phone.length != 0)
+            return Integer.parseInt(fetch_user[0][0]);
+
+        fetch_phone = sql.select("bankers", "id", String.format("phone='%s', id=%s", phone, fetch_user[0][0]));
+        if (fetch_phone.length != 0)
+            return Integer.parseInt(fetch_user[0][0]);
+
+        return INVALID_USER_ID;
     }
 
-    protected void updatePassword(String password) {
-        //Update user password
-        sql.update("users", "password", String.format("password='%s'", password));
+    protected void updatePassword(TextField username, TextField phone, Label resetStatus, int user_id) {
+        if (username.getText().compareTo(phone.getText()) == 0) {
+            LoanApp.sql.update("users", "password", username.getText(), String.format("id=%s", user_id));
+
+            LoginManager loginManager = new LoginManager(scene);
+            loginManager.initializeScreen();
+        } else {
+            resetStatus.setStyle("-fx-background-color: RED; -fx-text-fill: WHITE;");
+            resetStatus.setText("Passwords do not match!");
+            Timeline msg_flasher = new Timeline(
+                    new KeyFrame(Duration.seconds(0.2), e -> resetStatus.setVisible(true)),
+                    new KeyFrame(Duration.seconds(3.0), e -> resetStatus.setVisible(false)));
+            msg_flasher.setCycleCount(1);
+            msg_flasher.play();
+        }
+
     }
 
     public Scene getScene() {

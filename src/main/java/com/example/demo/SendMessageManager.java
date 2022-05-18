@@ -1,11 +1,7 @@
 package com.example.demo;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.effect.BoxBlur;
-import javafx.util.Duration;
 
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
@@ -54,8 +50,8 @@ public class SendMessageManager {
     public void sendMessage(String subject, String body, String banker_email) {
         LocalDate current_time = LocalDate.now();
         try {
-            int fetch_sender_id = LoginManager.logged_in_user.getInt("userid",LoanApp.USER_NOT_EXIST);
-            String fetch_banker_id = LoanApp.sql.select("users","id",String.format("email='%s'",banker_email))[0][0];
+            int fetch_sender_id = LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST);
+            String fetch_banker_id = LoanApp.sql.select("users", "id", String.format("email='%s'", banker_email))[0][0];
 
             String columns = "sender, receiver, subject, body, date_sent, read";
             LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_sender_id, fetch_banker_id, subject, body, current_time));

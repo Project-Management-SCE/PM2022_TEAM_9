@@ -24,10 +24,6 @@ public class ClientsModel {
         return id.get();
     }
 
-    public SimpleIntegerProperty idProperty() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id.set(id);
     }
@@ -36,9 +32,6 @@ public class ClientsModel {
         return username.get();
     }
 
-    public SimpleStringProperty usernameProperty() {
-        return username;
-    }
 
     public void setUsername(String username) {
         this.username.set(username);
@@ -48,33 +41,14 @@ public class ClientsModel {
         return email.get();
     }
 
-    public SimpleStringProperty emailProperty() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email.set(email);
-    }
-
-    public String getLast_logged_in() {
-        return last_logged_in.get();
-    }
-
-    public SimpleStringProperty last_logged_inProperty() {
-        return last_logged_in;
-    }
-
-    public void setLast_logged_in(String last_logged_in) {
-        this.last_logged_in.set(last_logged_in);
     }
 
     public String getRole() {
         return role.get();
     }
 
-    public SimpleStringProperty roleProperty() {
-        return role;
-    }
 
     public void setRole(String role) {
         this.role.set(role);

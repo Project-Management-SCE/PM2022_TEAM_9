@@ -3,11 +3,8 @@ package com.example.demo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 
 import java.sql.SQLException;
@@ -29,9 +26,7 @@ public class LoansGraphController {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            loansGraphManager.goBack();
-        });
+        homeButton.setOnAction(event -> loansGraphManager.goBack());
 
 
         editProfileButton.setOnAction(event -> {

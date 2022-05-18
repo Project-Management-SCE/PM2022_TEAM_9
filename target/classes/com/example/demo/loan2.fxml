@@ -101,12 +101,12 @@
             <CheckBox fx:id="flag_own_realty" mnemonicParsing="false" prefHeight="17.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <Button fx:id="nextBtn" layoutX="349.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Next">
+      <Button fx:id="nextBtn"  defaultButton="true" layoutX="349.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Next">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="backBtn" layoutX="19.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Back">
+      <Button fx:id="backBtn"  defaultButton="true" layoutX="19.0" layoutY="603.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Back">
          <font>
             <Font name="Arial" size="12.0" />
          </font>

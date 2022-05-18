@@ -70,19 +70,9 @@ public class ClientLoansManager {
         editProfileManager.initializeScreen();
     }
 
-    public void manageClients() {
-        ManageUsersManager manageUserManager = new ManageUsersManager(scene);
-        manageUserManager.initializeScreen();
-    }
-
     public void manageMessages() {
         MessagesPanelManager manageMessagesManager = new MessagesPanelManager(scene);
         manageMessagesManager.initializeScreen();
-    }
-
-    public void showTodoList() {
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
     }
 
     /**

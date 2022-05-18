@@ -6,8 +6,6 @@ import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -18,9 +16,7 @@ import javafx.scene.effect.MotionBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.util.Callback;
 import javafx.util.Duration;
-import javafx.util.converter.DefaultStringConverter;
 import javafx.util.converter.DoubleStringConverter;
 
 import java.beans.PropertyChangeEvent;
@@ -81,9 +77,7 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
             aboutManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            bankerPanelManager.initializeScreen();
-        });
+        homeButton.setOnAction(event -> bankerPanelManager.initializeScreen());
 
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(bankerPanelManager.getScene());
@@ -226,9 +220,6 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
         return editProfileButton;
     }
 
-    public MenuItem getTodolistButton() {
-        return todolistButton;
-    }
 
     public MenuItem getAboutButton() {
         return aboutButton;
@@ -242,48 +233,8 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
         return homeButton;
     }
 
-    public Label getNew_messages_quantity() {
-        return new_messages_quantity;
-    }
-
-    public Label getMessage_icon() {
-        return message_icon;
-    }
-
-    public Timeline getMsg_flasher() {
-        return msg_flasher;
-    }
-
-    public Boolean getUserNotified() {
-        return isUserNotified;
-    }
-
     public TableView<LoansModel> getLoans_list() {
         return loans_table;
-    }
-
-    public TableColumn<LoansModel, Integer> getLoan_id_column() {
-        return reference_id_col;
-    }
-
-    public TableColumn<LoansModel, String> getClient_name_column() {
-        return client_name_col;
-    }
-
-    public TableColumn<LoansModel, String> getRequest_date_column() {
-        return request_date_col;
-    }
-
-    public TableColumn<LoansModel, String> getStatus_column() {
-        return status_col;
-    }
-
-    public TableColumn<LoansModel, Double> getLoan_amount_column() {
-        return loan_amount_col;
-    }
-
-    public TableColumn<LoansModel, Double> getRemaining_amount_column() {
-        return remaining_amount_col;
     }
 
     public Label getApproved_count() {
@@ -306,10 +257,6 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
         return note_img;
     }
 
-    public TableView<LoansModel> getLoans_table() {
-        return loans_table;
-    }
-
     public AnchorPane getMain_pane() {
         return main_pane;
     }
@@ -324,14 +271,6 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
 
     public TableColumn<LoansModel, String> getClient_name_col() {
         return client_name_col;
-    }
-
-    public TableColumn<LoansModel, String> getRequest_date_col() {
-        return request_date_col;
-    }
-
-    public TableColumn<LoansModel, String> getStatus_col() {
-        return status_col;
     }
 
     public TableColumn<LoansModel, Double> getLoan_amount_col() {

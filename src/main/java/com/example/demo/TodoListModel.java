@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -22,9 +21,6 @@ public class TodoListModel {
         return id.get();
     }
 
-    public SimpleIntegerProperty idProperty() {
-        return id;
-    }
 
     public void setId(int id) {
         this.id.set(id);
@@ -32,10 +28,6 @@ public class TodoListModel {
 
     public int getUser_id() {
         return user_id.get();
-    }
-
-    public SimpleIntegerProperty user_idProperty() {
-        return user_id;
     }
 
     public void setUser_id(int user_id) {
@@ -46,20 +38,12 @@ public class TodoListModel {
         return item.get();
     }
 
-    public SimpleStringProperty itemProperty() {
-        return item;
-    }
-
     public void setItem(String item) {
         this.item.set(item);
     }
 
     public String getStatus() {
         return status.get();
-    }
-
-    public SimpleStringProperty statusProperty() {
-        return status;
     }
 
     public void setStatus(String status) {

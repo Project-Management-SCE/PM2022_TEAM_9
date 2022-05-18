@@ -9,7 +9,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -45,9 +44,7 @@ public class ViewLoansController implements Initializable {
             aboutManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            viewLoansManager.initializeScreen();
-        });
+        homeButton.setOnAction(event -> viewLoansManager.initializeScreen());
 
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(viewLoansManager.getScene());
@@ -120,34 +117,6 @@ public class ViewLoansController implements Initializable {
         return homeButton;
     }
 
-    public TableView<LoansModel> getLoans_list() {
-        return loans_table;
-    }
-
-    public TableColumn<LoansModel, Integer> getLoan_id_column() {
-        return reference_id_col;
-    }
-
-    public TableColumn<LoansModel, String> getClient_name_column() {
-        return client_name_col;
-    }
-
-    public TableColumn<LoansModel, String> getRequest_date_column() {
-        return request_date_col;
-    }
-
-    public TableColumn<LoansModel, String> getStatus_column() {
-        return status_col;
-    }
-
-    public TableColumn<LoansModel, Double> getLoan_amount_column() {
-        return loan_amount_col;
-    }
-
-    public TableColumn<LoansModel, Double> getRemaining_amount_column() {
-        return remaining_amount_col;
-    }
-
     public Label getApproved_count() {
         return approved_count;
     }
@@ -158,33 +127,5 @@ public class ViewLoansController implements Initializable {
 
     public Label getPending_count() {
         return pending_count;
-    }
-
-    public TableView<LoansModel> getLoans_table() {
-        return loans_table;
-    }
-
-    public TableColumn<LoansModel, Integer> getReference_id_col() {
-        return reference_id_col;
-    }
-
-    public TableColumn<LoansModel, String> getClient_name_col() {
-        return client_name_col;
-    }
-
-    public TableColumn<LoansModel, String> getRequest_date_col() {
-        return request_date_col;
-    }
-
-    public TableColumn<LoansModel, String> getStatus_col() {
-        return status_col;
-    }
-
-    public TableColumn<LoansModel, Double> getLoan_amount_col() {
-        return loan_amount_col;
-    }
-
-    public TableColumn<LoansModel, Double> getRemaining_amount_col() {
-        return remaining_amount_col;
     }
 }

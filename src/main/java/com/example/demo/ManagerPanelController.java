@@ -35,9 +35,7 @@ public class ManagerPanelController implements PropertyChangeListener {
         modifyAccountButton.setOnAction(event -> managerPanelManager.modifyAccount());
         manage_clients.setOnAction(event -> managerPanelManager.manageClients());
         message_icon.setOnMouseClicked(event -> managerPanelManager.manageMessages());
-        homeButton.setOnAction(event -> {
-            managerPanelManager.initializeScreen();
-        });
+        homeButton.setOnAction(event -> managerPanelManager.initializeScreen());
 
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(managerPanelManager.getScene());
@@ -56,8 +54,8 @@ public class ManagerPanelController implements PropertyChangeListener {
 
         // new message icon blinker
         msg_flasher = new Timeline(
-                new KeyFrame(Duration.seconds(0.8), e -> {message_icon.setVisible(false);}),
-                new KeyFrame(Duration.seconds(1.6), e -> {message_icon.setVisible(true);}));
+                new KeyFrame(Duration.seconds(0.8), e -> message_icon.setVisible(false)),
+                new KeyFrame(Duration.seconds(1.6), e -> message_icon.setVisible(true)));
         msg_flasher.setCycleCount(Animation.INDEFINITE);
     }
 
@@ -79,10 +77,6 @@ public class ManagerPanelController implements PropertyChangeListener {
             new_messages_quantity.setText("(" + evt.getNewValue() + ")");
             message_icon.setVisible(true);
         }
-    }
-
-    public Label getMessage_icon() {
-        return message_icon;
     }
 
     public StackPane getStackpane() {

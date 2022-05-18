@@ -56,7 +56,7 @@ public class PostgreSQL {
      */
     public void closeConnection() {
         try {
-            //TODO: might be a feature...
+            System.out.println("Connection closed!");
 
         } finally {
             if (this.stmt != null) {
@@ -156,7 +156,6 @@ public class PostgreSQL {
      *
      * @param table   (String) name
      * @param columns (String) columns name (separated by comma).
-     * @return
      */
     public boolean update(String table, String columns, String values) {
         try {

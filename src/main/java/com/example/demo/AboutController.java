@@ -21,9 +21,7 @@ public class AboutController {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            aboutManager.goBack();
-        });
+        homeButton.setOnAction(event -> aboutManager.goBack());
 
 
         editProfileButton.setOnAction(event -> {

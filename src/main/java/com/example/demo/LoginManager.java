@@ -22,7 +22,6 @@ public class LoginManager {
     private final static int WINDOW_HEIGHT = 436;
 
     protected final static Preferences logged_in_user = Preferences.userRoot().node("AUTHORIZED_USER");
-    ;
 
     public LoginManager(Scene scene) {
         this.scene = scene;

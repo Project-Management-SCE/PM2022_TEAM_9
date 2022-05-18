@@ -38,8 +38,6 @@ public class LoanManager implements PropertyChangeListener {
     private final static int WINDOW_HEIGHT = 675;
     private static int TIMELINE_OFFSET = 0;
     public static Boolean is_file_downloaded = false;
-    private final static int INT_KEY_ERROR = -1;
-    private final static String STRING_KEY_ERROR = "-1";
 
     private final static double EPSILON = 0.833;
 

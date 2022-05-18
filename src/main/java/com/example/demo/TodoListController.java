@@ -2,7 +2,6 @@ package com.example.demo;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -63,13 +62,9 @@ public class TodoListController implements Initializable {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            todoListManager.goBack();
-        });
+        homeButton.setOnAction(event -> todoListManager.goBack());
 
-        viewButton.setOnAction(event -> {
-            todoListManager.initializeScreen();
-        });
+        viewButton.setOnAction(event -> todoListManager.initializeScreen());
 
         manageUsersButton.setOnAction(event -> {
             ManageUsersManager manageUsersManager = new ManageUsersManager(todoListManager.getScene());
@@ -125,10 +120,6 @@ public class TodoListController implements Initializable {
         todo_list.setItems(itemsToTable());
     }
 
-    public ObservableList<TodoListModel> getObservable_list() {
-        return observable_list;
-    }
-
     public Button getAdd_item() {
         return add_item;
     }
@@ -139,13 +130,5 @@ public class TodoListController implements Initializable {
 
     public TableView<TodoListModel> getTodo_list() {
         return todo_list;
-    }
-
-    public TableColumn<TodoListModel, String> getTo_do_col() {
-        return to_do_col;
-    }
-
-    public TableColumn<TodoListModel, String> getStatus_col() {
-        return status_col;
     }
 }

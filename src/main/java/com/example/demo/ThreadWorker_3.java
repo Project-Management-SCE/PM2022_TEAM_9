@@ -45,10 +45,10 @@ public class ThreadWorker_3 extends Service<Void> {
                 DataInputStream dis;
                 FileOutputStream fos;
                 byte[] fileData;
-                File ann_file = new File("src\\main\\java\\core\\bin\\metrics",ANN_FILE_NAME);
+                File ann_file = new File("src\\main\\java\\core\\bin\\metrics", ANN_FILE_NAME);
 
                 try {
-                    if (!ann_file.exists()){ //skip download if file exists.
+                    if (!ann_file.exists()) { //skip download if file exists.
                         url = new URL(ANN_URL_FILE); //File Location goes here
                         con = url.openConnection(); // open the url connection.
                         dis = new DataInputStream(con.getInputStream());

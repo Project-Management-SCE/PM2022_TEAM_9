@@ -1,16 +1,10 @@
 package com.example.demo;
 
 import core.ann.classifier.NeuralNetwork;
-import javafx.animation.KeyFrame;
-import javafx.animation.PauseTransition;
-import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-import javafx.util.Duration;
 
 import java.beans.PropertyChangeSupport;
-import java.sql.SQLOutput;
 
 public class ThreadWorker_1 extends Service<NeuralNetwork> {
     private final PropertyChangeSupport notifier;
@@ -43,7 +37,7 @@ public class ThreadWorker_1 extends Service<NeuralNetwork> {
             @Override
             protected NeuralNetwork call() throws Exception {
                 //create neural network object and load pre-trained values
-                while(!LoanManager.is_file_downloaded) {
+                while (!LoanManager.is_file_downloaded) {
                     System.out.print("");
                 }
 

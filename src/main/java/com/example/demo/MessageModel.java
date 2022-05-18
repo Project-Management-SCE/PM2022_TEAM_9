@@ -23,21 +23,10 @@ public class MessageModel {
         return subject.get();
     }
 
-    public SimpleStringProperty subjectProperty() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject.set(subject);
-    }
-
     public String getMessage() {
         return message.get();
     }
 
-    public SimpleStringProperty messageProperty() {
-        return message;
-    }
 
     public void setMessage(String message) {
         this.message.set(message);
@@ -47,9 +36,6 @@ public class MessageModel {
         return time.get();
     }
 
-    public SimpleStringProperty timeProperty() {
-        return time;
-    }
 
     public void setTime(String time) {
         this.time.set(time);
@@ -59,24 +45,8 @@ public class MessageModel {
         return sender.get();
     }
 
-    public SimpleStringProperty senderProperty() {
-        return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender.set(sender);
-    }
-
     public int getID() {
         return id.get();
-    }
-
-    public SimpleIntegerProperty idProperty() {
-        return id;
-    }
-
-    public void setID(int id) {
-        this.id.set(id);
     }
 
 

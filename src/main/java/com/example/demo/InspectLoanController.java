@@ -1,11 +1,10 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class InspectLoanController {
     @FXML
@@ -17,9 +16,7 @@ public class InspectLoanController {
     public void initManager(InspectLoanManager inspectLoanManager, int loan_id) throws SQLException {
         this.loan_id = loan_id;
 
-        returnButton.setOnAction(event -> {
-            inspectLoanManager.goBack();
-        });
+        returnButton.setOnAction(event -> inspectLoanManager.goBack());
 
         fetchLoan(); // load form data
     }

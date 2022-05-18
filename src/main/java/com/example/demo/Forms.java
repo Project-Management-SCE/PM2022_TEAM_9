@@ -634,7 +634,6 @@ enum FLAG_DOCUMENT_21 {
 class FormAdapter {
     private final static int ATTRIBUTES = 43;
     private final static int INVALID_INT = -999;
-    private final static String INVALID_STR = "-999";
     private final static int ROWS = 1;
     private final Preferences data;
 
@@ -1232,7 +1231,7 @@ class FormAdapter {
             <p><strong>Country</strong> refers to:  Israel</p>
             </li>
             <li>
-            <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Loans LLC, Haim Nachman Bialik St 56, Be'er Sheva, 84100.</p>
+            <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Loans LLC, Haim Coachman valid St 56, Be'er Sheva, 84100.</p>
             </li>
             <li>
             <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>

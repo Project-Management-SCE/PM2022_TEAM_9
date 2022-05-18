@@ -8,13 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.ChoiceBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.DateTimeStringConverter;
 import javafx.util.converter.DefaultStringConverter;
-
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ModifyUserController implements Initializable {
@@ -33,7 +30,7 @@ public class ModifyUserController implements Initializable {
     @FXML
     private ComboBox<String> sort_list;
     @FXML
-    private MenuItem back, editProfileButton,logoutButton;
+    private MenuItem back, editProfileButton, logoutButton;
 
     public void initManager(ModifyUserManager modifyUserManager) {
         controlsConfiguration(modifyUserManager);
@@ -81,7 +78,7 @@ public class ModifyUserController implements Initializable {
         });
 
         // search by criteria
-        search_criterion.textProperty().addListener(event ->modifyUserManager.filterUsers(users_list, search_criterion, observable_list, sort_list));
+        search_criterion.textProperty().addListener(event -> modifyUserManager.filterUsers(users_list, search_criterion, observable_list, sort_list));
     }
 
     /**

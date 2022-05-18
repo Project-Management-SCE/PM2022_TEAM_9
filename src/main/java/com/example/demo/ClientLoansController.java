@@ -66,9 +66,7 @@ public class ClientLoansController implements PropertyChangeListener, Initializa
             aboutManager.initializeScreen();
         });
 
-        myLoansButton.setOnAction(event -> {
-            clientLoansManager.initializeScreen();
-        });
+        myLoansButton.setOnAction(event -> clientLoansManager.initializeScreen());
 
         requestLoanButton.setOnAction(event -> {
             LoanApp.isClientRequestedAnotherLoan = true;
@@ -181,48 +179,9 @@ public class ClientLoansController implements PropertyChangeListener, Initializa
         return homeButton;
     }
 
-    public Label getNew_messages_quantity() {
-        return new_messages_quantity;
-    }
-
-    public Label getMessage_icon() {
-        return message_icon;
-    }
-
-    public Timeline getMsg_flasher() {
-        return msg_flasher;
-    }
-
-    public Boolean getUserNotified() {
-        return isUserNotified;
-    }
-
     public TableView<LoansModel> getLoans_list() {
         return loans_table;
     }
 
-    public TableColumn<LoansModel, Integer> getLoan_id_column() {
-        return reference_id_col;
-    }
-
-    public TableColumn<LoansModel, String> getRequest_date_column() {
-        return request_date_col;
-    }
-
-    public TableColumn<LoansModel, String> getStatus_column() {
-        return status_col;
-    }
-
-    public TableColumn<LoansModel, Double> getLoan_amount_column() {
-        return loan_amount_col;
-    }
-
-    public TableColumn<LoansModel, Double> getRemaining_amount_column() {
-        return remaining_amount_col;
-    }
-
-    public TableView<LoansModel> getLoans_table() {
-        return loans_table;
-    }
 
 }

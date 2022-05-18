@@ -32,7 +32,7 @@ public class ThreadWorker_2 extends Service<Void> {
     protected Task<Void> createTask() {
         return new Task<>() {
             @Override
-            protected Void call() throws Exception {
+            protected Void call() {
                 //create neural network object and load pre-trained values
                 PythonInterpreter.exec("normalize_data.py");
                 return null;

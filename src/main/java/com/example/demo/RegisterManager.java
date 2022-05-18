@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -201,8 +200,6 @@ public class RegisterManager {
             // After successful data insertion go back to login
             LoginManager loginManager = new LoginManager(scene);
             loginManager.initializeScreen();
-
-        } else {
 
         }
     }

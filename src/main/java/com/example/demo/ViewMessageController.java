@@ -25,9 +25,7 @@ public class ViewMessageController {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            viewMessageManager.goBack();
-        });
+        homeButton.setOnAction(event -> viewMessageManager.goBack());
 
         manageUsersButton.setOnAction(event -> {
             ManageUsersManager manageUsersManager = new ManageUsersManager(viewMessageManager.getScene());

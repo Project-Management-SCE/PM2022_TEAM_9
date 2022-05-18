@@ -3,7 +3,6 @@ package com.example.demo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
-import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -47,21 +46,6 @@ public class ViewLoansManager {
     public void edit() {
         EditProfileManager editProfileManager = new EditProfileManager(scene);
         editProfileManager.initializeScreen();
-    }
-
-    public void manageClients() {
-        ManageUsersManager manageUserManager = new ManageUsersManager(scene);
-        manageUserManager.initializeScreen();
-    }
-
-    public void manageMessages() {
-        MessagesPanelManager manageMessagesManager = new MessagesPanelManager(scene);
-        manageMessagesManager.initializeScreen();
-    }
-
-    public void showTodoList() {
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
     }
 
     private void countStatus(ViewLoansController c) {

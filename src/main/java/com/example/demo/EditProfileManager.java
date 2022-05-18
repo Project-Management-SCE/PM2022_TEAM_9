@@ -32,7 +32,7 @@ public class EditProfileManager {
     }
 
     /**
-     * go back function from edit profile panel to ither user panel or manager panel
+     * go back function from edit profile panel to user panel or manager panel
      */
     public void goBack() throws SQLException {
         int role = LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST);
@@ -71,8 +71,8 @@ public class EditProfileManager {
                 c.getZipcode().setText(user_data[6]);
                 c.getPhone().setText(user_data[7]);
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
     }
 

@@ -4,8 +4,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -60,9 +58,7 @@ public class SendMessageController implements PropertyChangeListener {
             aboutManager.initializeScreen();
         });
 
-        contactusButton.setOnAction(event -> {
-            sendMessageManager.initializeScreen();
-        });
+        contactusButton.setOnAction(event -> sendMessageManager.initializeScreen());
 
         myLoansButton.setOnAction(event -> {
             ClientLoansManager clientLoansManager = new ClientLoansManager(sendMessageManager.getScene());

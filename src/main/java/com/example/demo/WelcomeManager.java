@@ -43,7 +43,7 @@ public class WelcomeManager {
             scene.setRoot(loader.load());
             scene.setUserData(loader);
 
-            if (scene.getWindow()!= null) {
+            if (scene.getWindow() != null) {
                 this.scene.getWindow().setWidth(WINDOW_WIDTH);
                 this.scene.getWindow().setHeight(WINDOW_HEIGHT);
                 this.scene.setUserData(loader);

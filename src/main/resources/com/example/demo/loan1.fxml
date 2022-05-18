@@ -86,12 +86,12 @@
                 <DatePicker fx:id="date_of_birth" prefHeight="25.0" prefWidth="193.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             </children>
         </GridPane>
-      <Button fx:id="backBtn" layoutX="24.0" layoutY="593.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Back">
+      <Button fx:id="backBtn"  defaultButton="true" layoutX="24.0" layoutY="593.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Back">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="nextBtn" layoutX="344.0" layoutY="593.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Next">
+      <Button fx:id="nextBtn"  defaultButton="true" layoutX="344.0" layoutY="593.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Next">
          <font>
             <Font name="Arial" size="12.0" />
          </font>

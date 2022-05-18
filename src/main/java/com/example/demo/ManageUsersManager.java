@@ -15,6 +15,7 @@ public class ManageUsersManager {
     private final static int WINDOW_WIDTH = 665;
     private final static int WINDOW_HEIGHT = 690;
     int role = LoginManager.logged_in_user.getInt("role", -1);
+
     public ManageUsersManager(Scene scene) {
         this.scene = scene;
     }
@@ -104,27 +105,26 @@ public class ManageUsersManager {
     }
 
 
-    public void goBack(){
-        if (role == 0){
+    public void goBack() {
+        if (role == 0) {
             UserPanelManager userPanelManager = new UserPanelManager(scene);
             userPanelManager.initializeScreen();
-        }
-        else if(role == 1){
+        } else if (role == 1) {
             BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
             bankerPanelManager.initializeScreen();
-        }
-        else if(role == 2){
+        } else if (role == 2) {
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();
         }
 
     }
-    public void logOut(){
+
+    public void logOut() {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.initializeScreen();
     }
 
-    public void editProfile(){
+    public void editProfile() {
         ModifyAccountManager modifyAccountManager = new ModifyAccountManager(scene);
         modifyAccountManager.initializeScreen();
     }

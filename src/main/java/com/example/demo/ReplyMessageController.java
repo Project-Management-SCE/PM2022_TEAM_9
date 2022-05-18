@@ -27,9 +27,7 @@ public class ReplyMessageController {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            replyMessageManager.goBack();
-        });
+        homeButton.setOnAction(event -> replyMessageManager.goBack());
 
         manageUsersButton.setOnAction(event -> {
             ManageUsersManager manageUsersManager = new ManageUsersManager(replyMessageManager.getScene());

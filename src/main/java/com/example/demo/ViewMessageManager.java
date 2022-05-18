@@ -2,6 +2,7 @@ package com.example.demo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -46,13 +47,12 @@ public class ViewMessageManager {
         controller.sender_username.setText(String.format("From: #%s", messageModel.getSender()));
     }
 
-    protected void goBack(){
+    protected void goBack() {
         int role = LoginManager.logged_in_user.getInt("role", -1);
-        if(role == 1){
+        if (role == 1) {
             BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
             bankerPanelManager.initializeScreen();
-        }
-        else if(role == 2){
+        } else if (role == 2) {
             ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
             managerPanelManager.initializeScreen();
         }

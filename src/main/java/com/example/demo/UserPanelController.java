@@ -4,14 +4,13 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.util.Duration;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
-
-import static com.example.demo.LoanApp.sql;
 
 
 /**
@@ -46,9 +45,7 @@ public class UserPanelController implements PropertyChangeListener {
             modifyAccountManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> {
-            userPanelManager.initializeScreen();
-        });
+        homeButton.setOnAction(event -> userPanelManager.initializeScreen());
 
         aboutButton.setOnAction(event -> {
             AboutManager aboutManager = new AboutManager(userPanelManager.getScene());

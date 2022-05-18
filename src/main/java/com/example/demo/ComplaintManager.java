@@ -50,9 +50,9 @@ public class ComplaintManager {
     public void sendMessage(String subject, String body, String complaint) {
         LocalDate current_time = LocalDate.now();
         try {
-            int fetch_sender_id = LoginManager.logged_in_user.getInt("userid",LoanApp.USER_NOT_EXIST);
+            int fetch_sender_id = LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST);
 
-            String fetch_admin = LoanApp.sql.select("users","id",String.format("role=2"))[0][0];
+            String fetch_admin = LoanApp.sql.select("users", "id", "role=2")[0][0];
             System.out.println(fetch_admin);
             String columns = "sender, receiver, subject, body, date_sent, read";
             LoanApp.sql.insert("mailbox", String.format("%s", columns), String.format("%s,%s,'%s :: %s','%s',TO_DATE('%s', 'YYYY-MM-DD'),CAST(0 AS BIT)", fetch_sender_id, fetch_admin, complaint, subject, body, current_time));

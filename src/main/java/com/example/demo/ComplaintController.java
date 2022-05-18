@@ -14,9 +14,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
 
-import static com.example.demo.LoanApp.sql;
-
-public class ComplaintController implements PropertyChangeListener{
+public class ComplaintController implements PropertyChangeListener {
     private final ObservableList<String> complain_list = FXCollections.observableArrayList("Bug", "Banker Report", "General");
     @FXML
     private Button send_message, exit_message;
@@ -59,11 +57,7 @@ public class ComplaintController implements PropertyChangeListener{
             aboutManager.initializeScreen();
         });
 
-        contactusButton.setOnAction(event -> {
-            complaintManager.initializeScreen();
-        });
-
-
+        contactusButton.setOnAction(event -> complaintManager.initializeScreen());
         exit_message.setOnAction(event -> complaintManager.returnToMessages());
         send_message.setOnAction(event -> complaintManager.sendMessage(message_subject.getText(), message_body.getText(), complain.getSelectionModel().getSelectedItem()));
 
