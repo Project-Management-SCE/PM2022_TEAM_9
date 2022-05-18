@@ -584,4 +584,271 @@ public class LoanController {
         return isFormInvalid;
     }
 
+    public ObservableList<String> getGenderList() {
+        return genderList;
+    }
+
+    public ObservableList<String> getRegionList() {
+        return regionList;
+    }
+
+    public ObservableList<String> getFamilyList() {
+        return familyList;
+    }
+
+    public ObservableList<String> getCountryList() {
+        return countryList;
+    }
+
+    public ObservableList<String> getEducationList() {
+        return educationList;
+    }
+
+    public ObservableList<String> getHousingList() {
+        return housingList;
+    }
+
+    public ObservableList<String> getOccupationList() {
+        return occupationList;
+    }
+
+    public ObservableList<String> getOrganizationList() {
+        return organizationList;
+    }
+
+    public DatePicker getDate_of_birth() {
+        return date_of_birth;
+    }
+
+    public DatePicker getDays_employed() {
+        return days_employed;
+    }
+
+    public ChoiceBox<String> getCountry() {
+        return country;
+    }
+
+    public ChoiceBox<String> getGender() {
+        return gender;
+    }
+
+    public ChoiceBox<String> getState() {
+        return state;
+    }
+
+    public ChoiceBox<String> getOrganization_type() {
+        return organization_type;
+    }
+
+    public ChoiceBox<String> getOccupation_type() {
+        return occupation_type;
+    }
+
+    public ChoiceBox<String> getLiving_type() {
+        return living_type;
+    }
+
+    public ChoiceBox<String> getEducation_level() {
+        return education_level;
+    }
+
+    public ChoiceBox<String> getFamily_status() {
+        return family_status;
+    }
+
+    public TextField getOwn_car_age() {
+        return own_car_age;
+    }
+
+    public TextField getLoan_amount() {
+        return loan_amount;
+    }
+
+    public TextField getProperty_value() {
+        return property_value;
+    }
+
+    public TextField getTotal_income() {
+        return total_income;
+    }
+
+    public TextField getFamily_members() {
+        return family_members;
+    }
+
+    public TextField getWork_phone() {
+        return work_phone;
+    }
+
+    public TextField getHome_phone() {
+        return home_phone;
+    }
+
+    public TextField getMobile_phone() {
+        return mobile_phone;
+    }
+
+    public TextField getEmail() {
+        return email;
+    }
+
+    public TextField getChildrens_amount() {
+        return childrens_amount;
+    }
+
+    public TextField getFull_name() {
+        return full_name;
+    }
+
+    public TextField getAddress() {
+        return address;
+    }
+
+    public TextField getCity() {
+        return city;
+    }
+
+    public TextField getZipcode() {
+        return zipcode;
+    }
+
+    public CheckBox getFlag_own_car() {
+        return flag_own_car;
+    }
+
+    public CheckBox getFlag_own_realty() {
+        return flag_own_realty;
+    }
+
+    public CheckBox getWork_phone_na() {
+        return work_phone_na;
+    }
+
+    public CheckBox getHome_phone_na() {
+        return home_phone_na;
+    }
+
+    public CheckBox getMobile_phone_na() {
+        return mobile_phone_na;
+    }
+
+    public CheckBox getEmail_na() {
+        return email_na;
+    }
+
+    public Button getNextBtn() {
+        return nextBtn;
+    }
+
+    public Button getBackBtn() {
+        return backBtn;
+    }
+
+    public Button getAccept_offer_button() {
+        return accept_offer_button;
+    }
+
+    public Button getReject_offer_button() {
+        return reject_offer_button;
+    }
+
+    public Button getFile_an_appeal_button() {
+        return file_an_appeal_button;
+    }
+
+    public Button getBack_to_main_button() {
+        return back_to_main_button;
+    }
+
+    public ToggleButton getDoc_btn_0() {
+        return doc_btn_0;
+    }
+
+    public ToggleButton getDoc_btn_1() {
+        return doc_btn_1;
+    }
+
+    public ToggleButton getDoc_btn_2() {
+        return doc_btn_2;
+    }
+
+    public ToggleButton getDoc_btn_3() {
+        return doc_btn_3;
+    }
+
+    public ToggleButton getDoc_btn_4() {
+        return doc_btn_4;
+    }
+
+    public ToggleButton getDoc_btn_5() {
+        return doc_btn_5;
+    }
+
+    public ToggleButton getDoc_btn_6() {
+        return doc_btn_6;
+    }
+
+    public ToggleButton getDoc_btn_7() {
+        return doc_btn_7;
+    }
+
+    public ToggleButton getDoc_btn_8() {
+        return doc_btn_8;
+    }
+
+    public ToggleButton getDoc_btn_9() {
+        return doc_btn_9;
+    }
+
+    public ToggleButton getDoc_btn_10() {
+        return doc_btn_10;
+    }
+
+    public ToggleButton getDoc_btn_11() {
+        return doc_btn_11;
+    }
+
+    public ToggleButton getDoc_btn_12() {
+        return doc_btn_12;
+    }
+
+    public ToggleButton getDoc_btn_13() {
+        return doc_btn_13;
+    }
+
+    public ToggleButton getDoc_btn_14() {
+        return doc_btn_14;
+    }
+
+    public ToggleButton getDoc_btn_15() {
+        return doc_btn_15;
+    }
+
+    public ToggleButton getDoc_btn_16() {
+        return doc_btn_16;
+    }
+
+    public ToggleButton getDoc_btn_17() {
+        return doc_btn_17;
+    }
+
+    public ToggleButton getDoc_btn_18() {
+        return doc_btn_18;
+    }
+
+    public ToggleButton getDoc_btn_19() {
+        return doc_btn_19;
+    }
+
+    public WebView getAgreement() {
+        return agreement;
+    }
+
+    public Label getLoadingStatus() {
+        return loadingStatus;
+    }
+
+    public static int getCurrent_page() {
+        return current_page;
+    }
 }

@@ -73,6 +73,7 @@ public class LoanManager implements PropertyChangeListener {
             scene.setRoot(loader.load());
             scene.getWindow().setWidth(WINDOW_WIDTH);
             scene.getWindow().setHeight(WINDOW_HEIGHT);
+            scene.setUserData(loader);
 
             LoanController controller = loader.getController();
             controller.initManager(this);
@@ -103,6 +104,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager(this);
@@ -119,6 +121,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager2(this);
@@ -134,6 +137,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager3(this);
@@ -149,6 +153,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager4(this);
@@ -165,6 +170,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager5(this);
@@ -181,6 +187,8 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
+
                 ann_loader.startTheService();
                 updateStatus("Building the magical network...");
             } catch (IOException e) {
@@ -194,6 +202,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager6(this);
@@ -215,6 +224,7 @@ public class LoanManager implements PropertyChangeListener {
                 scene.setRoot(loader.load());
                 scene.getWindow().setWidth(WINDOW_WIDTH);
                 scene.getWindow().setHeight(WINDOW_HEIGHT);
+                scene.setUserData(loader);
 
                 LoanController controller = loader.getController();
                 controller.initManager7(this);

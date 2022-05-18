@@ -45,8 +45,6 @@ public class PostgreSQL {
             this.connection = DriverManager.getConnection(URL_BUILDER, DB_USER, DB_PASSWORD);
             dispatchStatus(0);
         } catch (SQLException e) {
-            e.printStackTrace();
-            ;
             dispatchStatus(2);
             System.exit(2);
         }
