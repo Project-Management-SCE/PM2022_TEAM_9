@@ -110,8 +110,8 @@ public class LoginManager {
      * forgot password
      */
     public void forgotPassword() {
-        ForgotPassManager forgotPassManager = new ForgotPassManager(scene);
-        forgotPassManager.initializeScreen();
+        ForgotPasswordManager forgotPasswordManager = new ForgotPasswordManager(scene);
+        forgotPasswordManager.initializeScreen();
     }
 
     public Scene getScene() {
