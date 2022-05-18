@@ -317,4 +317,28 @@ public class BankerPanelController implements PropertyChangeListener, Initializa
     public Pane getPopup_pane() {
         return popup_pane;
     }
+
+    public TableColumn<LoansModel, Integer> getReference_id_col() {
+        return reference_id_col;
+    }
+
+    public TableColumn<LoansModel, String> getClient_name_col() {
+        return client_name_col;
+    }
+
+    public TableColumn<LoansModel, String> getRequest_date_col() {
+        return request_date_col;
+    }
+
+    public TableColumn<LoansModel, String> getStatus_col() {
+        return status_col;
+    }
+
+    public TableColumn<LoansModel, Double> getLoan_amount_col() {
+        return loan_amount_col;
+    }
+
+    public TableColumn<LoansModel, Double> getRemaining_amount_col() {
+        return remaining_amount_col;
+    }
 }
