@@ -101,4 +101,8 @@ public class UserPanelController implements PropertyChangeListener {
     public Label getBalanceLabel() {
         return balanceLabel;
     }
+
+    public MenuItem getRequestLoanButton() {
+        return requestLoanButton;
+    }
 }

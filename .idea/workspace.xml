@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="REGISTRATION IS NOW OPERATIONAL">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2d6b611d-5584-4e74-ab95-1d459ad0093a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LoanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" afterDir="false" />
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-171">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/RequestNewLoanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +21,9 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="JUnit3 Test Class" />
-        <option value="Class" />
         <option value="TestNG Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,7 +93,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoanManagerTest">
+  <component name="RunManager" selected="JUnit.RequestNewLoanTest">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -110,21 +103,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EditProfileManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.EditProfileManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,6 +137,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RequestNewLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.RequestNewLoanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BankerPanelManagerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -178,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RequestNewLoanTest" />
         <item itemvalue="JUnit.LoanManagerTest" />
         <item itemvalue="JUnit.LoginManagerTest" />
         <item itemvalue="Application.LoanApp" />
         <item itemvalue="TestNG.BankerPanelManagerTest" />
-        <item itemvalue="JUnit.EditProfileManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -202,13 +195,7 @@
       <workItem from="1652775462413" duration="18667000" />
       <workItem from="1652855255851" duration="112000" />
       <workItem from="1652855432220" duration="43000" />
-      <workItem from="1652857570954" duration="3717000" />
-    </task>
-    <task id="LOCAL‎00011" summary="BSPM2022T9-65">
-      <created>1650658509428</created>
-      <option name="number" value="LOCAL‎00011" />
-      <option name="presentableId" value="LOCAL‎00011" />
-      <updated>1650658509428</updated>
+      <workItem from="1652857570954" duration="4394000" />
     </task>
     <task id="LOCAL‎00012" summary="BSPM2022T9-134">
       <created>1650713495190</created>
@@ -498,7 +485,13 @@
       <option name="presentableId" value="LOCAL‎00059" />
       <updated>1652785272722</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL‎00060" summary="BSPM2022T9-171">
+      <created>1652861398463</created>
+      <option name="number" value="LOCAL‎00060" />
+      <option name="presentableId" value="LOCAL‎00060" />
+      <updated>1652861398463</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +521,8 @@
     <MESSAGE value="FIX TESTING FILES" />
     <MESSAGE value="MERGE HACKATHON WITH SPRINT 3" />
     <MESSAGE value="REGISTRATION IS NOW OPERATIONAL" />
-    <option name="LAST_COMMIT_MESSAGE" value="REGISTRATION IS NOW OPERATIONAL" />
+    <MESSAGE value="BSPM2022T9-171" />
+    <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-171" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
