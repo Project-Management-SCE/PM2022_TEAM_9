@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-170">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BankerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/UserPanelController.class" afterDir="false" />
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="BSPM2022T9-167">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ManagerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ManagerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/managerPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/managerPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
         <option value="JUnit5 Test Class" />
         <option value="JUnit3 Test Class" />
         <option value="TestNG Test Class" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -93,7 +95,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BankerPanelManagerTest">
+  <component name="RunManager" selected="Application.LoanApp">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -169,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.BankerPanelManagerTest" />
         <item itemvalue="JUnit.RequestNewLoanTest" />
         <item itemvalue="JUnit.LoanManagerTest" />
         <item itemvalue="JUnit.LoginManagerTest" />
-        <item itemvalue="Application.LoanApp" />
       </list>
     </recent_temporary>
   </component>
@@ -193,13 +195,7 @@
       <workItem from="1652775462413" duration="18667000" />
       <workItem from="1652855255851" duration="112000" />
       <workItem from="1652855432220" duration="43000" />
-      <workItem from="1652857570954" duration="5041000" />
-    </task>
-    <task id="LOCAL‎00013" summary="BSPM2022T9-135&#10;BSPM2022T9-136">
-      <created>1650717248279</created>
-      <option name="number" value="LOCAL‎00013" />
-      <option name="presentableId" value="LOCAL‎00013" />
-      <updated>1650717248279</updated>
+      <workItem from="1652857570954" duration="7548000" />
     </task>
     <task id="LOCAL‎00014" summary="BSPM2022T9-58&#10;BSPM2022T9-59&#10;BSPM2022T9-60">
       <created>1651057624048</created>
@@ -489,7 +485,13 @@
       <option name="presentableId" value="LOCAL‎00061" />
       <updated>1652862055490</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL‎00062" summary="BSPM2022T9-167">
+      <created>1652862671505</created>
+      <option name="number" value="LOCAL‎00062" />
+      <option name="presentableId" value="LOCAL‎00062" />
+      <updated>1652862671505</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +523,8 @@
     <MESSAGE value="REGISTRATION IS NOW OPERATIONAL" />
     <MESSAGE value="BSPM2022T9-171" />
     <MESSAGE value="BSPM2022T9-170" />
-    <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-170" />
+    <MESSAGE value="BSPM2022T9-167" />
+    <option name="LAST_COMMIT_MESSAGE" value="BSPM2022T9-167" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
