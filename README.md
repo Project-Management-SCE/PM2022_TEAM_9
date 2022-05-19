@@ -267,8 +267,8 @@ Distributed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) License
 <!-- CONTACT -->
 ## Contact
 
-Tamar Aminov - [@LinkedIn](https://github.com/tamar1472) - tamaram@ac.sce.ac.il
-Liran Smadja - [@LinkedIn](https://www.linkedin.com/in/liran-smadja/) - liransm@ac.sce.ac.il
-Bathen Avraham - [@LinkedIn](https://github.com/bathen-avraham) - bathenav@ac.sce.ac.il
+<u>Tamar Aminov - [@LinkedIn](https://github.com/tamar1472) - tamaram@ac.sce.ac.il</u>
+<u>Liran Smadja - [@LinkedIn](https://www.linkedin.com/in/liran-smadja/) - liransm@ac.sce.ac.il</u>
+<u>Bathen Avraham - [@LinkedIn](https://github.com/bathen-avraham) - bathenav@ac.sce.ac.il</u>
 
-Other Projects: [See Now!](https://github.com/liran121211)
+<u>Other Projects: [See Now!](https://github.com/liran121211)</u>
