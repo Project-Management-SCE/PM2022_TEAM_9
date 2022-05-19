@@ -126,4 +126,114 @@ JUnit 4
 
  **<u>**Welcome Window**</u>**:
 	
-![enter image description here](https://i.ibb.co/cCpqQNN/loading-windw.png)
+![enter image description here](https://ibb.co/B2xTpnW)
+	  
+	  
+ **<u>**Login Window**</u>**:
+	
+![enter image description here](https://ibb.co/vHP6xXv)
+	  
+**<u>**Client Window**</u>**:
+	
+![enter image description here](https://ibb.co/8gNCYqD)
+	  
+**<u>**Withdraw Window**</u>**:
+	
+![enter image description here](https://ibb.co/02RJZpd)
+	  
+**<u>**Reply Message Window**</u>**:
+	
+![enter image description here](https://ibb.co/mNB49h1)
+	  
+**<u>**Todo List Window**</u>**:
+	
+![enter image description here](https://ibb.co/Tcg8Wy1)
+	  
+**<u>**Reset Password Window**</u>**:
+	
+![enter image description here](https://ibb.co/cxrv4tS)
+	  
+**<u>**Reigster Window**</u>**:
+	
+![enter image description here](https://ibb.co/5kbMT7D)
+	  
+**<u>**Modify Account Window**</u>**:
+	
+![enter image description here](https://ibb.co/9VxnsRJ)
+	  
+**<u>**Messages Window**</u>**:
+	
+![enter image description here](https://ibb.co/pvzr0gV)
+
+**<u>**Manage Users Window**</u>**:
+	
+![enter image description here](https://ibb.co/gmZgBKp)
+	  
+**<u>**Loans Panel Window**</u>**:
+	
+![enter image description here](https://ibb.co/9Hgjp3g)
+	  
+**<u>**Loans Statistics Window**</u>**:
+	
+![enter image description here](https://ibb.co/cCpz9LS)
+	  
+**<u>**Approved Loan Window**</u>**:
+	
+![enter image description here](https://ibb.co/mCnvgMW)
+	  
+**<u>**Rejected Loan Window**</u>**:
+	
+![enter image description here](https://ibb.co/PYBXYmK)
+	  
+**<u>**Loan Form Window**</u>**:
+	
+![enter image description here](https://ibb.co/gD0FGVg)
+	  
+**<u>**Checking Loan Eligibility Window**</u>**:
+	
+![enter image description here](https://ibb.co/xGYgYt4)
+	  
+**<u>**Loan Agreement Window**</u>**:
+	
+![enter image description here](https://ibb.co/TBG6KfH)
+	  
+**<u>**Edit Profile Window**</u>**:
+	
+![enter image description here](https://ibb.co/p0MrYbm)
+	  
+**<u>**Contact Banker Window**</u>**:
+	
+![enter image description here](https://ibb.co/Xp9HYyM)
+	  
+**<u>**Complaint Form Window**</u>**:
+	
+![enter image description here](https://ibb.co/VNtF82B)
+	  
+**<u>**Banker Panel Window**</u>**:
+	
+![enter image description here](https://ibb.co/xXdw3sF)
+	  
+**<u>**Banker Panel Window**</u>**:
+	
+![enter image description here](https://ibb.co/JykyP7f)
+	    	  
+**<u>**About Window**</u>**:
+	
+![enter image description here](https://ibb.co/FW9X550)
+	  
+**<u>**Loan Form #1 Window**</u>**:
+	
+![enter image description here](https://ibb.co/f8ZmJqX)
+	  
+**<u>**Loan Form #2 Window**</u>**:
+	
+![enter image description here](https://ibb.co/42jnWwf)
+	  
+**<u>**Loan Form #3 Window**</u>**:
+	
+![enter image description here](https://ibb.co/dK15Gny)
+	  
+**<u>**Loan Form #4 Window**</u>**:
+	
+![enter image description here](https://ibb.co/4ZDqpsP)
+	  
