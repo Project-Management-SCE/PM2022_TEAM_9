@@ -29,21 +29,21 @@ public class EditProfileManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
-        scene = new Scene(new StackPane());
-        WelcomeManager welcomeManager = new WelcomeManager(scene);
-        welcomeManager.initializeScreen();
+        Platform.runLater(() -> {
+            scene = new Scene(new StackPane());
+            WelcomeManager welcomeManager = new WelcomeManager(scene);
+            welcomeManager.initializeScreen();
 
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.getIcons().add(new Image(String.format("file:%s\\src\\main\\resources\\com\\example\\demo\\img\\app_icon.jpg", System.getProperty("user.dir"))));
-        stage.show();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.getIcons().add(new Image(String.format("file:%s\\src\\main\\resources\\com\\example\\demo\\img\\app_icon.jpg", System.getProperty("user.dir"))));
+            stage.show();
 
-        // Stage [Welcome]
-        loader = (FXMLLoader) welcomeManager.getScene().getUserData();
-        ((WelcomeController) loader.getController()).getLogin().fire();
-
-
+            // Stage [Welcome]
+            loader = (FXMLLoader) welcomeManager.getScene().getUserData();
+            ((WelcomeController) loader.getController()).getLogin().fire();
+        });
     }
 
     @org.junit.Test
@@ -159,7 +159,7 @@ public class EditProfileManagerTest extends ApplicationTest {
             ((LoginController) loader.getController()).getLoginButton().fire();
 
             // Stage [UserPanel]
-            BankerPanelManager  bankerPanelManager= new BankerPanelManager(scene);
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
             bankerPanelManager.initializeScreen();
             loader = (FXMLLoader) bankerPanelManager.getScene().getUserData();
 

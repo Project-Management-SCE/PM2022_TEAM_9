@@ -28,17 +28,19 @@ public class LoanManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
-        scene = new Scene(new StackPane());
-        WelcomeManager welcomeManager = new WelcomeManager(scene);
-        welcomeManager.initializeScreen();
+        Platform.runLater(() -> {
+            scene = new Scene(new StackPane());
+            WelcomeManager welcomeManager = new WelcomeManager(scene);
+            welcomeManager.initializeScreen();
 
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.show();
 
-        // Stage [Welcome]
-        loader = (FXMLLoader) welcomeManager.getScene().getUserData();
+            // Stage [Welcome]
+            loader = (FXMLLoader) welcomeManager.getScene().getUserData();
+        });
     }
 
 

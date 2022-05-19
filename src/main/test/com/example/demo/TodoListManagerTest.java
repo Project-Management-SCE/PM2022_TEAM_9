@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.testfx.framework.junit.ApplicationTest;
+
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -29,35 +30,37 @@ public class TodoListManagerTest extends ApplicationTest {
     }
 
     @Override
-    public void start(Stage stage)  {
-        scene = new Scene(new StackPane());
-        WelcomeManager welcomeManager = new WelcomeManager(scene);
-        welcomeManager.initializeScreen();
+    public void start(Stage stage) {
+        Platform.runLater(() -> {
+            scene = new Scene(new StackPane());
+            WelcomeManager welcomeManager = new WelcomeManager(scene);
+            welcomeManager.initializeScreen();
 
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.getIcons().add(new Image(String.format("file:%s\\src\\main\\resources\\com\\example\\demo\\img\\app_icon.jpg", System.getProperty("user.dir"))));
-        stage.show();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.getIcons().add(new Image(String.format("file:%s\\src\\main\\resources\\com\\example\\demo\\img\\app_icon.jpg", System.getProperty("user.dir"))));
+            stage.show();
 
-        // Stage [Welcome]
-        loader = (FXMLLoader) welcomeManager.getScene().getUserData();
-        ((WelcomeController) loader.getController()).getLogin().fire();
-
-
-        // Stage [Login]
-        LoginManager loginManager = new LoginManager(scene);
-        loginManager.initializeScreen();
-        loader = (FXMLLoader) loginManager.getScene().getUserData();
-        ((LoginController) loader.getController()).getUser().setText("liransm");
-        ((LoginController) loader.getController()).getPassword().setText("PM2022");
-        ((LoginController) loader.getController()).getLoginButton().fire();
+            // Stage [Welcome]
+            loader = (FXMLLoader) welcomeManager.getScene().getUserData();
+            ((WelcomeController) loader.getController()).getLogin().fire();
 
 
-        // Stage [BankerPanel]
-        BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
-        bankerPanelManager.initializeScreen();
-        loader = (FXMLLoader) bankerPanelManager.getScene().getUserData();
+            // Stage [Login]
+            LoginManager loginManager = new LoginManager(scene);
+            loginManager.initializeScreen();
+            loader = (FXMLLoader) loginManager.getScene().getUserData();
+            ((LoginController) loader.getController()).getUser().setText("liransm");
+            ((LoginController) loader.getController()).getPassword().setText("PM2022");
+            ((LoginController) loader.getController()).getLoginButton().fire();
+
+
+            // Stage [BankerPanel]
+            BankerPanelManager bankerPanelManager = new BankerPanelManager(scene);
+            bankerPanelManager.initializeScreen();
+            loader = (FXMLLoader) bankerPanelManager.getScene().getUserData();
+        });
 
     }
 
