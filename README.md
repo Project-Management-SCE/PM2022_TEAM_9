@@ -237,3 +237,38 @@ JUnit 4
 	
 ![enter image description here](https://i.ibb.co/nsVGj3z/loan-form4.png)
 	  
+<!-- ROADMAP -->
+## Features
+
+ - Clients can receive positive or negative answer to their loan im minutes
+ - User-Friendly Interface
+ - Search users by keyword.
+ - Take another loans by clients
+ - Manage all loans in one pnael
+ - Change your personal details
+ - Logout to the Login Page.
+ - Modify account details
+ - Messages Panel
+ - Fast registration process.
+	  
+<!-- CONTRIBUTING -->
+## Limitations
+
+To avoid problems when using the app, please note the following limitations:
+
+1. Bigger data to load tables make changing screen much slower.
+2. Any attempt to over flood the app with data insert will effect the performance of the application.
+	  
+<!-- LICENSE -->
+## License
+
+Distributed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) License. 
+	  
+<!-- CONTACT -->
+## Contact
+
+Tamar Aminov - [@LinkedIn](https://github.com/tamar1472) - tamaram@ac.sce.ac.il
+Liran Smadja - [@LinkedIn](https://www.linkedin.com/in/liran-smadja/) - liransm@ac.sce.ac.il
+Bathen Avraham - [@LinkedIn](https://github.com/bathen-avraham) - bathenav@ac.sce.ac.il
+
+Other Projects: [See Now!](https://github.com/liran121211)
