@@ -39,7 +39,7 @@ public class LoanManager implements PropertyChangeListener {
     private static int TIMELINE_OFFSET = 0;
     public static Boolean is_file_downloaded = false;
 
-    private final static double EPSILON = 0.833;
+    private final static double EPSILON = 0.83;
 
     private final Scene scene;
     private FXMLLoader loader;

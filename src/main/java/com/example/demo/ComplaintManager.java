@@ -26,7 +26,7 @@ public class ComplaintManager {
     public void initializeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("complainForm.fxml")
+                    getClass().getResource("complaintForm.fxml")
             );
             this.scene.setRoot(loader.load());
             this.scene.getWindow().setWidth(WINDOW_WIDTH);
