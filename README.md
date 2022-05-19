@@ -50,7 +50,7 @@ The main purpose of the system is to give a loan to those who are conveniently e
     
 With the service of [DigitalOcean](https://m.do.co/c/70ab03cd54f1) We managed to fully operate PostgreSQL database that performs operations according to the command it receives from the client.
     
-The whole system was built in Java so I wanted to use the latest design libraries available to the user.
+The whole system was built in Java so we wanted to use the latest design libraries available to the user.
 The entire graphical user interface was built using JavaFX. 
     
 **Here's why we choose to make a loan application:**
