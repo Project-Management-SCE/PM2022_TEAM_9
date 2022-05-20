@@ -28,6 +28,7 @@ public class LoginManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             scene = new Scene(new StackPane());
             WelcomeManager welcomeManager = new WelcomeManager(scene);
@@ -57,6 +58,7 @@ public class LoginManagerTest extends ApplicationTest {
 
     @Test
     public void A2_authorize() {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             ////
             // USER LOGIN

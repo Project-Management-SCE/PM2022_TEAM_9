@@ -31,6 +31,7 @@ public class TodoListManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             scene = new Scene(new StackPane());
             WelcomeManager welcomeManager = new WelcomeManager(scene);
@@ -66,51 +67,63 @@ public class TodoListManagerTest extends ApplicationTest {
 
     @Test
     public void A1_initializeScreen() {
-        // Stage [TodoList Panel]
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
-        loader = (FXMLLoader) todoListManager.getScene().getUserData();
-        assertNotNull(((TodoListController) loader.getController()).getTodo_list());
+        Platform.setImplicitExit(false);
+        Platform.runLater(() -> {
+            // Stage [TodoList Panel]
+            TodoListManager todoListManager = new TodoListManager(scene);
+            todoListManager.initializeScreen();
+            loader = (FXMLLoader) todoListManager.getScene().getUserData();
+            assertNotNull(((TodoListController) loader.getController()).getTodo_list());
 
-        assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getItem(), "");
-        assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getStatus(), "");
+            assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getItem(), "");
+            assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getStatus(), "");
+        });
     }
 
     @Test
     public void A4_deleteItem() {
+        Platform.setImplicitExit(false);
         // Stage [TodoList Panel]
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
-        loader = (FXMLLoader) todoListManager.getScene().getUserData();
-        assertNotNull(((TodoListController) loader.getController()).getTodo_list());
-        assertNotNull(((TodoListController) loader.getController()).getDelete_item());
-        ((TodoListController) loader.getController()).getDelete_item().fire();
+        Platform.runLater(() -> {
+            TodoListManager todoListManager = new TodoListManager(scene);
+            todoListManager.initializeScreen();
+            loader = (FXMLLoader) todoListManager.getScene().getUserData();
+            assertNotNull(((TodoListController) loader.getController()).getTodo_list());
+            assertNotNull(((TodoListController) loader.getController()).getDelete_item());
+            ((TodoListController) loader.getController()).getDelete_item().fire();
+        });
 
     }
 
     @Test
     public void A2_commitChange() {
+        Platform.setImplicitExit(false);
         // Stage [TodoList Panel]
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
-        loader = (FXMLLoader) todoListManager.getScene().getUserData();
-        assertNotNull(((TodoListController) loader.getController()).getTodo_list());
+        Platform.runLater(() -> {
+            TodoListManager todoListManager = new TodoListManager(scene);
+            todoListManager.initializeScreen();
+            loader = (FXMLLoader) todoListManager.getScene().getUserData();
+            assertNotNull(((TodoListController) loader.getController()).getTodo_list());
 
-        assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getItem(), "");
-        assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getStatus(), "");
+            assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getItem(), "");
+            assertNotEquals(((TodoListController) loader.getController()).getTodo_list().getItems().get(0).getStatus(), "");
 
-        ((TodoListController) loader.getController()).getTodo_list().getItems().get(0).setItem("MODIFIED FOR TEST");
-        ((TodoListController) loader.getController()).getTodo_list().getItems().get(0).setStatus("DONE");
-        ((TodoListController) loader.getController()).getTodo_list().refresh();
+            ((TodoListController) loader.getController()).getTodo_list().getItems().get(0).setItem("MODIFIED FOR TEST");
+            ((TodoListController) loader.getController()).getTodo_list().getItems().get(0).setStatus("DONE");
+            ((TodoListController) loader.getController()).getTodo_list().refresh();
+        });
     }
 
     @Test
     public void A3_addItem() {
+        Platform.setImplicitExit(false);
         // Stage [TodoList Panel]
-        TodoListManager todoListManager = new TodoListManager(scene);
-        todoListManager.initializeScreen();
-        loader = (FXMLLoader) todoListManager.getScene().getUserData();
-        assertNotNull(((TodoListController) loader.getController()).getTodo_list());
-        ((TodoListController) loader.getController()).getAdd_item().fire();
+        Platform.runLater(() -> {
+            TodoListManager todoListManager = new TodoListManager(scene);
+            todoListManager.initializeScreen();
+            loader = (FXMLLoader) todoListManager.getScene().getUserData();
+            assertNotNull(((TodoListController) loader.getController()).getTodo_list());
+            ((TodoListController) loader.getController()).getAdd_item().fire();
+        });
     }
 }

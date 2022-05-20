@@ -29,6 +29,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             scene = new Scene(new StackPane());
             WelcomeManager welcomeManager = new WelcomeManager(scene);
@@ -65,18 +66,21 @@ public class MessagesPanelManagerTest extends ApplicationTest {
     @org.junit.Test
     public void A1_testInitializeScreen() {
         // Stage [MessagePanel]
-        MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
-        messagesPanelManager.initializeScreen();
-        loader = (FXMLLoader) messagesPanelManager.getScene().getUserData();
-        assertNotNull(((MessagesPanelController) loader.getController()).messages_list);
+        Platform.runLater(() -> {
+            MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
+            messagesPanelManager.initializeScreen();
+            loader = (FXMLLoader) messagesPanelManager.getScene().getUserData();
+            assertNotNull(((MessagesPanelController) loader.getController()).messages_list);
 
-        assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getMessage(), "");
-        assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getSubject(), "");
-        assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getTime(), "");
+            assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getMessage(), "");
+            assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getSubject(), "");
+            assertNotEquals(((MessagesPanelController) loader.getController()).messages_list.getItems().get(0).getTime(), "");
+        });
     }
 
     @org.junit.Test
     public void A2_testViewMessage() {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             // Stage [MessagePanel]
             MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
@@ -93,6 +97,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     @org.junit.Test
     public void A3_testReplyMessage() {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             // Stage [MessagePanel]
             MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);
@@ -114,6 +119,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     @org.junit.Test
     public void A4_testDeleteMessage() {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             // Stage [MessagePanel]
             MessagesPanelManager messagesPanelManager = new MessagesPanelManager(scene);

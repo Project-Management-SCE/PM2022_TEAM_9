@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="FIX JENKINS TESTS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/BankerPanelManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/BankerPanelManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ComplaintManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/ComplaintManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoanManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoanManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ManageUsersManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/ManageUsersManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/RequestNewLoanTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/RequestNewLoanTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/WithdrawManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/WithdrawManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/AboutManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/BankerPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/ComplaintManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/example/demo/EditProfileManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,13 +206,7 @@
       <workItem from="1652901386479" duration="4754000" />
       <workItem from="1652980117041" duration="746000" />
       <workItem from="1652984729878" duration="627000" />
-      <workItem from="1653043683226" duration="74000" />
-    </task>
-    <task id="LOCAL‎00018" summary="BSPM2022T9-154">
-      <created>1651315631415</created>
-      <option name="number" value="LOCAL‎00018" />
-      <option name="presentableId" value="LOCAL‎00018" />
-      <updated>1651315631415</updated>
+      <workItem from="1653043683226" duration="485000" />
     </task>
     <task id="LOCAL‎00019" summary="FIX JENKINS TESTING">
       <created>1651325066752</created>
@@ -510,7 +496,13 @@
       <option name="presentableId" value="LOCAL‎00066" />
       <updated>1652984957638</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL‎00067" summary="FIX JENKINS TESTS">
+      <created>1653043843964</created>
+      <option name="number" value="LOCAL‎00067" />
+      <option name="presentableId" value="LOCAL‎00067" />
+      <updated>1653043843965</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

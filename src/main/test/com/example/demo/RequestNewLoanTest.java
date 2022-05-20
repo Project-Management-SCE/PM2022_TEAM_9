@@ -28,6 +28,7 @@ public class RequestNewLoanTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             scene = new Scene(new StackPane());
             WelcomeManager welcomeManager = new WelcomeManager(scene);
@@ -62,6 +63,7 @@ public class RequestNewLoanTest extends ApplicationTest {
 
     @Test
     public void A1_initializeScreen() {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             // Stage [Loan Page 1]
             LoanManager loanManager = new LoanManager(scene);

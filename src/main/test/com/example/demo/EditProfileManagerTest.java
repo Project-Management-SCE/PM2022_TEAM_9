@@ -29,6 +29,7 @@ public class EditProfileManagerTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             scene = new Scene(new StackPane());
             WelcomeManager welcomeManager = new WelcomeManager(scene);
@@ -52,6 +53,8 @@ public class EditProfileManagerTest extends ApplicationTest {
         // TEST USER EDIT PROFILE PANEL
         ////
         // Stage [Login]
+        Platform.setImplicitExit(false);
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             LoginManager loginManager = new LoginManager(scene);
             loginManager.initializeScreen();
@@ -107,6 +110,7 @@ public class EditProfileManagerTest extends ApplicationTest {
         // TEST USER EDIT PROFILE PANEL
         ////
         // Stage [Login]
+        Platform.setImplicitExit(false);
         Platform.runLater(() -> {
             LoginManager loginManager = new LoginManager(scene);
             loginManager.initializeScreen();
