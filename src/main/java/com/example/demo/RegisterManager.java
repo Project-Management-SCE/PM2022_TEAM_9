@@ -136,7 +136,7 @@ public class RegisterManager {
                             loan_form.getDouble("property_value", INT_KEY_ERROR),
                             loan_form.getDouble("total_income", INT_KEY_ERROR),
                             loan_form.get("city", STRING_KEY_ERROR),
-                            loan_form.getInt("childrens_amount", INT_KEY_ERROR),
+                            loan_form.getInt("children_amount", INT_KEY_ERROR),
                             loan_form.getInt("family_members", INT_KEY_ERROR),
                             loan_form.get("gender", STRING_KEY_ERROR),
                             loan_form.get("country", STRING_KEY_ERROR),

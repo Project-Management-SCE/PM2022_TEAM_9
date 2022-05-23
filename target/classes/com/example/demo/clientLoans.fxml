@@ -79,7 +79,7 @@
                                 <Glow />
                             </effect>
                         </Label>
-                  <Separator layoutX="201.0" layoutY="61.0" prefHeight="2.0" prefWidth="214.0" />
+                  <Separator layoutX="207.0" layoutY="55.0" prefHeight="2.0" prefWidth="214.0" />
                   <TableView fx:id="loans_table" layoutX="4.0" layoutY="239.0" prefHeight="318.0" prefWidth="604.0">
                      <columns>
                         <TableColumn fx:id="reference_id_col" prefWidth="105.0" style="-fx-alignment: CENTER;" text="Loan ID">

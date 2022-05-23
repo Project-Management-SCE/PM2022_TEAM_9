@@ -63,7 +63,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="childrens_amount" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="children_amount" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <ChoiceBox fx:id="education_level" prefHeight="25.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="139.0" text="Family Members: " textAlignment="CENTER" GridPane.rowIndex="2">
                <font>

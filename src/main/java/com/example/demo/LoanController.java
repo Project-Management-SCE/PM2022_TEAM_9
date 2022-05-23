@@ -27,7 +27,7 @@ public class LoanController {
     @FXML
     private ChoiceBox<String> country, gender, state, organization_type, occupation_type, living_type, education_level, family_status;
     @FXML
-    private TextField own_car_age, loan_amount, property_value, total_income, family_members, work_phone, home_phone, mobile_phone, email, childrens_amount;
+    private TextField own_car_age, loan_amount, property_value, total_income, family_members, work_phone, home_phone, mobile_phone, email, children_amount;
     @FXML
     private TextField full_name, address, city, zipcode;
     @FXML
@@ -285,7 +285,7 @@ public class LoanController {
     }
 
     public TextField childrensAmount() {
-        return childrens_amount;
+        return children_amount;
     }
 
     public CheckBox workPhoneNA() {
@@ -434,11 +434,17 @@ public class LoanController {
 
         if (page == 0) {
             // Form Validation
-            if (fullName().getText().length() == 0) {
+            fullName().setText(fullName().getText().strip()); // Removes whitespace, test is now "2 2"
+            String[] testSplit = fullName().getText().split(" "); // Splits the string, testSplit is ["2", "2"]
+            if (testSplit.length < 2) {
+                isFormInvalid = true;
+                LoanApp.markRedBox(fullName(), false);
+            } else if (fullName().getText().length() == 0) {
                 isFormInvalid = true;
                 LoanApp.markRedBox(fullName(), false);
             } else
                 LoanApp.markRedBox(fullName(), true);
+
 
             if (Address().getText().length() == 0) {
                 isFormInvalid = true;

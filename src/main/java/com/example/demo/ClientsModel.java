@@ -53,4 +53,12 @@ public class ClientsModel {
     public void setRole(String role) {
         this.role.set(role);
     }
+
+    public String getLast_logged_in() {
+        return last_logged_in.get();
+    }
+
+    public SimpleStringProperty last_logged_inProperty() {
+        return last_logged_in;
+    }
 }

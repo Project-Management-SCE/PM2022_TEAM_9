@@ -646,7 +646,7 @@ class FormAdapter {
         ann_data.setValue(0, 0, Gender());
         ann_data.setValue(0, 1, flagOwnCar());
         ann_data.setValue(0, 2, flagOwnRealty());
-        ann_data.setValue(0, 3, data.getInt("childrens_amount", INVALID_INT));
+        ann_data.setValue(0, 3, data.getInt("children_amount", INVALID_INT));
         ann_data.setValue(0, 4, data.getInt("total_income", INVALID_INT));
         ann_data.setValue(0, 5, data.getInt("loan_amount", INVALID_INT));
         ann_data.setValue(0, 6, data.getInt("property_value", INVALID_INT));

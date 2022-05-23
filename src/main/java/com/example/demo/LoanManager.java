@@ -311,7 +311,7 @@ public class LoanManager implements PropertyChangeListener {
             loan_form.put("family_status", controller.familyStatus().getValue());
 
         if (controller.childrensAmount() != null && controller.childrensAmount().getText().length() > 0)
-            loan_form.putInt("childrens_amount", Integer.parseInt(controller.childrensAmount().getText()));
+            loan_form.putInt("children_amount", Integer.parseInt(controller.childrensAmount().getText()));
 
         if (controller.familyMembers() != null && controller.familyMembers().getText().length() > 0)
             loan_form.putInt("family_members", Integer.parseInt(controller.familyMembers().getText()));
@@ -445,8 +445,8 @@ public class LoanManager implements PropertyChangeListener {
         if (loan_form.get("family_status", UNDEFINED).compareTo("") != 0 && controller.familyStatus() != null)
             controller.familyStatus().getSelectionModel().select(loan_form.get("family_status", UNDEFINED));
 
-        if (loan_form.get("childrens_amount", UNDEFINED).compareTo("") != 0 && controller.childrensAmount() != null)
-            controller.childrensAmount().setText(loan_form.get("childrens_amount", UNDEFINED));
+        if (loan_form.get("children_amount", UNDEFINED).compareTo("") != 0 && controller.childrensAmount() != null)
+            controller.childrensAmount().setText(loan_form.get("children_amount", UNDEFINED));
 
         if (loan_form.get("family_members", UNDEFINED).compareTo("") != 0 && controller.familyMembers() != null)
             controller.familyMembers().setText(loan_form.get("family_members", UNDEFINED));
