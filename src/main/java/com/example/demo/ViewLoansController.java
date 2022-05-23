@@ -44,7 +44,10 @@ public class ViewLoansController implements Initializable {
             aboutManager.initializeScreen();
         });
 
-        homeButton.setOnAction(event -> viewLoansManager.initializeScreen());
+        homeButton.setOnAction(event -> {
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(viewLoansManager.getScene());
+            managerPanelManager.initializeScreen();
+        });
 
         modifyAccountButton.setOnAction(event -> {
             ModifyAccountManager modifyAccountManager = new ModifyAccountManager(viewLoansManager.getScene());
@@ -55,6 +58,19 @@ public class ViewLoansController implements Initializable {
             AboutManager aboutManager = new AboutManager(viewLoansManager.getScene());
             aboutManager.initializeScreen();
         });
+
+        manage_clients.setOnAction(event -> {
+            ManageUsersManager manageUsersManager = new ManageUsersManager(viewLoansManager.getScene());
+            manageUsersManager.initializeScreen();
+        });
+
+        loansStatusButton.setOnAction(event -> {LoansGraphManager loansGraphManager = new LoansGraphManager(viewLoansManager.getScene());
+            loansGraphManager.initializeScreen();
+        });
+
+
+
+
 
         // sort columns
         remaining_amount_col.setSortType(TableColumn.SortType.DESCENDING);
