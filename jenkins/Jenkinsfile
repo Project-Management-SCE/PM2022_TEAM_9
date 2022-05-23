@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                sh 'sloccount --duplicates --wide --details YOUR-PROJECT-ROOT-DIRECTORY | grep -v -e '.*ExternalFrameworks.*' | grep -v 'top_dir' > build/sloccount.sc'
             }
         }
         stage('Test') {
