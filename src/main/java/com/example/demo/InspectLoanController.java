@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 
 import java.sql.SQLException;
 
+import static com.example.demo.FormAdapter.isNumeric;
+
 public class InspectLoanController {
     @FXML
     private Button returnButton;
@@ -30,7 +32,10 @@ public class InspectLoanController {
             state_label.setText(loan_form[30]);
             country_label.setText(loan_form[31]);
             zipcode_label.setText(loan_form[29]);
-            age_label.setText(String.valueOf(Integer.parseInt(loan_form[34]) / 365));
+            if (isNumeric(loan_form[34]))
+                age_label.setText(String.valueOf(Integer.parseInt(loan_form[34]) / 365));
+            else
+                age_label.setText("N/A");
 
             if (loan_form[2].compareTo("0") == 0)
                 gender_label.setText("Male");
@@ -51,16 +56,26 @@ public class InspectLoanController {
             loan_amount_label.setText(loan_form[7]);
 
             for (NAME_HOUSING_TYPE value : NAME_HOUSING_TYPE.values())
-                if (value.value() == Integer.parseInt(loan_form[11]))
-                    lives_in_label.setText(value.name());
+                if (isNumeric(loan_form[11])) {
+                    if (value.value() == Integer.parseInt(loan_form[11]))
+                        lives_in_label.setText(value.name());
+                } else
+                    lives_in_label.setText(loan_form[11]);
 
             for (ORGANIZATION_TYPE value : ORGANIZATION_TYPE.values())
-                if (value.value() == Integer.parseInt(loan_form[20]))
-                    job_field_label.setText(value.name());
+                if (isNumeric(loan_form[20])) {
+                    if (value.value() == Integer.parseInt(loan_form[20]))
+                        job_field_label.setText(value.name());
+                } else
+                    job_field_label.setText(loan_form[20]);
+
 
             for (OCCUPATION_TYPE value : OCCUPATION_TYPE.values())
-                if (value.value() == Integer.parseInt(loan_form[23]))
-                    job_title_label.setText(value.name());
+                if (isNumeric(loan_form[23])) {
+                    if (value.value() == Integer.parseInt(loan_form[23]))
+                        job_title_label.setText(value.name());
+                } else
+                    job_title_label.setText(loan_form[23]);
 
             if (loan_form[3].compareTo("0") == 0) {
                 own_car_label.setText("No");
@@ -76,15 +91,21 @@ public class InspectLoanController {
                 employed_since_label.setText(String.valueOf(2022 - Integer.parseInt(loan_form[13]) / 365));
 
             for (NAME_FAMILY_STATUS value : NAME_FAMILY_STATUS.values())
-                if (value.value() == Integer.parseInt(loan_form[10]))
-                    family_status_label.setText(value.name());
+                if (isNumeric(loan_form[10])) {
+                    if (value.value() == Integer.parseInt(loan_form[10]))
+                        family_status_label.setText(value.name());
+                } else
+                    family_status_label.setText(loan_form[10]);
 
             children_label.setText(loan_form[5]);
             family_members_label.setText(loan_form[21]);
 
             for (NAME_EDUCATION_TYPE value : NAME_EDUCATION_TYPE.values())
-                if (value.value() == Integer.parseInt(loan_form[9]))
-                    education_label.setText(value.name());
+                if (isNumeric(loan_form[9])) {
+                    if (value.value() == Integer.parseInt(loan_form[9]))
+                        education_label.setText(value.name());
+                } else
+                    education_label.setText(loan_form[9]);
 
             if (loan_form[15].compareTo("0") == 0)
                 mobile_phone_label.setText("N/A");

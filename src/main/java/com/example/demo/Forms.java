@@ -889,7 +889,7 @@ class FormAdapter {
         return -1;
     }
 
-    private double regionPopulationRelative(){
+    private double regionPopulationRelative() {
         if ((data.get("state", null).compareTo("North") == 0))
             return 0.03;
         if ((data.get("state", null).compareTo("Center") == 0))
@@ -1208,6 +1208,21 @@ class FormAdapter {
         return -1;
     }
 
+
+    protected static boolean isNumeric(String string) {
+        int intValue;
+
+        if (string == null || string.equals(""))
+            return false;
+
+        try {
+            intValue = Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException ignore) {
+        }
+        return false;
+    }
+
     public final static String LOAN_AGREEMENT = """
             <h1>Loan Agreement</h1>
             <p>Last updated: April 12, 2022</p>
@@ -1401,7 +1416,7 @@ class FormAdapter {
              <P STYLE="margin-top:0px;margin-bottom:0px" ALIGN="center"><FONT FACE="Times New Roman" SIZE="2">4 </FONT></P>
              </BODY>
              </HTML>""";
-    
+
     public final static String USER_AGREEMENT = """
             <html>
             <body>

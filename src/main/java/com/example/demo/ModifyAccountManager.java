@@ -57,8 +57,8 @@ public class ModifyAccountManager {
         try {
             String[] user_data = LoanApp.sql.select("users", "*", String.format("id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST)))[0];
             c.getUsername().setText(user_data[1]);
-            c.getEmail().setText(user_data[2]);
-            c.getPassword().setText(user_data[3]);
+            c.getEmail().setText(user_data[3]);
+            c.getPassword().setText(user_data[2]);
         } catch (SQLException e) {
             e.printStackTrace();
         }
