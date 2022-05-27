@@ -11,9 +11,14 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Metrics') {
+        stage('Metrics - LOC') {
         steps {
                 sh 'cat ./src/main/java/core/bin/metrics/LOC.txt'           
+            }
+        }
+        stage('Metrics - COMPLEXITY') {
+        steps {
+                sh 'cat ./src/main/java/core/bin/metrics/COMPLEXITY.txt'           
             }
         }
         stage('Test') {
