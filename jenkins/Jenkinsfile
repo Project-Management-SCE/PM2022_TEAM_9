@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Metrics') {
             steps {
-                sh 'cat /src/main/java/core/bin/metrics/LOC.csv'
+                sh 'find . -name LOC.csv | cat'
                 
             }
         }
