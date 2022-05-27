@@ -11,14 +11,19 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Metrics - LOC') {
+        stage('Metrics - Lines of Code') {
         steps {
                 sh 'cat ./src/main/java/core/bin/metrics/LOC.txt'           
             }
         }
-        stage('Metrics - COMPLEXITY') {
+        stage('Metrics - Complexity') {
         steps {
                 sh 'cat ./src/main/java/core/bin/metrics/COMPLEXITY.txt'           
+            }
+        }
+                stage('Metrics - Chidamber & Kemerer') {
+        steps {
+                sh 'cat ./src/main/java/core/bin/metrics/CHIDAMBER-KEMERER.txt'           
             }
         }
         stage('Test') {
