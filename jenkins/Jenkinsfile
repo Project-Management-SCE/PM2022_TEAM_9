@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Metrics') {
             steps {
-                sh 'cat ./src/main/java/core/bin/metrics/LOC.csv | column -t -s, | less -S'
+                sh 'cat ./src/main/java/core/bin/metrics/LOC.csv | column -Method -CLOC -JLOC -LOC -NCLOC -RLOC , | less -S'
                 
             }
         }
