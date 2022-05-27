@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Metrics') {
-                sh 'tr ',' '    ' < ./src/main/java/core/bin/metrics/LOC.csv > out.txt | cat out.txt'
+                sh 'cat ./src/main/java/core/bin/metrics/LOC.csv | tr ',' '\t' | cat'
 
                 
             }
