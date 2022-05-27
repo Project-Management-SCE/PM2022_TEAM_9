@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Metrics') {
             steps {
-                sh 'cat ./src/main/java/core/bin/metrics/LOC.csv | column -Method -CLOC -JLOC -LOC -NCLOC -RLOC ,'
+                sh 'apt-get install bsdmainutils'
+
                 
             }
         }
