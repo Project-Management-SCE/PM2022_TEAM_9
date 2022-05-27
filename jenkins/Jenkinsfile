@@ -12,8 +12,7 @@ pipeline {
             }
         }
         stage('Metrics') {
-            steps {
-                sh 'apt-get install bsdmainutils'
+                sh 'tr ',' '\t' < ./src/main/java/core/bin/metrics/LOC.csv > out.txt | cat out.txt'
 
                 
             }
