@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Metrics') {
             steps {
-                sh 'pwd'
+                sh 'cat /src/main/java/core/bin/metrics/LOC.csv'
                 
             }
         }
