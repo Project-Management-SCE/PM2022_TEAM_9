@@ -69,14 +69,14 @@
             <groupId>org.testfx</groupId>
             <artifactId>testfx-core</artifactId>
             <version>4.0.16-alpha</version>
-            <scope>main/test/com/example/demo</scope>
+            <scope>main/test</scope>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>main/test/com/example/demo</scope>
+            <scope>main/test</scope>
         </dependency>
 
         <dependency>
@@ -165,6 +165,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <testSourceDirectory>src/main/old_tests</testSourceDirectory>
+        <testSourceDirectory>src/main/test</testSourceDirectory>
     </build>
 </project>
