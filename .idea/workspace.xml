@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="fix testing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,19 +55,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main" />
@@ -203,13 +202,7 @@
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
       <workItem from="1653741424061" duration="1345000" />
-      <workItem from="1653750216445" duration="5911000" />
-    </task>
-    <task id="LOCAL‎00026" summary="FIX JENKINS TESTING">
-      <created>1651329051692</created>
-      <option name="number" value="LOCAL‎00026" />
-      <option name="presentableId" value="LOCAL‎00026" />
-      <updated>1651329051692</updated>
+      <workItem from="1653750216445" duration="6329000" />
     </task>
     <task id="LOCAL‎00027" summary="FIX JENKINS TESTING">
       <created>1651329207486</created>
@@ -499,7 +492,13 @@
       <option name="presentableId" value="LOCAL‎00074" />
       <updated>1653752807472</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL‎00075" summary="fix testing">
+      <created>1653756662165</created>
+      <option name="number" value="LOCAL‎00075" />
+      <option name="presentableId" value="LOCAL‎00075" />
+      <updated>1653756662165</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
