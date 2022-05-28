@@ -4,12 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="Minor bugs fixed, admin panel modified.">
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="last modifications">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/PostgreSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ann/classifier/NeuralNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ForgotPasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ForgotPasswordManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/AboutManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/BankerPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ComplaintManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/EditProfileManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/LoanManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoanManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoginManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ManageUsersManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/MessagesPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/RequestNewLoanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/SendMessageManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/TodoListManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/WithdrawManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/WithdrawManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ComplaintManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ComplaintManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ViewLoansController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ViewLoansController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/BankerPanelManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ComplaintManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoanManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ManageUsersManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/RequestNewLoanTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/WithdrawManagerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +108,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\test\com\example\demo" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main" />
+      <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\test\com\example\demo" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\java" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\core\bin\python" />
@@ -120,27 +154,12 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="PATTERN" value="com.example.demo.depracated.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.AboutManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BankerPanelManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.BankerPanelManagerTest" />
+      <option name="PACKAGE_NAME" value="com.example.demo.depracated" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.depracated.AboutManagerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,27 +169,36 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="PATTERN" value="com.example.demo.depracated.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.EditProfileManagerTest" />
+      <option name="PACKAGE_NAME" value="com.example.demo.depracated" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.depracated.EditProfileManagerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="PATTERN" value="com.example.demo.depracated.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanManagerTest" />
+      <option name="PACKAGE_NAME" value="SQLTests" />
+      <option name="MAIN_CLASS_NAME" value="SQLTests.LoginTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoanApp" />
+        <item itemvalue="JUnit.LoginTest (1)" />
+        <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.EditProfileManagerTest" />
         <item itemvalue="JUnit.AboutManagerTest" />
-        <item itemvalue="JUnit.LoanManagerTest" />
-        <item itemvalue="JUnit.BankerPanelManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -210,13 +238,8 @@
       <workItem from="1653210039562" duration="1425000" />
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
-      <workItem from="1653741424061" duration="1192000" />
-    </task>
-    <task id="LOCAL‎00021" summary="FIX JENKINS TESTING">
-      <created>1651327754250</created>
-      <option name="number" value="LOCAL‎00021" />
-      <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1651327754250</updated>
+      <workItem from="1653741424061" duration="1345000" />
+      <workItem from="1653750216445" duration="2145000" />
     </task>
     <task id="LOCAL‎00022" summary="FIX JENKINS TESTING">
       <created>1651327945481</created>
@@ -506,7 +529,13 @@
       <option name="presentableId" value="LOCAL‎00069" />
       <updated>1653294441797</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL‎00070" summary="last modifications">
+      <created>1653742770462</created>
+      <option name="number" value="LOCAL‎00070" />
+      <option name="presentableId" value="LOCAL‎00070" />
+      <updated>1653742770462</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +573,8 @@
     <MESSAGE value="BSPM2022T9-183" />
     <MESSAGE value="FIX JENKINS TESTS" />
     <MESSAGE value="Minor bugs fixed, admin panel modified." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor bugs fixed, admin panel modified." />
+    <MESSAGE value="last modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="last modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

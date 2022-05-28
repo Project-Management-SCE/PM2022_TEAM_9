@@ -70,11 +70,11 @@ public class ForgotPasswordManager {
         if (fetch_user.length == 0)
             return INVALID_USER_ID;
 
-        String[][] fetch_phone = sql.select("clients", "id", String.format("phone='%s', id=%s", phone, fetch_user[0][0]));
+        String[][] fetch_phone = sql.select("clients", "id", String.format("phone='%s' , user_id=%s", phone, fetch_user[0][0]));
         if (fetch_phone.length != 0)
             return Integer.parseInt(fetch_user[0][0]);
 
-        fetch_phone = sql.select("bankers", "id", String.format("phone='%s', id=%s", phone, fetch_user[0][0]));
+        fetch_phone = sql.select("bankers", "id", String.format("phone='%s', user_id=%s", phone, fetch_user[0][0]));
         if (fetch_phone.length != 0)
             return Integer.parseInt(fetch_user[0][0]);
 

@@ -165,6 +165,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <testSourceDirectory>src/main/test</testSourceDirectory>
+        <testSourceDirectory>src/main/old_tests</testSourceDirectory>
     </build>
 </project>

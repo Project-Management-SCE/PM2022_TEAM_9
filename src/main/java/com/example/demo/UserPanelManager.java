@@ -45,7 +45,7 @@ public class UserPanelManager {
 
     private Double totalLoanRemaining() throws SQLException {
         double total = 0.0;
-        for (String[] value : sql.select("loans", "loan_amount", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST))))
+        for (String[] value : sql.select("clients", "credits", String.format("user_id=%s", LoginManager.logged_in_user.getInt("userid", LoanApp.USER_NOT_EXIST))))
             total += Double.parseDouble(value[0]);
         return total;
     }
