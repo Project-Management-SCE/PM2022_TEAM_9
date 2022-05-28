@@ -8,8 +8,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'java -jar -Djavafx.cachedir=/tmp -Duser.home=/tmp'
                 sh 'mvn -B -DskipTests clean package'
+                sh 'mkdir lib'
+                sh 'cd lib/ ; wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar'
+                sh 'cd src ; javac -cp "../lib/junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
             }
         }
         stage('Metrics - Lines of Code') {
@@ -29,7 +31,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test -e'
+                 sh 'cd src/ ; java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class LoginTest --reports-dir="reports"'
+                junit 'src/reports/*-jupiter.xml'
             }
             post {
                 always {
