@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="last modifications">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ForgotPasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ForgotPasswordManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/UserPanelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/AboutManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/BankerPanelManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ComplaintManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/EditProfileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/LoanManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoanManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoginManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ManageUsersManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/MessagesPanelManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/RequestNewLoanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/SendMessageManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/TodoListManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/com/example/demo/WithdrawManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/WithdrawManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BankerPanelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ClientsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ComplaintManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ComplaintManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/LoanManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/PostgreSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/RegisterManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ReplyMessageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ViewLoansController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ViewLoansController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/ann/classifier/NeuralNetwork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/AboutManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/BankerPanelManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ComplaintManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/EditProfileManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoanManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/LoginManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/ManageUsersManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/MessagesPanelManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/RequestNewLoanTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/SendMessageManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/TodoListManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/WithdrawManagerTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="fix testing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,25 +199,7 @@
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
       <workItem from="1653741424061" duration="1345000" />
-      <workItem from="1653750216445" duration="2145000" />
-    </task>
-    <task id="LOCAL‎00022" summary="FIX JENKINS TESTING">
-      <created>1651327945481</created>
-      <option name="number" value="LOCAL‎00022" />
-      <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1651327945481</updated>
-    </task>
-    <task id="LOCAL‎00023" summary="FIX JENKINS TESTING">
-      <created>1651328121726</created>
-      <option name="number" value="LOCAL‎00023" />
-      <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1651328121726</updated>
-    </task>
-    <task id="LOCAL‎00024" summary="FIX JENKINS TESTING">
-      <created>1651328199204</created>
-      <option name="number" value="LOCAL‎00024" />
-      <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1651328199204</updated>
+      <workItem from="1653750216445" duration="2450000" />
     </task>
     <task id="LOCAL‎00025" summary="FIX JENKINS TESTING">
       <created>1651328875599</created>
@@ -535,7 +477,25 @@
       <option name="presentableId" value="LOCAL‎00070" />
       <updated>1653742770462</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL‎00071" summary="reset password fixed, available credits fixed, tests modified">
+      <created>1653752407133</created>
+      <option name="number" value="LOCAL‎00071" />
+      <option name="presentableId" value="LOCAL‎00071" />
+      <updated>1653752407133</updated>
+    </task>
+    <task id="LOCAL‎00072" summary="reset password fixed, available credits fixed, tests modified">
+      <created>1653752419507</created>
+      <option name="number" value="LOCAL‎00072" />
+      <option name="presentableId" value="LOCAL‎00072" />
+      <updated>1653752419507</updated>
+    </task>
+    <task id="LOCAL‎00073" summary="fix testing">
+      <created>1653752676993</created>
+      <option name="number" value="LOCAL‎00073" />
+      <option name="presentableId" value="LOCAL‎00073" />
+      <updated>1653752676993</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +534,9 @@
     <MESSAGE value="FIX JENKINS TESTS" />
     <MESSAGE value="Minor bugs fixed, admin panel modified." />
     <MESSAGE value="last modifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="last modifications" />
+    <MESSAGE value="reset password fixed, available credits fixed, tests modified" />
+    <MESSAGE value="fix testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
