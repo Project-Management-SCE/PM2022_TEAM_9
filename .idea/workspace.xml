@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="fix testing">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +72,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\test" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\test\com\example\demo" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src" />
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\java" />
-      <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\core\bin\python" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -99,7 +100,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginTest (1)">
+  <component name="RunManager" selected="JUnit.AboutManagerTest (1)">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -113,16 +114,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AboutManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AboutManagerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.depracated.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.depracated" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.depracated.AboutManagerTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AboutManagerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AboutManagerTest (1)" />
         <item itemvalue="JUnit.LoginTest (1)" />
         <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.EditProfileManagerTest" />
-        <item itemvalue="JUnit.AboutManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -202,19 +197,7 @@
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
       <workItem from="1653741424061" duration="1345000" />
-      <workItem from="1653750216445" duration="6981000" />
-    </task>
-    <task id="LOCAL‎00030" summary="FIX JENKINS TESTING">
-      <created>1651329863665</created>
-      <option name="number" value="LOCAL‎00030" />
-      <option name="presentableId" value="LOCAL‎00030" />
-      <updated>1651329863665</updated>
-    </task>
-    <task id="LOCAL‎00031" summary="FIX JENKINS TESTING">
-      <created>1651330114573</created>
-      <option name="number" value="LOCAL‎00031" />
-      <option name="presentableId" value="LOCAL‎00031" />
-      <updated>1651330114573</updated>
+      <workItem from="1653750216445" duration="7287000" />
     </task>
     <task id="LOCAL‎00032" summary="FIX JENKINS TESTING">
       <created>1651330195250</created>
@@ -498,7 +481,19 @@
       <option name="presentableId" value="LOCAL‎00078" />
       <updated>1653757144253</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL‎00079" summary="fix testing">
+      <created>1653757523977</created>
+      <option name="number" value="LOCAL‎00079" />
+      <option name="presentableId" value="LOCAL‎00079" />
+      <updated>1653757523977</updated>
+    </task>
+    <task id="LOCAL‎00080" summary="fix testing">
+      <created>1653757634668</created>
+      <option name="number" value="LOCAL‎00080" />
+      <option name="presentableId" value="LOCAL‎00080" />
+      <updated>1653757634668</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

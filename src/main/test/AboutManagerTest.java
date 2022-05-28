@@ -1,5 +1,4 @@
-package com.example.demo;
-
+import com.example.demo.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
