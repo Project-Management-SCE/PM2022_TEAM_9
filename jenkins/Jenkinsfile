@@ -9,10 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'apt install wget'
-                sh 'mkdir lib'
-                sh 'cd lib/ ; wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar'
-                sh 'cd src ; javac -cp "../lib/junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
+                sh 'cd ./src/main/java/core/bin/'
+                sh 'javac -cp "junit-platform-console-standalone-1.7.0-all.jar" LoginTest.java'
             }
         }
         stage('Metrics - Lines of Code') {
@@ -32,8 +30,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                 sh 'cd src/ ; java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class LoginTest --reports-dir="reports"'
-                junit 'src/reports/*-jupiter.xml'
+                 sh 'cd ./src/main/java/core/bin/ ; java -jar junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class LoginTest --reports-dir="surefire-reports"'
             }
             post {
                 always {
