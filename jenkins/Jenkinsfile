@@ -8,9 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'java -jar \
-    -Djavafx.cachedir=/tmp \
-    -Duser.home=/tmp \'
+                sh 'java -jar -Djavafx.cachedir=/tmp -Duser.home=/tmp'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
