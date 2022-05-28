@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
                 sh 'cd ./src/main/java/core/bin/'
-                sh 'cd ../../../../test javac -cp "junit-platform-console-standalone-1.7.0-all.jar" LoginTest.java'
+                sh 'cd ./test javac -cp "junit-platform-console-standalone-1.7.0-all.jar" LoginTest.java'
             }
         }
         stage('Metrics - Lines of Code') {
