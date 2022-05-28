@@ -9,19 +9,13 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.sql.SQLException;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginTest extends ApplicationTest {
+public class LoginTest {
     private static final PostgreSQL sql = PostgreSQL.getInstance();
 
     @BeforeClass
     public static void initSQL() {
         sql.openConnection();
     }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-
-    }
-
     @Test
     public void A1() {
         try {
