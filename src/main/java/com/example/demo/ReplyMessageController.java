@@ -7,8 +7,12 @@ import java.sql.SQLException;
 
 public class ReplyMessageController {
     @FXML
-    Button send_message, exit_message;
+    public
+    Button send_message;
     @FXML
+    Button exit_message;
+    @FXML
+    public
     TextField message_subject;
     @FXML
     TextArea message_body;

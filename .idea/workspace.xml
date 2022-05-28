@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="fix testing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/BankerPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ComplaintManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/EditProfileManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoanManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoanManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoginManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ManageUsersManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/MessagesPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/RequestNewLoanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/SendMessageManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TodoListManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/WithdrawManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/WithdrawManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/junit-platform-console-standalone-1.9.0-M1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/reports/New Rich Text Document.rtf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +115,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AboutManagerTest (1)">
+  <component name="RunManager" selected="JUnit.All in demo">
     <configuration name="LoanApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.LoanApp" />
       <module name="demo" />
@@ -123,17 +138,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EditProfileManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.depracated.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.depracated" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.depracated.EditProfileManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in demo" />
         <item itemvalue="JUnit.AboutManagerTest (1)" />
         <item itemvalue="JUnit.LoginTest (1)" />
         <item itemvalue="Application.LoanApp" />
         <item itemvalue="JUnit.LoginTest" />
-        <item itemvalue="JUnit.EditProfileManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,13 +205,7 @@
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
       <workItem from="1653741424061" duration="1345000" />
-      <workItem from="1653750216445" duration="7287000" />
-    </task>
-    <task id="LOCAL‎00032" summary="FIX JENKINS TESTING">
-      <created>1651330195250</created>
-      <option name="number" value="LOCAL‎00032" />
-      <option name="presentableId" value="LOCAL‎00032" />
-      <updated>1651330195250</updated>
+      <workItem from="1653750216445" duration="7846000" />
     </task>
     <task id="LOCAL‎00033" summary="BSPM2022T9-158">
       <created>1651353381680</created>
@@ -493,7 +495,13 @@
       <option name="presentableId" value="LOCAL‎00080" />
       <updated>1653757634668</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL‎00081" summary="fix testing">
+      <created>1653757766232</created>
+      <option name="number" value="LOCAL‎00081" />
+      <option name="presentableId" value="LOCAL‎00081" />
+      <updated>1653757766232</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

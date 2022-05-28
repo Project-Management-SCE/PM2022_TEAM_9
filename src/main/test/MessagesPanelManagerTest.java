@@ -1,10 +1,10 @@
-package com.example.demo;
-
+import com.example.demo.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import javafx.scene.Scene;
@@ -27,7 +27,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Override
+    @Ignore
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -63,7 +63,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     }
 
-    @org.junit.Test
+    @Ignore
     public void A1_testInitializeScreen() {
         // Stage [MessagePanel]
         Platform.runLater(() -> {
@@ -78,7 +78,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @org.junit.Test
+    @Ignore
     public void A2_testViewMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -95,7 +95,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @org.junit.Test
+    @Ignore
     public void A3_testReplyMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -117,7 +117,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @org.junit.Test
+    @Ignore
     public void A4_testDeleteMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

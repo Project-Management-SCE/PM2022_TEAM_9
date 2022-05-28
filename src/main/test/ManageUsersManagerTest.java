@@ -1,10 +1,10 @@
-package com.example.demo;
-
+import com.example.demo.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import javafx.scene.Scene;
@@ -15,8 +15,7 @@ import org.testfx.framework.junit.ApplicationTest;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SendMessageManagerTest extends ApplicationTest {
-
+public class ManageUsersManagerTest extends ApplicationTest {
     private Scene scene;
     private FXMLLoader loader;
     private static final PostgreSQL sql = PostgreSQL.getInstance();
@@ -26,7 +25,7 @@ public class SendMessageManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Override
+    @Ignore
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -44,51 +43,50 @@ public class SendMessageManagerTest extends ApplicationTest {
             loader = (FXMLLoader) welcomeManager.getScene().getUserData();
             ((WelcomeController) loader.getController()).getLogin().fire();
 
-
             // Stage [Login]
             LoginManager loginManager = new LoginManager(scene);
             loginManager.initializeScreen();
             loader = (FXMLLoader) loginManager.getScene().getUserData();
-            ((LoginController) loader.getController()).getUser().setText("yonatan");
-            ((LoginController) loader.getController()).getPassword().setText("1234");
+            ((LoginController) loader.getController()).getUser().setText("tamaram");
+            ((LoginController) loader.getController()).getPassword().setText("PM2022");
             ((LoginController) loader.getController()).getLoginButton().fire();
 
             // Stage [UserPanel]
-            UserPanelManager userPanelManager = new UserPanelManager(scene);
-            userPanelManager.initializeScreen();
-            loader = (FXMLLoader) userPanelManager.getScene().getUserData();
+            ManagerPanelManager managerPanelManager = new ManagerPanelManager(scene);
+            managerPanelManager.initializeScreen();
+            loader = (FXMLLoader) managerPanelManager.getScene().getUserData();
         });
     }
 
-    @Test
+    @Ignore
     public void A1_initializeScreen() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
-            // Stage [SendMessagePanel]
-            SendMessageManager sendMessageManager = new SendMessageManager(scene);
-            sendMessageManager.initializeScreen();
-            loader = (FXMLLoader) sendMessageManager.getScene().getUserData();
+            // Stage [ManageUsersPanel]
+            ManageUsersManager manageUsersManager = new ManageUsersManager(scene);
+            manageUsersManager.initializeScreen();
+            loader = (FXMLLoader) manageUsersManager.getScene().getUserData();
 
-            assertNotNull(((SendMessageController) loader.getController()).getBankers_list());
-            assertNotNull(((SendMessageController) loader.getController()).getSend_message());
-            assertNotNull(((SendMessageController) loader.getController()).getMessage_subject());
-            assertNotNull(((SendMessageController) loader.getController()).getMessage_body());
-            assertNotEquals(((SendMessageController) loader.getController()).getBankers_list().getItems().get(0), "");
+            assertNotEquals(((ManageUsersController) loader.getController()).getUsers_list().getItems().get(0).getId(), "");
+            assertNotEquals(((ManageUsersController) loader.getController()).getUsers_list().getItems().get(0).getUsername(), "");
+            assertNotEquals(((ManageUsersController) loader.getController()).getUsers_list().getItems().get(0).getEmail(), "");
+            assertNotEquals(((ManageUsersController) loader.getController()).getUsers_list().getItems().get(0).getRole(), "");
         });
     }
 
-    @Test
-    public void A2_sendMessage() {
+
+    @Ignore
+    public void A2_filterUsers() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
-            // Stage [SendMessagePanel]
-            SendMessageManager sendMessageManager = new SendMessageManager(scene);
-            sendMessageManager.initializeScreen();
-            loader = (FXMLLoader) sendMessageManager.getScene().getUserData();
+            // Stage [ManageUsersPanel]
+            ManageUsersManager manageUsersManager = new ManageUsersManager(scene);
+            manageUsersManager.initializeScreen();
+            loader = (FXMLLoader) manageUsersManager.getScene().getUserData();
 
-            ((SendMessageController) loader.getController()).getMessage_subject().setText("TEST SUBJECT");
-            ((SendMessageController) loader.getController()).getMessage_body().setText("TEST MESSAGE");
-            ((SendMessageController) loader.getController()).getSend_message().fire();
+            ((ManageUsersController) loader.getController()).getSearch_criterion().setText("tamaram");
+            assertNotEquals(((ManageUsersController) loader.getController()).getUsers_list().getItems().get(0).getId(), "");
         });
+
     }
 }

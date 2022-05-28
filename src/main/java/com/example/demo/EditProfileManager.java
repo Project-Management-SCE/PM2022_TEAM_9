@@ -76,7 +76,7 @@ public class EditProfileManager {
         }
     }
 
-    protected void updateFormData(EditProfileController c) {
+    public void updateFormData(EditProfileController c) {
         if (LoginManager.logged_in_user.getInt("role", LoanApp.USER_NOT_EXIST) == 0) {
             String columns = "first_name, last_name, street, city, country, zipcode, phone, bank_number";
             String data = String.format("%s,%s,%s,%s,%s,%s,%s,%s", c.getFirstname().getText(), c.getLastname().getText(), c.getAddress().getText(), c.getCity().getText(), c.getCountry().getText(), c.getZipcode().getText(), c.getPhone().getText(), c.getBank_number().getText());

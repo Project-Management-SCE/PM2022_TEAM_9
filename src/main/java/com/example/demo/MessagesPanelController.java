@@ -19,8 +19,13 @@ public class MessagesPanelController implements Initializable {
     private final ObservableList<MessageModel> observable_list = FXCollections.observableArrayList();
 
     @FXML
-    Button view_message, reply_msg, delete_msg;
+    Button view_message;
     @FXML
+    Button reply_msg;
+    @FXML
+    public Button delete_msg;
+    @FXML
+    public
     TableView<MessageModel> messages_list;
     @FXML
     TableColumn<MessageModel, String> subject_col, message_col, sender_col;
