@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CarTest {
+public class LoginTest {
 
     String make = "Honda"; 
     String model = "Civic"; 
