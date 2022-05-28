@@ -184,7 +184,7 @@ public class NeuralNetwork implements Serializable {
 
             if (epoch % (int) batch_size == 0) {
                 if (isLogged)//show logs
-                    System.out.printf("Epochs: %d | Accuracy: %.5f | Loss: %.5f | Data Loss: %.10E | Regularization Loss: %.10E%n", epoch, this.accuracy, this.loss, data_loss, regularization_loss);
+                    //System.out.printf("Epochs: %d | Accuracy: %.5f | Loss: %.5f | Data Loss: %.10E | Regularization Loss: %.10E%n", epoch, this.accuracy, this.loss, data_loss, regularization_loss);
 
                 //collect logs
                 this.accuracy_logs.add(Double.toString(this.accuracy) + '\n');
@@ -234,7 +234,7 @@ public class NeuralNetwork implements Serializable {
         if (this.showMetrices) // show animated graphs of metrices.
             this.showMetrices();
 
-        System.out.printf("Training was completed successfully. Accuracy: %.5f | Loss: %.5f%n", this.accuracy, this.loss);
+        //System.out.printf("Training was completed successfully. Accuracy: %.5f | Loss: %.5f%n", this.accuracy, this.loss);
     }
 
     public void validation(Matrix X_test, Matrix y_test) throws InvalidMatrixOperation, MatrixIndexesOutOfBounds, InvalidMatrixDimension, InvalidMatrixAxis {
@@ -269,7 +269,7 @@ public class NeuralNetwork implements Serializable {
         // calculate accuracy
         this.accuracy = Matrix.bitwiseCompare(predictions.transpose(), y_test).mean();
 
-        System.out.printf("Validation was completed successfully. Accuracy: %.5f | Loss: %.5f%n", this.accuracy, loss);
+        //System.out.printf("Validation was completed successfully. Accuracy: %.5f | Loss: %.5f%n", this.accuracy, loss);
     }
 
     public void predict(Matrix X_test) throws InvalidMatrixDimension, InvalidMatrixOperation, MatrixIndexesOutOfBounds, InvalidMatrixAxis {
@@ -399,7 +399,7 @@ public class NeuralNetwork implements Serializable {
         loss_writer.close();
 
         // execute python script
-        System.out.println("Preparing data for visualization...");
+        //System.out.println("Preparing data for visualization...");
         PythonInterpreter.exec("python\\metrices_animation.py");
     }
 
@@ -436,7 +436,7 @@ public class NeuralNetwork implements Serializable {
     private static void raiseInfo(String msg) {
         final String ANSI_RESET = "\u001B[0m";
         final String ANSI_BLUE = "\u001B[34m";
-        System.out.println(ANSI_BLUE + "INFO: " + msg + ANSI_RESET);
+        //System.out.println(ANSI_BLUE + "INFO: " + msg + ANSI_RESET);
     }
 
     private static File DirectoryAssurance(String directory, String filename) {

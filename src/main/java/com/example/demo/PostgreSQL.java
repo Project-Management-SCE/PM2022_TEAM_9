@@ -43,7 +43,7 @@ public class PostgreSQL {
         String URL_BUILDER = "jdbc:postgresql://%s:%s/%s".formatted(SERVER_IP, SERVER_PORT, DB_NAME);
         try {
             this.connection = DriverManager.getConnection(URL_BUILDER, DB_USER, DB_PASSWORD);
-            dispatchStatus(0);
+            //dispatchStatus(0);
         } catch (SQLException e) {
             dispatchStatus(2);
             System.exit(2);

@@ -97,7 +97,7 @@ public class BankerPanelManager {
 
     public void commitChange(TableView<LoansModel> items_list, TableColumn.CellEditEvent<LoansModel, String> string_modified_data, TableColumn.CellEditEvent<LoansModel, Double> double_modified_data) throws SQLException {
         if (items_list.getSelectionModel().getSelectedItem() != null) { // if row selected
-            System.out.println(items_list.getFocusModel().getFocusedCell().getColumn());
+            //System.out.println(items_list.getFocusModel().getFocusedCell().getColumn());
 
             if (double_modified_data != null && double_modified_data.getNewValue().compareTo(double_modified_data.getOldValue()) != 0) { // if value did change
                 int loan_id = items_list.getSelectionModel().getSelectedItem().getId();

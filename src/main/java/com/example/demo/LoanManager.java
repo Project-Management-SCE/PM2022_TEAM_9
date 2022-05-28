@@ -557,13 +557,13 @@ public class LoanManager implements PropertyChangeListener {
             local_ann.predict(A); // convert (loan_form) to ANN form
 
             if (local_ann.get_predictions().argmax(0).getValue(0, 0) > EPSILON) { // if loan approved
-                System.out.println(local_ann.get_predictions().argmax(0));
+                //System.out.println(local_ann.get_predictions().argmax(0));
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "approved");
                 loan_form.put("reference_id", getReferenceID(8));
             } else { // if loan denied
                 ++LoanController.current_page;
-                System.out.println(local_ann.get_predictions().argmax(0));
+                //System.out.println(local_ann.get_predictions().argmax(0));
                 nextPage(++LoanController.current_page);
                 loan_form.put("loan_status", "rejected");
                 loan_form.put("reference_id", getReferenceID(8));
