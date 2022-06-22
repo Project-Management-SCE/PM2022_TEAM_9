@@ -27,7 +27,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -63,7 +63,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
 
     }
 
-    @Ignore
+    @Test
     public void A1_testInitializeScreen() {
         // Stage [MessagePanel]
         Platform.runLater(() -> {
@@ -78,7 +78,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A2_testViewMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -95,7 +95,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A3_testReplyMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -117,7 +117,7 @@ public class MessagesPanelManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A4_testDeleteMessage() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

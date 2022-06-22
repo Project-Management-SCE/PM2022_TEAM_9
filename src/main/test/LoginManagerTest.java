@@ -26,7 +26,7 @@ public class LoginManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -46,7 +46,7 @@ public class LoginManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A1_initializeScreen() {
         LoginManager loginManager = new LoginManager(scene);
         loginManager.initializeScreen();
@@ -56,7 +56,7 @@ public class LoginManagerTest extends ApplicationTest {
         assertNotNull(((LoginController) loader.getController()).getLoginButton());
     }
 
-    @Ignore
+    @Test
     public void A2_authorize() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

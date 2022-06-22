@@ -26,7 +26,7 @@ public class RequestNewLoanTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -61,7 +61,7 @@ public class RequestNewLoanTest extends ApplicationTest {
     }
 
 
-    @Ignore
+    @Test
     public void A1_initializeScreen() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

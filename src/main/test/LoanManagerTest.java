@@ -3,16 +3,13 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.testfx.framework.junit.ApplicationTest;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -26,7 +23,7 @@ public class LoanManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -45,7 +42,7 @@ public class LoanManagerTest extends ApplicationTest {
     }
 
 
-    @Ignore
+    @Test
     public void A1_initializeScreen() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

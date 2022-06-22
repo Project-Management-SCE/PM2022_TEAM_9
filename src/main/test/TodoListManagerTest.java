@@ -29,7 +29,7 @@ public class TodoListManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -65,7 +65,7 @@ public class TodoListManagerTest extends ApplicationTest {
 
     }
 
-    @Ignore
+    @Test
     public void A1_initializeScreen() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -80,7 +80,7 @@ public class TodoListManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A4_deleteItem() {
         Platform.setImplicitExit(false);
         // Stage [TodoList Panel]
@@ -95,7 +95,7 @@ public class TodoListManagerTest extends ApplicationTest {
 
     }
 
-    @Ignore
+    @Test
     public void A2_commitChange() {
         Platform.setImplicitExit(false);
         // Stage [TodoList Panel]
@@ -114,7 +114,7 @@ public class TodoListManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A3_addItem() {
         Platform.setImplicitExit(false);
         // Stage [TodoList Panel]

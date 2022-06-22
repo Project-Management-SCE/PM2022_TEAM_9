@@ -5,23 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61f5fe7-e752-4f94-ba87-cea09f9172cd" name="Changes" comment="fix testing">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MessagesPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ReplyMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/BankerPanelManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ComplaintManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/EditProfileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoanManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoanManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoginManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ManageUsersManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/MessagesPanelManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/RequestNewLoanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/SendMessageManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TodoListManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old_tests/com/example/demo/WithdrawManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/WithdrawManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_encoded.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/bin/metrics/loan_normalized.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/AboutManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/junit-platform-console-standalone-1.9.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/reports/New Rich Text Document.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/BankerPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/BankerPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/ComplaintManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ComplaintManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/EditProfileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/EditProfileManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/LoanManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoanManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/LoginManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoginManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/ManageUsersManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/ManageUsersManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/MessagesPanelManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/MessagesPanelManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/RequestNewLoanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/RequestNewLoanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/SendMessageManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/SendMessageManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TodoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TodoListManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/WithdrawManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/WithdrawManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AboutManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AboutManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BankerPanelManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BankerPanelManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ComplaintManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ComplaintManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/EditProfileManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/EditProfileManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LoanManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoanManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ManageUsersManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ManageUsersManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MessagesPanelManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MessagesPanelManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/RequestNewLoanTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RequestNewLoanTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/SendMessageManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SendMessageManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TodoListManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TodoListManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/WithdrawManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/WithdrawManagerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,20 +85,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Liran\IdeaProjects\PM2022_TEAM_9\src\main\test" />
@@ -205,13 +219,10 @@
       <workItem from="1653243481123" duration="9976000" />
       <workItem from="1653295287452" duration="1393000" />
       <workItem from="1653741424061" duration="1345000" />
-      <workItem from="1653750216445" duration="7846000" />
-    </task>
-    <task id="LOCAL‎00033" summary="BSPM2022T9-158">
-      <created>1651353381680</created>
-      <option name="number" value="LOCAL‎00033" />
-      <option name="presentableId" value="LOCAL‎00033" />
-      <updated>1651353381680</updated>
+      <workItem from="1653750216445" duration="8172000" />
+      <workItem from="1653812637025" duration="166000" />
+      <workItem from="1655278324950" duration="80000" />
+      <workItem from="1655893146703" duration="791000" />
     </task>
     <task id="LOCAL‎00034" summary="&#10;BSPM2022T9-158">
       <created>1651396327793</created>
@@ -501,7 +512,13 @@
       <option name="presentableId" value="LOCAL‎00081" />
       <updated>1653757766232</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL‎00082" summary="fix testing">
+      <created>1653758516890</created>
+      <option name="number" value="LOCAL‎00082" />
+      <option name="presentableId" value="LOCAL‎00082" />
+      <updated>1653758516890</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

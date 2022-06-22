@@ -27,7 +27,7 @@ public class EditProfileManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -47,7 +47,7 @@ public class EditProfileManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A1_testInitializeScreen() {
         ////
         // TEST USER EDIT PROFILE PANEL
@@ -104,7 +104,7 @@ public class EditProfileManagerTest extends ApplicationTest {
     }
 
 
-    @Ignore
+    @Test
     public void A2_updateFormData() {
         ////
         // TEST USER EDIT PROFILE PANEL

@@ -25,7 +25,7 @@ public class ManageUsersManagerTest extends ApplicationTest {
         sql.openConnection();
     }
 
-    @Ignore
+    @Override
     public void start(Stage stage) {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -58,7 +58,7 @@ public class ManageUsersManagerTest extends ApplicationTest {
         });
     }
 
-    @Ignore
+    @Test
     public void A1_initializeScreen() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {
@@ -75,7 +75,7 @@ public class ManageUsersManagerTest extends ApplicationTest {
     }
 
 
-    @Ignore
+    @Test
     public void A2_filterUsers() {
         Platform.setImplicitExit(false);
         Platform.runLater(() -> {

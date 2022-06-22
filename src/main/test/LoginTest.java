@@ -4,8 +4,6 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import javafx.stage.Stage;
-import org.testfx.framework.junit.ApplicationTest;
 import java.sql.SQLException;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
